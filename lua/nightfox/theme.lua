@@ -36,7 +36,7 @@ function M.setup(config)
     SignColumnSB = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr = { fg = c.black }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineNr = { fg = c.fg_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange, style = "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg_dark, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
@@ -93,7 +93,7 @@ function M.setup(config)
     Conditional = { fg = c.magenta_br }, --  if, then, else, endif, switch, etc.
     Repeat = { fg = c.magenta_br }, --   for, do, while, etc.
     Label = { fg = c.magenta_br }, --    case, default, etc.
-    Operator = { fg = c.orange }, -- "sizeof", "+", "*", etc.
+    Operator = { fg = c.fg_alt }, -- "sizeof", "+", "*", etc.
     Keyword = { fg = c.magenta, style = config.keyword_style }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
@@ -203,24 +203,24 @@ function M.setup(config)
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
-    TSField = { fg = c.green }, -- For fields.
+    TSField = { fg = util.brighten(c.black_br, 0.1) }, -- For fields.
     -- TSFloat             = { };    -- For floats.
-    -- TSFunction          = { };    -- For function (calls and definitions).
-    -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
-    -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    -- TSFunction = { fg = c.fg_gutter }, -- For function (calls and definitions).
+    TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.
+    TSFuncMacro = { fg = c.red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword = { fg = c.magenta, style = config.keyword_style }, -- For keywords that don't fall in previous categories.
     TSKeywordFunction = { fg = c.magenta, style = config.function_style }, -- For keywords used to define a fuction.
     TSLabel = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
-    -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
+    TSNamespace = { fg = c.cyan }, -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
     TSOperator = { fg = c.fg_alt }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = c.yellow }, -- For parameters of a function.
+    TSParameter = { fg = c.orange_br }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = { fg = c.green }, -- Same as `TSField`.
-    TSPunctDelimiter = { fg = c.blue }, -- For delimiters ie: `.`
+    TSPunctDelimiter = { fg = c.fg_alt }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.fg_dark }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.blue }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.

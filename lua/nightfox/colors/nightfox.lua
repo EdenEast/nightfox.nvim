@@ -5,13 +5,6 @@ local M = {}
 function M.setup(config)
   local colors = {}
 
-  --Some color ideas
-  -- https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590
-  -- https://coolors.co/233d4d-fe7f2d-fcca46-a1c181-619b8a
-  -- https://coolors.co/f79256-fbd1a2-7dcfb6-00b2ca-1d4e89
-  -- https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
-  -- https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
-  -- https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
   colors = {
     none = "NONE",
     bg = "#192330",
@@ -19,7 +12,8 @@ function M.setup(config)
     -- comment = "#50514F",
     -- bg = "#1A1A1A",
 
-    fg = "#DEDFE0",
+    -- fg = "#DEDFE0",
+    fg = "#CDCECF",
     fg_alt = "#B0B3B6",
     fg_gutter = "#3b4261",
 
@@ -56,23 +50,6 @@ function M.setup(config)
     -- red = "#F692B2",
     -- yellow = "#fbdf90",
 
-    -- comment = "#565f89",
-    -- dark3 = "#545c7e",
-    -- dark5 = "#737aa2",
-    -- blue0 = "#3d59a1",
-    -- blue = "#7aa2f7",
-    -- cyan = "#7dcfff",
-    -- magenta = "#bb9af7",
-    -- magenta2 = "#ff007c",
-    -- purple = "#9d7cd8",
-    -- orange = "#ff9e64",
-    -- yellow = "#e0af68",
-    -- green = "#9ece6a",
-    -- green1 = "#73daca",
-    -- green2 = "#41a6b5",
-    -- teal = "#1abc9c",
-    -- red = "#f7768e",
-    -- red1 = "#db4b4b",
     git = {
       change = "#6183bb",
       add = "#449dab",
