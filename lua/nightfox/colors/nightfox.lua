@@ -5,6 +5,11 @@ local M = {}
 function M.setup(config)
   local colors = {}
 
+  -- References:
+  -- https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
+  -- https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
+  -- https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
+
   colors = {
     none = "NONE",
     bg = "#192330",
