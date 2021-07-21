@@ -81,6 +81,26 @@ function util.syntax(tbl)
   end
 end
 
+function util.terminal(theme)
+  vim.g.terminal_color_0 = theme.colors.black
+  vim.g.terminal_color_1 = theme.colors.red
+  vim.g.terminal_color_2 = theme.colors.green
+  vim.g.terminal_color_3 = theme.colors.yellow
+  vim.g.terminal_color_4 = theme.colors.blue
+  vim.g.terminal_color_5 = theme.colors.magenta
+  vim.g.terminal_color_6 = theme.colors.cyan
+  vim.g.terminal_color_7 = theme.colors.white
+
+  vim.g.terminal_color_8 = theme.colors.black_br
+  vim.g.terminal_color_9 = theme.colors.red_br
+  vim.g.terminal_color_10 = theme.colors.green_br
+  vim.g.terminal_color_11 = theme.colors.yellow_br
+  vim.g.terminal_color_12 = theme.colors.blue_br
+  vim.g.terminal_color_13 = theme.colors.magenta_br
+  vim.g.terminal_color_14 = theme.colors.cyan_br
+  vim.g.terminal_color_15 = theme.colors.white_br
+end
+
 function util.load(theme)
   -- only needed to clear when not the default colorscheme
   -- if vim.g.colors_name then
@@ -93,6 +113,10 @@ function util.load(theme)
 
   util.syntax(theme.base)
   util.syntax(theme.plugins)
+
+  if theme.config.terminal_colors then
+    util.terminal(theme)
+  end
 end
 
 return util

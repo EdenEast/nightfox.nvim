@@ -23,6 +23,7 @@ config = {
   function_style = opt("italic_functions", false) and "italic" or "NONE",
   variable_style = opt("italic_variables", false) and "italic" or "NONE",
   hide_inactive_statusline = opt("hide_inactive_statusline", false),
+  terminal_colors = opt("terminal_colors", true),
   sidebars = opt("sidebars", {}),
   colors = opt("colors", {}),
 }

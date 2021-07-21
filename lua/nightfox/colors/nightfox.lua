@@ -46,15 +46,6 @@ function M.setup(config)
 
     comment = "#526175",
 
-    -- blue = "#719cd6",
-    -- cyan = "#7FE4D2",
-    -- green = "#94CF95",
-    -- magenta = "#CD84C8",
-    -- orange = "#F4A261",
-    -- pink = "#CCAACC",
-    -- red = "#F692B2",
-    -- yellow = "#fbdf90",
-
     git = {
       change = "#6183bb",
       add = "#449dab",
