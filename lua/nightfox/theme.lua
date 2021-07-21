@@ -80,7 +80,7 @@ function M.setup(config)
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant = { fg = c.orange }, -- (preferred) any constant
-    String = { fg = c.green }, --   a string constant: "this is a string"
+    String = { fg = c.green, style = config.string_style }, --   a string constant: "this is a string"
     Character = { fg = c.green }, --  a character constant: 'c', '\n'
     Number = { fg = c.orange_br }, --   a number constant: 234, 0xff
     Float = { fg = c.orange_br }, --    a floating point constant: 2.3e10
@@ -225,8 +225,8 @@ function M.setup(config)
     TSPunctSpecial = { fg = c.blue }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
-    TSStringRegex = { fg = c.blue }, -- For regexes.
-    TSStringEscape = { fg = c.magenta }, -- For escape characters within a string.
+    TSStringRegex = { fg = c.blue, style = config.string_style }, -- For regexes.
+    TSStringEscape = { fg = c.magenta, style = config.string_style }, -- For escape characters within a string.
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     TSTypeBuiltin = { fg = c.cyan }, -- For builtin types.

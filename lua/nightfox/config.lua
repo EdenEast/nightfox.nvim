@@ -18,14 +18,15 @@ end
 config = {
   style = opt("style", "nightfox"),
   transparent = opt("transparent", false),
-  comment_style = opt("italic_comments", true) and "italic" or "NONE",
-  keyword_style = opt("italic_keywords", true) and "italic" or "NONE",
+  comment_style = opt("italic_comments", false) and "italic" or "NONE",
   function_style = opt("italic_functions", false) and "italic" or "NONE",
+  keyword_style = opt("italic_keywords", false) and "italic" or "NONE",
+  string_style = opt("italic_strings", false) and "italic" or "NONE",
   variable_style = opt("italic_variables", false) and "italic" or "NONE",
-  hide_inactive_statusline = opt("hide_inactive_statusline", false),
   terminal_colors = opt("terminal_colors", true),
-  sidebars = opt("sidebars", {}),
-  colors = opt("colors", {}),
+  -- hide_inactive_statusline = opt("hide_inactive_statusline", false),
+  -- sidebars = opt("sidebars", {}),
+  -- colors = opt("colors", {}),
 }
 
 return config
