@@ -245,7 +245,154 @@ function M.setup(config)
     -- TSURI               = { };    -- Any URI like a link or email.
   }
 
-  theme.editor = {}
+  theme.plugins = {
+    -- LspTrouble
+    LspTroubleText = { fg = c.fg_dark },
+    LspTroubleCount = { fg = c.magenta, bg = c.fg_gutter },
+    LspTroubleNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+
+    -- Illuminate
+    illuminatedWord = { bg = c.fg_gutter },
+    illuminatedCurWord = { bg = c.fg_gutter },
+
+    -- diff
+    diffAdded = { fg = c.git.add },
+    diffRemoved = { fg = c.git.delete },
+    diffChanged = { fg = c.git.change },
+    diffOldFile = { fg = c.yellow },
+    diffNewFile = { fg = c.orange },
+    diffFile = { fg = c.blue },
+    diffLine = { fg = c.comment },
+    diffIndexLine = { fg = c.magenta },
+
+    -- Neogit
+    NeogitBranch = { fg = c.magenta },
+    NeogitRemote = { fg = c.pink },
+    NeogitHunkHeader = { bg = c.bg_highlight, fg = c.fg },
+    NeogitHunkHeaderHighlight = { bg = c.fg_gutter, fg = c.blue },
+    NeogitDiffContextHighlight = { bg = util.darken(c.fg_gutter, 0.5), fg = c.fg_dark },
+    NeogitDiffDeleteHighlight = { fg = c.git.delete, bg = c.diff.delete },
+    NeogitDiffAddHighlight = { fg = c.git.add, bg = c.diff.add },
+
+    -- GitGutter
+    GitGutterAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
+    GitGutterChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
+    GitGutterDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
+
+    -- GitSigns
+    GitSignsAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
+    GitSignsChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
+    GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
+
+    -- Telescope
+    TelescopeBorder = { fg = c.border_highlight },
+
+    -- NvimTree
+    NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    NvimTreeRootFolder = { fg = c.orange, style = "bold" },
+    NvimTreeGitDirty = { fg = c.git.change },
+    NvimTreeGitNew = { fg = c.git.add },
+    NvimTreeGitDeleted = { fg = c.git.delete },
+    NvimTreeSpecialFile = { fg = c.magenta, style = "underline" },
+    LspDiagnosticsError = { fg = c.error },
+    LspDiagnosticsWarning = { fg = c.warning },
+    LspDiagnosticsInformation = { fg = c.info },
+    LspDiagnosticsHint = { fg = c.hint },
+    NvimTreeIndentMarker = { fg = c.fg_gutter },
+    NvimTreeImageFile = { fg = c.fg_sidebar },
+    NvimTreeSymlink = { fg = c.magenta },
+    -- NvimTreeFolderName= { fg = c.fg_float },
+
+    -- Fern
+    FernBranchText = { fg = c.blue },
+
+    -- glyph palette
+    GlyphPalette1 = { fg = c.red },
+    GlyphPalette2 = { fg = c.green },
+    GlyphPalette3 = { fg = c.yellow },
+    GlyphPalette4 = { fg = c.blue },
+    GlyphPalette6 = { fg = c.green_br },
+    GlyphPalette7 = { fg = c.fg },
+    GlyphPalette9 = { fg = c.red },
+
+    -- Dashboard
+    DashboardShortCut = { fg = c.cyan },
+    DashboardHeader = { fg = c.blue },
+    DashboardCenter = { fg = c.magenta },
+    DashboardFooter = { fg = c.yellow, style = "italic" },
+
+    -- WhichKey
+    WhichKey = { fg = c.cyan },
+    WhichKeyGroup = { fg = c.blue },
+    WhichKeyDesc = { fg = c.magenta },
+    WhichKeySeperator = { fg = c.comment },
+    WhichKeySeparator = { fg = c.comment },
+    WhichKeyFloat = { bg = c.bg_sidebar },
+    WhichKeyValue = { fg = c.comment },
+
+    -- LspSaga
+    DiagnosticError = { fg = c.error },
+    DiagnosticWarning = { fg = c.warning },
+    DiagnosticInformation = { fg = c.info },
+    DiagnosticHint = { fg = c.hint },
+
+    LspFloatWinNormal = { bg = c.bg_float },
+    LspFloatWinBorder = { fg = c.border_highlight },
+    LspSagaBorderTitle = { fg = c.cyan },
+    LspSagaHoverBorder = { fg = c.blue },
+    LspSagaRenameBorder = { fg = c.green },
+    LspSagaDefPreviewBorder = { fg = c.green },
+    LspSagaCodeActionBorder = { fg = c.blue },
+    LspSagaFinderSelection = { fg = c.bg_visual },
+    LspSagaCodeActionTitle = { fg = c.blue1 },
+    LspSagaCodeActionContent = { fg = c.purple },
+    LspSagaSignatureHelpBorder = { fg = c.red },
+    ReferencesCount = { fg = c.purple },
+    DefinitionCount = { fg = c.purple },
+    DefinitionIcon = { fg = c.blue },
+    ReferencesIcon = { fg = c.blue },
+    TargetWord = { fg = c.cyan },
+
+    -- NeoVim
+    healthError = { fg = c.error },
+    healthSuccess = { fg = c.green_br },
+    healthWarning = { fg = c.warning },
+
+    -- BufferLine
+    BufferLineIndicatorSelected = { fg = c.git.change },
+    BufferLineFill = { bg = c.black },
+
+    -- Barbar
+    BufferCurrent = { bg = c.fg_gutter, fg = c.fg },
+    BufferCurrentIndex = { bg = c.fg_gutter, fg = c.info },
+    BufferCurrentMod = { bg = c.fg_gutter, fg = c.warning },
+    BufferCurrentSign = { bg = c.fg_gutter, fg = c.info },
+    BufferCurrentTarget = { bg = c.fg_gutter, fg = c.red },
+    BufferVisible = { bg = c.bg_statusline, fg = c.fg },
+    BufferVisibleIndex = { bg = c.bg_statusline, fg = c.info },
+    BufferVisibleMod = { bg = c.bg_statusline, fg = c.warning },
+    BufferVisibleSign = { bg = c.bg_statusline, fg = c.info },
+    BufferVisibleTarget = { bg = c.bg_statusline, fg = c.red },
+    BufferInactive = { bg = c.bg_statusline, fg = c.comment },
+    BufferInactiveIndex = { bg = c.bg_statusline, fg = c.comment },
+    BufferInactiveMod = { bg = c.bg_statusline, fg = util.darken(c.warning, 0.7) },
+    BufferInactiveSign = { bg = c.bg_statusline, fg = c.border_highlight },
+    BufferInactiveTarget = { bg = c.bg_statusline, fg = c.red },
+    BufferTabpages = { bg = c.bg_statusline, fg = c.none },
+    BufferTabpage = { bg = c.bg_statusline, fg = c.border_highlight },
+
+    -- Sneak
+    Sneak = { fg = c.bg_highlight, bg = c.magenta },
+    SneakScope = { bg = c.bg_visual },
+
+    -- Hop
+    HopNextKey = { fg = c.cyan, style = "bold" },
+    HopNextKey1 = { fg = c.blue, style = "bold" },
+    HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
+    HopUnmatched = { fg = c.comment },
+
+    LightspeedGreyWash = { fg = c.comment },
+  }
 
   return theme
 end

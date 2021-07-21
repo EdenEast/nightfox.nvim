@@ -92,6 +92,7 @@ function util.load(theme)
   vim.g.colors_name = "nightfox"
 
   util.syntax(theme.base)
+  util.syntax(theme.plugins)
 end
 
 return util
