@@ -317,9 +317,9 @@ function M.setup(config)
 
     -- Dashboard
     DashboardShortCut = { fg = c.cyan },
-    DashboardHeader = { fg = c.blue },
-    DashboardCenter = { fg = c.magenta },
-    DashboardFooter = { fg = c.yellow, style = "italic" },
+    DashboardHeader = { fg = c.yellow },
+    DashboardCenter = { fg = c.green },
+    DashboardFooter = { fg = c.orange, style = "italic" },
 
     -- WhichKey
     WhichKey = { fg = c.cyan },
