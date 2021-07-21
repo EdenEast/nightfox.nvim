@@ -96,8 +96,8 @@ function M.setup(config)
   colors.bg_sidebar = colors.bg
   colors.bg_float = colors.bg
 
-  colors.bg_visual = util.darken(colors.blue, 0.9)
-  colors.bg_search = util.darken(colors.blue, 0.4)
+  colors.bg_visual = util.darken(colors.blue, 0.2)
+  colors.bg_search = util.darken(colors.cyan, 0.3)
   colors.fg_sidebar = colors.fg_alt
 
   colors.error = colors.red
