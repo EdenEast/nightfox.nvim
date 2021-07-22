@@ -286,6 +286,9 @@ function M.setup(config)
 
     -- Telescope
     TelescopeBorder = { fg = c.border_highlight },
+    TelescopeSelectionCaret = { fg = c.cyan },
+    TelescopeSelection = { fg = c.cyan, bg = c.bg_highlight },
+    TelescopeMatching = { fg = c.blue },
 
     -- NvimTree
     NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
