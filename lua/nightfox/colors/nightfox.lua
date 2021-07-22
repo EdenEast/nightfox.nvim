@@ -61,7 +61,7 @@ function M.setup(config)
   util.bg = colors.bg
   -- util.day_brightness = config.dayBrightness
 
-  colors.bg_alt = util.darken(colors.bg, 0.10)
+  colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")
   colors.bg_highlight = util.brighten(colors.bg, 0.10)
 
   colors.diff = {
@@ -89,8 +89,8 @@ function M.setup(config)
   -- Sidebar and Floats are configurable
   -- colors.bg_sidebar = config.darkSidebar and colors.bg_alt or colors.bg
   -- colors.bg_float = config.darkFloat and colors.bg_alt or colors.bg
-  colors.bg_sidebar = colors.bg
-  colors.bg_float = colors.bg
+  colors.bg_sidebar = colors.bg_alt
+  colors.bg_float = colors.bg_alt
 
   colors.bg_visual = util.darken(colors.blue, 0.2)
   colors.bg_search = util.darken(colors.cyan, 0.3)
