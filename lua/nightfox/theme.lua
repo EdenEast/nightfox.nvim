@@ -98,7 +98,7 @@ function M.setup(config)
     -- Exception     = { }, --  try, catch, throw
 
     PreProc = { fg = c.pink }, -- (preferred) generic Preprocessor
-    -- Include       = { }, --  preprocessor #include
+    Include = { fg = c.pink }, --  preprocessor #include
     -- Define        = { }, --   preprocessor #define
     -- Macro         = { }, --    same as Define
     -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
@@ -203,8 +203,8 @@ function M.setup(config)
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
-    TSField = { fg = util.brighten(c.black_br, 0.15) }, -- For fields.
-    yamlTSField = { fg = c.blue }, -- Yaml fields are the actual nodes
+    TSField = { fg = c.blue }, -- For fields.
+    rustTSField = { fg = util.brighten(c.black_br, 0.15) }, -- For fields.
     -- TSFloat             = { };    -- For floats.
     -- TSFunction = { fg = c.fg_gutter }, -- For function (calls and definitions).
     TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.

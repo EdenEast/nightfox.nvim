@@ -13,6 +13,7 @@ function M.setup(config)
   colors = {
     none = "NONE",
     bg = "#192330",
+    -- bg = "#202120",
     -- bg = "#1A2026",
     -- comment = "#50514F",
     -- bg = "#1A1A1A",
