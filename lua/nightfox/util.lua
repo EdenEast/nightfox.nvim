@@ -103,9 +103,9 @@ end
 
 function util.load(theme)
   -- only needed to clear when not the default colorscheme
-  -- if vim.g.colors_name then
-  --   vim.cmd("hi clear")
-  -- end
+  if vim.g.colors_name then
+    vim.cmd("hi clear")
+  end
 
   vim.o.background = "dark"
   vim.o.termguicolors = true
