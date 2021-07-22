@@ -203,7 +203,8 @@ function M.setup(config)
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
-    TSField = { fg = util.brighten(c.black_br, 0.1) }, -- For fields.
+    TSField = { fg = util.brighten(c.black_br, 0.15) }, -- For fields.
+    yamlTSField = { fg = c.blue }, -- Yaml fields are the actual nodes
     -- TSFloat             = { };    -- For floats.
     -- TSFunction = { fg = c.fg_gutter }, -- For function (calls and definitions).
     TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.
