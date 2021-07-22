@@ -19,7 +19,7 @@ function M.setup(config)
 
     -- fg = "#DEDFE0",
     fg = "#CDCECF",
-    fg_alt = "#B0B3B6",
+    -- fg_alt = "#B0B3B6",
     fg_gutter = "#3b4261",
 
     blue = "#719cd6",
@@ -47,10 +47,10 @@ function M.setup(config)
     comment = "#526175",
 
     git = {
-      change = "#6183bb",
-      add = "#449dab",
-      delete = "#914c54",
-      conflict = "#bb7a61",
+      add = "#70a288",
+      change = "#A58155",
+      delete = "#904A6A",
+      conflict = "#C07A6D",
     },
     gitSigns = {
       add = "#164846",
@@ -59,10 +59,11 @@ function M.setup(config)
     },
   }
   util.bg = colors.bg
-  -- util.day_brightness = config.dayBrightness
 
   colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")
   colors.bg_highlight = util.brighten(colors.bg, 0.10)
+
+  colors.fg_alt = util.darken(colors.fg, 0.80, "#000000")
 
   colors.diff = {
     add = util.darken(colors.green, 0.15),

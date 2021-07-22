@@ -49,7 +49,7 @@ function M.setup(config)
     NormalFloat = { fg = c.fg, bg = c.bg_float }, -- Normal text in floating windows.
     FloatBorder = { fg = c.border_highlight },
     Pmenu = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
-    PmenuSel = { bg = util.darken(c.fg_gutter, 0.8) }, -- Popup menu: selected item.
+    PmenuSel = { fg = c.cyan, bg = util.darken(c.fg_gutter, 0.8) }, -- Popup menu: selected item.
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
@@ -289,19 +289,23 @@ function M.setup(config)
 
     -- NvimTree
     NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    NvimTreeFolderIcon = { fg = c.comment },
     NvimTreeRootFolder = { fg = c.orange, style = "bold" },
+    NvimTreeSymlink = { fg = c.magenta },
+    NvimTreeFolderName = { fg = c.blue },
+    NvimTreeEmptyFolderName = { fg = c.comment },
+    NvimTreeOpenedFolderName = { fg = c.blue_br },
+    NvimTreeOpenedFile = { fg = c.magenta }, -- TODO: not working
     NvimTreeGitDirty = { fg = c.git.change },
     NvimTreeGitNew = { fg = c.git.add },
     NvimTreeGitDeleted = { fg = c.git.delete },
-    NvimTreeSpecialFile = { fg = c.magenta, style = "underline" },
+    NvimTreeSpecialFile = { fg = c.cyan },
+    NvimTreeIndentMarker = { fg = c.fg_gutter },
+    NvimTreeImageFile = { fg = c.fg_sidebar },
     LspDiagnosticsError = { fg = c.error },
     LspDiagnosticsWarning = { fg = c.warning },
     LspDiagnosticsInformation = { fg = c.info },
     LspDiagnosticsHint = { fg = c.hint },
-    NvimTreeIndentMarker = { fg = c.fg_gutter },
-    NvimTreeImageFile = { fg = c.fg_sidebar },
-    NvimTreeSymlink = { fg = c.magenta },
-    -- NvimTreeFolderName= { fg = c.fg_float },
 
     -- Fern
     FernBranchText = { fg = c.blue },
