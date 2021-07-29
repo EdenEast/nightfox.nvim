@@ -5,63 +5,70 @@ local M = {}
 function M.setup()
   local colors = {}
 
-  -- References:
-  -- https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
-  -- https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
-  -- https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
-
+  -- stylua: ignore
   colors = {
     none = "NONE",
-    bg = "#192330",
-    -- bg = "#202120",
-    -- bg = "#1A2026",
-    -- comment = "#50514F",
-    -- bg = "#1A1A1A",
+    bg = "#2E3440",
 
-    -- fg = "#DEDFE0",
-    fg = "#CDCECF",
-    -- fg_alt = "#B0B3B6",
-    fg_gutter = "#3b4261",
+    fg = "#b9bfca",
+    fg_gutter = "#4B5668",
 
-    blue = "#719cd6",
-    black = "#393b44",
-    cyan = "#63cdcf",
-    green = "#81B29A",
-    magenta = "#9D79D6",
-    orange = "#F4A261",
-    pink = "#D67AD2",
-    red = "#c94f6d",
-    yellow = "#dbc074",
-    white = "#dfdfe0",
+    -- Reference:
+    -- https://i.imgur.com/LzJYkpS.jpeg
+    -- https://coolors.co/3B4252-BF616A-A3BE8C-EBCB8B-81A1C1-B48EAD-88C0D0-E5E9F0-C9826B-D67AD2
 
-    blue_br = "#84CEE4",
-    black_br = "#7f8c98",
-    cyan_br = "#59F0FF",
-    green_br = "#58cd8b",
-    magenta_br = "#B8A1E3",
-    orange_br = "#F6A878",
-    pink_br = "#DF97DB",
-    red_br = "#D6616B",
-    yellow_br = "#FFE37E",
-    white_br = "#F2F2F2",
+    black   = "#3B4252",
+    red     = "#BF616A",
+    green   = "#A3BE8C",
+    yellow  = "#EBCB8B",
+    blue    = "#81A1C1",
+    magenta = "#B48EAD",
+    cyan    = "#88C0D0",
+    white   = "#E5E9F0",
+    orange  = "#C9826B",
+    pink    = "#BF88BC",
 
-    comment = "#526175",
+    -- +15 brightness, +15 saturation
+    black_br   = "#465780",
+    red_br     = "#D06F79",
+    green_br   = "#B1D196",
+    yellow_br  = "#F0D399",
+    blue_br    = "#8CAFD2",
+    magenta_br = "#C895BF",
+    cyan_br    = "#93CCDC",
+    white_br   = "#E7ECF4",
+    orange_br  = "#D89079",
+    pink_br    = "#D092CE",
+
+    -- -15 brightness, -15 saturation
+    black_dm   = "#353A45",
+    red_dm     = "#A54E56",
+    green_dm   = "#8AA872",
+    yellow_dm  = "#D9B263",
+    blue_dm    = "#668AAB",
+    magenta_dm = "#9D7495",
+    cyan_dm    = "#69A7BA",
+    white_dm   = "#BBC3D4",
+    orange_dm  = "#B46950",
+    pink_dm    = "#A96CA5",
+
+    comment = "#60728A",
 
     git = {
-      add = "#70a288",
-      change = "#A58155",
-      delete = "#904A6A",
+      add      = "#70a288",
+      change   = "#A58155",
+      delete   = "#904A6A",
       conflict = "#C07A6D",
     },
     gitSigns = {
-      add = "#164846",
+      add    = "#164846",
       change = "#394b70",
       delete = "#823c41",
     },
   }
   util.bg = colors.bg
 
-  colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")
+  colors.bg_alt = "#232831"
   colors.bg_highlight = util.brighten(colors.bg, 0.10)
 
   colors.fg_alt = util.darken(colors.fg, 0.80, "#000000")
