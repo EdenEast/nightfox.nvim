@@ -4,6 +4,16 @@
 
 A dark Neovim theme written in lua.
 
+## Styles
+
+### Nightfox
+
+![nightfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nightfox-example.png)
+
+### Nordfox
+
+![nordfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png)
+
 ## ✨ Features
 
 Supported plugins
@@ -83,15 +93,16 @@ let g:lightline = {'colorscheme': 'nightfox'}
 
 Available options:
 
-| Option                       | Default   | Description                                                         |
-| ---------------------------- | --------- | ------------------------------------------------------------------- |
-| nightfox_transparent         | `false`   | Disable setting the background color                                |
-| nightfox_terminal_colors     | `true`    | Configure the colors used when opening `:terminal` in neovim        |
-| nightfox_italic_comments     | `false`   | Make comments italic                                                |
-| nightfox_italic_functions    | `false`   | Make function calls and names italic                                |
-| nightfox_italic_keywords     | `false`   | Make keywords like if, for, while etc. italic                       |
-| nightfox_italic_strings      | `false`   | Make strings italic                                                 |
-| nightfox_italic_variables    | `false`   | Make variable names and identifiers italic                          |
+| Option                       | Default      | Description                                                         |
+| ---------------------------- | ------------ | ------------------------------------------------------------------- |
+| nightfox_style               | `"nightfox"` | Which color style that will be applied                              |
+| nightfox_transparent         | `false`      | Disable setting the background color                                |
+| nightfox_terminal_colors     | `true`       | Configure the colors used when opening `:terminal` in neovim        |
+| nightfox_italic_comments     | `false`      | Make comments italic                                                |
+| nightfox_italic_functions    | `false`      | Make function calls and names italic                                |
+| nightfox_italic_keywords     | `false`      | Make keywords like if, for, while etc. italic                       |
+| nightfox_italic_strings      | `false`      | Make strings italic                                                 |
+| nightfox_italic_variables    | `false`      | Make variable names and identifiers italic                          |
 
 
 ```lua
