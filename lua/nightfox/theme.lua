@@ -125,7 +125,7 @@ function M.setup(conf)
     Error = { fg = c.error }, -- (preferred) any erroneous construct
     Todo = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-    qfLineNr = { fg = c.black },
+    qfLineNr = { fg = c.yellow },
     qfFileName = { fg = c.blue },
 
     htmlH1 = { fg = c.magenta, style = "bold" },
