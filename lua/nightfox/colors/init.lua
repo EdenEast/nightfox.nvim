@@ -7,8 +7,8 @@ function color.setup(conf)
     return require("nightfox.colors.nordfox").setup()
   end
 
-  if config.style == "hardfox" then
-    return require("nightfox.colors.hardfox").setup()
+  if config.style == "duskfox" then
+    return require("nightfox.colors.duskfox").setup()
   end
 
   return require("nightfox.colors.nightfox").setup()

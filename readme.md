@@ -18,9 +18,9 @@ A dark Neovim theme written in lua.
 
 ![nordfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png)
 
-### Hardfox
+### Duskfox
 
-![hardfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-hardfox-example.png)
+![duskfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-duskfox-example.png)
 
 ## ✨ Features
 
