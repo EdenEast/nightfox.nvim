@@ -4,6 +4,10 @@
 
 A dark Neovim theme written in lua.
 
+<div align="center">
+<img src="https://github.com/EdenEast/nightfox.nvim/wiki/resources/banner.svg" alt="banner" />
+</div>
+
 ## Styles
 
 ### Nightfox
