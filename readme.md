@@ -97,7 +97,7 @@ let g:lightline = {'colorscheme': 'nightfox'}
 
 ## ⚙️ Configuration
 
-> ❗️ configuration needs to be set BEFORE loading the color scheme with colorscheme tokyonight
+> ❗️ configuration needs to be set BEFORE loading the color scheme with colorscheme nightfox
 
 Available options:
 

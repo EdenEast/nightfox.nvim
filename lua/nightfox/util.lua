@@ -1,4 +1,4 @@
-local hsluv = require("tokyonight.hsluv")
+local hsluv = require("nightfox.hsluv")
 
 local util = {}
 
