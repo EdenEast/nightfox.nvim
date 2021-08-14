@@ -137,3 +137,13 @@ To inspect what colors are defined you can print the color object:
 ```vim
 :lua print(vim.inspect(require('nightfox.colors').setup()))
 ```
+
+## Credits
+
+These themes were used as references and based off this:
+
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim/)
+- [material.nvim](https://github.com/marko-cerovac/material.nvim)
+- [onedark.nvim](https://github.com/ful1e5/onedark.nvim)
+- [gruvbox-flat.nvim](https://github.com/eddyekofo94/gruvbox-flat.nvim)
+
