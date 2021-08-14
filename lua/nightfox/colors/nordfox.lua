@@ -2,7 +2,9 @@ local util = require("nightfox.util")
 
 local M = {}
 
-function M.setup()
+function M.setup(config)
+  config = config or require("nightfox.config")
+
   local colors = {}
 
   -- stylua: ignore
@@ -111,6 +113,8 @@ function M.setup()
   colors.hint = colors.cyan
 
   colors.variable = colors.white
+
+  util.color_overrides(colors, config)
 
   return colors
 end

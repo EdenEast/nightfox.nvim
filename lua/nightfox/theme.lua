@@ -3,8 +3,8 @@ local util = require("nightfox.util")
 
 local M = {}
 
-function M.setup(conf)
-  local config = conf or require("nightfox.config")
+function M.setup(config)
+  config = config or require("nightfox.config")
 
   local theme = {}
   theme.config = config

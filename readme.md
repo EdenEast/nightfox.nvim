@@ -111,6 +111,7 @@ Available options:
 | nightfox_italic_keywords     | `false`      | Make keywords like if, for, while etc. italic                       |
 | nightfox_italic_strings      | `false`      | Make strings italic                                                 |
 | nightfox_italic_variables    | `false`      | Make variable names and identifiers italic                          |
+| nightfox_colors              | `{}`         | Override specific colors or groups                                  |
 
 
 ```lua
@@ -133,6 +134,6 @@ colorscheme nightfox
 
 To inspect what colors are defined you can print the color object:
 
-```lua
-print(vim.inspect(require('nightfox.colors').setup()))
+```vim
+:lua print(vim.inspect(require('nightfox.colors').setup()))
 ```

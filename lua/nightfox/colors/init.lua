@@ -1,7 +1,7 @@
 local color = {}
 
-function color.setup(conf)
-  local config = conf or require("nightfox.config")
+function color.setup(config)
+  config = config or require("nightfox.config")
 
   if config.style == "nordfox" then
     return require("nightfox.colors.nordfox").setup()
