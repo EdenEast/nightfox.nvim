@@ -7,10 +7,6 @@ function color.setup(config)
     return require("nightfox.colors.nordfox").setup()
   end
 
-  if config.style == "duskfox" then
-    return require("nightfox.colors.duskfox").setup()
-  end
-
   if config.style == "palefox" then
     return require("nightfox.colors.palefox").setup()
   end
