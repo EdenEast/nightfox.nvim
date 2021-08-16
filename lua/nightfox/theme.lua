@@ -204,7 +204,7 @@ function M.setup(config)
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
     TSField = { fg = c.blue }, -- For fields.
-    rustTSField = { fg = util.brighten(c.black_br, 0.15) }, -- For fields.
+    rustTSField = { fg = util.darken(c.white, 0.75) }, -- For fields.
     -- TSFloat             = { };    -- For floats.
     -- TSFunction = { fg = c.fg_gutter }, -- For function (calls and definitions).
     TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.
