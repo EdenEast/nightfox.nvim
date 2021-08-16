@@ -1,7 +1,5 @@
 # 🦊 Nightfox
 
-> 🚧 This colorscheme is currently in development and subject to changes 🚧
-
 A dark Neovim theme written in lua.
 
 <div align="center">
@@ -97,7 +95,7 @@ let g:lightline = {'colorscheme': 'nightfox'}
 
 ## ⚙️ Configuration
 
-> ❗️ configuration needs to be set BEFORE loading the color scheme with colorscheme nightfox
+> ❗️ Configuration needs to be set BEFORE loading the color scheme with colorscheme nightfox
 
 Available options:
 
