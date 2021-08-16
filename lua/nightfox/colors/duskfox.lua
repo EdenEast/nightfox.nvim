@@ -5,13 +5,13 @@ local M = {}
 function M.setup(config)
   config = config or require("nightfox.config")
 
-  local colors = {}
-
   -- References
   -- https://coolors.co/000000-FF7878-AAE682-FFDC96-00B1FF-9696FF-00DCDC-dfdfe0-FFB482-FF50FF
 
   -- stylua: ignore
-  colors = {
+  local colors = {
+    name       = "duskfox",
+
     none       = "NONE",
     bg         = "#101E2C",
 
@@ -61,12 +61,14 @@ function M.setup(config)
       delete   = "#904A6A",
       conflict = "#C07A6D",
     },
+
     gitSigns = {
       add    = "#164846",
       change = "#394b70",
       delete = "#823c41",
     },
   }
+
   util.bg = colors.bg
 
   colors.bg_alt = "#1B324A"

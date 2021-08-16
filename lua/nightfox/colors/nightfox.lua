@@ -5,37 +5,31 @@ local M = {}
 function M.setup(config)
   config = config or require("nightfox.config")
 
-  local colors = {}
-
   -- References:
   -- https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
   -- https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
   -- https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
 
   -- stylua: ignore
-  colors = {
-    none = "NONE",
-    bg = "#192330",
-    -- bg = "#202120",
-    -- bg = "#1A2026",
-    -- comment = "#50514F",
-    -- bg = "#1A1A1A",
+  local colors = {
+    name       = "nightfox",
 
-    fg = "#CDCECF",
-    -- fg = "#DEDFE0",
-    -- fg_alt = "#B0B3B6",
-    fg_gutter = "#3b4261",
+    none       = "NONE",
+    bg         = "#192330",
 
-    black   = "#393b44",
-    red     = "#c94f6d",
-    green   = "#81B29A",
-    yellow  = "#dbc074",
-    blue    = "#719cd6",
-    magenta = "#9D79D6",
-    cyan    = "#63cdcf",
-    white   = "#dfdfe0",
-    orange  = "#F4A261",
-    pink    = "#D67AD2",
+    fg         = "#CDCECF",
+    fg_gutter  = "#3b4261",
+
+    black      = "#393b44",
+    red        = "#c94f6d",
+    green      = "#81B29A",
+    yellow     = "#dbc074",
+    blue       = "#719cd6",
+    magenta    = "#9D79D6",
+    cyan       = "#63cdcf",
+    white      = "#dfdfe0",
+    orange     = "#F4A261",
+    pink       = "#D67AD2",
 
     black_br   = "#7f8c98",
     red_br     = "#D6616B",
@@ -48,7 +42,7 @@ function M.setup(config)
     orange_br  = "#F6A878",
     pink_br    = "#DF97DB",
 
-    comment = "#526175",
+    comment    = "#526175",
 
     git = {
       add      = "#70a288",
@@ -56,12 +50,14 @@ function M.setup(config)
       delete   = "#904A6A",
       conflict = "#C07A6D",
     },
+
     gitSigns = {
       add    = "#164846",
       change = "#394b70",
       delete = "#823c41",
     },
   }
+
   util.bg = colors.bg
 
   colors.bg_alt = util.darken(colors.bg, 0.75, "#000000")

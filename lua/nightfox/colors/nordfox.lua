@@ -5,30 +5,30 @@ local M = {}
 function M.setup(config)
   config = config or require("nightfox.config")
 
-  local colors = {}
+  -- Reference:
+  -- https://i.imgur.com/LzJYkpS.jpeg
+  -- https://coolors.co/3B4252-BF616A-A3BE8C-EBCB8B-81A1C1-B48EAD-88C0D0-E5E9F0-C9826B-D67AD2
 
   -- stylua: ignore
-  colors = {
-    none = "NONE",
-    bg = "#2E3440",
+  local colors = {
+    name       = "nordfox",
 
-    fg = "#b9bfca",
-    fg_gutter = "#4B5668",
+    none       = "NONE",
+    bg         = "#2E3440",
 
-    -- Reference:
-    -- https://i.imgur.com/LzJYkpS.jpeg
-    -- https://coolors.co/3B4252-BF616A-A3BE8C-EBCB8B-81A1C1-B48EAD-88C0D0-E5E9F0-C9826B-D67AD2
+    fg         = "#b9bfca",
+    fg_gutter  = "#4B5668",
 
-    black   = "#3B4252",
-    red     = "#BF616A",
-    green   = "#A3BE8C",
-    yellow  = "#EBCB8B",
-    blue    = "#81A1C1",
-    magenta = "#B48EAD",
-    cyan    = "#88C0D0",
-    white   = "#E5E9F0",
-    orange  = "#C9826B",
-    pink    = "#BF88BC",
+    black      = "#3B4252",
+    red        = "#BF616A",
+    green      = "#A3BE8C",
+    yellow     = "#EBCB8B",
+    blue       = "#81A1C1",
+    magenta    = "#B48EAD",
+    cyan       = "#88C0D0",
+    white      = "#E5E9F0",
+    orange     = "#C9826B",
+    pink       = "#BF88BC",
 
     -- +15 brightness, +15 saturation
     black_br   = "#465780",
@@ -54,7 +54,7 @@ function M.setup(config)
     orange_dm  = "#B46950",
     pink_dm    = "#A96CA5",
 
-    comment = "#60728A",
+    comment    = "#60728A",
 
     git = {
       add      = "#70a288",
@@ -62,12 +62,14 @@ function M.setup(config)
       delete   = "#904A6A",
       conflict = "#C07A6D",
     },
+
     gitSigns = {
       add    = "#164846",
       change = "#394b70",
       delete = "#823c41",
     },
   }
+
   util.bg = colors.bg
 
   colors.bg_alt = "#232831"

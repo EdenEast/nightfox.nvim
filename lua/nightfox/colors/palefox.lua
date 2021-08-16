@@ -5,56 +5,56 @@ local M = {}
 function M.setup(config)
   config = config or require("nightfox.config")
 
-  local colors = {}
+  -- Reference:
+  -- https://coolors.co/3b3a32-f1756f-6de874-f0e656-a381ff-ff87b1-7ef5b8-c7b7c7-f5b87f-ffb8d1
 
   -- stylua: ignore
-  colors = {
-    none = "NONE",
-    bg = "#3D3F52",
+  local colors = {
+    name        = "palefox",
 
-    fg = "#F8F8F2",
-    fg_gutter = "#5A5475",
+    none        = "NONE",
+    bg          = "#3D3F52",
 
-    -- Reference:
-    -- https://coolors.co/3b3a32-f1756f-6de874-f0e656-a381ff-ff87b1-7ef5b8-c7b7c7-f5b87f-ffb8d1
+    fg          = "#F8F8F2",
+    fg_gutter   = "#5A5475",
 
-    black   = "#3b3a32",
-    red     = "#f1756f",
-    green   = "#6de874",
-    yellow  = "#F0E656",
-    blue    = "#a381ff",
-    magenta = "#ff87b1",
-    cyan    = "#7ef5b8",
-    white   = "#c7b7c7",
-    orange  = "#f5b87f",
-    pink    = "#ffb8d1",
+    black       = "#3b3a32",
+    red         = "#f1756f",
+    green       = "#6de874",
+    yellow      = "#F0E656",
+    blue        = "#a381ff",
+    magenta     = "#ff87b1",
+    cyan        = "#7ef5b8",
+    white       = "#c7b7c7",
+    orange      = "#f5b87f",
+    pink        = "#ffb8d1",
 
     -- +15 brightness, -15 saturation
-    -- black_br   = "#685868",
-    black_br   = "#9c97ac",
-    red_br     = "#ff9f9a",
-    green_br   = "#7bfa81",
-    yellow_br  = "#ffea00",
-    blue_br    = "#c5a3ff",
-    magenta_br = "#ffb8d1",
-    cyan_br    = "#c2ffdf",
-    white_br   = "#ffefff",
-    orange_br  = "#efc39a",
-    pink_br    = "#fbc7d9",
+    -- black_br = "#685868",
+    black_br    = "#9c97ac",
+    red_br      = "#ff9f9a",
+    green_br    = "#7bfa81",
+    yellow_br   = "#ffea00",
+    blue_br     = "#c5a3ff",
+    magenta_br  = "#ffb8d1",
+    cyan_br     = "#c2ffdf",
+    white_br    = "#ffefff",
+    orange_br   = "#efc39a",
+    pink_br     = "#fbc7d9",
 
     -- -15 brightness, -15 saturation
-    black_dm   = "#31302a",
-    red_dm     = "#df534c",
-    green_dm   = "#4dd554",
-    yellow_dm  = "#b4990f",
-    blue_dm    = "#7e55f0",
-    magenta_dm = "#f1588e",
-    cyan_dm    = "#59e49c",
-    white_dm   = "#ac99ac",
-    orange_dm  = "#e49c59",
-    pink_dm    = "#f57fa9",
+    black_dm    = "#31302a",
+    red_dm      = "#df534c",
+    green_dm    = "#4dd554",
+    yellow_dm   = "#b4990f",
+    blue_dm     = "#7e55f0",
+    magenta_dm  = "#f1588e",
+    cyan_dm     = "#59e49c",
+    white_dm    = "#ac99ac",
+    orange_dm   = "#e49c59",
+    pink_dm     = "#f57fa9",
 
-    comment = "#6f6b80",
+    comment     = "#6f6b80",
 
     git = {
       add      = "#70a288",
@@ -62,6 +62,7 @@ function M.setup(config)
       delete   = "#904A6A",
       conflict = "#C07A6D",
     },
+
     gitSigns = {
       add    = "#164846",
       change = "#394b70",
