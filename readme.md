@@ -117,6 +117,8 @@ Available options:
 
 ```lua
 -- Example in lua
+vim.g.nightfox_style = "palefox"
+vim.g.nightfox_color_delimiter = "red"
 vim.g.nightfox_italic_comments = 1
 
 -- Load the colorscheme
@@ -125,6 +127,8 @@ require('nightfox').set()
 
 ```vim
 " Example in vim
+let g:nightfox_style = "palefox"
+let g:nightfox_color_delimiter = "red"
 let g:nightfox_italic_comments = 1
 
 " Load the colorscheme
