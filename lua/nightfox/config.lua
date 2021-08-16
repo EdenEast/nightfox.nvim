@@ -24,6 +24,7 @@ config = {
   string_style = opt("italic_strings", false) and "italic" or "NONE",
   variable_style = opt("italic_variables", false) and "italic" or "NONE",
   terminal_colors = opt("terminal_colors", true),
+  color_delimiter = opt("color_delimiter", ""),
   colors = opt("colors", {}),
   -- hide_inactive_statusline = opt("hide_inactive_statusline", false),
   -- sidebars = opt("sidebars", {}),

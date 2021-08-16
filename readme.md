@@ -115,6 +115,7 @@ Available options:
 | nightfox_italic_keywords     | `false`      | Make keywords like if, for, while etc. italic                       |
 | nightfox_italic_strings      | `false`      | Make strings italic                                                 |
 | nightfox_italic_variables    | `false`      | Make variable names and identifiers italic                          |
+| nightfox_color_delimiter     | `""`         | Set `TSPunctDelimiter` to either hex color code or color name       |
 | nightfox_colors              | `{}`         | Override specific colors or groups                                  |
 
 

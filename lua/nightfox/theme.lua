@@ -222,7 +222,7 @@ function M.setup(config)
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = { fg = c.green }, -- Same as `TSField`.
     tomlTSProperty = { fg = c.blue }, -- Differentiates between string and properties
-    TSPunctDelimiter = { fg = c.red }, -- For delimiters ie: `.`
+    TSPunctDelimiter = { fg = util.string_to_color(c, config.color_delimiter, c.fg_alt) }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.fg_alt }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.white }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.

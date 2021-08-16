@@ -91,6 +91,29 @@ function util.color_overrides(colors, config)
   end
 end
 
+function util.string_to_color(colors, value, default)
+  if not value or value == "" then
+    return default
+  end
+
+  -- If the value is a hex color code then return it
+  local hex = "[abcdef0-9][abcdef0-9]"
+  local pat = "^#" .. hex .. hex .. hex .. "$"
+  if string.match(value, pat) then
+    return value
+  end
+
+  local acceptable_colors = { "black", "red", "green", "blue", "magenta", "cyan", "white", "orange", "pink" }
+  for _, ac in ipairs(acceptable_colors) do
+    if string.match(value, ac) then
+      return colors[value]
+    end
+  end
+
+  -- Did not match anything to return default
+  return default
+end
+
 function util.highlight(group, color)
   local style = color.style and "gui=" .. color.style or "gui=NONE"
   local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
