@@ -155,8 +155,9 @@ end
 
 function util.load(theme)
   -- only needed to clear when not the default colorscheme
-  if vim.g.colors_name then
-    vim.cmd("hi clear")
+  vim.cmd("hi clear")
+  if vim.fn.exists("syntax_on") then
+    vim.cmd("syntax reset")
   end
 
   vim.o.background = "dark"
