@@ -127,6 +127,18 @@ function util.highlight(group, color)
   end
 end
 
+-- Simple string interpolation.
+--
+-- Example template: "${name} is ${value}"
+--
+---@param str string template string
+---@param table table key value pairs to replace in the string
+function util.template(str, table)
+  return (str:gsub("($%b{})", function(w)
+    return table[w:sub(3, -2)] or w
+  end))
+end
+
 function util.syntax(tbl)
   for group, colors in pairs(tbl) do
     util.highlight(group, colors)
