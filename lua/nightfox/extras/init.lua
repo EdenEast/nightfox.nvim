@@ -11,6 +11,7 @@ end
 
 local extras = {
   alacritty = "yml",
+  fish = "fish",
   kitty = "conf",
   tmux = "tmux",
   wezterm = "toml",
