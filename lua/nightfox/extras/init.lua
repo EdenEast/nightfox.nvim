@@ -12,6 +12,7 @@ end
 local extras = {
   alacritty = "yml",
   kitty = "conf",
+  tmux = "tmux",
   wezterm = "toml",
   xresources = "Xresources",
 }
@@ -24,7 +25,6 @@ for extra, ext in pairs(extras) do
     config.style = style
     local colors = require("nightfox.colors").setup(config)
     local filename = string.format("%s/nightfox_%s.%s", style, extra, ext)
-    P(filename)
     write(plugin.generate(colors), filename)
   end
 end
