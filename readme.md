@@ -93,6 +93,9 @@ To enable `Nightfox` from `Lightline`:
 let g:lightline = {'colorscheme': 'nightfox'}
 ```
 
+Note, the colorscheme's name is `nightfox`. Other styles are only set with the variable
+`nightfox_style`. Setting `colorscheme`, `lualine` or `lightline` theme to `nordfox` or `palefox` is invalid.
+
 ## ⚙️ Configuration
 
 > ❗️ Configuration needs to be set BEFORE loading the color scheme with colorscheme nightfox
