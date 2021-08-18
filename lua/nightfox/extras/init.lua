@@ -11,6 +11,7 @@ end
 
 local extras = {
   alacritty = "yml",
+  wezterm = "toml",
   xresources = "Xresources",
 }
 

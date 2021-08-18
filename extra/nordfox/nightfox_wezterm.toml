@@ -1,0 +1,13 @@
+# Nightfox Alacritty Colors
+# Style: nordfox
+[colors]
+foreground = "#b9bfca"
+background = "#2E3440"
+cursor_bg = "#b9bfca"
+cursor_border = "#b9bfca"
+cursor_fg = "#2E3440"
+selection_bg = "#3e4655"
+selection_fg = "#b9bfca"
+ansi = ["#252A33", "#D6616B", "#A3BE8C", "#EBCB8B", "#81A1C1", "#B48EAD", "#88C0D0", "#E5E9F0"]
+brights = ["#465780", "#D06F79", "#B1D196", "#F0D399", "#8CAFD2", "#C895BF", "#93CCDC", "#E7ECF4"]
+  
