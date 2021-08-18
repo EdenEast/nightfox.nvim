@@ -11,6 +11,7 @@ end
 
 local extras = {
   alacritty = "yml",
+  xresources = "Xresources",
 }
 
 local styles = { "nightfox", "nordfox", "palefox" }
