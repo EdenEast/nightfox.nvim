@@ -1,0 +1,31 @@
+# Nightfox Alacritty Colors
+# Style: nightfox
+colors:
+  # Default colors
+  primary:
+    background: '0x192330'
+    foreground: '0xCDCECF'
+  # Normal colors
+  normal:
+    black:   '0x141C26'
+    red:     '0xD6616B'
+    green:   '0x81B29A'
+    yellow:  '0xdbc074'
+    blue:    '0x719cd6'
+    magenta: '0x9D79D6'
+    cyan:    '0x63cdcf'
+    white:   '0xdfdfe0'
+  # Bright colors
+  bright:
+    black:   '0x7f8c98'
+    red:     '0xD6616B'
+    green:   '0x58cd8b'
+    yellow:  '0xFFE37E'
+    blue:    '0x84CEE4'
+    magenta: '0xB8A1E3'
+    cyan:    '0x59F0FF'
+    white:   '0xF2F2F2'
+  indexed_colors:
+    - { index: 16, color: '0xF4A261' }
+    - { index: 17, color: '0xD67AD2' }
+  
