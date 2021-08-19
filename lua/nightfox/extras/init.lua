@@ -13,6 +13,7 @@ local extras = {
   alacritty = "yml",
   fish = "fish",
   kitty = "conf",
+  iterm = "itermcolors",
   tmux = "tmux",
   wezterm = "toml",
   xresources = "Xresources",
