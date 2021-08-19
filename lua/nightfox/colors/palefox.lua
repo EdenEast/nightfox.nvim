@@ -81,7 +81,7 @@ function M.setup(config)
     add = util.darken(colors.green, 0.15),
     delete = util.darken(colors.red, 0.15),
     change = util.darken(colors.blue, 0.15),
-    text = colors.blue,
+    text = util.darken(colors.blue, 0.5),
   }
 
   colors.gitSigns = {
