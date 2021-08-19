@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
   local wezterm = util.template(
     [[
-# Nightfox Alacritty Colors
+# Nightfox Wezterm Colors
 # Style: ${name}
 [colors]
 foreground = "${fg}"
