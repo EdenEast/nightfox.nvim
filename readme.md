@@ -176,7 +176,7 @@ local overrides = {
 }
 
 -- Loop though table above and call nightfox's highlight util function
-for group, values in pairs(tbl) do
+for group, values in pairs(overrides) do
   -- This function takes the values defined above and creates a vim.cmd highlight command.
   util.highlight(group, values)
 end
