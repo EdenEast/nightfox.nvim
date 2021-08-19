@@ -294,6 +294,4 @@ function M.generate(colors)
   return iterm
 end
 
-M.generate(require("nightfox.colors").setup())
-
 return M
