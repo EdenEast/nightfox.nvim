@@ -138,11 +138,53 @@ colorscheme nightfox
 
 ## ⚙️ Advanced Configuration
 
+### Inspect color object
+
 To inspect what colors are defined you can print the color object:
 
 ```vim
 :lua print(vim.inspect(require('nightfox.colors').setup()))
 ```
+
+### Override highlight group
+
+Nightfox does not have a builtin way to override highlight groups like it does for colors. However
+this can be done manually. Here is a documented example of overriding multiple highlight groups:
+
+```lua
+-- Setting the style you want the require colors will return
+vim.g.nightfox_style = "nordfox"
+
+-- Overriding any colors you want
+vim.g.nightfox_colors = {
+  red = "#FF0000" -- Much red, such wow
+}
+
+-- Set the colorscheme, This will set nightfox's config based on the variables above
+require('nightfox').set()
+
+-- Get the colors from nightfox and util functions
+local colors = require("nightfox.colors").setup()
+local util = require("nightfox.util")
+
+-- Create a table with the highlight groups that you want to override and the highlight group keys.
+-- Keys are the following: bg, fg, style and sp.
+-- See `:help highlight-guisp` for more info.
+local overrides = {
+  String = { fg = colors.orange },
+  IncSearch = { bg = colors.magenta, fg = colors.black },
+}
+
+-- Loop though table above and call nightfox's highlight util function
+for group, values in pairs(overrides) do
+  -- This function takes the values defined above and creates a vim.cmd highlight command.
+  util.highlight(group, values)
+end
+```
+
+If you would like to see an example list of highlight groups that you override, check out the
+[theme.lua](./lua/nightfox/theme.lua) file.
+
 
 ## 🍬 Extra
 
