@@ -6,7 +6,7 @@ util.bg = "#000000"
 util.fg = "#ffffff"
 util.day_brightness = 0.3
 
-local hex_to_rgb = function(hex_str)
+function util.hex_to_rgb(hex_str)
   local hex = "[abcdef0-9][abcdef0-9]"
   local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
   hex_str = string.lower(hex_str)
@@ -17,12 +17,17 @@ local hex_to_rgb = function(hex_str)
   return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
 end
 
+function util.hex_to_norm_rgb(hex_str)
+  local c = util.hex_to_rgb(hex_str)
+  return { c[1] / 255, c[2] / 255, c[3] / 255 }
+end
+
 ---@param fg string foreground color
 ---@param bg string background color
 ---@param alpha number number between 0 and 1. 0 results in bg, 1 results in fg
 function util.blend(fg, bg, alpha)
-  bg = hex_to_rgb(bg)
-  fg = hex_to_rgb(fg)
+  bg = util.hex_to_rgb(bg)
+  fg = util.hex_to_rgb(fg)
 
   local blendChannel = function(i)
     local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
