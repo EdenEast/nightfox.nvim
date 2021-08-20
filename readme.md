@@ -8,6 +8,8 @@ A dark Neovim theme written in lua.
 
 ## Styles
 
+Which _fox_ will you choose?
+
 ### Nightfox
 
 ![nightfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nightfox-example.png)
@@ -19,6 +21,11 @@ A dark Neovim theme written in lua.
 ### Palefox
 
 ![palefox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-palefox-example.png)
+
+### Randfox
+
+Having trouble picking a fox. Let the dice decide! Set `nightfox_style` to `randfox` to get a random
+fox every time the colorsheme is applied.
 
 ## ✨ Features
 
