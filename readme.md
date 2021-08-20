@@ -170,8 +170,10 @@ vim.g.nightfox_colors = {
 -- Set the colorscheme, This will set nightfox's config based on the variables above
 require('nightfox').set()
 
--- Get the colors from nightfox and util functions
+-- Get the colors from nightfox that were set in the call above
 local colors = require("nightfox.colors").setup()
+
+-- Get the util functions that the nightfox theme uses
 local util = require("nightfox.util")
 
 -- Create a table with the highlight groups that you want to override and the highlight group keys.
