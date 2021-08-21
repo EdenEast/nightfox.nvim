@@ -79,7 +79,6 @@ function M.setup(config)
   }
 
   colors.git.ignore = colors.black
-  colors.black = util.darken(colors.bg, 0.8, "#000000")
   colors.border_highlight = colors.blue
   colors.border = colors.black
 
