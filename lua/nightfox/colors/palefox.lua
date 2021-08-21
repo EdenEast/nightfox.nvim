@@ -13,15 +13,15 @@ function M.setup(config)
     name        = "palefox",
 
     none        = "NONE",
-    bg          = "#3D3F52",
+    bg          = "#3d3f52",
 
-    fg          = "#F8F8F2",
-    fg_gutter   = "#5A5475",
+    fg          = "#f8f8f2",
+    fg_gutter   = "#5a5475",
 
     black       = "#3b3a32",
     red         = "#f1756f",
     green       = "#6de874",
-    yellow      = "#F0E656",
+    yellow      = "#f0e656",
     blue        = "#a381ff",
     magenta     = "#ff87b1",
     cyan        = "#7ef5b8",
@@ -58,9 +58,9 @@ function M.setup(config)
 
     git = {
       add      = "#70a288",
-      change   = "#A58155",
-      delete   = "#904A6A",
-      conflict = "#C07A6D",
+      change   = "#a58155",
+      delete   = "#904a6a",
+      conflict = "#c07a6d",
     },
 
     gitSigns = {

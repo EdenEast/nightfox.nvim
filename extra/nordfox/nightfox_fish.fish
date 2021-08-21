@@ -2,14 +2,14 @@
 # Style: nordfox
 set -l foreground b9bfca
 set -l selection 3e4655
-set -l comment 60728A
-set -l red BF616A
-set -l orange C9826B
-set -l yellow EBCB8B
-set -l green A3BE8C
+set -l comment 60728a
+set -l red bf616a
+set -l orange c9826b
+set -l yellow ebcb8b
+set -l green a3be8c
 set -l purple ${purple}
-set -l cyan 88C0D0
-set -l pink BF88BC
+set -l cyan 88c0d0
+set -l pink bf88bc
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground

@@ -1,15 +1,15 @@
 # Nightfox Color Palette
 # Style: nightfox
-set -l foreground CDCECF
+set -l foreground cdcecf
 set -l selection 283648
 set -l comment 526175
 set -l red c94f6d
-set -l orange F4A261
+set -l orange f4a261
 set -l yellow dbc074
-set -l green 81B29A
+set -l green 81b29a
 set -l purple ${purple}
 set -l cyan 63cdcf
-set -l pink D67AD2
+set -l pink d67ad2
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground

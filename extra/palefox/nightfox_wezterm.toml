@@ -1,13 +1,13 @@
 # Nightfox Wezterm Colors
 # Style: palefox
 [colors]
-foreground = "#F8F8F2"
-background = "#3D3F52"
-cursor_bg = "#F8F8F2"
-cursor_border = "#F8F8F2"
-cursor_fg = "#3D3F52"
+foreground = "#f8f8f2"
+background = "#3d3f52"
+cursor_bg = "#f8f8f2"
+cursor_border = "#f8f8f2"
+cursor_fg = "#3d3f52"
 selection_bg = "#4d5067"
-selection_fg = "#F8F8F2"
-ansi = ["#313242", "#f1756f", "#6de874", "#F0E656", "#a381ff", "#ff87b1", "#7ef5b8", "#c7b7c7"]
+selection_fg = "#f8f8f2"
+ansi = ["#313242", "#f1756f", "#6de874", "#f0e656", "#a381ff", "#ff87b1", "#7ef5b8", "#c7b7c7"]
 brights = ["#9c97ac", "#ff9f9a", "#7bfa81", "#ffea00", "#c5a3ff", "#ffb8d1", "#c2ffdf", "#ffefff"]
   

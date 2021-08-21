@@ -3,14 +3,14 @@
 colors:
   # Default colors
   primary:
-    background: '0x3D3F52'
-    foreground: '0xF8F8F2'
+    background: '0x3d3f52'
+    foreground: '0xf8f8f2'
   # Normal colors
   normal:
     black:   '0x313242'
     red:     '0xf1756f'
     green:   '0x6de874'
-    yellow:  '0xF0E656'
+    yellow:  '0xf0e656'
     blue:    '0xa381ff'
     magenta: '0xff87b1'
     cyan:    '0x7ef5b8'

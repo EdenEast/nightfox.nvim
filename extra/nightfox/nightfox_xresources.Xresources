@@ -1,21 +1,21 @@
 ! Nightfox colors for Xresources
 ! Style: nightfox
 *background: #192330
-*foreground: #CDCECF
+*foreground: #cdcecf
 *color0:  #141C26
 *color1:  #c94f6d
-*color2:  #81B29A
+*color2:  #81b29a
 *color3:  #dbc074
 *color4:  #719cd6
-*color5:  #9D79D6
+*color5:  #9d79d6
 *color6:  #63cdcf
 *color7:  #dfdfe0
 *color8:  #7f8c98
-*color9:  #D6616B
+*color9:  #d6616b
 *color10: #58cd8b
-*color11: #FFE37E
-*color12: #84CEE4
-*color13: #B8A1E3
-*color14: #59F0FF
-*color15: #F2F2F2
+*color11: #ffe37e
+*color12: #84cee4
+*color13: #b8a1e3
+*color14: #59f0ff
+*color15: #f2f2f2
 

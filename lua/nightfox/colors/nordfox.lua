@@ -7,60 +7,60 @@ function M.setup(config)
 
   -- Reference:
   -- https://i.imgur.com/LzJYkpS.jpeg
-  -- https://coolors.co/3B4252-BF616A-A3BE8C-EBCB8B-81A1C1-B48EAD-88C0D0-E5E9F0-C9826B-D67AD2
+  -- https://coolors.co/3b4252-bf616a-a3be8c-ebcb8b-81a1c1-b48ead-88c0d0-e5e9f0-c9826b-d67ad2
 
   -- stylua: ignore
   local colors = {
     name       = "nordfox",
 
     none       = "NONE",
-    bg         = "#2E3440",
+    bg         = "#2e3440",
 
     fg         = "#b9bfca",
-    fg_gutter  = "#4B5668",
+    fg_gutter  = "#4b5668",
 
-    black      = "#3B4252",
-    red        = "#BF616A",
-    green      = "#A3BE8C",
-    yellow     = "#EBCB8B",
-    blue       = "#81A1C1",
-    magenta    = "#B48EAD",
-    cyan       = "#88C0D0",
-    white      = "#E5E9F0",
-    orange     = "#C9826B",
-    pink       = "#BF88BC",
+    black      = "#3b4252",
+    red        = "#bf616a",
+    green      = "#a3be8c",
+    yellow     = "#ebcb8b",
+    blue       = "#81a1c1",
+    magenta    = "#b48ead",
+    cyan       = "#88c0d0",
+    white      = "#e5e9f0",
+    orange     = "#c9826b",
+    pink       = "#bf88bc",
 
     -- +15 brightness, +15 saturation
     black_br   = "#465780",
-    red_br     = "#D06F79",
-    green_br   = "#B1D196",
-    yellow_br  = "#F0D399",
-    blue_br    = "#8CAFD2",
-    magenta_br = "#C895BF",
-    cyan_br    = "#93CCDC",
-    white_br   = "#E7ECF4",
-    orange_br  = "#D89079",
-    pink_br    = "#D092CE",
+    red_br     = "#d06f79",
+    green_br   = "#b1d196",
+    yellow_br  = "#f0d399",
+    blue_br    = "#8cafd2",
+    magenta_br = "#c895bf",
+    cyan_br    = "#93ccdc",
+    white_br   = "#e7ecf4",
+    orange_br  = "#d89079",
+    pink_br    = "#d092ce",
 
     -- -15 brightness, -15 saturation
-    black_dm   = "#353A45",
-    red_dm     = "#A54E56",
-    green_dm   = "#8AA872",
-    yellow_dm  = "#D9B263",
-    blue_dm    = "#668AAB",
-    magenta_dm = "#9D7495",
-    cyan_dm    = "#69A7BA",
-    white_dm   = "#BBC3D4",
-    orange_dm  = "#B46950",
-    pink_dm    = "#A96CA5",
+    black_dm   = "#353a45",
+    red_dm     = "#a54e56",
+    green_dm   = "#8aa872",
+    yellow_dm  = "#d9b263",
+    blue_dm    = "#668aab",
+    magenta_dm = "#9d7495",
+    cyan_dm    = "#69a7ba",
+    white_dm   = "#bbc3d4",
+    orange_dm  = "#b46950",
+    pink_dm    = "#a96ca5",
 
-    comment    = "#60728A",
+    comment    = "#60728a",
 
     git = {
       add      = "#70a288",
-      change   = "#A58155",
-      delete   = "#904A6A",
-      conflict = "#C07A6D",
+      change   = "#a58155",
+      delete   = "#904a6a",
+      conflict = "#c07a6d",
     },
 
     gitSigns = {

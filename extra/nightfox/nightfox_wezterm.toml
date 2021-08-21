@@ -1,13 +1,13 @@
 # Nightfox Wezterm Colors
 # Style: nightfox
 [colors]
-foreground = "#CDCECF"
+foreground = "#cdcecf"
 background = "#192330"
-cursor_bg = "#CDCECF"
-cursor_border = "#CDCECF"
+cursor_bg = "#cdcecf"
+cursor_border = "#cdcecf"
 cursor_fg = "#192330"
 selection_bg = "#283648"
-selection_fg = "#CDCECF"
-ansi = ["#141C26", "#c94f6d", "#81B29A", "#dbc074", "#719cd6", "#9D79D6", "#63cdcf", "#dfdfe0"]
-brights = ["#7f8c98", "#D6616B", "#58cd8b", "#FFE37E", "#84CEE4", "#B8A1E3", "#59F0FF", "#F2F2F2"]
+selection_fg = "#cdcecf"
+ansi = ["#141C26", "#c94f6d", "#81b29a", "#dbc074", "#719cd6", "#9d79d6", "#63cdcf", "#dfdfe0"]
+brights = ["#7f8c98", "#d6616b", "#58cd8b", "#ffe37e", "#84cee4", "#b8a1e3", "#59f0ff", "#f2f2f2"]
   

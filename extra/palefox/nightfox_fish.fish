@@ -1,11 +1,11 @@
 # Nightfox Color Palette
 # Style: palefox
-set -l foreground F8F8F2
+set -l foreground f8f8f2
 set -l selection 4d5067
 set -l comment 6f6b80
 set -l red f1756f
 set -l orange f5b87f
-set -l yellow F0E656
+set -l yellow f0e656
 set -l green 6de874
 set -l purple ${purple}
 set -l cyan 7ef5b8

@@ -1,11 +1,11 @@
 ! Nightfox colors for Xresources
 ! Style: palefox
-*background: #3D3F52
-*foreground: #F8F8F2
+*background: #3d3f52
+*foreground: #f8f8f2
 *color0:  #313242
 *color1:  #f1756f
 *color2:  #6de874
-*color3:  #F0E656
+*color3:  #f0e656
 *color4:  #a381ff
 *color5:  #ff87b1
 *color6:  #7ef5b8
