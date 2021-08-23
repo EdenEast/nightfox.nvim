@@ -41,16 +41,16 @@ function M.setup(config)
     pink_br    = "#df97db",
 
     -- -15 brightness -15 saturation
-    black_dm   = "#32343B",
-    red_dm     = "#AD425C",
-    green_dm   = "#689C83",
-    yellow_dm  = "#C7A957",
-    blue_dm    = "#5483C1",
-    magenta_dm = "#835DC1",
-    cyan_dm    = "#4AB8BA",
-    white_dm   = "#BDBDC0",
-    orange_dm  = "#E28940",
-    pink_dm    = "#C15DBC",
+    black_dm   = "#32343b",
+    red_dm     = "#ad425c",
+    green_dm   = "#689c83",
+    yellow_dm  = "#c7a957",
+    blue_dm    = "#5483c1",
+    magenta_dm = "#835dc1",
+    cyan_dm    = "#4ab8ba",
+    white_dm   = "#bdbdc0",
+    orange_dm  = "#e28940",
+    pink_dm    = "#c15dbc",
 
     comment    = "#526175",
 
