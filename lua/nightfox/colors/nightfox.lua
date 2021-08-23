@@ -6,9 +6,7 @@ function M.setup(config)
   config = config or require("nightfox.config")
 
   -- References:
-  -- https://coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557
-  -- https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
-  -- https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
+  -- https://coolors.co/393b44-c94f6d-81b29a-dbc074-719cd6-9d79d6-63cdcf-dfdfe0-f4a261-d67ad2
 
   -- stylua: ignore
   local colors = {
@@ -41,6 +39,18 @@ function M.setup(config)
     white_br   = "#f2f2f2",
     orange_br  = "#f6a878",
     pink_br    = "#df97db",
+
+    -- -15 brightness -15 saturation
+    black_dm   = "#32343B",
+    red_dm     = "#AD425C",
+    green_dm   = "#689C83",
+    yellow_dm  = "#C7A957",
+    blue_dm    = "#5483C1",
+    magenta_dm = "#835DC1",
+    cyan_dm    = "#4AB8BA",
+    white_dm   = "#BDBDC0",
+    orange_dm  = "#E28940",
+    pink_dm    = "#C15DBC",
 
     comment    = "#526175",
 
