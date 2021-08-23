@@ -186,6 +186,8 @@ function util.load(theme)
   if theme.config.terminal_colors then
     util.terminal(theme)
   end
+
+  vim.cmd([[doautocmd ColorScheme]])
 end
 
 return util
