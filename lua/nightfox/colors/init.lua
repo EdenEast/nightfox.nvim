@@ -23,7 +23,7 @@ function M.init(name)
     return require("nightfox.colors." .. name).init()
   end
 
-  print("Nightfox: colorscheme " .. name .. " was not found")
+  require("nightfox.util").warn("colorscheme " .. name .. " was not found")
   return require("nightfox.colors.nightfox").init()
 end
 
@@ -43,7 +43,7 @@ function M.load(name)
     return require("nightfox.colors." .. name).load()
   end
 
-  print("Nightfox: colorscheme " .. name .. " was not found")
+  require("nightfox.util").warn("colorscheme " .. name .. " was not found")
   return require("nightfox.colors.nightfox").load()
 end
 

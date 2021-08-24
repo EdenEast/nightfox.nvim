@@ -6,6 +6,10 @@ util.bg = "#000000"
 util.fg = "#ffffff"
 util.day_brightness = 0.3
 
+function util.warn(message)
+  vim.api.nvim_command('echohl WarningMsg | echom "Nightfox: ' .. message .. '" | echohl NONE')
+end
+
 function util.hex_to_rgb(hex_str)
   local hex = "[abcdef0-9][abcdef0-9]"
   local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
