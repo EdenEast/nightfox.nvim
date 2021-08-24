@@ -1,18 +1,18 @@
-local colors = require("nightfox.colors")
 local util = require("nightfox.util")
 
 local M = {}
 
-function M.setup(config)
-  config = config or require("nightfox.config")
+function M.apply(colors, config)
+  config = config or require("nightfox.config").options
+  colors = colors or require("nightfox.colors").load()
 
   local theme = {}
   theme.config = config
-  theme.colors = colors.setup(config)
+  theme.colors = colors
   local c = theme.colors
 
-  theme.base = {
-    Comment = { fg = c.comment, style = config.comment_style }, -- any comment
+  theme.groups = {
+    Comment = { fg = c.comment, style = config.styles.comments }, -- any comment
     ColorColumn = { bg = c.bg_visual }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = c.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = { fg = c.bg, bg = c.fg }, -- character under the cursor
@@ -80,21 +80,21 @@ function M.setup(config)
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant = { fg = c.orange }, -- (preferred) any constant
-    String = { fg = c.green, style = config.string_style }, --   a string constant: "this is a string"
+    String = { fg = c.green, style = config.styles.strings }, --   a string constant: "this is a string"
     Character = { fg = c.green }, --  a character constant: 'c', '\n'
     Number = { fg = c.orange_br }, --   a number constant: 234, 0xff
     Float = { fg = c.orange_br }, --    a floating point constant: 2.3e10
     Boolean = { fg = c.orange_br }, --  a boolean constant: TRUE, false
 
-    Identifier = { fg = c.cyan, style = config.variable_style }, -- (preferred) any variable name
-    Function = { fg = c.blue, style = config.function_style }, -- function name (also: methods for classes)
+    Identifier = { fg = c.cyan, style = config.styles.variables }, -- (preferred) any variable name
+    Function = { fg = c.blue, style = config.styles.functions }, -- function name (also: methods for classes)
 
     Statement = { fg = c.magenta_br }, -- (preferred) any statement
     Conditional = { fg = c.magenta_br }, --  if, then, else, endif, switch, etc.
     Repeat = { fg = c.magenta_br }, --   for, do, while, etc.
     Label = { fg = c.magenta_br }, --    case, default, etc.
     Operator = { fg = c.fg_alt }, -- "sizeof", "+", "*", etc.
-    Keyword = { fg = c.magenta, style = config.keyword_style }, --  any other keyword
+    Keyword = { fg = c.magenta, style = config.styles.keywords }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
     PreProc = { fg = c.pink }, -- (preferred) generic Preprocessor
@@ -211,8 +211,8 @@ function M.setup(config)
     TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.
     TSFuncMacro = { fg = c.red }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.magenta, style = config.keyword_style }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.magenta, style = config.function_style }, -- For keywords used to define a fuction.
+    TSKeyword = { fg = c.magenta, style = config.styles.keywords }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { fg = c.magenta, style = config.styles.functions }, -- For keywords used to define a fuction.
     TSLabel = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     TSNamespace = { fg = c.cyan }, -- For identifiers referring to modules and namespaces.
@@ -223,17 +223,17 @@ function M.setup(config)
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = { fg = c.green }, -- Same as `TSField`.
     tomlTSProperty = { fg = c.blue }, -- Differentiates between string and properties
-    TSPunctDelimiter = { fg = util.string_to_color(c, config.color_delimiter, c.fg_alt) }, -- For delimiters ie: `.`
+    TSPunctDelimiter = { fg = c.fg_alt }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.fg_alt }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.white }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
-    TSStringRegex = { fg = c.blue, style = config.string_style }, -- For regexes.
-    TSStringEscape = { fg = c.magenta, style = config.string_style }, -- For escape characters within a string.
+    TSStringRegex = { fg = c.blue, style = config.styles.strings }, -- For regexes.
+    TSStringEscape = { fg = c.magenta, style = config.styles.strings }, -- For escape characters within a string.
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     TSTypeBuiltin = { fg = c.cyan }, -- For builtin types.
-    TSVariable = { style = config.variable_style }, -- Any variable name that does not have another highlight.
+    TSVariable = { style = config.styles.variables }, -- Any variable name that does not have another highlight.
     TSVariableBuiltin = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     -- TSTag               = { };    -- Tags like html tag names.
@@ -246,9 +246,9 @@ function M.setup(config)
     -- TSTitle             = { };    -- Text that is part of a title.
     -- TSLiteral           = { };    -- Literal text.
     -- TSURI               = { };    -- Any URI like a link or email.
-  }
 
-  theme.plugins = {
+    -- Plugins ------------------------------------------------------------------------------------
+
     -- LspTrouble
     LspTroubleText = { fg = c.fg_alt },
     LspTroubleCount = { fg = c.magenta, bg = c.fg_gutter },

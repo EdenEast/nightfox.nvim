@@ -2,8 +2,9 @@ local util = require("nightfox.util")
 
 local M = {}
 
-function M.setup(config)
-  config = config or require("nightfox.config")
+-- Return the initial colors of the colorscheme. This is the default defined colors
+-- without the color overrides from the configuration.
+function M.init()
 
   -- References:
   -- https://coolors.co/393b44-c94f6d-81b29a-dbc074-719cd6-9d79d6-63cdcf-dfdfe0-f4a261-d67ad2
@@ -96,9 +97,6 @@ function M.setup(config)
   colors.bg_popup = colors.bg_alt
   colors.bg_statusline = colors.bg_alt
 
-  -- Sidebar and Floats are configurable
-  -- colors.bg_sidebar = config.darkSidebar and colors.bg_alt or colors.bg
-  -- colors.bg_float = config.darkFloat and colors.bg_alt or colors.bg
   colors.bg_sidebar = colors.bg_alt
   colors.bg_float = colors.bg_alt
 
@@ -113,6 +111,15 @@ function M.setup(config)
 
   colors.variable = colors.white
 
+  return colors
+end
+
+-- Returns the completed colors with the overrides from the configuration
+-- @param config table
+function M.load(config)
+  config = config or require("nightfox.config").options
+
+  local colors = M.init()
   util.color_overrides(colors, config)
 
   return colors
