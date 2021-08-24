@@ -24,7 +24,7 @@ Which _fox_ will you choose?
 
 ### Randfox
 
-Having trouble picking a fox. Let the dice decide! Set `nightfox_style` to `randfox` to get a random
+Having trouble picking a fox. Let the dice decide! Set `style` to `randfox` to get a random
 fox every time the colorsheme is applied.
 
 ## ✨ Features
