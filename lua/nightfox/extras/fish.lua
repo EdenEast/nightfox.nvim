@@ -24,7 +24,7 @@ set -l red ${red}
 set -l orange ${orange}
 set -l yellow ${yellow}
 set -l green ${green}
-set -l purple ${purple}
+set -l purple ${magenta}
 set -l cyan ${cyan}
 set -l pink ${pink}
 
