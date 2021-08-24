@@ -17,6 +17,7 @@ local extras = {
   tmux = "tmux",
   wezterm = "toml",
   xresources = "Xresources",
+  windows_terminal = "json",
 }
 
 for extra, ext in pairs(extras) do
