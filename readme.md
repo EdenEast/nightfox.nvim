@@ -1,5 +1,6 @@
 # 🦊 Nightfox
 
+⚠️
 A dark Neovim theme written in lua.
 
 <div align="center">
@@ -149,6 +150,15 @@ nightfox.setup({
 
 -- Load the configuration set above and apply the colorscheme
 nightfox.load()
+```
+
+For configuration in `vimscript`, wrap the above example in a lua script block.
+
+```vim
+" vimscript
+lua << EOF
+-- example above here
+EOF
 ```
 
 ### General
