@@ -144,6 +144,23 @@ function util.template(str, table)
   end))
 end
 
+-- Template values in a table recursivly
+---@param table table the table to be replaced
+---@param values table the values to be replaced by the template strings in the table passed in
+function util.template_table(table, values)
+  -- if the value passed is a string the return templated resolved string
+  if type(table) == "string" then
+    return util.template(table, values)
+  end
+
+  -- If the table passed in is a table then iterate though the children and call template table
+  for key, value in pairs(table) do
+    table[key] = util.template_table(value, values)
+  end
+
+  return table
+end
+
 function util.syntax(tbl)
   for group, colors in pairs(tbl) do
     util.highlight(group, colors)
@@ -180,8 +197,10 @@ function util.load(theme)
   vim.o.termguicolors = true
   vim.g.colors_name = "nightfox"
 
-  util.syntax(theme.base)
-  util.syntax(theme.plugins)
+  local hlgroups = util.template_table(theme.config.hlgroups, theme.colors)
+  local groups = vim.tbl_deep_extend("force", theme.groups, hlgroups)
+
+  util.syntax(groups)
 
   if theme.config.terminal_colors then
     util.terminal(theme)

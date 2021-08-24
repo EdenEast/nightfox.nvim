@@ -1,6 +1,6 @@
 package.path = "./lua/?/init.lua;./lua/?.lua"
 
-local config = require("nightfox.config")
+local color_module = require("nightfox.colors")
 
 local function write(str, filename)
   print("[write]: extra/" .. filename)
@@ -19,13 +19,10 @@ local extras = {
   xresources = "Xresources",
 }
 
-local styles = { "nightfox", "nordfox", "palefox" }
-
 for extra, ext in pairs(extras) do
   local plugin = require("nightfox.extras." .. extra)
-  for _, style in ipairs(styles) do
-    config.style = style
-    local colors = require("nightfox.colors").setup(config)
+  for _, style in ipairs(color_module.foxes) do
+    local colors = color_module.init(style)
     local filename = string.format("%s/nightfox_%s.%s", style, extra, ext)
     write(plugin.generate(colors), filename)
   end

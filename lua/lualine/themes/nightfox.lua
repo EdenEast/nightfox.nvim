@@ -1,4 +1,4 @@
-local colors = require("nightfox.colors").setup()
+local colors = require("nightfox.colors").load()
 
 local nightfox = {}
 

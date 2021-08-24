@@ -2,9 +2,9 @@ local util = require("nightfox.util")
 
 local M = {}
 
-function M.setup(config)
-  config = config or require("nightfox.config")
-
+-- Return the initial colors of the colorscheme. This is the default defined colors
+-- without the color overrides from the configuration.
+function M.init()
   -- Reference:
   -- https://coolors.co/3b3a32-f1756f-6de874-f0e656-a381ff-ff87b1-7ef5b8-c7b7c7-f5b87f-ffb8d1
 
@@ -115,6 +115,15 @@ function M.setup(config)
 
   colors.variable = colors.white
 
+  return colors
+end
+
+-- Returns the completed colors with the overrides from the configuration
+-- @param config table
+function M.load(config)
+  config = config or require("nightfox.config").options
+
+  local colors = M.init()
   util.color_overrides(colors, config)
 
   return colors

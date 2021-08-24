@@ -1,5 +1,6 @@
 # 🦊 Nightfox
 
+⚠️
 A dark Neovim theme written in lua.
 
 <div align="center">
@@ -79,7 +80,7 @@ colorscheme nightfox
 
 ```lua
 -- From lua
-require('nightfox').set()
+require('nightfox').load()
 ```
 
 To enable `Nightfox` from `Lualine`:
@@ -100,100 +101,136 @@ To enable `Nightfox` from `Lightline`:
 let g:lightline = {'colorscheme': 'nightfox'}
 ```
 
-Note, the colorscheme's name is `nightfox`. Other styles are only set with the variable
-`nightfox_style`. Setting `colorscheme`, `lualine` or `lightline` theme to `nordfox` or `palefox` is invalid.
+> ❗️ `nightfox` is the only valid theme name. The other names are styles that can be set in the configuration.
 
 ## ⚙️ Configuration
 
-> ❗️ Configuration needs to be set BEFORE loading the color scheme with colorscheme nightfox
-
-Available options:
-
-| Option                       | Default      | Description                                                         |
-| ---------------------------- | ------------ | ------------------------------------------------------------------- |
-| nightfox_style               | `"nightfox"` | Which color style that will be applied                              |
-| nightfox_transparent         | `false`      | Disable setting the background color                                |
-| nightfox_terminal_colors     | `true`       | Configure the colors used when opening `:terminal` in neovim        |
-| nightfox_italic_comments     | `false`      | Make comments italic                                                |
-| nightfox_italic_functions    | `false`      | Make function calls and names italic                                |
-| nightfox_italic_keywords     | `false`      | Make keywords like if, for, while etc. italic                       |
-| nightfox_italic_strings      | `false`      | Make strings italic                                                 |
-| nightfox_italic_variables    | `false`      | Make variable names and identifiers italic                          |
-| nightfox_color_delimiter     | `""`         | Set `TSPunctDelimiter` to either hex color code or color name       |
-| nightfox_colors              | `{}`         | Override specific colors or groups                                  |
-
+Nightfox comes with default configuration values. You can view them here:
 
 ```lua
--- Example in lua
-vim.g.nightfox_style = "palefox"
-vim.g.nightfox_color_delimiter = "red"
-vim.g.nightfox_italic_comments = 1
-
--- Load the colorscheme
-require('nightfox').set()
+{
+  fox = "nightfox", -- Which fox style should be applied
+  transparent = false, -- Disable setting the background color
+  terminal_colors = true, -- Configure the colors used when opening :terminal
+  styles = {
+    comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
+    functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
+    keywords = "NONE", -- Style that is applied to keywords: see `highlight-args` for options
+    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
+    variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
+  },
+  colors = {}, -- Override default colors
+  hlgroups = {}, -- Override highlight groups
+}
 ```
+
+You can override these values to suite your preferences. An example of this would be as follows:
+
+```lua
+local nightfox = require('nightfox')
+
+-- This function set the configuration of nightfox. If a value is not passed in the setup function
+-- it will be taken from the default configuration above
+nightfox.setup({
+  fox = "nordfox", -- change the colorscheme to use nordfox
+  styles = {
+    comments = "italic", -- change style of comments to be italic
+    keywords = "bold", -- change style of keywords to be bold
+    functions = "italic,bold" -- styles can be a comma separated list
+  },
+  colors = {
+    red = "#FF000", -- Override the red color for MAX POWER
+    bg_alt = "#000000",
+  },
+  hlgroup = {
+    TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
+    LspCodeLens = { bg = "#000000" },
+  }
+})
+
+-- Load the configuration set above and apply the colorscheme
+nightfox.load()
+```
+
+For configuration in `vimscript`, wrap the above example in a lua script block.
 
 ```vim
-" Example in vim
-let g:nightfox_style = "palefox"
-let g:nightfox_color_delimiter = "red"
-let g:nightfox_italic_comments = 1
-
-" Load the colorscheme
-colorscheme nightfox
+" vimscript
+lua << EOF
+-- example above here
+EOF
 ```
+
+### General
+
+These are general settings and are unrelated to any group of settings.
+
+- `fox`: **{string}** The name of the fox you which to base the colorscheme on. See [Styles](#styles).
+- `transparent`: **{boolean}** If set to true the background color will not be set.
+- `terminal_colors`: **{boolean}** If set to true nightfox will set the terminal colors for `:terminal`
+
+### Styles
+
+These options set the style for their respecitve highlight groups. See `:help highlight-args`.
+
+- `comments`: **{string}** Style to the applied to comments
+- `functions`: **{string}** Style to the applied to functions
+- `keywords`: **{string}** Style to the applied to keywords
+- `strings`: **{string}** Style to the applied to strings
+- `variables`: **{string}** Style to the applied to variables
+
+### Colors
+
+`colors` is a table that defines hex color overrides for the colors returned by
+`require('nightfox.colors').load()`. To see what values can be overridden, use `vim.inspect` to
+print out the returned color table.
+
+```lua
+print(vim.inspect(require('nightfox.colors').init()))
+```
+
+Colors with the suffix `_br` are brighter colors. Colors with the suffix `_dm` are dimmer colors.
+
+To see what colors are defined to what highlight group you can reference the file
+[theme.lua](./lua/nightfox/theme.lua).
+
+### HLGroup
+
+`hlgroups` is a table that defines overrides for highlight groups. The table consists of the
+highlight group name as the key. The value is a table that defines optional values of the highlight
+group. These values can be:
+
+- `fg`: The foreground color of the highlight group
+- `bg`: The background color of the highlight group
+- `style`: The style applied to the highlight group (see `:help hightlight-args`)
+- `sp`: Special colors use in GUI. (see `:help hightlight-guisp`)
+
+To use a color defined by nightfox's you can use the template format: `${}`. Any value that you can
+override in the [colors](#colors) section can be added in the template format. Some examples would
+be: `${red}`, `${blue_br}`, `${bg_alt}`.
+
+To see examples of highlight groups that can be overridden reference the file
+[theme.lua](./lua/nightfox/theme.lua).
 
 ## ⚙️ Advanced Configuration
 
-### Inspect color object
+### Get color values from nightfox
 
-To inspect what colors are defined you can print the color object:
-
-```vim
-:lua print(vim.inspect(require('nightfox.colors').setup()))
-```
-
-### Override highlight group
-
-Nightfox does not have a builtin way to override highlight groups like it does for colors. However
-this can be done manually. Here is a documented example of overriding multiple highlight groups:
+There are different ways to get colors from nightfox. Here are some examples:
 
 ```lua
--- Setting the style you want the require colors will return
-vim.g.nightfox_style = "nordfox"
+-- Get the colors defined in nightfox with the color overrides from config applied
+local colors = require('nightfox.colors').load()
 
--- Overriding any colors you want
-vim.g.nightfox_colors = {
-  red = "#FF0000" -- Much red, such wow
-}
+-- Get the color of a specific theme with the color overrides applied from the config
+local colors = require('nightfox.colors').load('nordfox')
 
--- Set the colorscheme, This will set nightfox's config based on the variables above
-require('nightfox').set()
+-- Get the colors defined in nightfox without the color overrides applied from the config
+local colors = require('nightfox.colors').init()
 
--- Get the colors from nightfox that were set in the call above
-local colors = require("nightfox.colors").setup()
-
--- Get the util functions that the nightfox theme uses
-local util = require("nightfox.util")
-
--- Create a table with the highlight groups that you want to override and the highlight group keys.
--- Keys are the following: bg, fg, style and sp.
--- See `:help highlight-guisp` for more info.
-local overrides = {
-  String = { fg = colors.orange },
-  IncSearch = { bg = colors.magenta, fg = colors.black },
-}
-
--- Loop though table above and call nightfox's highlight util function
-for group, values in pairs(overrides) do
-  -- This function takes the values defined above and creates a vim.cmd highlight command.
-  util.highlight(group, values)
-end
+-- Get the color of a specific theme without the color overrides applied from the config
+local colors = require('nightfox.colors').init("nordfox")
 ```
-
-If you would like to see an example list of highlight groups that you override, check out the
-[theme.lua](./lua/nightfox/theme.lua) file.
-
 
 ## 🍬 Extra
 
