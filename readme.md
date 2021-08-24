@@ -102,6 +102,12 @@ let g:lightline = {'colorscheme': 'nightfox'}
 
 > ❗️ `nightfox` is the only valid theme name. The other names are styles that can be set in the configuration.
 
+### Command
+
+Nightfox also provides the following command to load a specific fox's style.
+
+- `:NightfoxLoad <fox>` load and applies the passed `<fox>` (Use tab completion to view options)
+
 ## ⚙️ Configuration
 
 Nightfox comes with default configuration values. You can view them here:

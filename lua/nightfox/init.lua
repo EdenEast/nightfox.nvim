@@ -21,4 +21,23 @@ function M.load(name)
   util.load(theme)
 end
 
+-- Completion function for the NightfoxLoad command
+-- @param lead string The current typed string
+function M.load_complete(lead, _, _)
+  local foxes = require("nightfox.colors").foxes
+
+  if lead == "" then
+    return foxes
+  end
+
+  local completion_list = {}
+  for _, name in pairs(foxes) do
+    if vim.startswith(name, lead) then
+      table.insert(completion_list, name)
+    end
+  end
+
+  return completion_list
+end
+
 return M
