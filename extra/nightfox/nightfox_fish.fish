@@ -1,5 +1,6 @@
 # Nightfox Color Palette
 # Style: nightfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_fish.fish
 set -l foreground cdcecf
 set -l selection 283648
 set -l comment 526175

@@ -8,6 +8,7 @@ function M.generate(colors)
     [[
 ! Nightfox colors for Xresources
 ! Style: ${name}
+! Upstream: ${_upstream_url}
 *background: ${bg}
 *foreground: ${fg}
 *color0:  ${black}

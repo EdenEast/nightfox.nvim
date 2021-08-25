@@ -1,5 +1,6 @@
 # Nightfox Color Palette
 # Style: palefox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/palefox/nightfox_fish.fish
 set -l foreground f8f8f2
 set -l selection 4d5067
 set -l comment 6f6b80

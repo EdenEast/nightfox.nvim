@@ -3,6 +3,7 @@
 <plist version="1.0">
 <!-- Nightfox ITerm Colors -->
 <!-- Style: palefox -->
+<!-- Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/palefox/nightfox_iterm.itermcolors -->
 <dict>
   <key>Ansi 0 Color</key>
   <dict>

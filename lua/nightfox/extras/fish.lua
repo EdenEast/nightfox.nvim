@@ -16,6 +16,7 @@ function M.generate(colors)
     [[
 # Nightfox Color Palette
 # Style: ${name}
+# Upstream: ${_upstream_url}
 set -l foreground ${fg}
 set -l selection ${bg_highlight}
 set -l comment ${comment}

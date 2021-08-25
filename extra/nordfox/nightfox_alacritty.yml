@@ -1,5 +1,6 @@
 # Nightfox Alacritty Colors
 # Style: nordfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_alacritty.yml
 colors:
   # Default colors
   primary:

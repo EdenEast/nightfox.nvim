@@ -8,6 +8,7 @@ function M.generate(colors)
     [[
 # Nightfox Wezterm Colors
 # Style: ${name}
+# Upstream: ${_upstream_url}
 [colors]
 foreground = "${fg}"
 background = "${bg}"

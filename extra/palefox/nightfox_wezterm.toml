@@ -1,5 +1,6 @@
 # Nightfox Wezterm Colors
 # Style: palefox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/palefox/nightfox_wezterm.toml
 [colors]
 foreground = "#f8f8f2"
 background = "#3d3f52"

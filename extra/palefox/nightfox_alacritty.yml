@@ -1,5 +1,6 @@
 # Nightfox Alacritty Colors
 # Style: palefox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/palefox/nightfox_alacritty.yml
 colors:
   # Default colors
   primary:

@@ -16,6 +16,7 @@ function M.generate(colors)
     [[
 # Nightfox Alacritty Colors
 # Style: ${name}
+# Upstream: ${_upstream_url}
 colors:
   # Default colors
   primary:

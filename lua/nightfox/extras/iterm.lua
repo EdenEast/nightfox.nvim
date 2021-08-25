@@ -31,6 +31,7 @@ function M.generate(colors)
 <plist version="1.0">
 <!-- Nightfox ITerm Colors -->
 <!-- Style: ${name} -->
+<!-- Upstream: ${_upstream_url} -->
 <dict>
   <key>Ansi 0 Color</key>
   <dict>
