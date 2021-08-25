@@ -317,13 +317,22 @@ function M.apply(colors, config)
     FernBranchText = { fg = c.blue },
 
     -- glyph palette
+    GlyphPalette0 = { fg = c.black },
     GlyphPalette1 = { fg = c.red },
     GlyphPalette2 = { fg = c.green },
     GlyphPalette3 = { fg = c.yellow },
     GlyphPalette4 = { fg = c.blue },
-    GlyphPalette6 = { fg = c.green_br },
-    GlyphPalette7 = { fg = c.fg },
-    GlyphPalette9 = { fg = c.red },
+    GlyphPalette5 = { fg = c.magenta },
+    GlyphPalette6 = { fg = c.cyan },
+    GlyphPalette7 = { fg = c.white },
+    GlyphPalette8 = { fg = c.black_br },
+    GlyphPalette9 = { fg = c.red_br },
+    GlyphPalette10 = { fg = c.green_br },
+    GlyphPalette11 = { fg = c.yellow_br },
+    GlyphPalette12 = { fg = c.blue_br },
+    GlyphPalette13 = { fg = c.magenta_br },
+    GlyphPalette14 = { fg = c.cyan_br },
+    GlyphPalette15 = { fg = c.white_br },
 
     -- Dashboard
     DashboardShortCut = { fg = c.cyan },
