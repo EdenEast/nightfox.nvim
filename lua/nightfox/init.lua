@@ -1,4 +1,3 @@
-package.loaded["nightfox.config"] = nil
 local util = require("nightfox.util")
 
 local M = {}
@@ -38,6 +37,14 @@ function M.load_complete(lead, _, _)
   end
 
   return completion_list
+end
+
+function M.set()
+  util.warn(
+    "`set()` has been deprecated in favor of `load()`",
+    "See https://github.com/edeneast/nightfox.nvim for more info"
+  )
+  M.load()
 end
 
 return M

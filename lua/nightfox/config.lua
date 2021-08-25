@@ -41,16 +41,13 @@ function M.check_depricated_options()
   for _, k in ipairs(keys) do
     local key = "nightfox_" .. k
     if vim.g[key] ~= nil then
-      table.insert(
-        results,
-        "Nightfox: Warning config using '" .. key .. "' is deprecated in favor of lua setup configuration"
-      )
+      table.insert(results, "Warning config using '" .. key .. "' is deprecated in favor of lua setup configuration")
     end
   end
 
   if #results > 0 then
-    local msg = table.concat(results, "\n")
-    print(msg)
+    table.insert(results, "See https://github.com/edeneast/nightfox.nvim for more info")
+    require("nightfox.util").warn(unpack(results))
   end
 end
 

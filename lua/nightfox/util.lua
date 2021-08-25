@@ -6,8 +6,10 @@ util.bg = "#000000"
 util.fg = "#ffffff"
 util.day_brightness = 0.3
 
-function util.warn(message)
-  vim.api.nvim_command('echohl WarningMsg | echom "Nightfox: ' .. message .. '" | echohl NONE')
+function util.warn(...)
+  for _, msg in ipairs({ ... }) do
+    vim.api.nvim_command('echohl WarningMsg | echom "Nightfox: ' .. msg .. '" | echohl NONE')
+  end
 end
 
 function util.hex_to_rgb(hex_str)
