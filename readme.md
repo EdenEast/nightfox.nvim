@@ -148,9 +148,9 @@ nightfox.setup({
     red = "#FF000", -- Override the red color for MAX POWER
     bg_alt = "#000000",
   },
-  hlgroup = {
+  hlgroups = {
     TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
-    LspCodeLens = { bg = "#000000" },
+    LspCodeLens = { bg = "#000000", style = "italic" },
   }
 })
 
