@@ -218,6 +218,9 @@ be: `${red}`, `${blue_br}`, `${bg_alt}`.
 To see examples of highlight groups that can be overridden reference the file
 [theme.lua](./lua/nightfox/theme.lua).
 
+To find the hightlight group being applied to a piece of syntax refer to
+[syntax highlight group](#syntax-highlight-groups) section.
+
 ## ⚙️ Advanced Configuration
 
 ### Get color values from nightfox
@@ -236,6 +239,45 @@ local colors = require('nightfox.colors').init()
 
 -- Get the color of a specific theme without the color overrides applied from the config
 local colors = require('nightfox.colors').init("nordfox")
+```
+
+### Syntax highlight groups
+
+This section will help you determine what highlight group is being applied to a piece of syntax.
+These sections will output the highlight group for the value under the cursor.
+
+#### Treesitter
+
+If treesitter is the highlighting method for the language in question you can use the command:
+`:TSHighlightCapturesUnderCursor`. This command comes from the treesitter [playground] plugin. Make
+sure you have this installed as well as [nvim-treesitter].
+
+[playground]: https://github.com/nvim-treesitter/playground
+[nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
+
+#### Vim highlighting
+
+Add this vimscript function to your configuration.
+
+```vim
+" plugin/syntax.vim
+
+" Output the highlight group under the cursor
+"
+" This function will output the entire stack of hightlight groups being applied. The stack is
+" outputted in the correct order from top to bottom. Vim will walk through the stack from top to
+" bottom and apply the first defined highlight group found.
+function! SynStack()
+  for i1 in synstack(line("."), col("."))
+    let i2 = synIDtrans(i1)
+    let n1 = synIDattr(i1, "name")
+    let n2 = synIDattr(i2, "name")
+    echo n1 "->" n2
+  endfor
+endfunction
+
+" You can also create a convenience mapping
+map <F2> <cmd>call SynStack()<cr>
 ```
 
 ## 🍬 Extra
