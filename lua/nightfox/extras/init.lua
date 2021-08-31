@@ -12,12 +12,13 @@ end
 local extras = {
   alacritty = "yml",
   fish = "fish",
-  kitty = "conf",
   iterm = "itermcolors",
+  kitty = "conf",
+  konsole = "colorscheme",
   tmux = "tmux",
   wezterm = "toml",
-  xresources = "Xresources",
   windows_terminal = "json",
+  xresources = "Xresources",
 }
 
 for extra, ext in pairs(extras) do
