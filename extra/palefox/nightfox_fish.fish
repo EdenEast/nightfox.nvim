@@ -8,7 +8,7 @@ set -l red f1756f
 set -l orange f5b87f
 set -l yellow f0e656
 set -l green 6de874
-set -l purple ${purple}
+set -l purple ff87b1
 set -l cyan 7ef5b8
 set -l pink ffb8d1
 
