@@ -7,6 +7,7 @@ function M.generate(colors)
   local konsoleColors = {}
   for k, v in pairs(colors) do
     if type(v) == "string" then
+      vim.api.nvim_command('echohl WarningMsg | echom "Nightfox: ' .. v .. '" | echohl NONE')
       -- Konsole does not use the format `#` for hex colors it uses `r,g,b`
       konsoleColors[k] = util.hex_to_rgb(v)
     end
