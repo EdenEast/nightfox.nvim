@@ -125,6 +125,11 @@ Nightfox comes with default configuration values. You can view them here:
     strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
     variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
   },
+  inverse = {
+    match_paren = false, -- Enable/Disable inverse highlighting for match parens
+    visual = false, -- Enable/Disable inverse highlighting for visual selection
+    search = false, -- Enable/Disable inverse highlights for search highlights
+  },
   colors = {}, -- Override default colors
   hlgroups = {}, -- Override highlight groups
 }
@@ -177,13 +182,22 @@ These are general settings and are unrelated to any group of settings.
 
 ### Styles
 
-These options set the style for their respecitve highlight groups. See `:help highlight-args`.
+These options set the style for their respective highlight groups. See `:help highlight-args`.
 
 - `comments`: **{string}** Style to the applied to comments
 - `functions`: **{string}** Style to the applied to functions
 - `keywords`: **{string}** Style to the applied to keywords
 - `strings`: **{string}** Style to the applied to strings
 - `variables`: **{string}** Style to the applied to variables
+
+### Inverse
+
+These options set the style of selection groups. If set, The selection will swap foreground and
+background (inverse).
+
+- `match_paren`: **{bool}** The character under the cursor or just before it, if it is a paired bracket, and its match. See `:help pi_paren.txt`
+- `search`: **{bool}** Highlighted search matches and incremental searches. See `:help hlsearch`
+- `visual`: **{bool}** 
 
 ### Colors
 

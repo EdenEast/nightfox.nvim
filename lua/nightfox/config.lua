@@ -11,6 +11,11 @@ local config = {
     strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
     variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
   },
+  inverse = {
+    match_paren = false, -- Enable/Disable inverse highlighting for match parens
+    visual = false, -- Enable/Disable inverse highlighting for visual selection
+    search = false, -- Enable/Disable inverse highlights for search highlights
+  },
   colors = {}, -- Override default colors
   hlgroups = {}, -- Override highlight groups
 }
