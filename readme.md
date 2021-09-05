@@ -149,6 +149,9 @@ nightfox.setup({
     keywords = "bold", -- change style of keywords to be bold
     functions = "italic,bold" -- styles can be a comma separated list
   },
+  inverse {
+    match_paren = true, -- inverse the highlighting of match_parens
+  },
   colors = {
     red = "#FF000", -- Override the red color for MAX POWER
     bg_alt = "#000000",
@@ -197,7 +200,7 @@ background (inverse).
 
 - `match_paren`: **{bool}** The character under the cursor or just before it, if it is a paired bracket, and its match. See `:help pi_paren.txt`
 - `search`: **{bool}** Highlighted search matches and incremental searches. See `:help hlsearch`
-- `visual`: **{bool}** 
+- `visual`: **{bool}** Visual selection mode
 
 ### Colors
 
