@@ -80,8 +80,10 @@ colorscheme nightfox
 
 ```lua
 -- From lua
-require('nightfox').load()
+require('nightfox').load(<fox_name>)
 ```
+
+If `<fox_name>` is not passed load will apply the fox specified in the config.
 
 To enable `Nightfox` from `Lualine`:
 
