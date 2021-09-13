@@ -11,5 +11,9 @@ if vim.g.nightfox_debug == true then
   package.loaded['nightfox.util'] = nil
 end
 
-require('nightfox').load()
+local nightfox = require('nightfox')
+nightfox.setup({
+  fox = 'nightfox'
+})
+nightfox.load()
 EOF

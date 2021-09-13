@@ -11,5 +11,9 @@ if vim.g.nightfox_debug == true then
   package.loaded['nightfox.util'] = nil
 end
 
-require('nightfox').load("nordfox")
+local nightfox = require('nightfox')
+nightfox.setup({
+  fox = 'nordfox'
+})
+nightfox.load()
 EOF
