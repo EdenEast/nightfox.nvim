@@ -43,7 +43,6 @@ Supported plugins
 - [WhichKey](https://github.com/liuchengxu/vim-which-key)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
-- [BufferLine](https://github.com/akinsho/nvim-bufferline.lua)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [Lightline](https://github.com/itchyny/lightline.vim)
 - [Neogit](https://github.com/TimUntersberger/neogit)

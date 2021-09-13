@@ -377,10 +377,6 @@ function M.apply(colors, config)
     healthSuccess = { fg = c.green_br },
     healthWarning = { fg = c.warning },
 
-    -- BufferLine
-    BufferLineIndicatorSelected = { fg = c.git.change },
-    BufferLineFill = { bg = c.black },
-
     -- Barbar
     BufferCurrent = { bg = c.fg_gutter, fg = c.fg },
     BufferCurrentIndex = { bg = c.fg_gutter, fg = c.info },
