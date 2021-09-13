@@ -24,7 +24,7 @@ M.options = {}
 
 function M.set_options(opts)
   opts = opts or {}
-  M.options = vim.tbl_deep_extend("force", {}, config, opts)
+  M.options = vim.tbl_deep_extend("force", M.options, opts)
 end
 
 function M.check_depricated_options()
