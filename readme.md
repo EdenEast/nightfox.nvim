@@ -70,23 +70,31 @@ use 'EdenEast/nightfox.nvim'
 
 ## 🚀 Usage
 
+### Vimscript
+
 Enable the colorscheme:
 
 ```vim
-" From vimscript
 colorscheme nightfox
 ```
 
+Nightfox also defines the other styles as colorschemes, `nordfox` and `palefox`.
+
+### Lua
+
+If you prefer to use lua:
+
 ```lua
--- From lua
-require('nightfox').load(<fox_name>)
+require('nightfox'.load(<fox_name>))
 ```
 
 If `<fox_name>` is not passed load will apply the fox specified in the config.
 
-To enable `Nightfox` from `Lualine`:
+## Status lines
 
-> Note: Use lualine fork [shadmansaleh/lualine.nvim][lualinefork] while waiting for pr [#311][lualinepr] to be merged
+For all status lines `nightfox` is the only valid name. The other names are names of styles.
+
+### [Lualine]
 
 ```lua
 require('lualine').setup {
@@ -97,6 +105,10 @@ require('lualine').setup {
 }
 ```
 
+**Note:** Use lualine fork [shadmansaleh/lualine.nvim][lualinefork] while waiting for pr [#311][lualinepr] to be merged
+
+### [Lightline]
+
 To enable `Nightfox` from `Lightline`:
 
 ```vim
@@ -104,13 +116,12 @@ To enable `Nightfox` from `Lightline`:
 let g:lightline = {'colorscheme': 'nightfox'}
 ```
 
-> ❗️ `nightfox` is the only valid theme name. The other names are styles that can be set in the configuration.
-
-
+[lualine]: https://github.com/hoob3rt/lualine.nvim
+[lightline]: https://github.com/itchyny/lightline.vim
 [lualinefork]: https://github.com/shadmansaleh/lualine.nvim
 [lualinepr]: https://github.com/hoob3rt/lualine.nvim/pull/311
 
-### Command
+## Command
 
 Nightfox also provides the following command to load a specific fox's style.
 
@@ -118,7 +129,7 @@ Nightfox also provides the following command to load a specific fox's style.
 
 ## ⚙️ Configuration
 
-Nightfox comes with default configuration values. You can view them here:
+Nightfox is configured in lua. Nightfox comes with default configuration values. You can view them here:
 
 ```lua
 {
@@ -181,6 +192,9 @@ lua << EOF
 -- example above here
 EOF
 ```
+
+**Note:** The `colorscheme` command sets the `fox` value to the colorscheme that is being supplied,
+before loading the colorscheme.
 
 ### General
 
