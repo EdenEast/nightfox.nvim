@@ -86,6 +86,8 @@ If `<fox_name>` is not passed load will apply the fox specified in the config.
 
 To enable `Nightfox` from `Lualine`:
 
+> Note: Use lualine fork [shadmansaleh/lualine.nvim][lualinefork] while waiting for pr [#311][lualinepr] to be merged
+
 ```lua
 require('lualine').setup {
   options = {
@@ -103,6 +105,10 @@ let g:lightline = {'colorscheme': 'nightfox'}
 ```
 
 > ❗️ `nightfox` is the only valid theme name. The other names are styles that can be set in the configuration.
+
+
+[lualinefork]: https://github.com/shadmansaleh/lualine.nvim
+[lualinepr]: https://github.com/hoob3rt/lualine.nvim/pull/311
 
 ### Command
 
