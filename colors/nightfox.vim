@@ -12,8 +12,6 @@ if vim.g.nightfox_debug == true then
 end
 
 local nightfox = require('nightfox')
-nightfox.setup({
-  fox = 'nightfox'
-})
-nightfox.load()
+nightfox.setup({fox = "nightfox"})
+nightfox._colorscheme_load()
 EOF

@@ -17,7 +17,21 @@ function M.load(name)
   local colors = require("nightfox.colors").load(name)
   local theme = require("nightfox.theme").apply(colors)
 
-  util.load(theme)
+  util.load(theme, true)
+end
+
+-- Loads colorscheme and applies the highlight groups.
+-- If a name is passed it will override what was set in the configuration setup.
+--
+-- This function is internal and should not be called by the user. This funciton is
+-- to be called from the `colors/*.vim` files. This function will not execute the
+-- autocmd `ColorScheme`. The command `:colorscheme` is already handling this.
+-- @param name string
+function M._colorscheme_load()
+  local colors = require("nightfox.colors").load()
+  local theme = require("nightfox.theme").apply(colors)
+
+  util.load(theme, false)
 end
 
 -- Completion function for the NightfoxLoad command
