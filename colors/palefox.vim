@@ -13,7 +13,8 @@ end
 
 local nightfox = require('nightfox')
 nightfox.setup({
-  fox = 'nightfox'
+  fox = 'palefox'
 })
 nightfox.load()
 EOF
+
