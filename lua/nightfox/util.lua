@@ -201,7 +201,7 @@ function util.load(theme, exec_autocmd)
 
   vim.o.background = "dark"
   vim.o.termguicolors = true
-  vim.g.colors_name = "nightfox"
+  vim.g.colors_name = theme.name
 
   local hlgroups = util.template_table(theme.config.hlgroups, theme.colors)
   local groups = vim.tbl_deep_extend("force", theme.groups, hlgroups)
