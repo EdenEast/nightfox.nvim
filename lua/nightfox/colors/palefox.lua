@@ -11,6 +11,7 @@ function M.init()
   -- stylua: ignore
   local colors = {
     name        = "palefox",
+    light       = false,
 
     none        = "NONE",
     bg          = "#3d3f52",
@@ -114,6 +115,11 @@ function M.init()
   colors.hint = colors.cyan
 
   colors.variable = colors.white
+
+  colors.harsh = colors.white
+  colors.subtle = colors.black
+  colors.harsh_br = colors.white_br
+  colors.subtle_br = colors.black_br
 
   return colors
 end

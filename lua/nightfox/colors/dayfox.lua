@@ -7,14 +7,12 @@ local M = {}
 function M.init()
   -- Reference:
   -- https://github.com/Rashad-707/rhombuses
-  -- https://coolors.co/1d344f-c98093-7ca198-DDB278-6080b0-8e6f98-6ca8cf-cdd1d5-c9826b-bf88bc
-
-
--- https://coolors.co/1d344f-c98093-7ca198-CE8D52-6080b0-8e6f98-6ca8cf-cdd1d5-EE896D-D685AF
+  -- https://coolors.co/1d344f-c98093-7ca198-CE8D52-6080b0-8e6f98-6ca8cf-cdd1d5-EE896D-D685AF
 
   -- stylua: ignore
   local colors = {
     name       = "dayfox",
+    light      = true,
 
     none       = "NONE",
     bg         = "#EEEFF1",
@@ -114,6 +112,11 @@ function M.init()
   colors.hint = colors.cyan
 
   colors.variable = colors.white
+
+  colors.harsh = colors.black
+  colors.subtle = colors.white
+  colors.harsh_br = colors.black_br
+  colors.subtle_br = colors.light_br
 
   return colors
 end
