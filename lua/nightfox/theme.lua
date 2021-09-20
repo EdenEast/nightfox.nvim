@@ -9,7 +9,7 @@ function M.apply(colors, config)
   local theme = {}
   theme.config = config
   theme.colors = colors
-  theme.name = colors.name
+  theme.name = colors.meta.name
   local c = theme.colors
 
   theme.groups = {

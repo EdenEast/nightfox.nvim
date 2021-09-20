@@ -10,8 +10,7 @@ function M.init()
 
   -- stylua: ignore
   local colors = {
-    name        = "palefox",
-    light       = false,
+    meta        = { name = "palefox", light = true },
 
     none        = "NONE",
     bg          = "#3d3f52",

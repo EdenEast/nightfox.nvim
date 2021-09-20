@@ -1,34 +1,16 @@
-local util = require("nightfox.util")
-
-local M = {}
-
---- @param colors ColorScheme
-function M.generate(colors)
-  local fishColors = {}
-  for k, v in pairs(colors) do
-    if type(v) == "string" then
-      -- Fish does not use the format `#` for hex colors it uses `0x`
-      fishColors[k] = v:gsub("^#", "")
-    else
-      fishColors[k] = v
-    end
-  end
-
-  local fish = util.template(
-    [[
 # Nightfox Color Palette
-# Style: ${meta.name}
-# Upstream: ${meta.url}
-set -l foreground ${fg}
-set -l selection ${bg_highlight}
-set -l comment ${comment}
-set -l red ${red}
-set -l orange ${orange}
-set -l yellow ${yellow}
-set -l green ${green}
-set -l purple ${magenta}
-set -l cyan ${cyan}
-set -l pink ${pink}
+# Style: dayfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_fish.fish
+set -l foreground 1D344F
+set -l selection E2E3E5
+set -l comment 7F848E
+set -l red c98093
+set -l orange EE896D
+set -l yellow CE8D52
+set -l green 7ca198
+set -l purple 8e6f98
+set -l cyan 6ca8cf
+set -l pink D685AF
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
@@ -52,11 +34,4 @@ set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
 
-  ]],
-    fishColors
-  )
-
-  return fish
-end
-
-return M
+  

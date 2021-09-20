@@ -9,14 +9,16 @@ function M.generate(colors)
     if type(v) == "string" then
       -- Alacirty does not use the format `#` for hex colors it uses `0x`
       alacrittyColors[k] = v:gsub("^#", "0x")
+    else
+      alacrittyColors[k] = v
     end
   end
 
   local alacritty = util.template(
     [[
 # Nightfox Alacritty Colors
-# Style: ${name}
-# Upstream: ${_upstream_url}
+# Style: ${meta.name}
+# Upstream: ${meta.url}
 colors:
   # Default colors
   primary:

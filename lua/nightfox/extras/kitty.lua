@@ -7,8 +7,8 @@ function M.generate(colors)
   local kitty = util.template(
     [[
 # Nightfox colors for Kitty
-## name: ${name}
-## upstream: ${name}
+## name: ${meta.name}
+## upstream: ${meta.url}
 
 background ${bg}
 foreground ${fg}

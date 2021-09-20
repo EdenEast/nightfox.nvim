@@ -7,8 +7,8 @@ function M.generate(colors)
   local wezterm = util.template(
     [[
 # Nightfox Wezterm Colors
-# Style: ${name}
-# Upstream: ${_upstream_url}
+# Style: ${meta.name}
+# Upstream: ${meta.url}
 [colors]
 foreground = "${fg}"
 background = "${bg}"
