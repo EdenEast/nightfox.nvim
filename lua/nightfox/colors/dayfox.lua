@@ -6,7 +6,7 @@ local M = {}
 -- without the color overrides from the configuration.
 function M.init()
   -- Reference:
-  -- https://github.com/Rashad-707/rhombuses
+  -- https://github.com/Rashad-707/rhombuses/tree/c147ffdcc1
   -- https://coolors.co/1d344f-c98093-7ca198-CE8D52-6080b0-8e6f98-6ca8cf-cdd1d5-EE896D-D685AF
 
   -- stylua: ignore
