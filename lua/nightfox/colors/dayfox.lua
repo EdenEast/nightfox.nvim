@@ -73,9 +73,9 @@ function M.init()
   util.bg = colors.bg
 
   colors.bg_alt = "#DBDFE2"
-  colors.bg_highlight = util.darken(colors.bg, 0.95, "#000000")
+  colors.bg_highlight = util.darken(colors.bg, 0.90, "#000000")
 
-  colors.fg_alt = util.lighten(colors.fg, 0.65)
+  colors.fg_alt = util.lighten(colors.fg, 0.75)
 
   colors.diff = {
     add = util.darken(colors.green, 0.15),
