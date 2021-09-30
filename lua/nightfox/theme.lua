@@ -174,6 +174,11 @@ function M.apply(colors, config)
     LspSignatureActiveParameter = { fg = c.orange },
     LspCodeLens = { fg = c.comment }, -- Used to color the virtual text of the codelens
 
+    DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+
     -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
     -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
     -- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
@@ -351,10 +356,8 @@ function M.apply(colors, config)
     WhichKeyValue = { fg = c.comment },
 
     -- LspSaga
-    DiagnosticError = { fg = c.error },
     DiagnosticWarning = { fg = c.warning },
     DiagnosticInformation = { fg = c.info },
-    DiagnosticHint = { fg = c.hint },
 
     LspFloatWinNormal = { bg = c.bg_float },
     LspFloatWinBorder = { fg = c.border_highlight },
