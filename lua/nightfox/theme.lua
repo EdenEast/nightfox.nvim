@@ -156,20 +156,20 @@ function M.apply(colors, config)
     LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
     LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
 
-    LspDiagnosticsDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultHint = { fg = c.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultWarning = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticDefaultHint = { fg = c.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-    LspDiagnosticsVirtualTextError = { bg = util.darken(c.error, 0.1), fg = c.error }, -- Used for "Error" diagnostic virtual text
-    LspDiagnosticsVirtualTextWarning = { bg = util.darken(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-    LspDiagnosticsVirtualTextInformation = { bg = util.darken(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
-    LspDiagnosticsVirtualTextHint = { bg = util.darken(c.hint, 0.1), fg = c.hint }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextError = { bg = util.darken(c.error, 0.1), fg = c.error }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarning = { bg = util.darken(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInformation = { bg = util.darken(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { bg = util.darken(c.hint, 0.1), fg = c.hint }, -- Used for "Hint" diagnostic virtual text
 
-    LspDiagnosticsUnderlineError = { style = "undercurl", sp = c.error }, -- Used to underline "Error" diagnostics
-    LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = c.warning }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = c.info }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint = { style = "undercurl", sp = c.hint }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineError = { style = "undercurl", sp = c.error }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarning = { style = "undercurl", sp = c.warning }, -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInformation = { style = "undercurl", sp = c.info }, -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = { style = "undercurl", sp = c.hint }, -- Used to underline "Hint" diagnostics
 
     LspSignatureActiveParameter = { fg = c.orange },
     LspCodeLens = { fg = c.comment }, -- Used to color the virtual text of the codelens
@@ -412,6 +412,23 @@ function M.apply(colors, config)
 
     LightspeedGreyWash = { fg = c.comment },
   }
+
+  -- Support versions of Neovim prior to this change:
+  -- https://github.com/neovim/neovim/pull/15585
+  theme.groups.LspDiagnosticsDefaultError = theme.groups.DiagnosticDefaultError
+  theme.groups.LspDiagnosticsDefaultWarning = theme.groups.DiagnosticDefaultWarning
+  theme.groups.LspDiagnosticsDefaultInformation = theme.groups.DiagnosticDefaultInformation
+  theme.groups.LspDiagnosticsDefaultHint = theme.groups.DiagnosticDefaultHint
+
+  theme.groups.LspDiagnosticsVirtualTextError = theme.groups.DiagnosticVirtualTextError
+  theme.groups.LspDiagnosticsVirtualTextWarning = theme.groups.DiagnosticVirtualTextWarning
+  theme.groups.LspDiagnosticsVirtualTextInformation = theme.groups.DiagnosticVirtualTextInformation
+  theme.groups.LspDiagnosticsVirtualTextHint = theme.groups.DiagnosticVirtualTextHint
+
+  theme.groups.LspDiagnosticsUnderlineError = theme.groups.DiagnosticUnderlineError
+  theme.groups.LspDiagnosticsUnderlineWarning = theme.groups.DiagnosticUnderlineWarning
+  theme.groups.LspDiagnosticsUnderlineInformation = theme.groups.DiagnosticUnderlineInformation
+  theme.groups.LspDiagnosticsUnderlineHint = theme.groups.DiagnosticUnderlineHint
 
   return theme
 end
