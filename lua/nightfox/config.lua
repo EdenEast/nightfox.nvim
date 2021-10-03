@@ -1,3 +1,4 @@
+local util = require("nightfox.util")
 local M = {}
 
 local config = {
@@ -24,7 +25,7 @@ M.options = {}
 
 function M.set_options(opts)
   opts = opts or {}
-  M.options = vim.tbl_deep_extend("force", M.options, opts)
+  M.options = util.tbl_deep_extend(M.options, opts)
 end
 
 function M.check_depricated_options()
@@ -52,7 +53,7 @@ function M.check_depricated_options()
 
   if #results > 0 then
     table.insert(results, "See https://github.com/edeneast/nightfox.nvim for more info")
-    require("nightfox.util").warn(unpack(results))
+    util.warn(unpack(results))
   end
 end
 

@@ -19,8 +19,10 @@ function M.init(name)
     return require("nightfox.colors." .. M.foxes[index]).init()
   end
 
-  if vim.tbl_contains(M.foxes, name) then
-    return require("nightfox.colors." .. name).init()
+  for _, fox in ipairs(M.foxes) do
+    if fox == name then
+      return require("nightfox.colors." .. name).init()
+    end
   end
 
   require("nightfox.util").warn("colorscheme " .. name .. " was not found")
@@ -39,8 +41,10 @@ function M.load(name)
     return require("nightfox.colors." .. M.foxes[index]).load()
   end
 
-  if vim.tbl_contains(M.foxes, name) then
-    return require("nightfox.colors." .. name).load()
+  for _, fox in ipairs(M.foxes) do
+    if fox == name then
+      return require("nightfox.colors." .. name).load()
+    end
   end
 
   require("nightfox.util").warn("colorscheme " .. name .. " was not found")
