@@ -1,6 +1,7 @@
 local hsluv = require("nightfox.hsluv")
 
 local util = {}
+local cmd = vim.cmd or vim.command
 
 util.bg = "#000000"
 util.fg = "#ffffff"
@@ -8,8 +9,22 @@ util.day_brightness = 0.3
 
 function util.warn(...)
   for _, msg in ipairs({ ... }) do
-    vim.api.nvim_command('echohl WarningMsg | echom "Nightfox: ' .. msg .. '" | echohl NONE')
+    cmd('echohl WarningMsg | echom "Nightfox: ' .. msg .. '" | echohl NONE')
   end
+end
+
+function util.tbl_deep_extend(...)
+  local lhs = {}
+  for _, rhs in ipairs({ ... }) do
+    for k, v in pairs(rhs) do
+      if type(lhs[k]) == "table" and type(v) == "table" then
+        lhs[k] = util.tbl_deep_extend(lhs[k], v)
+      else
+        lhs[k] = v
+      end
+    end
+  end
+  return lhs
 end
 
 function util.hex_to_rgb(hex_str)
@@ -132,9 +147,9 @@ function util.highlight(group, color)
   local sp = color.sp and "guisp=" .. color.sp or ""
   local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
 
-  vim.cmd(hl)
+  cmd(hl)
   if color.link then
-    vim.cmd("highlight! link " .. group .. " " .. color.link)
+    cmd("highlight! link " .. group .. " " .. color.link)
   end
 end
 
@@ -196,15 +211,15 @@ end
 function util.load(theme, exec_autocmd)
   -- only needed to clear when not the default colorscheme
   if vim.g.colors_name then
-    vim.cmd("hi clear")
+    cmd("hi clear")
   end
 
-  vim.o.background = "dark"
-  vim.o.termguicolors = true
+  cmd("set background=dark")
+  cmd("set termguicolors")
   vim.g.colors_name = theme.name
 
   local hlgroups = util.template_table(theme.config.hlgroups, theme.colors)
-  local groups = vim.tbl_deep_extend("force", theme.groups, hlgroups)
+  local groups = util.tbl_deep_extend(theme.groups, hlgroups)
 
   util.syntax(groups)
 
@@ -213,7 +228,7 @@ function util.load(theme, exec_autocmd)
   end
 
   if exec_autocmd then
-    vim.cmd([[doautocmd ColorScheme]])
+    cmd([[doautocmd ColorScheme]])
   end
 end
 

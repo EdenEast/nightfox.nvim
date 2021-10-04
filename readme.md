@@ -1,6 +1,6 @@
 # 🦊 Nightfox
 
-A dark Neovim theme written in lua.
+A dark (Neo)vim theme written in lua.
 
 <div align="center">
 <img src="https://github.com/EdenEast/nightfox.nvim/wiki/resources/banner.svg" alt="banner" />
@@ -53,6 +53,10 @@ Supported plugins
 ## ⚡️ Requirements
 
 - Neovim >= 0.5.0
+
+OR
+
+- Vim with Lua >= 5.2
 
 ## 📦 Installation
 
@@ -226,7 +230,7 @@ background (inverse).
 ### Colors
 
 `colors` is a table that defines hex color overrides for the colors returned by
-`require('nightfox.colors').load()`. To see what values can be overridden, use `vim.inspect` to
+`require('nightfox.colors').load()`. To see what values can be overridden, use `vim.inspect` (for neovim) to
 print out the returned color table.
 
 ```lua

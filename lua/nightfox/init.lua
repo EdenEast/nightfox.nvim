@@ -45,7 +45,7 @@ function M.load_complete(lead, _, _)
 
   local completion_list = {}
   for _, name in pairs(foxes) do
-    if vim.startswith(name, lead) then
+    if name:sub(1, #lead) == lead then
       table.insert(completion_list, name)
     end
   end
