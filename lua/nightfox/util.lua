@@ -227,7 +227,7 @@ function util.load(theme, exec_autocmd)
     cmd("hi clear")
   end
 
-  local background = theme.colors.light and "light" or "dark"
+  local background = theme.colors.meta.light and "light" or "dark"
   cmd("set background=" .. background)
   cmd("set termguicolors")
   vim.g.colors_name = theme.name
