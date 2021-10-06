@@ -156,6 +156,11 @@ function M.apply(colors, config)
     LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
     LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
 
+    DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+
     DiagnosticDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticDefaultWarning = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -171,23 +176,35 @@ function M.apply(colors, config)
     DiagnosticUnderlineInformation = { style = "undercurl", sp = c.info }, -- Used to underline "Information" diagnostics
     DiagnosticUnderlineHint = { style = "undercurl", sp = c.hint }, -- Used to underline "Hint" diagnostics
 
+    -- Support versions of Neovim prior to this change:
+    -- https://github.com/neovim/neovim/pull/15585
+    -- Lsp color groups for nvim 0.5.x
+    LspDiagnosticsSignWarning = { link = "DiagnosticSignWarn" },
+    LspDiagnosticsDefaultWarning = { link = "DiagnosticDefaultWarn" },
+    LspDiagnosticsFloatingWarning = { link = "DiagnosticFloatingWarn" },
+    LspDiagnosticsVirtualTextWarning = { link = "DiagnosticVirtualTextWarn" },
+    LspDiagnosticsUnderlineWarning = { link = "DiagnosticUnderlineWarn" },
+
+    LspDiagnosticsSignHint = { link = "DiagnosticSignHint" },
+    LspDiagnosticsDefaultHint = { link = "DiagnosticDefaultHint" },
+    LspDiagnosticsVirtualTextHint = { link = "DiagnosticFloatingHint" },
+    LspDiagnosticsFloatingHint = { link = "DiagnosticVirtualTextHint" },
+    LspDiagnosticsUnderlineHint = { link = "DiagnosticUnderlineHint" },
+
+    LspDiagnosticsSignError = { link = "DiagnosticSignError" },
+    LspDiagnosticsDefaultError = { link = "DiagnosticDefaultError" },
+    LspDiagnosticsFloatingError = { link = "DiagnosticFloatingError" },
+    LspDiagnosticsVirtualTextError = { link = "DiagnosticVirtualTextError" },
+    LspDiagnosticsUnderlineError = { link = "DiagnosticUnderlineError" },
+
+    LspDiagnosticsSignInformation = { link = "DiagnosticSignInfo" },
+    LspDiagnosticsDefaultInformation = { link = "DiagnosticDefaultInfo" },
+    LspDiagnosticsFloatingInformation = { link = "DiagnosticFloatingInfo" },
+    LspDiagnosticsVirtualTextInformation = { link = "DiagnosticVirtualTextInfo" },
+    LspDiagnosticsUnderlineInformation = { link = "DiagnosticUnderlineInfo" },
+
     LspSignatureActiveParameter = { fg = c.orange },
     LspCodeLens = { fg = c.comment }, -- Used to color the virtual text of the codelens
-
-    DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-
-    -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
-    -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
-    -- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
-    -- LspDiagnosticsFloatingHint          = { }, -- Used to color "Hint" diagnostic messages in diagnostics float
-
-    -- LspDiagnosticsSignError             = { }, -- Used for "Error" signs in sign column
-    -- LspDiagnosticsSignWarning           = { }, -- Used for "Warning" signs in sign column
-    -- LspDiagnosticsSignInformation       = { }, -- Used for "Information" signs in sign column
-    -- LspDiagnosticsSignHint              = { }, -- Used for "Hint" signs in sign column
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.
@@ -412,23 +429,6 @@ function M.apply(colors, config)
 
     LightspeedGreyWash = { fg = c.comment },
   }
-
-  -- Support versions of Neovim prior to this change:
-  -- https://github.com/neovim/neovim/pull/15585
-  theme.groups.LspDiagnosticsDefaultError = theme.groups.DiagnosticDefaultError
-  theme.groups.LspDiagnosticsDefaultWarning = theme.groups.DiagnosticDefaultWarning
-  theme.groups.LspDiagnosticsDefaultInformation = theme.groups.DiagnosticDefaultInformation
-  theme.groups.LspDiagnosticsDefaultHint = theme.groups.DiagnosticDefaultHint
-
-  theme.groups.LspDiagnosticsVirtualTextError = theme.groups.DiagnosticVirtualTextError
-  theme.groups.LspDiagnosticsVirtualTextWarning = theme.groups.DiagnosticVirtualTextWarning
-  theme.groups.LspDiagnosticsVirtualTextInformation = theme.groups.DiagnosticVirtualTextInformation
-  theme.groups.LspDiagnosticsVirtualTextHint = theme.groups.DiagnosticVirtualTextHint
-
-  theme.groups.LspDiagnosticsUnderlineError = theme.groups.DiagnosticUnderlineError
-  theme.groups.LspDiagnosticsUnderlineWarning = theme.groups.DiagnosticUnderlineWarning
-  theme.groups.LspDiagnosticsUnderlineInformation = theme.groups.DiagnosticUnderlineInformation
-  theme.groups.LspDiagnosticsUnderlineHint = theme.groups.DiagnosticUnderlineHint
 
   return theme
 end
