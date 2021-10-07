@@ -14,7 +14,7 @@ function M.init()
     meta       = { name = "dayfox", light = true },
 
     none       = "NONE",
-    bg         = "#EEEFF1",
+    bg         = "#E8EAEC", -- "#EEEFF1"
 
     fg         = "#1D344F",
     fg_gutter  = "#B9BCC2",
@@ -72,7 +72,7 @@ function M.init()
 
   util.bg = colors.bg
 
-  colors.bg_alt = "#DBDFE2"
+  colors.bg_alt = "#D5DADE" -- "#DBDFE2"
   colors.bg_highlight = util.darken(colors.bg, 0.90, "#000000")
 
   colors.fg_alt = util.lighten(colors.fg, 0.75)
