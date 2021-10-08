@@ -7,8 +7,8 @@ function M.generate(colors)
   local xr = util.template(
     [[
 ! Nightfox colors for Xresources
-! Style: ${name}
-! Upstream: ${_upstream_url}
+! Style: ${meta.name}
+! Upstream: ${meta.url}
 *background: ${bg}
 *foreground: ${fg}
 *color0:  ${black}

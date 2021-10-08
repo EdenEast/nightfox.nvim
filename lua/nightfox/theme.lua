@@ -9,13 +9,13 @@ function M.apply(colors, config)
   local theme = {}
   theme.config = config
   theme.colors = colors
-  theme.name = colors.name
+  theme.name = colors.meta.name
   local c = theme.colors
 
   theme.groups = {
     Comment = { fg = c.comment, style = config.styles.comments }, -- any comment
     ColorColumn = { bg = c.bg_visual }, -- used for the columns set with 'colorcolumn'
-    Conceal = { fg = c.black }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { fg = c.subtle }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = { fg = c.bg, bg = c.fg }, -- character under the cursor
     lCursor = { fg = c.bg, bg = c.fg }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM = { fg = c.bg, bg = c.fg }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -35,7 +35,7 @@ function M.apply(colors, config)
     FoldColumn = { bg = c.bg, fg = c.comment }, -- 'foldcolumn'
     SignColumn = { bg = config.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
     SignColumnSB = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
-    Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
+    Substitute = { bg = c.red, fg = c.subtle }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.fg_alt }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange, style = config.inverse.match_paren and "inverse,bold" or "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -56,8 +56,8 @@ function M.apply(colors, config)
     Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.bg_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search = config.inverse.search and { style = "inverse" } or { bg = c.bg_search, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    IncSearch = config.inverse.search and { style = "inverse" } or { bg = c.cyan, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    SpecialKey = { fg = c.black }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    IncSearch = config.inverse.search and { style = "inverse" } or { bg = c.cyan, fg = c.subtle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    SpecialKey = { fg = c.subtle }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad = { sp = c.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap = { sp = c.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal = { sp = c.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -228,7 +228,7 @@ function M.apply(colors, config)
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
     TSField = { fg = c.blue }, -- For fields.
-    rustTSField = { fg = util.darken(c.white, 0.75) }, -- For fields.
+    rustTSField = { fg = c.light and util.lighten(c.harsh, 0.70) or util.darken(c.harsh, 0.70) }, -- For fields.
     -- TSFloat             = { };    -- For floats.
     -- TSFunction = { fg = c.fg_gutter }, -- For function (calls and definitions).
     TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.
@@ -248,7 +248,7 @@ function M.apply(colors, config)
     tomlTSProperty = { fg = c.blue }, -- Differentiates between string and properties
     TSPunctDelimiter = { fg = c.fg_alt }, -- For delimiters ie: `.`
     TSPunctBracket = { fg = c.fg_alt }, -- For brackets and parens.
-    TSPunctSpecial = { fg = c.white }, -- For special punctutation that does not fall in the catagories before.
+    TSPunctSpecial = { fg = c.harsh }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
     TSStringRegex = { fg = c.blue, style = config.styles.strings }, -- For regexes.

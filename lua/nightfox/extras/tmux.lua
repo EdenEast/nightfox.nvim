@@ -8,8 +8,8 @@ function M.generate(colors)
     [[
 #!/usr/bin/env bash
 # Nightfox colors for Tmux
-# Style: ${name}
-# Upstream: ${_upstream_url}
+# Style: ${meta.name}
+# Upstream: ${meta.url}
 set -g mode-style "fg=${blue},bg=${fg_gutter}"
 set -g message-style "fg=${blue},bg=${fg_gutter}"
 set -g message-command-style "fg=${blue},bg=${fg_gutter}"

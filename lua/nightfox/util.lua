@@ -158,11 +158,24 @@ end
 -- Example template: "${name} is ${value}"
 --
 ---@param str string template string
----@param table table key value pairs to replace in the string
-function util.template(str, table)
-  return (str:gsub("($%b{})", function(w)
-    return table[w:sub(3, -2)] or w
-  end))
+---@param tbl table key value pairs to replace in the string
+function util.template(str, tbl)
+  local function parse(split, t)
+    local name = table.remove(split, 1)
+    local result = t[name]
+    if not result then
+      return nil
+    end
+
+    return type(result) == "table" and parse(split, result) or result
+  end
+  return (
+      str:gsub("($%b{})", function(w)
+        local name = w:sub(3, -2)
+        local split = vim.split(name, ".", true)
+        return parse(split, tbl) or w
+      end)
+    )
 end
 
 -- Template values in a table recursivly
@@ -214,7 +227,8 @@ function util.load(theme, exec_autocmd)
     cmd("hi clear")
   end
 
-  cmd("set background=dark")
+  local background = theme.colors.meta.light and "light" or "dark"
+  cmd("set background=" .. background)
   cmd("set termguicolors")
   vim.g.colors_name = theme.name
 

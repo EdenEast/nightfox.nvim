@@ -7,7 +7,7 @@ function M.generate(colors)
   local winterm = util.template(
     [[
 {
-    "name" : "${name}",
+    "name" : "${meta.name}",
 
     "background" : "${bg}",
     "foreground" : "${fg}",
