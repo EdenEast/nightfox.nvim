@@ -3,11 +3,11 @@
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_wezterm.toml
 [colors]
 foreground = "#1D344F"
-background = "#EEEFF1"
+background = "#E8EAEC"
 cursor_bg = "#1D344F"
 cursor_border = "#1D344F"
-cursor_fg = "#EEEFF1"
-selection_bg = "#E2E3E5"
+cursor_fg = "#E8EAEC"
+selection_bg = "#D1D3D4"
 selection_fg = "#1D344F"
 ansi = ["#1d344f", "#c98093", "#7ca198", "#CE8D52", "#6080b0", "#8e6f98", "#6ca8cf", "#cdd1d5"]
 brights = ["#24476F", "#D48A9D", "#82B2A6", "#D8985C", "#678ABF", "#9F75AC", "#77B2D9", "#CFD6DD"]

@@ -2,7 +2,7 @@
 # Style: dayfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_fish.fish
 set -l foreground 1D344F
-set -l selection E2E3E5
+set -l selection D1D3D4
 set -l comment 7F848E
 set -l red c98093
 set -l orange EE896D

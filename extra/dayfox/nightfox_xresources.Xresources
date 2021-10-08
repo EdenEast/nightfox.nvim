@@ -1,7 +1,7 @@
 ! Nightfox colors for Xresources
 ! Style: dayfox
 ! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_xresources.Xresources
-*background: #EEEFF1
+*background: #E8EAEC
 *foreground: #1D344F
 *color0:  #1d344f
 *color1:  #c98093
