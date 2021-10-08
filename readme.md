@@ -22,6 +22,10 @@ Which _fox_ will you choose?
 
 ![palefox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-palefox-example.png)
 
+### Dayfox
+
+![dayfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dayfox-example.png)
+
 ### Randfox
 
 Having trouble picking a fox. Let the dice decide! Set `style` to `randfox` to get a random
@@ -82,7 +86,7 @@ Enable the colorscheme:
 colorscheme nightfox
 ```
 
-Nightfox also defines the other styles as colorschemes, `nordfox` and `palefox`.
+Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, and `dayfox`.
 
 ### Lua
 
