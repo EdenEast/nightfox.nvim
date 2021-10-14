@@ -30,7 +30,7 @@ function M.init()
     orange     = "#f4a261",
     pink       = "#d67ad2",
 
-    black_br   = "#7f8c98",
+    black_br   = "#475072",
     red_br     = "#d6616b",
     green_br   = "#58cd8b",
     yellow_br  = "#ffe37e",
