@@ -162,20 +162,18 @@ end
 ---@param str string template string
 ---@param tbl table key value pairs to replace in the string
 function util.template(str, tbl)
-  local function parse(split, t)
-    local name = table.remove(split, 1)
-    local result = t[name]
-    if not result then
-      return nil
+  local function get_path(t, path)
+    for segment in string.gmatch(path, "[^.]+") do
+      if type(t) == "table" then
+        t = t[segment]
+      end
     end
-
-    return type(result) == "table" and parse(split, result) or result
+    return t
   end
   return (
       str:gsub("($%b{})", function(w)
-        local name = w:sub(3, -2)
-        local split = vim.split(name, ".", true)
-        return parse(split, tbl) or w
+        local path = w:sub(3, -2)
+        return get_path(tbl, path) or w
       end)
     )
 end
