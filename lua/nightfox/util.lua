@@ -145,7 +145,9 @@ function util.highlight(group, color)
   local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
   local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
   local sp = color.sp and "guisp=" .. color.sp or ""
-  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
+  -- Vim will still apply 'cterm' styles when 'termguicolors' is on.
+  -- Manually clear it to provide consistent styles of CursorLine, StatusLine, and etc.
+  local hl = "highlight " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp .. " cterm=NONE"
 
   cmd(hl)
   if color.link then
