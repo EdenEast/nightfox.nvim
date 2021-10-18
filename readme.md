@@ -93,7 +93,7 @@ Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, an
 If you prefer to use lua:
 
 ```lua
-require('nightfox'.load(<fox_name>))
+require('nightfox').load(<fox_name>)
 ```
 
 If `<fox_name>` is not passed load will apply the fox specified in the config.
