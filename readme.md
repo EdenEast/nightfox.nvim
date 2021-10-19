@@ -143,6 +143,7 @@ Nightfox is configured in lua. Nightfox comes with default configuration values.
 {
   fox = "nightfox", -- Which fox style should be applied
   transparent = false, -- Disable setting the background color
+  alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
   terminal_colors = true, -- Configure the colors used when opening :terminal
   styles = {
     comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
@@ -210,7 +211,8 @@ These are general settings and are unrelated to any group of settings.
 
 - `fox`: **{string}** The name of the fox you which to base the colorscheme on. See [Styles](#styles).
 - `transparent`: **{boolean}** If set to true the background color will not be set.
-- `terminal_colors`: **{boolean}** If set to true nightfox will set the terminal colors for `:terminal`
+- `alt_nc`: **{boolean}** If set non-current (unfocused) windows Will have an alt bg color.
+- `terminal_colors`: **{boolean}** If set to true nightfox will set the terminal colors for `:terminal`.
 
 ### Styles
 

@@ -4,6 +4,7 @@ local M = {}
 local config = {
   fox = "nightfox", -- Which fox style should be applied
   transparent = false, -- Disable setting the background color
+  alt_nc = false, -- Non current window bg to alt color
   terminal_colors = true, -- Configure the colors used when opening :terminal
   styles = {
     comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
