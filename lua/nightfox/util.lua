@@ -170,12 +170,10 @@ function util.template(str, tbl)
     end
     return t
   end
-  return (
-      str:gsub("($%b{})", function(w)
-        local path = w:sub(3, -2)
-        return get_path(tbl, path) or w
-      end)
-    )
+  return (str:gsub("($%b{})", function(w)
+    local path = w:sub(3, -2)
+    return get_path(tbl, path) or w
+  end))
 end
 
 -- Template values in a table recursivly
