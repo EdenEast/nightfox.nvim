@@ -228,7 +228,7 @@ function M.apply(colors, config)
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
     TSField = { fg = c.blue }, -- For fields.
-    rustTSField = { fg = c.light and util.lighten(c.harsh, 0.70) or util.darken(c.harsh, 0.70) }, -- For fields.
+    rustTSField = { fg = c.fg_alt },
     -- TSFloat             = { };    -- For floats.
     -- TSFunction = { fg = c.fg_gutter }, -- For function (calls and definitions).
     TSFuncBuiltin = { fg = c.cyan }, -- For builtin functions: `table.insert` in Lua.
