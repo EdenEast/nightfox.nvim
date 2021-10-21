@@ -427,6 +427,9 @@ function M.apply(colors, config)
     HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
     HopUnmatched = { fg = c.comment },
 
+    -- Symbol outline
+    FocusedSymbol = { bg = c.bg_search },
+
     LightspeedGreyWash = { fg = c.comment },
   }
 
