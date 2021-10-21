@@ -26,6 +26,14 @@ Which _fox_ will you choose?
 
 ![dayfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dayfox-example.png)
 
+### Dawnfox
+
+![dawnfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dawnfox-example.png)
+
+### Duskfox
+
+![duskfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-duskfox-example.png)
+
 ### Randfox
 
 Having trouble picking a fox. Let the dice decide! Set `style` to `randfox` to get a random
@@ -86,7 +94,7 @@ Enable the colorscheme:
 colorscheme nightfox
 ```
 
-Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, and `dayfox`.
+Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, `dayfox`, `dawnfox` and `duskfox`.
 
 ### Lua
 
@@ -367,6 +375,5 @@ These themes were used as references and based off this:
 
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim/)
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
-- [onedark.nvim](https://github.com/ful1e5/onedark.nvim)
-- [gruvbox-flat.nvim](https://github.com/eddyekofo94/gruvbox-flat.nvim)
+- [rose-pine](https://github.com/rose-pine/neovim) (dawnfox / duskfox)
 
