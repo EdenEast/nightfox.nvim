@@ -16,9 +16,9 @@ set -g status-left-style NONE
 set -g status-right-style NONE
 set -g status-left "#[fg=#3b4252,bg=#81a1c1,bold] #S #[fg=#81a1c1,bg=#232831,nobold,nounderscore,noitalics]"
 set -g status-right "#[fg=#232831,bg=#232831,nobold,nounderscore,noitalics]#[fg=#81a1c1,bg=#232831] #{prefix_highlight} #[fg=#4b5668,bg=#232831,nobold,nounderscore,noitalics]#[fg=#81a1c1,bg=#4b5668] %Y-%m-%d  %I:%M %p #[fg=#81a1c1,bg=#4b5668,nobold,nounderscore,noitalics]#[fg=#3b4252,bg=#81a1c1,bold] #h "
-setw -g window-status-activity-style "underscore,fg=#9499A2,bg=#232831"
+setw -g window-status-activity-style "underscore,fg=#9DA2AC,bg=#232831"
 setw -g window-status-separator ""
-setw -g window-status-style "NONE,fg=#9499A2,bg=#232831"
+setw -g window-status-style "NONE,fg=#9DA2AC,bg=#232831"
 setw -g window-status-format "#[fg=#232831,bg=#232831,nobold,nounderscore,noitalics]#[default] #I  #W #F #[fg=#232831,bg=#232831,nobold,nounderscore,noitalics]"
 setw -g window-status-current-format "#[fg=#232831,bg=#4b5668,nobold,nounderscore,noitalics]#[fg=#81a1c1,bg=#4b5668,bold] #I  #W #F #[fg=#4b5668,bg=#232831,nobold,nounderscore,noitalics]"
   
