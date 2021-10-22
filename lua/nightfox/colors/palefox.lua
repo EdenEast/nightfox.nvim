@@ -115,11 +115,6 @@ function M.init()
 
   colors.variable = colors.white
 
-  colors.harsh = colors.white
-  colors.subtle = colors.black
-  colors.harsh_br = colors.white_br
-  colors.subtle_br = colors.black_br
-
   return colors
 end
 
