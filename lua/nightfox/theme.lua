@@ -11,6 +11,11 @@ function M.apply(colors, config)
   theme.colors = colors
   theme.name = colors.meta.name
   local c = theme.colors
+  local light = c.meta.light
+
+  -- Depending if this colorscheme is light or dark I want either bright or dim modes.
+  local alt_orange = light and c.orange_dm or c.orange_br
+  local alt_magenta = light and c.magenta_dm or c.magenta_br
 
   theme.groups = {
     Comment = { fg = c.comment, style = config.styles.comments }, -- any comment
@@ -83,17 +88,17 @@ function M.apply(colors, config)
     Constant = { fg = c.orange }, -- (preferred) any constant
     String = { fg = c.green, style = config.styles.strings }, --   a string constant: "this is a string"
     Character = { fg = c.green }, --  a character constant: 'c', '\n'
-    Number = { fg = c.orange_br }, --   a number constant: 234, 0xff
-    Float = { fg = c.orange_br }, --    a floating point constant: 2.3e10
-    Boolean = { fg = c.orange_br }, --  a boolean constant: TRUE, false
+    Number = { fg = alt_orange }, --   a number constant: 234, 0xff
+    Float = { fg = alt_orange }, --    a floating point constant: 2.3e10
+    Boolean = { fg = alt_orange }, --  a boolean constant: TRUE, false
 
     Identifier = { fg = c.cyan, style = config.styles.variables }, -- (preferred) any variable name
     Function = { fg = c.blue, style = config.styles.functions }, -- function name (also: methods for classes)
 
-    Statement = { fg = c.magenta_br }, -- (preferred) any statement
-    Conditional = { fg = c.magenta_br }, --  if, then, else, endif, switch, etc.
-    Repeat = { fg = c.magenta_br }, --   for, do, while, etc.
-    Label = { fg = c.magenta_br }, --    case, default, etc.
+    Statement = { fg = alt_magenta }, -- (preferred) any statement
+    Conditional = { fg = alt_magenta }, --  if, then, else, endif, switch, etc.
+    Repeat = { fg = alt_magenta }, --   for, do, while, etc.
+    Label = { fg = alt_magenta }, --    case, default, etc.
     Operator = { fg = c.fg_alt }, -- "sizeof", "+", "*", etc.
     Keyword = { fg = c.magenta, style = config.styles.keywords }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
@@ -223,7 +228,7 @@ function M.apply(colors, config)
     TSConstructor = { fg = c.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
     TSConstant = { fg = c.orange }, -- For constants
-    TSConstBuiltin = { fg = c.orange_br }, -- For constant that are built in the language: `nil` in Lua.
+    TSConstBuiltin = { fg = alt_orange }, -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
@@ -242,7 +247,7 @@ function M.apply(colors, config)
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
     TSOperator = { fg = c.fg_alt }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = c.orange_br }, -- For parameters of a function.
+    TSParameter = { fg = alt_orange }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = { fg = c.green }, -- Same as `TSField`.
     tomlTSProperty = { fg = c.blue }, -- Differentiates between string and properties
