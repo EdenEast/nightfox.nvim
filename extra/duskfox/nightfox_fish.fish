@@ -5,9 +5,9 @@ set -l foreground e0def4
 set -l selection 35334f
 set -l comment 817c9c
 set -l red eb6f92
-set -l orange EB8595
+set -l orange ea9a97
 set -l yellow f6c177
-set -l green ea9a97
+set -l green a3be8c
 set -l purple c4a7e7
 set -l cyan 9ccfd8
 set -l pink EB98C3

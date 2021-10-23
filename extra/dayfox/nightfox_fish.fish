@@ -2,14 +2,14 @@
 # Style: dayfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_fish.fish
 set -l foreground 1D344F
-set -l selection D1D3D4
+set -l selection CFCFCF
 set -l comment 7F848E
-set -l red c98093
-set -l orange EE896D
-set -l yellow CE8D52
-set -l green 7ca198
+set -l red B95D76
+set -l orange E3786C
+set -l yellow BC8C4E
+set -l green 618774
 set -l purple 8e6f98
-set -l cyan 6ca8cf
+set -l cyan 6CA7BD
 set -l pink D685AF
 
 # Syntax Highlighting Colors

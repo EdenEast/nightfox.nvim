@@ -10,7 +10,7 @@ colors:
   normal:
     black:   '0x575279'
     red:     '0xb4637a'
-    green:   '0xd7827e'
+    green:   '0x618774'
     yellow:  '0xea9d34'
     blue:    '0x286983'
     magenta: '0x907aa9'
@@ -20,13 +20,13 @@ colors:
   bright:
     black:   '0x5F5695'
     red:     '0xC26D85'
-    green:   '0xDE8C88'
+    green:   '0x629F81'
     yellow:  '0xEEA846'
     blue:    '0x2D81A3'
     magenta: '0x9A80B9'
     cyan:    '0x5CA7B4'
     white:   '0xE6EBF3'
   indexed_colors:
-    - { index: 16, color: '0xEE896D' }
+    - { index: 16, color: '0xd7827e' }
     - { index: 17, color: '0xD685AF' }
   

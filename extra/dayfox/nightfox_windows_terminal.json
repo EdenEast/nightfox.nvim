@@ -1,25 +1,25 @@
 {
     "name" : "dayfox",
 
-    "background" : "#E8EAEC",
+    "background" : "#E6E6E6",
     "foreground" : "#1D344F",
 
     "black" : "#1d344f",
     "blue" : "#6080b0",
-    "cyan" : "#6ca8cf",
-    "green" : "#7ca198",
+    "cyan" : "#6CA7BD",
+    "green" : "#618774",
     "purple" : "#8e6f98",
-    "red" : "#c98093",
+    "red" : "#B95D76",
     "white" : "#cdd1d5",
-    "yellow" : "#CE8D52",
+    "yellow" : "#BC8C4E",
 
     "brightBlack" : "#24476F",
     "brightBlue" : "#678ABF",
-    "brightCyan" : "#77B2D9",
-    "brightGreen" : "#82B2A6",
+    "brightCyan" : "#74B2C9",
+    "brightGreen" : "#629F81",
     "brightPurple" : "#9F75AC",
-    "brightRed" : "#D48A9D",
+    "brightRed" : "#C76882",
     "brightWhite" : "#CFD6DD",
-    "brightYellow" : "#D8985C"
+    "brightYellow" : "#D78614"
 },
   
