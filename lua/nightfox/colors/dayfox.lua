@@ -7,51 +7,51 @@ local M = {}
 function M.init()
   -- Reference:
   -- https://github.com/Rashad-707/rhombuses/tree/c147ffdcc1
-  -- https://coolors.co/1d344f-c98093-7ca198-CE8D52-6080b0-8e6f98-6ca8cf-cdd1d5-EE896D-D685AF
+  -- https://github.com/Rashad-707/dotfiles/tree/df5ac6b
 
   -- stylua: ignore
   local colors = {
     meta       = { name = "dayfox", light = true },
 
     none       = "NONE",
-    bg         = "#E8EAEC", -- "#EEEFF1"
+    bg         = "#E6E6E6",
 
     fg         = "#1D344F",
-    fg_gutter  = "#B9BCC2",
+    fg_gutter  = "#AAACB3",
 
     black      = "#1d344f",
-    red        = "#c98093",
-    green      = "#7ca198",
-    yellow     = "#CE8D52",
+    red        = "#B95D76",
+    green      = "#618774",
+    yellow     = "#BC8C4E", -- "#c29860",
     blue       = "#6080b0",
     magenta    = "#8e6f98",
-    cyan       = "#6ca8cf",
+    cyan       = "#6CA7BD",
     white      = "#cdd1d5",
-    orange     = "#EE896D",
+    orange     = "#E3786C",
     pink       = "#D685AF",
 
     -- +10 brightness, +10 saturation
     black_br   = "#24476F",
-    red_br     = "#D48A9D",
-    green_br   = "#82B2A6",
-    yellow_br  = "#D8985C",
+    red_br     = "#C76882",
+    green_br   = "#629F81",
+    yellow_br  = "#D78614",
     blue_br    = "#678ABF",
     magenta_br = "#9F75AC",
-    cyan_br    = "#77B2D9",
+    cyan_br    = "#74B2C9",
     white_br   = "#CFD6DD",
-    orange_br  = "#F29379",
+    orange_br  = "#E8857A",
     pink_br    = "#DE8DB7",
 
     -- -10 brightness, -10 saturation
     black_dm   = "#1C2F44",
-    red_dm     = "#BB6F83",
-    green_dm   = "#6F9289",
-    yellow_dm  = "#C07E41",
+    red_dm     = "#AC5169",
+    green_dm   = "#597668",
+    yellow_dm  = "#9F6719",
     blue_dm    = "#54729F",
     magenta_dm = "#806589",
-    cyan_dm    = "#5A99C2",
+    cyan_dm    = "#5A99B0",
     white_dm   = "#B6BCC2",
-    orange_dm  = "#E27456",
+    orange_dm  = "#D76558",
     pink_dm    = "#C9709E",
 
     comment    = "#7F848E",
@@ -72,7 +72,7 @@ function M.init()
 
   util.bg = colors.bg
 
-  colors.bg_alt = "#D5DADE" -- "#DBDFE2"
+  colors.bg_alt = "#D8D8D8" -- "#DBDFE2"
   colors.bg_highlight = util.darken(colors.bg, 0.90, "#000000")
 
   colors.fg_alt = util.lighten(colors.fg, 0.85, "#ffffff")
