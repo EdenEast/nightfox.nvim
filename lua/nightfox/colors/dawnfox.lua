@@ -19,40 +19,40 @@ function M.init()
     fg         = "#575279",
     fg_gutter  = "#ADAFB9",
 
-    -- https://coolors.co/575279-b4637a-d7827e-ea9d34-286983-907aa9-56949f-e5e9f0-EE896D-D685AF
+    -- https://coolors.co/575279-b4637a-618774-ea9d34-286983-907aa9-56949f-e5e9f0-d7827e-D685AF
     black      = "#575279",
     red        = "#b4637a",
-    green      = "#d7827e",
+    green      = "#618774",
     yellow     = "#ea9d34",
     blue       = "#286983",
     magenta    = "#907aa9",
     cyan       = "#56949f",
     white      = "#e5e9f0",
-    orange     = "#EE896D",
+    orange     = "#d7827e",
     pink       = "#D685AF",
 
     -- +10 brightness, +10 saturation
     black_br   = "#5F5695",
     red_br     = "#C26D85",
-    green_br   = "#DE8C88",
+    green_br   = "#629F81",
     yellow_br  = "#EEA846",
     blue_br    = "#2D81A3",
     magenta_br = "#9A80B9",
     cyan_br    = "#5CA7B4",
     white_br   = "#E6EBF3",
-    orange_br  = "#F29379",
+    orange_br  = "#DE8C88",
     pink_br    = "#DE8DB7",
 
     -- -10 brightness, -10 saturation
     black_dm   = "#504C6B",
     red_dm     = "#A5576D",
-    green_dm   = "#CA6E69",
+    green_dm   = "#597668",
     yellow_dm  = "#DD9024",
     blue_dm    = "#295E73",
     magenta_dm = "#816B9A",
     cyan_dm    = "#50848C",
     white_dm   = "#C8CFDE",
-    orange_dm  = "#E27456",
+    orange_dm  = "#CA6E69",
     pink_dm    = "#C9709E",
 
     comment = "#9893a5",
