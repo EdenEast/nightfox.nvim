@@ -12,6 +12,8 @@ function M.apply(colors, config)
   theme.name = colors.meta.name
   local c = theme.colors
 
+  local light = c.meta.light
+
   theme.groups = {
     Comment = { fg = c.comment, style = config.styles.comments }, -- any comment
     ColorColumn = { bg = c.bg_visual }, -- used for the columns set with 'colorcolumn'
@@ -49,9 +51,9 @@ function M.apply(colors, config)
     NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in non-current windows
     NormalFloat = { fg = c.fg, bg = c.bg_float }, -- Normal text in floating windows.
     FloatBorder = { fg = c.border_highlight },
-    Pmenu = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
-    PmenuSel = { fg = c.cyan, bg = util.darken(c.fg_gutter, 0.8) }, -- Popup menu: selected item.
-    PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
+    Pmenu = { bg = c.bg_popup, fg = c.fg_alt }, -- Popup menu: normal item.
+    PmenuSel = { fg = c.cyan, bg = c.bg_highlight }, -- Popup menu: selected item.
+    PmenuSbar = { bg = light and util.darken(c.bg_popup, 0.2) or util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.bg_visual, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
