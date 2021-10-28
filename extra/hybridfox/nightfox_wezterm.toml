@@ -1,0 +1,14 @@
+# Nightfox Wezterm Colors
+# Style: hybridfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/hybridfox/nightfox_wezterm.toml
+[colors]
+foreground = "#c5c8c6"
+background = "#1d1f21"
+cursor_bg = "#c5c8c6"
+cursor_border = "#c5c8c6"
+cursor_fg = "#1d1f21"
+selection_bg = "#2f3235"
+selection_fg = "#c5c8c6"
+ansi = ["#282a2e", "#cc6666", "#b5bd68", "#f0c674", "#81a2be", "#b294bb", "#8abeb7", "#c5c8c6"]
+brights = ["#3d4454", "#f25555", "#d5e35b", "#ffc654", "#7ab3e6", "#ce90e0", "#6ee6d6", "#c7edd4"]
+  

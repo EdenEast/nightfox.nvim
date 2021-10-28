@@ -1,0 +1,22 @@
+! Nightfox colors for Xresources
+! Style: hybridfox
+! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/hybridfox/nightfox_xresources.Xresources
+*background: #1d1f21
+*foreground: #c5c8c6
+*color0:  #282a2e
+*color1:  #cc6666
+*color2:  #b5bd68
+*color3:  #f0c674
+*color4:  #81a2be
+*color5:  #b294bb
+*color6:  #8abeb7
+*color7:  #c5c8c6
+*color8:  #3d4454
+*color9:  #f25555
+*color10: #d5e35b
+*color11: #ffc654
+*color12: #7ab3e6
+*color13: #ce90e0
+*color14: #6ee6d6
+*color15: #c7edd4
+

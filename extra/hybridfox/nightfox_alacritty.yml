@@ -1,0 +1,32 @@
+# Nightfox Alacritty Colors
+# Style: hybridfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/hybridfox/nightfox_alacritty.yml
+colors:
+  # Default colors
+  primary:
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
+  # Normal colors
+  normal:
+    black:   '0x282a2e'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xc5c8c6'
+  # Bright colors
+  bright:
+    black:   '0x3d4454'
+    red:     '0xf25555'
+    green:   '0xd5e35b'
+    yellow:  '0xffc654'
+    blue:    '0x7ab3e6'
+    magenta: '0xce90e0'
+    cyan:    '0x6ee6d6'
+    white:   '0xc7edd4'
+  indexed_colors:
+    - { index: 16, color: '0xde935f' }
+    - { index: 17, color: '0xcf90e0' }
+  
