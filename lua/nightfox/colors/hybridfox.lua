@@ -37,7 +37,7 @@ function M.init()
     blue_br    = "#7ab3e6",
     magenta_br = "#ce90e0",
     cyan_br    = "#93d9d0",
-    white_br   = "#c7edd4",
+    white_br   = "#707880",
     orange_br  = "#ff9447",
     pink_br    = "#e37dff",
 

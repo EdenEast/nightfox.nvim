@@ -19,13 +19,13 @@ colors:
   # Bright colors
   bright:
     black:   '0x3d4454'
-    red:     '0xf25555'
-    green:   '0xd5e35b'
+    red:     '0xe66767'
+    green:   '0xcbd66b'
     yellow:  '0xffc654'
     blue:    '0x7ab3e6'
     magenta: '0xce90e0'
-    cyan:    '0x6ee6d6'
-    white:   '0xc7edd4'
+    cyan:    '0x93d9d0'
+    white:   '0x707880'
   indexed_colors:
     - { index: 16, color: '0xde935f' }
     - { index: 17, color: '0xcf90e0' }
