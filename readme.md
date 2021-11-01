@@ -184,7 +184,7 @@ nightfox.setup({
     keywords = "bold", -- change style of keywords to be bold
     functions = "italic,bold" -- styles can be a comma separated list
   },
-  inverse {
+  inverse = {
     match_paren = true, -- inverse the highlighting of match_parens
   },
   colors = {
