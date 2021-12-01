@@ -462,6 +462,7 @@ function M.apply(colors, config)
 
     CmpItemKindClass = { fg = c.yellow },
     CmpItemKindModule = { fg = c.yellow },
+    CmpItemKindStruct = { fg = c.yellow },
   }
 
   return theme
