@@ -448,13 +448,14 @@ function M.apply(colors, config)
     CmpItemKindVariable = { fg = c.cyan },
     CmpItemKindInterface = { fg = c.cyan },
 
-    CmpItemKindFunction = { fg = c.pink },
-    CmpItemKindMethod = { fg = c.pink },
+    CmpItemKindFunction = { fg = c.blue },
+    CmpItemKindMethod = { fg = c.blue },
 
     CmpItemKindText = { fg = c.fg },
     CmpItemKindKeyword = { fg = c.magenta },
     CmpItemKindUnit = { fg = c.magenta },
     CmpItemKindProperty = { fg = c.green },
+    CmpItemKindField = { fg = c.green },
 
     CmpItemKindClass = { fg = c.yellow },
     CmpItemKindModule = { fg = c.yellow },
