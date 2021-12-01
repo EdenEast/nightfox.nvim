@@ -440,6 +440,9 @@ function M.apply(colors, config)
     LightspeedGreyWash = { fg = c.comment },
 
     -- cmp
+    CmpItemKindAbbr = { fg = c.fg },
+    CmpItemKindDefault = { fg = c.fg_alt },
+
     CmpItemAbbrDeprecated = { fg = c.comment, style = "strikethrough" },
 
     CmpItemAbbrMatch = { fg = c.blue, style = "bold" },
