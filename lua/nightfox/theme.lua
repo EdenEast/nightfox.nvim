@@ -438,6 +438,30 @@ function M.apply(colors, config)
     FocusedSymbol = { bg = c.bg_search },
 
     LightspeedGreyWash = { fg = c.comment },
+
+    -- cmp
+    CmpItemKindAbbr = { fg = c.fg },
+    CmpItemKindDefault = { fg = c.fg_alt },
+
+    CmpItemAbbrDeprecated = { fg = c.comment, style = "strikethrough" },
+
+    CmpItemAbbrMatch = { fg = c.blue },
+    CmpItemAbbrMatchFuzzy = { fg = c.blue },
+
+    CmpItemKindVariable = { fg = c.cyan },
+    CmpItemKindInterface = { fg = c.cyan },
+
+    CmpItemKindFunction = { fg = c.blue },
+    CmpItemKindMethod = { fg = c.blue },
+
+    CmpItemKindText = { fg = c.fg },
+    CmpItemKindKeyword = { fg = c.magenta },
+    CmpItemKindUnit = { fg = c.magenta },
+    CmpItemKindProperty = { fg = c.green },
+    CmpItemKindField = { fg = c.green },
+
+    CmpItemKindClass = { fg = c.yellow },
+    CmpItemKindModule = { fg = c.yellow },
   }
 
   return theme
