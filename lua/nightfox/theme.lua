@@ -445,8 +445,8 @@ function M.apply(colors, config)
 
     CmpItemAbbrDeprecated = { fg = c.comment, style = "strikethrough" },
 
-    CmpItemAbbrMatch = { fg = c.blue, style = "bold" },
-    CmpItemAbbrMatchFuzzy = { fg = c.blue, style = "bold" },
+    CmpItemAbbrMatch = { fg = c.blue },
+    CmpItemAbbrMatchFuzzy = { fg = c.blue },
 
     CmpItemKindVariable = { fg = c.cyan },
     CmpItemKindInterface = { fg = c.cyan },
