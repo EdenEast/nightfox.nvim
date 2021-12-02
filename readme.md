@@ -94,7 +94,7 @@ Enable the colorscheme:
 colorscheme nightfox
 ```
 
-Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, `dayfox`, `dawnfox` and `duskfox`.
+Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, `dayfox`, `dawnfox`, `duskfox` and `hybridfox`.
 
 ### Lua
 
@@ -376,4 +376,5 @@ These themes were used as references and based off this:
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim/)
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [rose-pine](https://github.com/rose-pine/neovim) (dawnfox / duskfox)
+- [hybrid](https://github.com/w0ng/vim-hybrid)
 

@@ -7,6 +7,7 @@ M.foxes = {
   "dayfox",
   "dawnfox",
   "duskfox",
+  "hybridfox",
 }
 
 -- Adds subtle and harsh colors depending if the colors are dark or light
