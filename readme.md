@@ -18,10 +18,6 @@ Which _fox_ will you choose?
 
 ![nordfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png)
 
-### Palefox
-
-![palefox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-palefox-example.png)
-
 ### Dayfox
 
 ![dayfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dayfox-example.png)
@@ -94,7 +90,7 @@ Enable the colorscheme:
 colorscheme nightfox
 ```
 
-Nightfox also defines the other styles as colorschemes, `nordfox`, `palefox`, `dayfox`, `dawnfox` and `duskfox`.
+Nightfox also defines the other styles as colorschemes, `nordfox`, `dayfox`, `dawnfox` and `duskfox`.
 
 ### Lua
 
