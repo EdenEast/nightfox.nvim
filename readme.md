@@ -209,6 +209,8 @@ EOF
 **Note:** The `colorscheme` command sets the `fox` value to the colorscheme that is being supplied,
 before loading the colorscheme.
 
+You can also find this information in vim's help `:help nightfox`.
+
 ### General
 
 These are general settings and are unrelated to any group of settings.
@@ -372,4 +374,3 @@ These themes were used as references and based off this:
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim/)
 - [material.nvim](https://github.com/marko-cerovac/material.nvim)
 - [rose-pine](https://github.com/rose-pine/neovim) (dawnfox / duskfox)
-
