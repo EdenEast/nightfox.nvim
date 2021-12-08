@@ -22,8 +22,6 @@ Table of Contents                                 *nightfox-table-of-contents*
 
 A dark (Neo)vim theme written in lua.
 
-A change to see if ci executes
-
 <img src="https://github.com/EdenEast/nightfox.nvim/wiki/resources/banner.svg"
 alt="banner" />
 
@@ -262,6 +260,8 @@ For configuration in `vimscript`, wrap the above example in a lua script block.
 
 **Note:** The `colorscheme` command sets the `fox` value to the colorscheme
 that is being supplied, before loading the colorscheme.
+
+You can also find this information in vim’s help `:help nightfox`.
 
 GENERAL ~
 
