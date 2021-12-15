@@ -270,9 +270,10 @@ function M.apply(colors, config)
     -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
     -- TSText              = { };    -- For strings considered text in a markup language.
     TSTextReference = { fg = c.cyan },
-    -- TSEmphasis          = { };    -- For text to be represented with emphasis.
-    -- TSUnderline         = { };    -- For text to be represented with an underline.
-    -- TSStrike            = { };    -- For strikethrough text.
+    TSEmphasis = { style = "italic" }, -- For text to be represented with emphasis (italics).
+    TSUnderline = { style = "underline" }, -- For text to be represented with an underline.
+    TSStrike = { style = "strikethrough" }, -- For strikethrough text.
+    TSStrong = { style = "bold" }, -- For bold text
     -- TSTitle             = { };    -- Text that is part of a title.
     -- TSLiteral           = { };    -- Literal text.
     TSURI = { fg = c.orange }, -- Any URI like a link or email.
