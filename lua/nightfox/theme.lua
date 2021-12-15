@@ -275,7 +275,7 @@ function M.apply(colors, config)
     -- TSStrike            = { };    -- For strikethrough text.
     -- TSTitle             = { };    -- Text that is part of a title.
     -- TSLiteral           = { };    -- Literal text.
-    -- TSURI               = { };    -- Any URI like a link or email.
+    TSURI = { fg = c.orange }, -- Any URI like a link or email.
 
     -- Plugins ------------------------------------------------------------------------------------
 
