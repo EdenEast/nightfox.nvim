@@ -57,6 +57,7 @@ Supported plugins
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
 - [Fern](https://github.com/lambdalisue/fern.vim)
 - [Barbar](https://github.com/romgrk/barbar.nvim)
+- [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 
 ## ⚡️ Requirements
 
