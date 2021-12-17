@@ -464,6 +464,15 @@ function M.apply(colors, config)
     CmpItemKindClass = { fg = c.yellow },
     CmpItemKindModule = { fg = c.yellow },
     CmpItemKindStruct = { fg = c.yellow },
+
+    -- TS Rainbow
+    rainbowcol1 = { fg = c.red },
+    rainbowcol2 = { fg = c.yellow },
+    rainbowcol3 = { fg = c.green },
+    rainbowcol4 = { fg = c.blue },
+    rainbowcol5 = { fg = c.cyan },
+    rainbowcol6 = { fg = c.magenta },
+    rainbowcol7 = { fg = c.pink },
   }
 
   return theme
