@@ -217,6 +217,20 @@ function util.terminal(theme)
   vim.g.terminal_color_13 = theme.colors.magenta_br
   vim.g.terminal_color_14 = theme.colors.cyan_br
   vim.g.terminal_color_15 = theme.colors.white_br
+
+  if (vim.fn.has('nvim') == 0) then
+    local colors = {
+      theme.colors.black, theme.colors.red,
+      theme.colors.green, theme.colors.yellow,
+      theme.colors.blue, theme.colors.magenta,
+      theme.colors.cyan, theme.colors.white,
+      theme.colors.black_br, theme.colors.red_br,
+      theme.colors.green_br, theme.colors.yellow_br,
+      theme.colors.blue_br, theme.colors.magenta_br,
+      theme.colors.cyan_br, theme.colors.white_br
+    }
+    vim.g.terminal_ansi_colors = vim.list(colors)
+  end
 end
 
 function util.load(theme, exec_autocmd)
