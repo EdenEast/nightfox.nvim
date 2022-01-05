@@ -67,6 +67,10 @@ OR
 
 - Vim with Lua >= 5.2
 
+- For Mac Users:
+  Nightfox does not work in Terminal. I suggest you use ITerm2.
+
+
 ## 📦 Installation
 
 Install the theme with a package manager:
