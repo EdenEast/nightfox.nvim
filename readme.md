@@ -61,15 +61,14 @@ Supported plugins
 
 ## ⚡️ Requirements
 
-- Neovim >= 0.5.0
+- `Neovim` >= 0.5.0 **- or -** `Vim` with Lua >= 5.2
+- Gui or Terminal with `true color` support
+  - Some example Terminals:
+    - [Alacritty](https://alacrity.org)
+    - [Kitty](https://sw.kovidgoyal.net/kitty/)
+    - [WezTerm](https://wezfurlong.org/wezterm/)
 
-OR
-
-- Vim with Lua >= 5.2
-
-- For Mac Users:
-  Nightfox does not work in Terminal. I suggest you use ITerm2.
-
+> Note for MacOS: `terminal.app` does not support `true color` use either `Iterm2` or another `true color` terminal.
 
 ## 📦 Installation
 
