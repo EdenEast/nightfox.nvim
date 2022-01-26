@@ -17,8 +17,6 @@ function M.apply(colors, config)
   local alt_orange = light and c.orange_dm or c.orange_br
   local alt_magenta = light and c.magenta_dm or c.magenta_br
 
-  local light = c.meta.light
-
   theme.groups = {
     Comment = { fg = c.comment, style = config.styles.comments }, -- any comment
     ColorColumn = { bg = c.bg_visual }, -- used for the columns set with 'colorcolumn'
