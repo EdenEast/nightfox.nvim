@@ -325,7 +325,7 @@ function M.apply(colors, config)
     TelescopeMatching = { fg = c.blue },
 
     -- NvimTree
-    NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    NvimTreeNormal = { fg = c.fg_sidebar, bg = config.transparent and c.none or c.bg_sidebar },
     NvimTreeFolderIcon = { fg = c.comment },
     NvimTreeRootFolder = { fg = c.orange, style = "bold" },
     NvimTreeSymlink = { fg = c.magenta },
