@@ -300,11 +300,13 @@ function M.apply(colors, config)
     -- Neogit
     NeogitBranch = { fg = c.magenta },
     NeogitRemote = { fg = c.pink },
-    NeogitHunkHeader = { bg = c.bg_highlight, fg = c.fg },
-    NeogitHunkHeaderHighlight = { bg = c.fg_gutter, fg = c.blue },
-    NeogitDiffContextHighlight = { bg = util.darken(c.fg_gutter, 0.5), fg = c.fg_alt },
+    NeogitHunkHeader = { bg = c.bg_highlight, fg = c.yellow },
+    NeogitHunkHeaderHighlight = { bg = c.bg_visual, fg = c.cyan },
+    NeogitDiffContextHighlight = { bg = c.bg_highlight },
     NeogitDiffDeleteHighlight = { fg = c.git.delete, bg = c.diff.delete },
     NeogitDiffAddHighlight = { fg = c.git.add, bg = c.diff.add },
+    NeogitDiffAdd = { fg = c.git.add },
+    NeogitDiffDelete = { fg = c.git.delete },
 
     -- GitGutter
     GitGutterAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
