@@ -307,6 +307,9 @@ function M.apply(colors, config)
     NeogitDiffAddHighlight = { fg = c.git.add, bg = c.diff.add },
     NeogitDiffAdd = { fg = c.git.add },
     NeogitDiffDelete = { fg = c.git.delete },
+    NeogitNotificationInfo = { fg = c.info },
+    NeogitNotificationWarning = { fg = c.warning },
+    NeogitNotificationError = { fg = c.error },
 
     -- GitGutter
     GitGutterAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
