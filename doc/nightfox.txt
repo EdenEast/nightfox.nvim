@@ -101,7 +101,7 @@ Supported plugins
 - `Neovim` >= 0.5.0 **- or -** `Vim` with Lua >= 5.2
 - Gui or Terminal with `true color` support
     - Some example Terminals:
-        - Alacritty <https://alacrity.org>
+        - Alacritty <https://alacritty.org/>
         - Kitty <https://sw.kovidgoyal.net/kitty/>
         - WezTerm <https://wezfurlong.org/wezterm/>
 
