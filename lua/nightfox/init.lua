@@ -1,6 +1,7 @@
 local M = {}
 
 local override = {}
+
 function override.pallets(pallets)
   require("nightfox.override").pallets = pallets
 end
@@ -15,7 +16,9 @@ end
 
 M.override = override
 
-function M.init(opts) end
+function M.init(opts)
+  require("nightfox.config").set_options(opts)
+end
 
 function M.setup(opts)
   if opts.options then
