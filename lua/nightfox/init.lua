@@ -6,8 +6,8 @@ function override.pallets(pallets)
   require("nightfox.override").pallets = pallets
 end
 
-function override.schemes(schemes)
-  require("nightfox.override").schemes = schemes
+function override.specs(specs)
+  require("nightfox.override").specs = specs
 end
 
 function override.groups(groups)
