@@ -1,6 +1,6 @@
-local util = require("nightfox.util")
+local util = require('nightfox.util')
 
---#region Types
+--#region Types ----------------------------------------------------------------
 
 ---RGBA color representation stored in float [0,1]
 ---@class RGBA
@@ -21,7 +21,7 @@ local util = require("nightfox.util")
 
 --#endregion
 
---#region Helpers
+--#region Helpers --------------------------------------------------------------
 
 local function calc_hue(r, g, b)
   local max = math.max(r, g, b)
@@ -48,24 +48,23 @@ end
 
 --#endregion
 
----@class Color
----@field red number [0,1]
----@field green number [0,1]
----@field blue number [0,1]
----@field alpha number [0,1]
-local Color = setmetatable({}, {})
+local Color = {}
+Color.__index = Color
 
----Initialize a new Color object
----@param r number Integer [0,1]
----@param g number Integer [0,1]
----@param b number Integer [0,1]
----@param a number Float [0,1]
-function Color:init(r, g, b, a)
-  self:set_red(r)
-  self:set_green(g)
-  self:set_blue(b)
-  self:set_alpha(a)
+function Color.__tostring(self)
+  return self:to_css()
 end
+
+function Color.new(r,g,b,a)
+  local self = setmetatable({}, Color)
+  self.red = util.clamp(r, 0, 1)
+  self.green = util.clamp(g, 0, 1)
+  self.blue = util.clamp(b, 0, 1)
+  self.alpha = util.clamp(a or 1, 0, 1)
+  return self
+end
+
+--#region from_* ---------------------------------------------------------------
 
 ---Create color from RGBA 0,255
 ---@param r number Integer [0,255]
@@ -139,6 +138,10 @@ function Color.from_hsl(h, s, l, a)
   return Color.new(f(0), f(8), f(4), a)
 end
 
+--#endregion
+
+--#region to_* -----------------------------------------------------------------
+
 ---Convert Color to RGBA
 ---@return RGBA
 function Color:to_rgba()
@@ -194,6 +197,10 @@ function Color:to_css(with_alpha)
   local l = with_alpha and 8 or 6
   return string.format("#%0" .. l .. "x", n)
 end
+
+--#endregion
+
+--#region Manipulate -----------------------------------------------------------
 
 ---Returns a new color that a linear blend between two colors
 ---@param other Color
@@ -253,134 +260,22 @@ function Color:saturate(v)
   return Color.from_hsv(hsv.hue, saturation, hsv.value)
 end
 
----Adds value of `v` to the `hue` of the current color. This returns a shift of
----hue based on +/- of v. Resulting `hue` is clamped [0,360]
+---Adds value of `v` to the `hue` of the current color. This returns a rotation of
+---hue based on +/- of v. Resulting `hue` is wrapped [0,360]
 ---@return Color
-function Color:shift(v)
+function Color:rotate(v)
   local hsv = self:to_hsv()
   local hue = (hsv.hue + v) % 360
   return Color.from_hsv(hue, hsv.saturation, hsv.value)
 end
 
----@param v number Float [0,1].
-function Color:set_red(v)
-  self._red = util.clamp(v or 1.0, 0, 1)
-end
+--#endregion
 
----@param v number Float [0,1].
-function Color:set_green(v)
-  self._green = util.clamp(v or 1.0, 0, 1)
-end
+--#region Constants ------------------------------------------------------------
 
----@param v number Float [0,1].
-function Color:set_blue(v)
-  self._blue = util.clamp(v or 1.0, 0, 1)
-end
+Color.WHITE = Color.new(1, 1, 1, 1)
+Color.BLACK = Color.new(0, 0, 0, 1)
 
----@param v number Float [0,1].
-function Color:set_alpha(v)
-  self._alpha = util.clamp(v or 1.0, 0, 1)
-end
-
----@param v number Hue. Float [0,360].
-function Color:set_hue(v)
-  local hsv = self:to_hsv()
-  hsv.hue = v % 360
-  local c = Color.from_hsv(hsv.hue, hsv.saturation, hsv.value)
-  self._red = c.red
-  self._green = c.green
-  self._blue = c.blue
-end
-
----@param v number saturation. Float [0,100]
-function Color:set_saturation(v)
-  local hsv = self:to_hsv()
-  hsv.saturation = util.clamp(v, 0, 100)
-  local c = Color.from_hsv(hsv.hue, hsv.saturation, hsv.value)
-  self._red = c.red
-  self._green = c.green
-  self._blue = c.blue
-end
-
----@param v number Value. Float [0,100]
-function Color:set_value(v)
-  local hsv = self:to_hsv()
-  hsv.value = util.clamp(v, 0, 100)
-  local c = Color.from_hsv(hsv.hue, hsv.saturation, hsv.value)
-  self._red = c.red
-  self._green = c.green
-  self._blue = c.blue
-end
-
----@param v number Value. Float [0,100]
-function Color:set_lightness(v)
-  local hsl = self:to_hsl()
-  hsl.value = util.clamp(v, 0, 100)
-  local c = Color.from_hsv(hsl.hue, hsl.saturation, hsl.lightness)
-  self._red = c.red
-  self._green = c.green
-  self._blue = c.blue
-end
-
----Copy the values from another color.
----@param c Color
-function Color:set_from_color(c)
-  self._red = c.red
-  self._green = c.green
-  self._blue = c.blue
-  self._alpha = c.alpha
-end
-
--- stylua: ignore start
-local getters = {
-  red   = function(self) return self._red end,
-  green = function(self) return self._green end,
-  blue  = function(self) return self._blue end,
-  alpha = function(self) return self._alpha end,
-  hue = function (self) return self:to_hsv().hue end,
-  saturation = function (self) return self:to_hsv().saturation end,
-  value = function (self) return self:to_hsv().value end,
-  lightness = function (self) return self:to_hsl().lightness end,
-}
-
-local setters = {
-  red   = function(self, v) self:set_red(v) end,
-  green = function(self, v) self:set_green(v) end,
-  blue  = function(self, v) self:set_blue(v) end,
-  alpha = function(self, v) self:set_alpha(v) end,
-  hue = function(self, v) self:set_hue(v) end,
-  saturation = function(self, v) self:set_saturation(v) end,
-  value = function(self, v) self:set_value(v) end,
-  lightness = function(self, v) self:set_lightness(v) end,
-}
--- stylua: ignore end
-
-function Color.__index(self, k)
-  if getters[k] then
-    return getters[k](self)
-  end
-  return Color[k]
-end
-
-function Color.__newindex(self, k, v)
-  if setters[k] then
-    setters[k](self, v)
-  else
-    rawset(self, k, v)
-  end
-end
-
-function Color.__tostring(self)
-  return self:to_css()
-end
-
-function Color.new(...)
-  local this = setmetatable({}, Color)
-  this:init(...)
-  return this
-end
-
-Color.WHITE = Color.from_hex(0xffffffff)
-Color.BLACK = Color.from_hex(0x00000000)
+--#endregion
 
 return Color
