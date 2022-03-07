@@ -38,4 +38,24 @@ function M.setup(opts)
   end
 end
 
+function M.load(name)
+  -- if vim.g.colors_name then
+  --   vim.cmd("hi clear")
+  -- end
+
+  name = name or require("nightfox.config").fox
+  local spec = require("nightfox.spec").load(name)
+  local groups = require("nightfox.group").load(spec)
+  require("nightfox.lib.highlight").highlight(groups)
+
+  -- local config = require('nightfox.config').options
+  -- if config.terminal_colors then
+  --   util.set_terminal_colors(spec.pallet)
+  -- end
+
+  vim.g.colors_name = spec.pallet.meta.name
+  vim.g.termguicolors = true
+  vim.cmd([[set background=]] .. (spec.pallet.meta.light and "light" or "dark"))
+end
+
 return M

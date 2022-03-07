@@ -1,6 +1,6 @@
 local collect = require("nightfox.lib.collect")
 
-local M = {}
+local M = { fox = "nightfox" }
 
 M.options = {
   transparent = false,
@@ -20,6 +20,9 @@ M.options = {
     visual = false,
     search = false,
   },
+  modules = {
+
+  }
 }
 
 function M.set_options(opts)
