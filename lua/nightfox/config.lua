@@ -20,10 +20,12 @@ M.options = {
     visual = false,
     search = false,
   },
-  modules = {
-
-  }
+  modules = {},
 }
+
+function M.set_fox(name)
+  M.fox = name
+end
 
 function M.set_options(opts)
   opts = opts or {}

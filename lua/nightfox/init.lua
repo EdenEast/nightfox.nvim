@@ -53,7 +53,7 @@ function M.load(name)
   --   util.set_terminal_colors(spec.pallet)
   -- end
 
-  vim.g.colors_name = spec.pallet.meta.name
+  vim.g.colors_name = name
   vim.g.termguicolors = true
   vim.cmd([[set background=]] .. (spec.pallet.meta.light and "light" or "dark"))
 end
