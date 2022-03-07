@@ -7,7 +7,7 @@ function M.get(spec, config)
 
  -- stylua: ignore
  return {
-    -- ColorColumn     = { bg = spec.bg2 }, -- used for the columns set with 'colorcolumn'
+    ColorColumn     = { bg = spec.bg2 }, -- used for the columns set with 'colorcolumn'
     Conceal         = { fg = spec.bg4 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor          = { fg = spec.bg1, bg = spec.fg1 }, -- character under the cursor
     lCursor         = { link = "Cursor" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
