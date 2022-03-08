@@ -1,4 +1,4 @@
-local util = require('nightfox.util')
+local util = require("nightfox.util")
 
 --#region Types ----------------------------------------------------------------
 
@@ -48,7 +48,7 @@ end
 
 --#endregion
 
-local Color = {}
+local Color = setmetatable({}, {})
 Color.__index = Color
 
 function Color.__tostring(self)
@@ -70,7 +70,7 @@ function Color.new(opts)
   end
 end
 
-function Color.init(r,g,b,a)
+function Color.init(r, g, b, a)
   local self = setmetatable({}, Color)
   self.red = util.clamp(r, 0, 1)
   self.green = util.clamp(g, 0, 1)
@@ -292,5 +292,21 @@ Color.WHITE = Color.init(1, 1, 1, 1)
 Color.BLACK = Color.init(0, 0, 0, 1)
 
 --#endregion
+
+local mt = getmetatable(Color)
+function mt.__call(_, opts)
+  if type(opts) == "string" or type(opts) == "number" then
+    return Color.from_hex(opts)
+  end
+  if opts.red then
+    return Color.from_rgba(opts.red, opts.green, opts.blue, opts.alpha)
+  end
+  if opts.value then
+    return Color.from_hsv(opts.hue, opts.saturation, opts.value)
+  end
+  if opts.lightness then
+    return Color.from_hsl(opts.hue, opts.saturation, opts.lightness)
+  end
+end
 
 return Color

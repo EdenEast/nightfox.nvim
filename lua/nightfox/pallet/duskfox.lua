@@ -86,17 +86,17 @@ local function generate_spec(pal)
   }
 
   spec.diag_bg = {
-    error = C.new(spec.diag.error):shade(-0.75):to_css(),
-    warn  = C.new(spec.diag.warn):shade(-0.7):to_css(),
-    info  = C.new(spec.diag.info):shade(-0.7):to_css(),
-    hint  = C.new(spec.diag.hint):shade(-0.7):to_css(),
+    error = C(spec.diag.error):shade(-0.75):to_css(),
+    warn  = C(spec.diag.warn):shade(-0.7):to_css(),
+    info  = C(spec.diag.info):shade(-0.7):to_css(),
+    hint  = C(spec.diag.hint):shade(-0.7):to_css(),
   }
 
   spec.diff = {
-    add    = C.new(spec.bg1):blend(C.new(pal.green.base), 0.2):to_css(),
-    delete = C.new(spec.bg1):blend(C.new(pal.red.base), 0.2):to_css(),
-    change = C.new(spec.bg1):blend(C.new(pal.blue.base), 0.2):to_css(),
-    text   = C.new(spec.bg1):blend(C.new(pal.blue.base), 0.4):to_css(),
+    add    = C(spec.bg1):blend(C(pal.green.base), 0.2):to_css(),
+    delete = C(spec.bg1):blend(C(pal.red.base), 0.2):to_css(),
+    change = C(spec.bg1):blend(C(pal.blue.base), 0.2):to_css(),
+    text   = C(spec.bg1):blend(C(pal.blue.base), 0.4):to_css(),
   }
 
   spec.git = {
