@@ -1,6 +1,4 @@
-local M = {
-  checked_deprication = false,
-}
+local M = { }
 
 function M.check_deprication(opts)
   if M.checked_deprication then
@@ -42,9 +40,6 @@ function M.check_deprication(opts)
       " for more info"
     )
   end
-
-  M.checked_deprication = true
-  dep.register_event()
 end
 
 return M

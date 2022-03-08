@@ -15,4 +15,4 @@ if vim.g.nightfox_debug then
 end
 
 require("nightfox.config").set_fox("duskfox")
-require("nightfox").load()
+require("nightfox.main").load()

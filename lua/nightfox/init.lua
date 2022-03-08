@@ -40,8 +40,15 @@ function M.setup(opts)
   require("nightfox.util.deprication").check_deprication(opts)
 end
 
-function M.load(name)
-  require("nightfox.main").load(name)
+function M.load()
+  require("nightfox.lib.deprication").write(
+    "  ",
+    { "nightfox.load()", "WarningMsg" },
+    " has been depricated. To apply the colorscheme use the builtin ",
+    { ":colorscheme", "WarningMsg" },
+    " command ",
+    { ":colorscheme nightfox", "WarningMsg" }
+  )
 end
 
 return M

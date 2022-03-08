@@ -1,6 +1,6 @@
 local M = {
   _list = { { "nightfox.nvim\n", "Question" }, { "The following has been " }, { "depricated:\n", "WarningMsg" } },
-  _count = 0,
+  _has_registered = false,
 }
 
 function M.write(...)
@@ -9,17 +9,15 @@ function M.write(...)
   end
 
   M._list[#M._list][1] = M._list[#M._list][1] .. "\n"
-  M._count = M._count + 1
-end
 
-function M.register_event()
-  if M._count > 0 then
+  if not M._has_registered then
     vim.cmd([[
       augroup NightfoxDepricationMessage
         au!
         autocmd VimEnter * ++once lua require("nightfox.lib.deprication").flush()
       augroup END
     ]])
+    M._has_registered = true
   end
 end
 
