@@ -29,8 +29,8 @@ function M.setup(opts)
     M.override.pallets(opts.pallets)
   end
 
-  if opts.schemes then
-    M.override.schemes(opts.schemes)
+  if opts.specs then
+    M.override.specs(opts.specs)
   end
 
   if opts.groups then
