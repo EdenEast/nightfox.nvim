@@ -11,9 +11,9 @@ function Shade.new(base, bright, dim, light)
     or bright
   dim = type(dim) == "string" and Color.from_hex(dim) or type(dim) == "number" and base:shade(dim) or dim
 
-  self.base = base
-  self.bright = bright
-  self.dim = dim
+  self.base = base:to_css()
+  self.bright = bright:to_css()
+  self.dim = dim:to_css()
   self.light = light or false
 
   return self

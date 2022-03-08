@@ -8,14 +8,15 @@ local function override(spec, ovr)
 
   for _, name in ipairs(single_list) do
     if ovr[name] then
-      spec[name] = type(ovr[name]) == "string" and Color.from_hex(ovr[name]) or ovr[name]
+      local value = ovr[name]
+      spec[name] = type(value) == "table" and value:to_css() or value
     end
   end
 
   for _, name in ipairs(tbl_list) do
     if ovr[name] then
       for k, v in pairs(ovr[name]) do
-        spec[name][k] = type(v) == "string" and Color.from_hex(v) or v
+        spec[name][k] = type(v) == "table" and v:to_css() or v
       end
     end
   end

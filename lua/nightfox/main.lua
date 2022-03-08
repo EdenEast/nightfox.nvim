@@ -19,35 +19,35 @@ end
 local function set_terminal_colors(spec)
   local c = spec.pallet
 
-  vim.g.terminal_color_0 = c.black.base:to_css()
-  vim.g.terminal_color_1 = c.red.base:to_css()
-  vim.g.terminal_color_2 = c.green.base:to_css()
-  vim.g.terminal_color_3 = c.yellow.base:to_css()
-  vim.g.terminal_color_4 = c.blue.base:to_css()
-  vim.g.terminal_color_5 = c.magenta.base:to_css()
-  vim.g.terminal_color_6 = c.cyan.base:to_css()
-  vim.g.terminal_color_7 = c.white.base:to_css()
+  vim.g.terminal_color_0 = c.black.base
+  vim.g.terminal_color_1 = c.red.base
+  vim.g.terminal_color_2 = c.green.base
+  vim.g.terminal_color_3 = c.yellow.base
+  vim.g.terminal_color_4 = c.blue.base
+  vim.g.terminal_color_5 = c.magenta.base
+  vim.g.terminal_color_6 = c.cyan.base
+  vim.g.terminal_color_7 = c.white.base
 
-  vim.g.terminal_color_8 = c.black.bright:to_css()
-  vim.g.terminal_color_9 = c.red.bright:to_css()
-  vim.g.terminal_color_10 = c.green.bright:to_css()
-  vim.g.terminal_color_11 = c.yellow.bright:to_css()
-  vim.g.terminal_color_12 = c.blue.bright:to_css()
-  vim.g.terminal_color_13 = c.magenta.bright:to_css()
-  vim.g.terminal_color_14 = c.cyan.bright:to_css()
-  vim.g.terminal_color_15 = c.white.bright:to_css()
+  vim.g.terminal_color_8 = c.black.bright
+  vim.g.terminal_color_9 = c.red.bright
+  vim.g.terminal_color_10 = c.green.bright
+  vim.g.terminal_color_11 = c.yellow.bright
+  vim.g.terminal_color_12 = c.blue.bright
+  vim.g.terminal_color_13 = c.magenta.bright
+  vim.g.terminal_color_14 = c.cyan.bright
+  vim.g.terminal_color_15 = c.white.bright
 
   if vim.fn.has("nvim") == 0 then
     -- stylua: ignore
     local colors = {
-      c.black.base:to_css(),   c.red.base:to_css(),
-      c.green.base:to_css(),   c.yellow.base:to_css(),
-      c.blue.base:to_css(),    c.magenta.base:to_css(),
-      c.cyan.base:to_css(),    c.white.base:to_css(),
-      c.black.bright:to_css(), c.red.bright:to_css(),
-      c.green.bright:to_css(), c.yellow.bright:to_css(),
-      c.blue.bright:to_css(),  c.magenta.bright:to_css(),
-      c.cyan.bright:to_css(),  c.white.bright:to_css()
+      c.black.base,   c.red.base,
+      c.green.base,   c.yellow.base,
+      c.blue.base,    c.magenta.base,
+      c.cyan.base,    c.white.base,
+      c.black.bright, c.red.bright,
+      c.green.bright, c.yellow.bright,
+      c.blue.bright,  c.magenta.bright,
+      c.cyan.bright,  c.white.bright
     }
     vim.g.terminal_ansi_colors = vim.list(colors)
   end

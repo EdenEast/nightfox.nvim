@@ -55,7 +55,22 @@ function Color.__tostring(self)
   return self:to_css()
 end
 
-function Color.new(r,g,b,a)
+function Color.new(opts)
+  if type(opts) == "string" or type(opts) == "number" then
+    return Color.from_hex(opts)
+  end
+  if opts.red then
+    return Color.from_rgba(opts.red, opts.green, opts.blue, opts.alpha)
+  end
+  if opts.value then
+    return Color.from_hsv(opts.hue, opts.saturation, opts.value)
+  end
+  if opts.lightness then
+    return Color.from_hsv(opts.hue, opts.saturation, opts.lightness)
+  end
+end
+
+function Color.init(r,g,b,a)
   local self = setmetatable({}, Color)
   self.red = util.clamp(r, 0, 1)
   self.green = util.clamp(g, 0, 1)
@@ -73,7 +88,7 @@ end
 ---@param a number Float [0,1]
 ---@return Color
 function Color.from_rgba(r, g, b, a)
-  return Color.new(r / 0xff, g / 0xff, b / 0xff, a or 1)
+  return Color.init(r / 0xff, g / 0xff, b / 0xff, a or 1)
 end
 
 ---Create a color from a hex number
@@ -89,7 +104,7 @@ function Color.from_hex(c)
     end
   end
 
-  return Color.new(
+  return Color.init(
     bit.rshift(n, 24) / 0xff,
     bit.band(bit.rshift(n, 16), 0xff) / 0xff,
     bit.band(bit.rshift(n, 8), 0xff) / 0xff,
@@ -114,7 +129,7 @@ function Color.from_hsv(h, s, v, a)
     return v - v * s * math.max(math.min(k, 4 - k, 1), 0)
   end
 
-  return Color.new(f(5), f(3), f(1), a)
+  return Color.init(f(5), f(3), f(1), a)
 end
 
 ---Create a Color from HSL value
@@ -135,7 +150,7 @@ function Color.from_hsl(h, s, l, a)
     return l - _a * math.max(math.min(k - 3, 9 - k, 1), -1)
   end
 
-  return Color.new(f(0), f(8), f(4), a)
+  return Color.init(f(0), f(8), f(4), a)
 end
 
 --#endregion
@@ -207,7 +222,7 @@ end
 ---@param f number Float [0,1]. 0 being this and 1 being other
 ---@return Color
 function Color:blend(other, f)
-  return Color.new(
+  return Color.init(
     (other.red - self.red) * f + self.red,
     (other.green - self.green) * f + self.green,
     (other.blue - self.blue) * f + self.blue,
@@ -222,7 +237,7 @@ function Color:shade(f)
   local t = f < 0 and 0 or 1.0
   local p = f < 0 and f * -1.0 or f
 
-  return Color.new(
+  return Color.init(
     (t - self.red) * p + self.red,
     (t - self.green) * p + self.green,
     (t - self.blue) * p + self.blue,
@@ -273,8 +288,8 @@ end
 
 --#region Constants ------------------------------------------------------------
 
-Color.WHITE = Color.new(1, 1, 1, 1)
-Color.BLACK = Color.new(0, 0, 0, 1)
+Color.WHITE = Color.init(1, 1, 1, 1)
+Color.BLACK = Color.init(0, 0, 0, 1)
 
 --#endregion
 

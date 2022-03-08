@@ -1,4 +1,4 @@
-local Color = require("nightfox.lib.color")
+local C = require("nightfox.lib.color")
 local Shade = require("nightfox.lib.shade")
 
 local meta = {
@@ -19,22 +19,22 @@ local pallet = {
   orange  = Shade.new("#e3786c", "#e8857a", "#d76558", true),
   pink    = Shade.new("#d685af", "#de8db7", "#c9709e", true),
 
-  comment = Color.from_hex("#7f848e"),
+  comment = "#7f848e",
 
-  bg0     = Color.from_hex("#dbdbdb"), -- Dark bg (status line and float)
-  bg1     = Color.from_hex("#eaeaea"), -- Default bg
-  bg2     = Color.from_hex("#DBCECE"), -- Lighter bg (colorcolm folds)
-  bg3     = Color.from_hex("#CED6DB"), -- Lighter bg (cursor line)
-  bg4     = Color.from_hex("#bebebe"), -- Conceal, border fg
+  bg0     = "#dbdbdb", -- Dark bg (status line and float)
+  bg1     = "#eaeaea", -- Default bg
+  bg2     = "#DBCECE", -- Lighter bg (colorcolm folds)
+  bg3     = "#CED6DB", -- Lighter bg (cursor line)
+  bg4     = "#bebebe", -- Conceal, border fg
 
-  fg0     = Color.from_hex("#182a40"), -- Lighter fg
-  fg1     = Color.from_hex("#1d344f"), -- Default fg
-  fg2     = Color.from_hex("#233f5e"), -- Darker fg (status line)
-  fg3     = Color.from_hex("#2E537D"), -- Darker fg (line numbers, fold colums)
-  -- fg3  = Color.from_hex("#848f9c"), -- Darker fg (line numbers, fold colums)
+  fg0     = "#182a40", -- Lighter fg
+  fg1     = "#1d344f", -- Default fg
+  fg2     = "#233f5e", -- Darker fg (status line)
+  fg3     = "#2E537D", -- Darker fg (line numbers, fold colums)
+  -- fg3  = "#848f9c", -- Darker fg (line numbers, fold colums)
 
-  sel0    = Color.from_hex("#ced5de"), -- Popup bg, visual selection bg
-  sel1    = Color.from_hex("#b6c4d9"), -- Popup sel bg, search bg
+  sel0    = "#ced5de", -- Popup bg, visual selection bg
+  sel1    = "#b6c4d9", -- Popup sel bg, search bg
 }
 
 local function generate_spec(pal)
@@ -61,7 +61,7 @@ local function generate_spec(pal)
     builtin1    = pal.cyan.dim,     -- Builtin type
     builtin2    = pal.orange.dim,   -- Builtin const
     builtin3    = pal.red.dim,      -- Not used
-    comment     = pal.comment,          -- Comment
+    comment     = pal.comment,      -- Comment
     conditional = pal.magenta.dim,  -- Conditional and loop
     const       = pal.orange.dim,   -- Constants, imports and booleans
     dep         = spec.fg3,         -- Depricated
@@ -87,17 +87,17 @@ local function generate_spec(pal)
   }
 
   spec.diag_bg = {
-    error = spec.bg1:blend(spec.diag.error, 0.3),
-    warn  = spec.bg1:blend(spec.diag.warn, 0.3),
-    info  = spec.bg1:blend(spec.diag.info, 0.3),
-    hint  = spec.bg1:blend(spec.diag.hint, 0.3),
+    error = C.new(spec.bg1):blend(C.new(spec.diag.error), 0.3):to_css(),
+    warn  = C.new(spec.bg1):blend(C.new(spec.diag.warn), 0.3):to_css(),
+    info  = C.new(spec.bg1):blend(C.new(spec.diag.info), 0.3):to_css(),
+    hint  = C.new(spec.bg1):blend(C.new(spec.diag.hint), 0.3):to_css(),
   }
 
   spec.diff = {
-    add    = spec.bg1:blend(pal.green.base, 0.2),
-    delete = spec.bg1:blend(pal.red.base, 0.2),
-    change = spec.bg1:blend(pal.blue.base, 0.2),
-    text   = spec.bg1:blend(pal.blue.base, 0.4),
+    add    = C.new(spec.bg1):blend(C.new(pal.green.base), 0.2):to_css(),
+    delete = C.new(spec.bg1):blend(C.new(pal.red.base), 0.2):to_css(),
+    change = C.new(spec.bg1):blend(C.new(pal.blue.base), 0.2):to_css(),
+    text   = C.new(spec.bg1):blend(C.new(pal.blue.base), 0.4):to_css(),
   }
 
   spec.git = {

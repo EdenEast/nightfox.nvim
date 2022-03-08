@@ -1,4 +1,4 @@
-local Color = require("nightfox.lib.color")
+local C = require("nightfox.lib.color")
 local Shade = require("nightfox.lib.shade")
 
 local meta = {
@@ -19,21 +19,21 @@ local pallet = {
   orange  = Shade.new("#f4a261", 0.15, -0.15),
   pink    = Shade.new("#d67ad2", 0.15, -0.15),
 
-  comment = Color.from_hex("#526176"),
+  comment = "#526176",
 
-  bg0     = Color.from_hex("#131a24"), -- Dark bg (status line and float)
-  bg1     = Color.from_hex("#192330"), -- Default bg
-  bg2     = Color.from_hex("#212e3f"), -- Lighter bg (colorcolm folds)
-  bg3     = Color.from_hex("#29394e"), -- Lighter bg (cursor line)
-  bg4     = Color.from_hex("#3c4b5e"), -- Conceal, border fg
+  bg0     = "#131a24", -- Dark bg (status line and float)
+  bg1     = "#192330", -- Default bg
+  bg2     = "#212e3f", -- Lighter bg (colorcolm folds)
+  bg3     = "#29394e", -- Lighter bg (cursor line)
+  bg4     = "#3c4b5e", -- Conceal, border fg
 
-  fg0     = Color.from_hex("#D6D6D7"), -- Lighter fg
-  fg1     = Color.from_hex("#cdcecf"), -- Default fg
-  fg2     = Color.from_hex("#aeafb0"), -- Darker fg (status line)
-  fg3     = Color.from_hex("#71839b"), -- Darker fg (line numbers, fold colums)
+  fg0     = "#D6D6D7", -- Lighter fg
+  fg1     = "#cdcecf", -- Default fg
+  fg2     = "#aeafb0", -- Darker fg (status line)
+  fg3     = "#71839b", -- Darker fg (line numbers, fold colums)
 
-  sel0    = Color.from_hex("#223249"), -- Popup bg, visual selection bg
-  sel1    = Color.from_hex("#3a567d"), -- Popup sel bg, search bg
+  sel0    = "#223249", -- Popup bg, visual selection bg
+  sel1    = "#3a567d", -- Popup sel bg, search bg
 }
 
 local function generate_spec(pal)
@@ -60,7 +60,7 @@ local function generate_spec(pal)
     builtin1    = pal.cyan.bright,    -- Builtin type
     builtin2    = pal.orange.bright,  -- Builtin const
     builtin3    = pal.red.bright,     -- Not used
-    comment     = pal.comment,            -- Comment
+    comment     = pal.comment,        -- Comment
     conditional = pal.magenta.bright, -- Conditional and loop
     const       = pal.orange.bright,  -- Constants, imports and booleans
     dep         = spec.fg3,           -- Depricated
@@ -86,17 +86,17 @@ local function generate_spec(pal)
   }
 
   spec.diag_bg = {
-    error = spec.bg1:blend(spec.diag.error, 0.2),
-    warn  = spec.bg1:blend(spec.diag.warn, 0.2),
-    info  = spec.bg1:blend(spec.diag.info, 0.2),
-    hint  = spec.bg1:blend(spec.diag.hint, 0.2),
+    error = C.new(spec.bg1):blend(C.new(spec.diag.error), 0.2):to_css(),
+    warn  = C.new(spec.bg1):blend(C.new(spec.diag.warn), 0.2):to_css(),
+    info  = C.new(spec.bg1):blend(C.new(spec.diag.info), 0.2):to_css(),
+    hint  = C.new(spec.bg1):blend(C.new(spec.diag.hint), 0.2):to_css(),
   }
 
   spec.diff = {
-    add    = spec.bg1:blend(pal.green.dim, 0.15),
-    delete = spec.bg1:blend(pal.red.dim, 0.15),
-    change = spec.bg1:blend(pal.blue.dim, 0.15),
-    text   = spec.bg1:blend(pal.cyan.dim, 0.2),
+    add    = C.new(spec.bg1):blend(C.new(pal.green.dim), 0.15):to_css(),
+    delete = C.new(spec.bg1):blend(C.new(pal.red.dim), 0.15):to_css(),
+    change = C.new(spec.bg1):blend(C.new(pal.blue.dim), 0.15):to_css(),
+    text   = C.new(spec.bg1):blend(C.new(pal.cyan.dim), 0.2):to_css(),
   }
 
   spec.git = {

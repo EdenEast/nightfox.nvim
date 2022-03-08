@@ -18,14 +18,8 @@ local M = {}
 ---Validate input input from opts table and return a hex string if opt exists
 ---@param input string|Color|nil
 ---@return string
-local function validate(input, use_nil)
-  local type = type(input)
-  if type == "string" then
-    return input
-  elseif type == "table" then
-    return input:to_css()
-  end
-  return use_nil and nil or "NONE"
+local function validate(input)
+  return input and input or "NONE"
 end
 
 local function parse_style(style)
@@ -65,8 +59,8 @@ local function nvim_hl(highlights)
   for group, opts in pairs(highlights) do
     local style = parse_style(opts.style)
     vim.api.nvim_set_hl(0, group, {
-      background = validate(opts.bg, true),
-      foreground = validate(opts.fg, true),
+      background = opts.bg,
+      foreground = opts.fg,
       link = opts.link,
       bold = style.bold,
       italic = style.italic,

@@ -13,7 +13,7 @@ local function parse_string(str, spec)
       str:gsub("($%b{})", function(w)
         local path = w:sub(3, -2)
         local r = get_path(spec, path)
-        return r and r.base and r.base:to_css() or r["to_css"] and r:to_css() or w
+        return r and r.base and r.base or r or w
       end)
     )
 end

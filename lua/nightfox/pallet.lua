@@ -18,10 +18,10 @@ local function override(color, ovr)
   for _, name in ipairs(color_list) do
     if ovr[name] then
       if type(ovr[name]) == "string" then
-        color[name].base = Color.from_hex(ovr[name])
+        color[name].base = ovr[name]
       else
         for k, v in pairs(ovr[name]) do
-          color[name][k] = Color.from_hex(v)
+          color[name][k] = type(v) == "table" and v:to_css() or v
         end
       end
     end
@@ -30,7 +30,7 @@ local function override(color, ovr)
   for _, name in ipairs(single_list) do
     if ovr[name] then
       local v = ovr[name]
-      color[name] = type(v) == "string" and Color.from_hex(v) or v
+      color[name] = type(v) == "table" and v:to_css() or v
     end
   end
 end
