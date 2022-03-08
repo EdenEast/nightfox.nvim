@@ -67,7 +67,6 @@ function M.load(name)
   if config.options.terminal_colors then
     set_terminal_colors(spec)
   end
-
 end
 
 return M

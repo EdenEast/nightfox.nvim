@@ -1,6 +1,6 @@
 -- Useful when debugging
 if vim.g.nightfox_debug then
-  local ignore = { "config" }
+  local ignore = { "config", "deprication", "override" }
   for name, _ in pairs(package.loaded) do
     if name:match("^nightfox") then
       for _, ign in ipairs(ignore) do

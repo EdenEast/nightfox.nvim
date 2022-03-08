@@ -36,10 +36,12 @@ function M.setup(opts)
   if opts.groups then
     M.override.groups(opts.groups)
   end
+
+  require("nightfox.util.deprication").check_deprication(opts)
 end
 
 function M.load(name)
-  require('nightfox.main').load(name)
+  require("nightfox.main").load(name)
 end
 
 return M

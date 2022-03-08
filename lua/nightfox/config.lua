@@ -1,6 +1,6 @@
 local collect = require("nightfox.lib.collect")
 
-local M = { fox = "nightfox" }
+local M = { fox = "nightfox", checked_deprication = false }
 
 M.options = {
   transparent = false,
