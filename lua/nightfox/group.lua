@@ -1,4 +1,5 @@
 local collect = require("nightfox.lib.collect")
+local template = require("nightfox.util.template")
 
 local M = {}
 
@@ -23,7 +24,7 @@ function M.load(spec)
     end
   end
 
-  return result
+  return collect.deep_extend(result, template.parse(ovr, spec))
 end
 
 return M
