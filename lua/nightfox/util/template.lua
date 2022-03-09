@@ -1,5 +1,9 @@
 local M = {}
 
+local function to_value(tbl)
+  return tbl.base and tbl.base or tbl.to_css()
+end
+
 local function parse_string(str, spec)
   local function get_path(t, path)
     for segment in string.gmatch(path, "[^.]+") do
@@ -24,7 +28,7 @@ function M.parse(template, spec)
   for group, opts in pairs(template) do
     local new = {}
     for key, value in pairs(opts) do
-      new[key] = type(value) == "table" and value:to_css() or parse_string(value, spec)
+      new[key] = type(value) == "table" and to_value(value) or parse_string(value, spec)
     end
 
     result[group] = new
