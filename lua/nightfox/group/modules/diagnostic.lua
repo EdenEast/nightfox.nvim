@@ -16,10 +16,10 @@ function M.get(spec, config, opts)
     DiagnosticSignInfo         = { link = "DiagnosticInfo" },
     DiagnosticSignHint         = { link = "DiagnosticHint" },
 
-    DiagnosticVirtualTextError = { fg = d.error, bg = dbg.error },
-    DiagnosticVirtualTextWarn  = { fg = d.warn, bg = dbg.warn },
-    DiagnosticVirtualTextInfo  = { fg = d.info, bg = dbg.info },
-    DiagnosticVirtualTextHint  = { fg = d.hint, bg = dbg.hint },
+    DiagnosticVirtualTextError = { fg = d.error, bg = opts.background and dbg.error or "NONE" },
+    DiagnosticVirtualTextWarn  = { fg = d.warn, bg = opts.background and dbg.warn or "NONE" },
+    DiagnosticVirtualTextInfo  = { fg = d.info, bg = opts.background and dbg.info or "NONE" },
+    DiagnosticVirtualTextHint  = { fg = d.hint, bg = opts.background and dbg.hint or "NONE" },
 
     DiagnosticUnderlineError   = { style = "undercurl", sp = d.error },
     DiagnosticUnderlineWarn    = { style = "undercurl", sp = d.warning },

@@ -24,7 +24,10 @@ M.options = {
     barbar = true,
     cmp = true,
     dashboard = true,
-    diagnostic = true,
+    diagnostic = {
+      enable = true,
+      background = true,
+    },
     fern = true,
     fidget = true,
     gitgutter = true,
