@@ -1,380 +1,319 @@
-# 🦊 Nightfox
+<h1 align="center">Nightfox</h1>
 
-A dark (Neo)vim theme written in lua.
+<p align="center">
+  <a href="https://github.com/edeneast/nightfox.nvim/stargazers"><img src="https://img.shields.io/github/stars/edeneast/nightfox.nvim?colorA=192330&colorB=719cd6&style=for-the-badge"></a>
+  <a href="https://github.com/edeneast/nightfox.nvim/issues"><img src="https://img.shields.io/github/issues/edeneast/nightfox.nvim?colorA=192330&colorB=dbc074&style=for-the-badge"></a>
+  <a href="https://github.com/edeneast/nightfox.nvim/contributors"><img src="https://img.shields.io/github/contributors/edeneast/nightfox.nvim?colorA=192330&colorB=81b29a&style=for-the-badge"></a>
+  <a href="https://github.com/EdenEast/nightfox.nvim/network/members"><img src="https://img.shields.io/github/forks/edeneast/nightfox.nvim?colorA=192330&colorB=9d79d6&style=for-the-badge"></a>
+</p>
+
+<p align="center">
+  A highly customizable theme for vim and neovim with support for lsp, treesitter and a variety of plugins.
+</p>
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/2746374/158089930-f1802adf-e6f5-4d58-a0c1-64e7d933d718.svg" alt="banner" />
+  <h3>Nightfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nightfox-example.png" alt="nightfox" />
+  <h3>Dayfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dayfox-example.png" alt="dayfox" />
+  <h3>Dawnfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dawnfox-example.png" alt="dawnfox" />
+  <h3>Duskfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-duskfox-example.png" alt="duskfox" />
+  <h3>Nordfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png" alt="nordfox" />
 </div>
 
-## Styles
+## Features
 
-Which _fox_ will you choose?
+- Support both vim and neovim
+- Highly configurable with template overriding
+- Support for multiple [plugins](#supported-plugins) and [status lines](#status-lines)
+  - And many others should "just work"!
+- Export Color library utility
 
-### Nightfox
+## Requirements
 
-![nightfox-example](https://user-images.githubusercontent.com/2746374/158089942-59b6964e-da36-4178-828d-86a30c459e92.png)
+- Neovim >= 0.5 **or** Vim with lua >= 5.2
+- True color support
+- Undercurl terminal support (optional)
 
-### Nordfox
+> Note for MacOS: The default `terminal` does not support `true color`. Use either `Iterm2` or [another] terminal that
+> supports true color.
 
-![nordfox-example](https://user-images.githubusercontent.com/2746374/158089990-fd3135f9-7cd5-4e15-ac66-dd38367e1142.png)
+[another]: https://gist.github.com/XVilka/8346728#terminal-emulators
 
-### Dayfox
+## Installation
 
-![dayfox-example](https://user-images.githubusercontent.com/2746374/158090131-7d88803e-6902-405f-a817-d173f99b3980.png)
-
-### Dawnfox
-
-![dawnfox-example](https://user-images.githubusercontent.com/2746374/158090165-0a079d08-3ea8-4ca0-99e9-2e967e762542.png)
-
-### Duskfox
-
-![duskfox-example](https://user-images.githubusercontent.com/2746374/158090299-fc836b05-65d7-4a03-86b1-bc3d71f7c603.png)
-
-### Randfox
-
-Having trouble picking a fox. Let the dice decide! Set `style` to `randfox` to get a random
-fox every time the colorsheme is applied.
-
-## ✨ Features
-
-Supported plugins
-
-- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
-- [LSP Trouble](https://github.com/folke/lsp-trouble.nvim)
-- [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
-- [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-- [Git Gutter](https://github.com/airblade/vim-gitgutter)
-- [Glyph Palette](https://github.com/lambdalisue/glyph-palette.vim/)
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-- [WhichKey](https://github.com/liuchengxu/vim-which-key)
-- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [Dashboard](https://github.com/glepnir/dashboard-nvim)
-- [Lualine](https://github.com/hoob3rt/lualine.nvim)
-- [Lightline](https://github.com/itchyny/lightline.vim)
-- [Neogit](https://github.com/TimUntersberger/neogit)
-- [vim-sneak](https://github.com/justinmk/vim-sneak)
-- [Fern](https://github.com/lambdalisue/fern.vim)
-- [Barbar](https://github.com/romgrk/barbar.nvim)
-- [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
-
-## ⚡️ Requirements
-
-- `Neovim` >= 0.5.0 **- or -** `Vim` with Lua >= 5.2
-- Gui or Terminal with `true color` support
-  - Some example Terminals:
-    - [Alacritty](https://alacritty.org/)
-    - [Kitty](https://sw.kovidgoyal.net/kitty/)
-    - [WezTerm](https://wezfurlong.org/wezterm/)
-
-> Note for MacOS: `terminal.app` does not support `true color` use either `Iterm2` or another `true color` terminal.
-
-## 📦 Installation
-
-Install the theme with a package manager:
-
-```vim
-" For Vim-Plug
-Plug 'EdenEast/nightfox.nvim'
-```
+Download with your favorite package manager.
 
 ```lua
--- For Packer
-use 'EdenEast/nightfox.nvim'
+use "EdenEast/nightfox.nvim" -- Packer
 ```
 
-## 🚀 Usage
+```vim
+Plug 'EdenEast/nightfox.nvim' " Vim-Plug
+```
 
-### Vimscript
+## Usage
 
-Enable the colorscheme:
+Simply set the colorscheme with the builtin command `:colorscheme`
 
 ```vim
 colorscheme nightfox
 ```
 
-Nightfox also defines the other styles as colorschemes, `nordfox`, `dayfox`, `dawnfox` and `duskfox`.
-
-### Lua
-
-If you prefer to use lua:
-
 ```lua
-require('nightfox').load(<fox_name>)
+vim.cmd("colorscheme nightfox")
 ```
 
-If `<fox_name>` is not passed load will apply the fox specified in the config.
+## Configuration
+
+There is no need to call `setup` if you dont require to change the default options and settings.
+
+```lua
+-- Default options
+require('nightfox').setup({
+  options = {
+    transparent = false,    -- Disable setting background
+    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*)
+    dim_inactive = false,   -- Non focused panes set to alternative background
+    styles = {              -- Style to be applied to different syntax groups
+      comments = "NONE",
+      functions = "NONE",
+      keywords = "NONE",
+      numbers = "NONE",
+      strings = "NONE",
+      types = "NONE",
+      variables = "NONE",
+    },
+    inverse = {             -- Inverse highlight for different types
+      match_paren = false,
+      visual = false,
+      search = false,
+    },
+    modules = {             -- List of various plugins and additional options
+      -- ...
+    },
+  }
+})
+
+-- setup must be called before loading
+vim.cmd("colorscheme nightfox")
+```
+
+To see a detailed explanation of nightfox's config settings concult either the builtin help `:help nightfox` or [usage.md]
+
+[usage.md]: ./usage.md.
+
+### Modules
+
+Nightfox's modules store configuration information for various plugins and other neovim modules. To enable a module
+either set the module to `true` or if the module has additional configuration information set `enable` to `true`.
+
+To see a list of modules check the `help` or [usage.md] for more information.
+
+### Customize pallets and groups
+
+You can change the color `pallet` and the highlight `group` of nightfox. Here is a breif example:
+
+```lua
+-- Pallets are the base color defines of a colorscheme.
+-- You can override these pallets for each colorscheme defined by nightfox
+local pallets = {
+  nightfox = {
+    -- Each pallet defines these colors:
+    --   black, red, green, yellow, blue, magenta, cyan, white, orange, pink
+    --
+    -- These colors have 3 shades: base, bright, and dim
+    --
+    -- Defining just a color defines it's base color
+    red = "#c94f6d",
+  },
+  dayfox = {
+    -- Defining multiple shades is done by passing a table
+    blue = { base = "#4d688e", bright = "#4e75aa", dim = "#485e7d", }
+  },
+  nordfox = {
+    -- A pallet also defines the following:
+    --   bg0, bg1, bg2, bg3, bg4, fg0, fg1, fg2, fg3, sel0, sel1, comment
+    --
+    -- These are the different foreground and background shades used by the theme.
+    -- The base bg and fg is 1, 0 is normally the dark alternative. The others are
+    -- incrementally lighter versions.
+    bg1 = "#2e3440"
+
+    -- sel is different types of selection colors.
+    sel0 = "#3e4a5b", -- Popup bg, visual selection bg
+    sel1 = "#4f6074", -- Popup sel bg, search bg
+
+    -- comment is the definition of the comment color.
+    comment = "#60728a",
+  }
+}
+
+-- Spec's (specifications) are a mapping of pallets to logical groups that will be
+-- used by the groups. Some examples of the groups that specs map would be:
+--   - syntax groups (functions, types, keywords, ...)
+--   - diagnostic groups (error, warning, info, hints)
+--   - git groups (add, removed, changed)
+--
+-- You can override these just like pallets
+local specs = {
+  nightfox = {
+    syntax = {
+      -- Specs allow you to define a value using either a color or template. If the string does
+      -- start with `#` the string will be used as the path of the pallet table. Defining just
+      -- a color uses the base version of that color.
+      keyword = "magenta",
+
+      -- Adding either `.bright` or `.dim` will change the value
+      conditional = "magenta.bright",
+      number = "orange.dim"
+    },
+    git = {
+      -- A color define can also be used
+      changed = "#f4a261",
+    }
+  }
+}
+
+-- Groups are the highlight group definitions. The keys of this table are the name of the highlight
+-- groups that will be overridden. The value is a table with the following values:
+--   - fg, bg, style, sp, link,
+--
+-- Just like `spec` groups support templates. This time the template is based on a spec object.
+local groups = {
+  -- By default nightfox links some groups together. `CursorLine` is one of these groups. When overriding
+  -- Make sure `link` is cleared to `""` so that the link will be removed.
+  CursorLine = { bg = "sel1", link = "" },
+
+  -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
+  IncSearch = { bg = "pallet.cyan" },
+}
+
+require("nightfox").setup({ pallets = pallets, specs = specs, groups = groups })
+
+-- setup must be called before loading
+vim.cmd("colorscheme nightfox")
+```
+
+To get more information check out [usage.md] or the help file `:help nightfox` for more detailed information.
+
+## Api
+
+Nightfox exposes some Api's and utility classes that let you fetch data from nightfox.
+
+### Pallets
+
+You can get the pallets used by each colorscheme:
+
+```lua
+-- Returns a table with each colorscheme and the pallet associated with it
+local pallets = require('nightfox.pallet').load()
+
+-- Returns the pallet of the specified colorscheme
+local pallet = require('nightfox.pallet').load("nightfox")
+
+print(vim.insepct(pallet.red))
+-- {
+--   base = "#c94f6d",
+--   bright = "#d16983",
+--   dim = "#ab435d",
+-- }
+```
+
+See TODO for more information on pallets.
+
+### Specs
+
+You can get the spec used by each colorscheme:
+
+```lua
+-- Returns a table with each colorscheme and the spec associated with it
+local specs require('nightfox.spec').load()
+
+-- Returns the spec of the specified colorscheme
+local spec = require('nightfox.spec').load("nightfox")
+
+print(vim.inspect(spec.git))
+-- {
+--   add = "#81b29a",
+--   changed = "#dbc074",
+--   removed = "#c94f6d"
+-- }
+```
+
+See TODO for more information on specs.
+
+### Color lib
+
+Nightfox uses a color library internally to manipulate colors. You can use this library as well.
+
+```lua
+local pallet = require('nightfox.pallet').load('nightfox')
+local Color = require("nightfox.lib.color")
+
+local bg = Color.from_hex(pallet.bg1)
+local red = Color.from_hex("#ff0000")
+
+-- Blend the bg with red. The blend factor is from 0 to 1
+-- with 0 being full bg and 1 being full red
+local red_bg = bg:blend(red, 0.2)
+
+print(red_bg:to_css())
+-- "#471c26"
+
+-- Brighten bg by adding 10 to the value of the color as a hsv
+local alt_bg = bg:brighten(10)
+print(alt_bg:to_hsv())
+-- {
+--   hue = 213.91304347826,
+--   saturation = 47.916666666667,
+--   value = 28.823529411765
+-- }
+```
+
+There are a lot of useful functions to manipulate and work with colors in different color spaces.
+See TODO for more information on `Color`.
+
+## Supported Plugins
+
+- [barbar.nvim](https://github.com/romgrk/barbar.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+- [fern.vim](https://github.com/lambdalisue/fern.vim)
+- [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
+- [hop.nvim](https://github.com/phaazon/hop.nvim)
+- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)
+- [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
+- [lsp-trouble.nvim](https://github.com/simrat39/lsp-trouble.nvim)
+- [neogit](https://github.com/TimUntersberger/neogit)
+- [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- [vim-sneak](https://github.com/justinmk/vim-sneak)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ## Status lines
 
-For all status lines `nightfox` is the only valid name. The other names are names of styles.
+**Note:** For all status lines `nightfox` is the only valid name.
 
 ### [Lualine]
 
 ```lua
-require('lualine').setup {
+require('lualine').setup({
   options = {
-    -- ... your lualine config
     theme = "nightfox"
   }
-}
-```
-
-**Note:** Use lualine fork [shadmansaleh/lualine.nvim][lualinefork] while waiting for pr [#311][lualinepr] to be merged
-
-### [Lightline]
-
-To enable `Nightfox` from `Lightline`:
-
-```vim
-" Vim Script
-let g:lightline = {'colorscheme': 'nightfox'}
-```
-
-[lualine]: https://github.com/hoob3rt/lualine.nvim
-[lightline]: https://github.com/itchyny/lightline.vim
-[lualinefork]: https://github.com/shadmansaleh/lualine.nvim
-[lualinepr]: https://github.com/hoob3rt/lualine.nvim/pull/311
-
-## Command
-
-Nightfox also provides the following command to load a specific fox's style.
-
-- `:NightfoxLoad <fox>` load and applies the passed `<fox>` (Use tab completion to view options)
-
-## ⚙️ Configuration
-
-Nightfox is configured in lua. Nightfox comes with default configuration values. You can view them here:
-
-```lua
-{
-  fox = "nightfox", -- Which fox style should be applied
-  transparent = false, -- Disable setting the background color
-  alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
-  terminal_colors = true, -- Configure the colors used when opening :terminal
-  styles = {
-    comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
-    functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
-    keywords = "NONE", -- Style that is applied to keywords: see `highlight-args` for options
-    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
-    variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
-  },
-  inverse = {
-    match_paren = false, -- Enable/Disable inverse highlighting for match parens
-    visual = false, -- Enable/Disable inverse highlighting for visual selection
-    search = false, -- Enable/Disable inverse highlights for search highlights
-  },
-  colors = {}, -- Override default colors
-  hlgroups = {}, -- Override highlight groups
-}
-```
-
-You can override these values to suite your preferences. An example of this would be as follows:
-
-```lua
-local nightfox = require('nightfox')
-
--- This function set the configuration of nightfox. If a value is not passed in the setup function
--- it will be taken from the default configuration above
-nightfox.setup({
-  fox = "nordfox", -- change the colorscheme to use nordfox
-  styles = {
-    comments = "italic", -- change style of comments to be italic
-    keywords = "bold", -- change style of keywords to be bold
-    functions = "italic,bold" -- styles can be a comma separated list
-  },
-  inverse = {
-    match_paren = true, -- inverse the highlighting of match_parens
-  },
-  colors = {
-    red = "#FF000", -- Override the red color for MAX POWER
-    bg_alt = "#000000",
-  },
-  hlgroups = {
-    TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
-    LspCodeLens = { bg = "#000000", style = "italic" },
-  }
 })
-
--- Load the configuration set above and apply the colorscheme
-nightfox.load()
 ```
 
-For configuration in `vimscript`, wrap the above example in a lua script block.
+[lualine]: https://github.com/nvim-lualine/lualine.nvim
 
-```vim
-" vimscript
-lua << EOF
--- example above here
-EOF
-```
+## Acknowledgements
 
-**Note:** The `colorscheme` command sets the `fox` value to the colorscheme that is being supplied,
-before loading the colorscheme.
-
-You can also find this information in vim's help `:help nightfox`.
-
-### General
-
-These are general settings and are unrelated to any group of settings.
-
-- `fox`: **{string}** The name of the fox you which to base the colorscheme on. See [Styles](#styles).
-- `transparent`: **{boolean}** If set to true the background color will not be set.
-- `alt_nc`: **{boolean}** If set non-current (unfocused) windows Will have an alt bg color.
-- `terminal_colors`: **{boolean}** If set to true nightfox will set the terminal colors for `:terminal`.
-
-### Styles
-
-These options set the style for their respective highlight groups. See `:help highlight-args`.
-
-- `comments`: **{string}** Style to the applied to comments
-- `functions`: **{string}** Style to the applied to functions
-- `keywords`: **{string}** Style to the applied to keywords
-- `strings`: **{string}** Style to the applied to strings
-- `variables`: **{string}** Style to the applied to variables
-
-### Inverse
-
-These options set the style of selection groups. If set, The selection will swap foreground and
-background (inverse).
-
-- `match_paren`: **{bool}** The character under the cursor or just before it, if it is a paired bracket, and its match. See `:help pi_paren.txt`
-- `search`: **{bool}** Highlighted search matches and incremental searches. See `:help hlsearch`
-- `visual`: **{bool}** Visual selection mode
-
-### Colors
-
-`colors` is a table that defines hex color overrides for the colors returned by
-`require('nightfox.colors').load()`. To see what values can be overridden, use `vim.inspect` (for neovim) to
-print out the returned color table.
-
-```lua
-print(vim.inspect(require('nightfox.colors').init()))
-```
-
-Colors with the suffix `_br` are brighter colors. Colors with the suffix `_dm` are dimmer colors.
-
-To see what colors are defined to what highlight group you can reference the file
-[theme.lua](./lua/nightfox/theme.lua).
-
-### HLGroup
-
-`hlgroups` is a table that defines overrides for highlight groups. The table consists of the
-highlight group name as the key. The value is a table that defines optional values of the highlight
-group. These values can be:
-
-- `fg`: The foreground color of the highlight group
-- `bg`: The background color of the highlight group
-- `style`: The style applied to the highlight group (see `:help hightlight-args`)
-- `sp`: Special colors use in GUI. (see `:help hightlight-guisp`)
-
-To use a color defined by nightfox's you can use the template format: `${}`. Any value that you can
-override in the [colors](#colors) section can be added in the template format. Some examples would
-be: `${red}`, `${blue_br}`, `${bg_alt}`.
-
-To see examples of highlight groups that can be overridden reference the file
-[theme.lua](./lua/nightfox/theme.lua).
-
-To find the hightlight group being applied to a piece of syntax refer to
-[syntax highlight group](#syntax-highlight-groups) section.
-
-## ⚙️ Advanced Configuration
-
-### Get color values from nightfox
-
-There are different ways to get colors from nightfox. Here are some examples:
-
-```lua
--- Get the colors defined in nightfox with the color overrides from config applied
-local colors = require('nightfox.colors').load()
-
--- Get the color of a specific theme with the color overrides applied from the config
-local colors = require('nightfox.colors').load('nordfox')
-
--- Get the colors defined in nightfox without the color overrides applied from the config
-local colors = require('nightfox.colors').init()
-
--- Get the color of a specific theme without the color overrides applied from the config
-local colors = require('nightfox.colors').init("nordfox")
-```
-
-### Syntax highlight groups
-
-This section will help you determine what highlight group is being applied to a piece of syntax.
-These sections will output the highlight group for the value under the cursor.
-
-#### Treesitter
-
-If treesitter is the highlighting method for the language in question you can use the command:
-`:TSHighlightCapturesUnderCursor`. This command comes from the treesitter [playground] plugin. Make
-sure you have this installed as well as [nvim-treesitter].
-
-[playground]: https://github.com/nvim-treesitter/playground
-[nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
-
-#### Vim highlighting
-
-Add this vimscript function to your configuration.
-
-```vim
-" plugin/syntax.vim
-
-" Output the highlight group under the cursor
-"
-" This function will output the entire stack of hightlight groups being applied. The stack is
-" outputted in the correct order from top to bottom. Vim will walk through the stack from top to
-" bottom and apply the first defined highlight group found.
-function! SynStack()
-  for i1 in synstack(line("."), col("."))
-    let i2 = synIDtrans(i1)
-    let n1 = synIDattr(i1, "name")
-    let n2 = synIDattr(i2, "name")
-    echo n1 "->" n2
-  endfor
-endfunction
-
-" You can also create a convenience mapping
-map <F2> <cmd>call SynStack()<cr>
-```
-
-## 🍬 Extra
-
-There are [extra](./extra) configuration files for:
-
-- [alacritty](https://github.com/alacritty/alacritty)
-- [fish](https://fishshell.com/)
-- [iterm](https://iterm2.com/index.html)
-- [kitty](https://sw.kovidgoyal.net/kitty/overview/#configuring-kitty)
-- [tmux](https://github.com/tmux/tmux)
-- [wezterm](https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file)
-- [xresources](https://wiki.archlinux.org/title/X_resources)
-
-The generation method used is based off of [tokyonight](https://github.com/folke/tokyonight.nvim).
-They are generated by executing lua on the file `lua/nightfox/extras/init.lua`. The generated
-results are output to the [extra](./extra) folder.
-
-## 🔥Contributing
-
-Pull requests are welcome. For contributing to `extras`, they are generated with a template and run
-with each colorscheme style. To add a new template follow these steps:
-
-1. Create new `lua` file under `./lua/nightfox/extras/`
-1. Add the name and file extension into the `extras` table in `./lua/nightfox/extras/init.lua`
-1. To execute the template generation `:luafile ./lua/nightfox/extras/init.lua`
-1. Commit any files generated in `./extra`
-
-Found a new fox? Follow this checklist to capture the fox:
-
-1. Create a new `lua` file under `./lua/nightfox/colors` folder with the fox's name
-1. Copy the contents of another fox into the file that was created
-1. Update the color table with new foxes hex colors
-1. Add the fox's name into the `M.foxes` table in `./lua/nightfox/colors/init.lua`
-
-## Credits
-
-These themes were used as references and based off this:
-
-- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim/)
-- [material.nvim](https://github.com/marko-cerovac/material.nvim)
-- [rose-pine](https://github.com/rose-pine/neovim) (dawnfox / duskfox)
+- [catppuccin](https://github.com/catppuccin/nvim/) (integration/modules)
+- [rose-pine](https://github.com/rose-pine/nvim) (dawnfox/duskfox)
+- [nord](https://i.imgur.com/LzJYkpS.jpeg) (nordfox reference image)
+- [coolers](https://coolers.co) (Useful color information and pallet tool)
+- [colorhexa](https://www.colorhexa.com/) (detailed color information)
