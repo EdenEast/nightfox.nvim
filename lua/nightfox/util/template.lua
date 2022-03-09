@@ -4,22 +4,22 @@ local function to_value(tbl)
   return tbl.base and tbl.base or tbl.to_css()
 end
 
-local function parse_string(str, spec)
-  local function get_path(t, path)
-    for segment in string.gmatch(path, "[^.]+") do
-      if type(t) == "table" then
-        t = t[segment]
-      end
+local function get_path(t, path)
+  for segment in path:gmatch("[^.]+") do
+    if type(t) == "table" then
+      t = t[segment]
     end
-    return t
   end
-  return (
-      str:gsub("($%b{})", function(w)
-        local path = w:sub(3, -2)
-        local r = get_path(spec, path)
-        return r and r.base and r.base or r or w
-      end)
-    )
+  return t
+end
+
+local function parse_string(str, spec)
+  if str:match("^#") then
+    return str
+  end
+
+  local path = get_path(spec, str)
+  return path and path.base and path.base or path or str
 end
 
 function M.parse(template, spec)
