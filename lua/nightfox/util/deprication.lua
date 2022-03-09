@@ -35,7 +35,7 @@ function M.check_deprication(opts)
 
   check_opt("transparent")
   check_opt("terminal_colors")
-  check_opt("alt_nc", { replaced = "options.focused" })
+  check_opt("alt_nc", { replaced = "options.dim_inactive" })
   check_opt("colors", { replace = "pallets" })
   check_opt("hlgroups", { replace = "groups" })
 end

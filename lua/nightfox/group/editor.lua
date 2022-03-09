@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(spec, config)
   local trans = config.transparent
-  local alt = config.alt_nc
+  local alt = config.dim_inactive
   local inv = config.inverse
 
  -- stylua: ignore

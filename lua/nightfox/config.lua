@@ -5,7 +5,7 @@ local M = { fox = "nightfox", checked_deprication = false }
 M.options = {
   transparent = false,
   terminal_colors = true,
-  alt_nc = false,
+  dim_inactive = false,
   styles = {
     comments = "NONE",
     functions = "NONE",
