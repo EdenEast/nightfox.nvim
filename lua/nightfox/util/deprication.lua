@@ -1,4 +1,4 @@
-local M = { }
+local M = {}
 
 function M.check_deprication(opts)
   if M.checked_deprication then
@@ -17,29 +17,27 @@ function M.check_deprication(opts)
     )
   end
 
-  if opts.colors then
-    dep.write(
-      "  ",
-      { "colors", "WarningMsg" },
-      " has been replaced by ",
-      { "pallets", "WarningMsg" },
-      " See ",
-      { ":h nightfox-pallets", "WarningMsg" },
-      " for more info"
-    )
+  local function check_opt(name, o)
+    if opts[name] then
+      local replace = o.replace or string.format("options.%s", name)
+      local help = o.help or "nightfox"
+      dep.write(
+        "  ",
+        { name, "WarningMsg" },
+        " has been replaced by ",
+        { replace, "WarningMsg" },
+        ". See ",
+        { ":h " .. help, "WarningMsg" },
+        " for more info."
+      )
+    end
   end
 
-  if opts.hlgroups then
-    dep.write(
-      "  ",
-      { "hlgroups", "WarningMsg" },
-      " has been replaced by ",
-      { "groups", "WarningMsg" },
-      " See ",
-      { ":h nightfox-groups", "WarningMsg" },
-      " for more info"
-    )
-  end
+  check_opt("transparent")
+  check_opt("terminal_colors")
+  check_opt("alt_nc", { replaced = "options.focused" })
+  check_opt("colors", { replace = "pallets" })
+  check_opt("hlgroups", { replace = "groups" })
 end
 
 return M
