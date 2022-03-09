@@ -35,10 +35,14 @@ local function parse_style(style)
   return result
 end
 
+local function should_link(link)
+  return link and link ~= ''
+end
+
 local function viml_hl(highlights)
   local highlight_cmds = {}
   for group, opts in pairs(highlights) do
-    if opts.link then
+    if should_link(opts.link) then
       table.insert(highlight_cmds, fmt("highlight! link %s %s", group, opts.link))
     else
       local cmd = fmt(
@@ -57,11 +61,14 @@ end
 
 local function nvim_hl(highlights)
   for group, opts in pairs(highlights) do
+    if group == "CursorLine" then
+      P(opts)
+    end
     local style = parse_style(opts.style)
     vim.api.nvim_set_hl(0, group, {
       background = opts.bg,
       foreground = opts.fg,
-      link = opts.link,
+      link = should_link(opts.link) and opts.link or nil,
       bold = style.bold,
       italic = style.italic,
       underline = style.underline,
@@ -76,4 +83,5 @@ else
   M.highlight = viml_hl
 end
 
+  M.highlight = viml_hl
 return M
