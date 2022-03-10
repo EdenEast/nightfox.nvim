@@ -63,7 +63,7 @@ local function generate_spec(pal)
     comment     = pal.comment,        -- Comment
     conditional = pal.magenta.bright, -- Conditional and loop
     const       = pal.orange.bright,  -- Constants, imports and booleans
-    dep         = spec.fg3,           -- Depricated
+    dep         = spec.fg3,           -- Deprecated
     field       = pal.blue.base,      -- Field
     func        = pal.blue.bright,    -- Functions and Titles
     ident       = pal.cyan.base,      -- Identifiers

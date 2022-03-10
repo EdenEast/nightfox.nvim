@@ -1,5 +1,5 @@
 local M = {
-  _list = { { "nightfox.nvim\n", "Question" }, { "The following has been " }, { "depricated:\n", "WarningMsg" } },
+  _list = { { "nightfox.nvim\n", "Question" }, { "The following has been " }, { "Deprecated:\n", "WarningMsg" } },
   _has_registered = false,
 }
 

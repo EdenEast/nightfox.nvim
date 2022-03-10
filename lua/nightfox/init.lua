@@ -44,7 +44,7 @@ function M.load()
   require("nightfox.lib.deprication").write(
     "  ",
     { "nightfox.load()", "WarningMsg" },
-    " has been depricated. To apply the colorscheme use the builtin ",
+    " has been Deprecated. To apply the colorscheme use the builtin ",
     { ":colorscheme", "WarningMsg" },
     " command ",
     { ":colorscheme nightfox", "WarningMsg" }
