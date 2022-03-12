@@ -7,7 +7,7 @@ function M.get(spec, config, opts)
   -- stylua: ignore
   return {
     DiagnosticError            = { fg = d.error },
-    DiagnosticWarn             = { fg = d.warning },
+    DiagnosticWarn             = { fg = d.warn },
     DiagnosticInfo             = { fg = d.info },
     DiagnosticHint             = { fg = d.hint },
 
@@ -22,7 +22,7 @@ function M.get(spec, config, opts)
     DiagnosticVirtualTextHint  = { fg = d.hint, bg = opts.background and dbg.hint or "NONE" },
 
     DiagnosticUnderlineError   = { style = "undercurl", sp = d.error },
-    DiagnosticUnderlineWarn    = { style = "undercurl", sp = d.warning },
+    DiagnosticUnderlineWarn    = { style = "undercurl", sp = d.warn },
     DiagnosticUnderlineInfo    = { style = "undercurl", sp = d.info },
     DiagnosticUnderlineHint    = { style = "undercurl", sp = d.hint },
   }

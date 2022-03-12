@@ -12,7 +12,7 @@ function M.get(spec, config, opts)
     NeogitHunkHeaderHighlight  = { fg = spec.diag.info, bg = spec.sel0 },
 
     NeogitDiffAdd              = { fg = spec.git.add },
-    NeogitDiffDelete           = { fg = spec.git.delete },
+    NeogitDiffDelete           = { fg = spec.git.removed },
 
     NeogitDiffAddHighlight     = { bg = spec.diff.add },
     NeogitDiffDeleteHighlight  = { bg = spec.diff.delete },
