@@ -4,6 +4,7 @@ local store = {
   pallets = {},
   specs = {},
   groups = {},
+  has_override = false,
 }
 
 return setmetatable({}, {
@@ -16,6 +17,7 @@ return setmetatable({}, {
   __newindex = function(_, key, value)
     if store[key] then
       store[key] = collect.deep_extend(store[key], value or {})
+      store.has_override = true
     end
   end,
 })

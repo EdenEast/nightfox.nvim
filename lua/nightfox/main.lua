@@ -55,11 +55,14 @@ end
 
 function M.load(name)
   local config = require("nightfox.config")
+  local override = require("nightfox.override")
   name = name or config.fox
 
   local status, mod = pcall(require, "nightfox_compiled")
   if status then
     mod.load(name)
+  elseif not override.has_override and not config.has_options then
+    require("nightfox.util.precompiled").load(name)
   else
     local spec = require("nightfox.spec").load(name)
     local groups = require("nightfox.group").load(spec)

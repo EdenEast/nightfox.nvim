@@ -1,7 +1,7 @@
 local collect = require("nightfox.lib.collect")
 local util = require("nightfox.util")
 
-local M = { fox = "nightfox", checked_deprication = false }
+local M = { fox = "nightfox", checked_deprication = false, has_options = false }
 
 M.options = {
   transparent = false,
@@ -58,6 +58,7 @@ end
 function M.set_options(opts)
   opts = opts or {}
   M.options = collect.deep_extend(M.options, opts)
+  M.has_options = true
 end
 
 return M
