@@ -20,6 +20,14 @@ function M.init(opts)
   require("nightfox.config").set_options(opts)
 end
 
+function M.compile(output_path)
+  require("nightfox.lib.compile").compile(output_path)
+end
+
+function M.clean()
+  require("nightfox.lib.compile").clean()
+end
+
 function M.setup(opts)
   if opts.options then
     M.init(opts.options)

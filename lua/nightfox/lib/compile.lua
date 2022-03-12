@@ -195,10 +195,11 @@ function M.compile(output_file)
 
   table.insert(lines, footer)
 
-  output_file = output_file or config.compile_path
+  output_file = output_file and output_file ~= "" or config.compile_path
   local file = io.open(output_file, "w")
   file:write(table.concat(lines, "\n"))
   file:close()
+  print(fmt([[Wrote to: %s]], output_file))
 end
 
 function M.clean()
