@@ -55,17 +55,22 @@ end
 
 function M.load(name)
   local config = require("nightfox.config")
-
   name = name or config.fox
-  local spec = require("nightfox.spec").load(name)
-  local groups = require("nightfox.group").load(spec)
 
-  clear_hl()
-  set_info(spec)
-  hl.highlight(groups)
+  local status, mod = pcall(require, "nightfox_compiled")
+  if status then
+    mod.load(name)
+  else
+    local spec = require("nightfox.spec").load(name)
+    local groups = require("nightfox.group").load(spec)
 
-  if config.options.terminal_colors then
-    set_terminal_colors(spec)
+    clear_hl()
+    set_info(spec)
+    hl.highlight(groups)
+
+    if config.options.terminal_colors then
+      set_terminal_colors(spec)
+    end
   end
 end
 

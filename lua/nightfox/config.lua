@@ -1,4 +1,5 @@
 local collect = require("nightfox.lib.collect")
+local util = require("nightfox.util")
 
 local M = { fox = "nightfox", checked_deprication = false }
 
@@ -6,6 +7,7 @@ M.options = {
   transparent = false,
   terminal_colors = true,
   dim_inactive = false,
+  compile_path = util.join_paths(vim.fn.stdpath("config"), "lua", "nightfox_compiled.lua"),
   styles = {
     comments = "NONE",
     functions = "NONE",

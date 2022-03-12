@@ -36,7 +36,7 @@ local function parse_style(style)
 end
 
 local function should_link(link)
-  return link and link ~= ''
+  return link and link ~= ""
 end
 
 local function viml_hl(highlights)
@@ -61,9 +61,6 @@ end
 
 local function nvim_hl(highlights)
   for group, opts in pairs(highlights) do
-    if group == "CursorLine" then
-      P(opts)
-    end
     local style = parse_style(opts.style)
     vim.api.nvim_set_hl(0, group, {
       background = opts.bg,
@@ -83,5 +80,4 @@ else
   M.highlight = viml_hl
 end
 
-  M.highlight = viml_hl
 return M

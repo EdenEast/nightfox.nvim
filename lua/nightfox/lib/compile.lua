@@ -10,29 +10,6 @@ local footer = [[
 return M
 ]]
 
-local nvim_highlight_func = [[
-local function highlight(groups)
-  for group, opts in pairs(groups) do
-    vim.api.nvim_set_hl(0, group, {
-      background = opts.bg,
-      foreground = opts.fg,
-      bold = opts.bold,
-      italic = opts.italic,
-      underline = opts.underline,
-      undercurl = opts.undercurl,
-    })
-  end
-end
-]]
-
-local nvim_link_func = [[
-local function link(groups)
-  for group, opts in pairs(groups) do
-    vim.api.nvim_set_hl(0, group, { link = opts.link })
-  end
-end
-]]
-
 local vim_highlight_func = [[
 local function highlight(list)
   local cmds = {}
@@ -54,7 +31,7 @@ local vim_link_func = [[
 local function link(list)
   local cmds = {}
   for group, opts in pairs(list) do
-    table.insert(cmds, string.format("highlight! link %s %s", group, opts.link))
+    table.insert(cmds, string.format("highlight! link %s %s", group, opts))
   end
   vim.cmd(table.concat(cmds, "\n"))
 end
@@ -69,153 +46,150 @@ end
 ]]
 
 local set_info_func = [[
-local function set_info()
-  vim.cmd("set background=%s")
+local function set_info(name)
+  vim.cmd("set background=" .. metas[name])
   vim.cmd("set termguicolors")
-  vim.g.colors_name = "%s"
+  vim.g.colors_name = name
 end
 ]]
 
--- local use_nvim_api = vim.fn.has("nvim-0.7") and vim.api.nvim_set_hl
-local use_nvim_api = false
-
-local function parse_style(style)
-  if not style then
-    return {}
-  end
-
-  local result = {}
-  for token in string.gmatch(style, "([^,]+)") do
-    result[token] = true
-  end
-
-  return result
-end
-
-local function create_load_func()
+local function gen_main_func()
   local lines = {}
 
-  table.insert(lines, "function M.load()")
+  table.insert(lines, "function M.load(name)")
   table.insert(lines, "  clear()")
-  table.insert(lines, "  highlight(groups)")
-  table.insert(lines, "  link(links)")
-  table.insert(lines, "  set_info()")
+  table.insert(lines, "  highlight(highlights[name])")
+  table.insert(lines, "  link(links[name])")
+  table.insert(lines, "  set_info(name)")
+
   if config.terminal_colors then
-    table.insert(lines, "  set_terminal()")
+    table.insert(lines, "  set_terminal(name)")
   end
+
   table.insert(lines, "end")
-
-  return table.concat(lines, '\n')
-end
-
-local function create_terminal(spec)
-  local c = spec.pallet
-
-  local lines = { "local function set_terminal()" }
-  table.insert(lines, fmt([[  vim.g.terminal_color_0 = "%s"]], c.black.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_1 = "%s"]], c.red.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_2 = "%s"]], c.green.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_3 = "%s"]], c.yellow.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_4 = "%s"]], c.blue.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_5 = "%s"]], c.magenta.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_6 = "%s"]], c.cyan.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_7 = "%s"]], c.white.base))
-  table.insert(lines, fmt([[  vim.g.terminal_color_8 = "%s"]], c.black.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_9 = "%s"]], c.red.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_10 = "%s"]], c.green.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_11 = "%s"]], c.yellow.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_12 = "%s"]], c.blue.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_13 = "%s"]], c.magenta.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_14 = "%s"]], c.cyan.bright))
-  table.insert(lines, fmt([[  vim.g.terminal_color_15 = "%s"]], c.white.bright))
-
-  local colors = {
-    fmt([["%s"]], c.black.base),
-    fmt([["%s"]], c.red.base),
-    fmt([["%s"]], c.green.base),
-    fmt([["%s"]], c.yellow.base),
-    fmt([["%s"]], c.blue.base),
-    fmt([["%s"]], c.magenta.base),
-    fmt([["%s"]], c.cyan.base),
-    fmt([["%s"]], c.white.base),
-    fmt([["%s"]], c.black.bright),
-    fmt([["%s"]], c.red.bright),
-    fmt([["%s"]], c.green.bright),
-    fmt([["%s"]], c.yellow.bright),
-    fmt([["%s"]], c.blue.bright),
-    fmt([["%s"]], c.magenta.bright),
-    fmt([["%s"]], c.cyan.bright),
-    fmt([["%s"]], c.white.bright),
-  }
-
-  table.insert(lines, [[  if vim.fn.has("nvim") == 0 then]])
-  table.insert(lines, fmt([[    local colors = { %s }]], table.concat(colors, ", ")))
-  table.insert(lines, fmt([[    vim.g.terminal_ansi_colors = vim.list(colors)]], table.concat(colors, ", ")))
-  table.insert(lines, [[  end]])
-  table.insert(lines, "end")
+  table.insert(lines, "")
 
   return table.concat(lines, "\n")
 end
 
+local function gen_terminal_func(specs)
+  local lines = {}
 
-local specs = require("nightfox.spec").load()
+  table.insert(lines, "local function set_terminal(name)")
+  table.insert(lines, "  local colors = {")
+  for name, spec in pairs(specs) do
+    local c = spec.pallet
+    -- stylua: ignore
+    local colors = {
+      fmt([["%s"]], c.black.base),   fmt([["%s"]], c.red.base),
+      fmt([["%s"]], c.green.base),   fmt([["%s"]], c.yellow.base),
+      fmt([["%s"]], c.blue.base),    fmt([["%s"]], c.magenta.base),
+      fmt([["%s"]], c.cyan.base),    fmt([["%s"]], c.white.base),
+      fmt([["%s"]], c.black.bright), fmt([["%s"]], c.red.bright),
+      fmt([["%s"]], c.green.bright), fmt([["%s"]], c.yellow.bright),
+      fmt([["%s"]], c.blue.bright),  fmt([["%s"]], c.magenta.bright),
+      fmt([["%s"]], c.cyan.bright),  fmt([["%s"]], c.white.bright),
+    }
+    table.insert(lines, fmt("    %s = { %s },", name, table.concat(colors, ", ")))
+  end
+  table.insert(lines, "  }")
 
-for specname, spec in pairs(specs) do
-  local groups = require("nightfox.group").load(spec)
+  table.insert(lines, [[  for i, c in ipairs(colors[name]) do]])
+  table.insert(lines, [[    local n = "terminal_color_" .. i - 1]])
+  table.insert(lines, [[    vim.g[n] = c]])
+  table.insert(lines, [[  end]])
+  table.insert(lines, [[  if vim.fn.has("nvim") == 0 then]])
+  table.insert(lines, [[    vim.g.terminal_ansi_colors = vim.list(colors)]])
+  table.insert(lines, [[  end]])
+  table.insert(lines, "end")
+  table.insert(lines, "")
+
+  return table.concat(lines, "\n")
+end
+
+local M = {}
+
+function M.compile()
+  local specs = require("nightfox.spec").load()
 
   local lines = { header }
+  local hlgroups = {}
+  local hllinks = {}
+  local metas = {}
 
+  for specname, spec in pairs(specs) do
+    local groups = require("nightfox.group").load(spec)
 
-  local links = {}
-  local hls = {}
+    local hls = {}
+    local lks = {}
 
-  for name, opts in pairs(groups) do
-    if opts.link and opts.link ~= "" then
-      table.insert(links, fmt([[%s = "%s",]], name, opts.link))
-    else
-      local rhs = {}
-      for k, v in pairs(opts) do
-        if k == "style" and use_nvim_api then
-          if v ~= "NONE" then
-            for style_name, style_value in pairs(parse_style(v)) do
-              table.insert(rhs, fmt([[%s = %s]], style_name, style_value))
-            end
-          end
-        else
-          table.insert(rhs, fmt([[%s = "%s"]], k, v))
+    metas[specname] = spec.pallet.meta.light and "light" or "dark"
+
+    for name, opts in pairs(groups) do
+      if opts.link and opts.link ~= "" then
+        table.insert(lks, fmt([[    %s = "%s",]], name, opts.link))
+      else
+        local rhs = {}
+        for key, value in pairs(opts) do
+          table.insert(rhs, fmt([[%s = "%s"]], key, value))
         end
+        table.insert(hls, fmt([[    %s = { %s },]], name, table.concat(rhs, ", ")))
       end
-      table.insert(hls, fmt([[%s = { %s },]], name, table.concat(rhs, ", ")))
     end
+    hlgroups[specname] = hls
+    hllinks[specname] = lks
   end
 
-  -- write groups
-  table.insert(lines, [[local groups = {]])
-  table.insert(lines, table.concat(hls, "\n"))
+  -- Write highlights
+  table.insert(lines, [[local metas = {]])
+  for key, value in pairs(metas) do
+    table.insert(lines, fmt([[  %s = "%s",]], key, value))
+  end
   table.insert(lines, [[}]])
-  table.insert(lines, [[]])
+  table.insert(lines, "")
 
-  -- write write lines
+  -- Write highlights
+  table.insert(lines, [[local highlights = {]])
+  for key, value in pairs(hlgroups) do
+    table.sort(value)
+    table.insert(lines, fmt([[  %s = {]], key))
+    table.insert(lines, table.concat(value, "\n"))
+    table.insert(lines, [[  },]])
+  end
+  table.insert(lines, [[}]])
+  table.insert(lines, "")
+
+  -- Write links
   table.insert(lines, [[local links = {]])
-  table.insert(lines, table.concat(links, "\n"))
+  for key, value in pairs(hllinks) do
+    table.sort(value)
+    table.insert(lines, fmt([[%s = {]], key))
+    table.insert(lines, table.concat(value, "\n"))
+    table.insert(lines, [[  },]])
+  end
   table.insert(lines, [[}]])
-  table.insert(lines, [[]])
+  table.insert(lines, "")
 
-  -- write funcs
-  table.insert(lines, use_nvim_api and nvim_highlight_func or vim_highlight_func)
-  table.insert(lines, use_nvim_api and nvim_link_func or vim_link_func)
+  table.insert(lines, vim_highlight_func)
+  table.insert(lines, vim_link_func)
+  table.insert(lines, clear_func)
+  table.insert(lines, set_info_func)
 
   if config.terminal_colors then
-    table.insert(lines, create_terminal(spec))
+    table.insert(lines, gen_terminal_func(specs))
   end
-  local background_type = spec.pallet.meta.light and "light" or "dark"
-  table.insert(lines, fmt(set_info_func, background_type, spec.pallet.meta.name))
-  table.insert(lines, clear_func)
-  table.insert(lines, create_load_func())
-  table.insert(lines, "M.load()")
+
+  table.insert(lines, gen_main_func())
+
   table.insert(lines, footer)
 
-  local file = io.open(specname .. ".lua", "w")
+  local file = io.open(config.compile_path, "w")
   file:write(table.concat(lines, "\n"))
   file:close()
 end
+
+function M.clean()
+  os.remove(config.compile_path)
+end
+
+return M
