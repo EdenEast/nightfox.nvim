@@ -72,12 +72,13 @@ local function gen_main_func()
   return table.concat(lines, "\n")
 end
 
-local function gen_terminal_func(specs)
+local function gen_terminal_func(specs, order)
   local lines = {}
 
   table.insert(lines, "local function set_terminal(name)")
   table.insert(lines, "  local colors = {")
-  for name, spec in pairs(specs) do
+  for _, name in ipairs(order) do
+    local spec = specs[name]
     local c = spec.pallet
     -- stylua: ignore
     local colors = {
@@ -109,15 +110,17 @@ end
 
 local M = {}
 
-function M.compile()
+function M.compile(output_file)
   local specs = require("nightfox.spec").load()
 
   local lines = { header }
   local hlgroups = {}
   local hllinks = {}
   local metas = {}
+  local order = {}
 
   for specname, spec in pairs(specs) do
+    table.insert(order, specname)
     local groups = require("nightfox.group").load(spec)
 
     local hls = {}
@@ -133,6 +136,7 @@ function M.compile()
         for key, value in pairs(opts) do
           table.insert(rhs, fmt([[%s = "%s"]], key, value))
         end
+        table.sort(rhs)
         table.insert(hls, fmt([[    %s = { %s },]], name, table.concat(rhs, ", ")))
       end
     end
@@ -140,19 +144,26 @@ function M.compile()
     hllinks[specname] = lks
   end
 
+  -- This order table is used to make sure the output of the table alphabetical
+  -- and always the same oder. This make sure that calling compile multiple times
+  -- Will not result in a different file
+  table.sort(order)
+
   -- Write highlights
   table.insert(lines, [[local metas = {]])
-  for key, value in pairs(metas) do
-    table.insert(lines, fmt([[  %s = "%s",]], key, value))
+  table.sort(metas)
+  for _, name in ipairs(order) do
+    table.insert(lines, fmt([[  %s = "%s",]], name, metas[name]))
   end
   table.insert(lines, [[}]])
   table.insert(lines, "")
 
   -- Write highlights
   table.insert(lines, [[local highlights = {]])
-  for key, value in pairs(hlgroups) do
+  for _, name in ipairs(order) do
+    local value = hlgroups[name]
     table.sort(value)
-    table.insert(lines, fmt([[  %s = {]], key))
+    table.insert(lines, fmt([[  %s = {]], name))
     table.insert(lines, table.concat(value, "\n"))
     table.insert(lines, [[  },]])
   end
@@ -161,9 +172,10 @@ function M.compile()
 
   -- Write links
   table.insert(lines, [[local links = {]])
-  for key, value in pairs(hllinks) do
+  for _, name in ipairs(order) do
+    local value = hllinks[name]
     table.sort(value)
-    table.insert(lines, fmt([[%s = {]], key))
+    table.insert(lines, fmt([[%s = {]], name))
     table.insert(lines, table.concat(value, "\n"))
     table.insert(lines, [[  },]])
   end
@@ -176,14 +188,15 @@ function M.compile()
   table.insert(lines, set_info_func)
 
   if config.terminal_colors then
-    table.insert(lines, gen_terminal_func(specs))
+    table.insert(lines, gen_terminal_func(specs, order))
   end
 
   table.insert(lines, gen_main_func())
 
   table.insert(lines, footer)
 
-  local file = io.open(config.compile_path, "w")
+  output_file = output_file or config.compile_path
+  local file = io.open(output_file, "w")
   file:write(table.concat(lines, "\n"))
   file:close()
 end

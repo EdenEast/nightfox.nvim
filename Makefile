@@ -1,14 +1,16 @@
 pandocrepo = https://github.com/kdheepak/panvimdoc
 pandocdir = doc/panvimdoc
 
+compile:
+	@nvim --headless --clean -u precompile.lua
 
 docgen: | $(pandocdir)
 	@pandoc \
 		--metadata=project:nightfox \
 		--metadata="description:A highly customizable theme for vim and neovim" \
-		--lua-filter tmp/panvimdoc/scripts/skip-blocks.lua \
-		--lua-filter tmp/panvimdoc/scripts/include-files.lua \
-		-t tmp/panvimdoc/scripts/panvimdoc.lua \
+		--lua-filter doc/panvimdoc/scripts/skip-blocks.lua \
+		--lua-filter doc/panvimdoc/scripts/include-files.lua \
+		-t doc/panvimdoc/scripts/panvimdoc.lua \
 		usage.md \
 		-o doc/nightfox.txt
 
