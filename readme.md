@@ -65,7 +65,7 @@ vim.cmd("colorscheme nightfox")
 
 ## Configuration
 
-There is no need to call `setup` if you dont require to change the default options and settings.
+There is no need to call `setup` if you don't require to change the default options and settings.
 
 ```lua
 -- Default options
@@ -101,20 +101,19 @@ require('nightfox').setup({
 vim.cmd("colorscheme nightfox")
 ```
 
-To see a detailed explanation of nightfox's config settings concult either the builtin help `:help nightfox` or [usage.md]
-
-[usage.md]: ./usage.md.
+To see a detailed explanation of nightfox's config settings consult either the builtin help `:help nightfox` or
+[Usage](./usage.md).
 
 ### Modules
 
 Nightfox's modules store configuration information for various plugins and other neovim modules. To enable a module
 either set the module to `true` or if the module has additional configuration information set `enable` to `true`.
 
-To see a list of modules check the `help` or [usage.md] for more information.
+To see a list of modules check, see [Usage](./usage.md#module) or `:help` for more information.
 
 ### Customize pallets and groups
 
-You can change the color `pallet` and the highlight `group` of nightfox. Here is a breif example:
+You can change the color `pallet` and the highlight `group` of nightfox. Here is a brief example:
 
 ```lua
 -- Pallets are the base color defines of a colorscheme.
@@ -140,7 +139,7 @@ local pallets = {
     -- These are the different foreground and background shades used by the theme.
     -- The base bg and fg is 1, 0 is normally the dark alternative. The others are
     -- incrementally lighter versions.
-    bg1 = "#2e3440"
+    bg1 = "#2e3440",
 
     -- sel is different types of selection colors.
     sel0 = "#3e4a5b", -- Popup bg, visual selection bg
@@ -168,7 +167,7 @@ local specs = {
 
       -- Adding either `.bright` or `.dim` will change the value
       conditional = "magenta.bright",
-      number = "orange.dim"
+      number = "orange.dim",
     },
     git = {
       -- A color define can also be used
@@ -197,7 +196,7 @@ require("nightfox").setup({ pallets = pallets, specs = specs, groups = groups })
 vim.cmd("colorscheme nightfox")
 ```
 
-To get more information check out [usage.md] or the help file `:help nightfox` for more detailed information.
+To get more information check out [Usage](./usage.md#configuration) or the help file `:help nightfox` for more detailed information.
 
 ## Api
 
@@ -222,7 +221,7 @@ print(vim.insepct(pallet.red))
 -- }
 ```
 
-See TODO for more information on pallets.
+See [Usage](./usage.md#pallet) for more information on pallets.
 
 ### Specs
 
@@ -243,7 +242,7 @@ print(vim.inspect(spec.git))
 -- }
 ```
 
-See TODO for more information on specs.
+See [Usage](./usage.md#spec) for more information on specs.
 
 ### Color lib
 
@@ -274,7 +273,7 @@ print(alt_bg:to_hsv())
 ```
 
 There are a lot of useful functions to manipulate and work with colors in different color spaces.
-See TODO for more information on `Color`.
+See [Usage](./usage.md#color) for more information on `Color`.
 
 ## Compile
 
@@ -347,5 +346,6 @@ require('lualine').setup({
 - [catppuccin](https://github.com/catppuccin/nvim/) (integration/modules)
 - [rose-pine](https://github.com/rose-pine/nvim) (dawnfox/duskfox)
 - [nord](https://i.imgur.com/LzJYkpS.jpeg) (nordfox reference image)
-- [coolers](https://coolers.co) (Useful color information and pallet tool)
+- [coolers](https://coolers.co) (useful color information and pallet tool)
 - [colorhexa](https://www.colorhexa.com/) (detailed color information)
+- [neogit](https://github.com/TimUntersberger/neogit/blob/b688a2c/lua/neogit/lib/color.lua) (base for color lib)
