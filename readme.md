@@ -71,8 +71,9 @@ There is no need to call `setup` if you dont require to change the default optio
 -- Default options
 require('nightfox').setup({
   options = {
-    -- Path for compiled file
-    compile_path = join(vim.fn.stdpath("config"), "lua", "nightfox_compiled.lua"),
+    -- Compiled file's destination location
+    compile_path = util.join_paths(vim.fn.stdpath("cache"), "nightfox"),
+    compile_file_suffix = "_compiled", -- Compiled file suffix
     transparent = false,    -- Disable setting background
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*)
     dim_inactive = false,   -- Non focused panes set to alternative background
@@ -277,37 +278,30 @@ See TODO for more information on `Color`.
 
 ## Compile
 
-Nightfox is a highly customizable and configurable colorscheme. This does come at the cost of complexity and execution
-time. Nightfox can take the customization from your config and compile the results into a single script. All the work is
-done upfront and nightfox only has to execute the `precompiled` script.
+Nightfox is a highly customizable and configurable colorscheme. There are endless ways to customize nightfox. This does
+however come at the cost of complexity and execution time. Nightfox can pre compute the results of your configuration
+and store the results in a compiled lua file. After nightfox use these precached values to set it's highlights.
 
-When applying the colorscheme, nightfox will check for a compiled file. If found it will execute the precompiled script
-instead of computing the results from its configuration. This helps with startup times.
-
+By default nightfox writes the compiled results into the system's `cache` directory. On unix this is
+`$XDG_CACHE_HOME/nvim/nightfox` and on windows this is `%localappdata%\\Temp\\nvim\\nightfox`.
 
 Nightfox provides functions to work with the nightfox compiler.
 
 ```lua
 local nightfox = require('nightfox')
 
--- Create/update the compile file
+-- Create/update the compile files
 nightfox.compile()
 
--- Compile takes an optional argument for the compile file
-nightfox.compile("path/to/lua/nightfox_compiled.lua")
-
--- Delete compiled file
+-- Delete compiled files
 nightfox.clean()
-
--- Also takes an optional argument for the compiled file
-nightfox.clean("path/to/lua/nightfox_compiled.lua")
 ```
 
 Nightfox provides the following commands that wrap these functions above:
 
 ```vim
-:NightfoxCompile <optional_path_to_compiled.lua>
-:NightfoxClean <optional_path_to_compiled.lua>
+:NightfoxCompile
+:NightfoxClean
 ```
 
 ## Supported Plugins

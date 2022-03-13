@@ -26,16 +26,36 @@ else
   M.is_windows = package.config:sub(1, 1) == "\\"
 end
 
-M.get_separator = function()
+function M.get_separator()
   if M.is_windows then
     return "\\"
   end
   return "/"
 end
 
-M.join_paths = function(...)
+function M.join_paths(...)
   local separator = M.get_separator()
   return table.concat({ ... }, separator)
+end
+
+function M.exists(path)
+  local f = io.open(path, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
+end
+
+function M.ensure_dir(path)
+  os.execute(string.format("mkdir %s %s", M.is_windows and "" or "-p", path))
+  -- if M.is_windows then
+  --   io.execute("mkdir")
+  --   vim.cmd("!mkdir " .. path)
+  -- else
+  --   vim.cmd("!mkdir -p " .. path)
+  -- end
 end
 
 return M

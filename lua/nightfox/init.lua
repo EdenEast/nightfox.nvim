@@ -20,11 +20,11 @@ function M.init(opts)
   require("nightfox.config").set_options(opts)
 end
 
-function M.compile(output_path)
-  require("nightfox.lib.compile").compile(output_path)
+function M.compile()
+  require("nightfox.lib.compile").compile()
 end
 
-function M.clean(output_path)
+function M.clean()
   require("nightfox.lib.compile").clean()
 end
 

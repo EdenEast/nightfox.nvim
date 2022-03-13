@@ -1,4 +1,5 @@
 local hl = require("nightfox.lib.highlight")
+local util = require("nightfox.util")
 
 local M = {}
 
@@ -58,11 +59,15 @@ function M.load(name)
   local override = require("nightfox.override")
   name = name or config.fox
 
-  local status, mod = pcall(require, "nightfox_compiled")
-  if status then
-    mod.load(name)
+  local precompiled_file = util.join_paths(
+    config.options.compile_path,
+    name .. config.options.compile_file_suffix .. ".lua"
+  )
+
+  if util.exists(precompiled_file) then
+    vim.cmd("luafile " .. precompiled_file)
   elseif not override.has_override and not config.has_options then
-    require("nightfox.util.precompiled").load(name)
+    require("nightfox.precompiled." .. name .. "_compiled")
   else
     local spec = require("nightfox.spec").load(name)
     local groups = require("nightfox.group").load(spec)
