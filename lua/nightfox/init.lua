@@ -24,7 +24,7 @@ function M.compile(output_path)
   require("nightfox.lib.compile").compile(output_path)
 end
 
-function M.clean()
+function M.clean(output_path)
   require("nightfox.lib.compile").clean()
 end
 

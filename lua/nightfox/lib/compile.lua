@@ -202,7 +202,8 @@ function M.compile(output_file)
   print(fmt([[Wrote to: %s]], output_file))
 end
 
-function M.clean()
+function M.clean(output_file)
+  output_file = output_file and output_file ~= "" or config.compile_path
   os.remove(config.compile_path)
 end
 

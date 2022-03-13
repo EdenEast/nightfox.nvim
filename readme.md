@@ -25,7 +25,8 @@
 - Highly configurable with template overriding
 - Support for multiple [plugins](#supported-plugins) and [status lines](#status-lines)
   - And many others should "just work"!
-- Export Color library utility
+- [Compile](#compile) user's configuration
+- Export [Color](#color-lib) library utility
 
 ## Requirements
 
@@ -70,6 +71,8 @@ There is no need to call `setup` if you dont require to change the default optio
 -- Default options
 require('nightfox').setup({
   options = {
+    -- Path for compiled file
+    compile_path = join(vim.fn.stdpath("config"), "lua", "nightfox_compiled.lua"),
     transparent = false,    -- Disable setting background
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*)
     dim_inactive = false,   -- Non focused panes set to alternative background
@@ -271,6 +274,41 @@ print(alt_bg:to_hsv())
 
 There are a lot of useful functions to manipulate and work with colors in different color spaces.
 See TODO for more information on `Color`.
+
+## Compile
+
+Nightfox is a highly customizable and configurable colorscheme. This does come at the cost of complexity and execution
+time. Nightfox can take the customization from your config and compile the results into a single script. All the work is
+done upfront and nightfox only has to execute the `precompiled` script.
+
+When applying the colorscheme, nightfox will check for a compiled file. If found it will execute the precompiled script
+instead of computing the results from its configuration. This helps with startup times.
+
+
+Nightfox provides functions to work with the nightfox compiler.
+
+```lua
+local nightfox = require('nightfox')
+
+-- Create/update the compile file
+nightfox.compile()
+
+-- Compile takes an optional argument for the compile file
+nightfox.compile("path/to/lua/nightfox_compiled.lua")
+
+-- Delete compiled file
+nightfox.clean()
+
+-- Also takes an optional argument for the compiled file
+nightfox.clean("path/to/lua/nightfox_compiled.lua")
+```
+
+Nightfox provides the following commands that wrap these functions above:
+
+```vim
+:NightfoxCompile <optional_path_to_compiled.lua>
+:NightfoxClean <optional_path_to_compiled.lua>
+```
 
 ## Supported Plugins
 
