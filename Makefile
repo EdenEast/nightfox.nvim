@@ -15,5 +15,5 @@ docgen: | $(pandocdir)
 		-o doc/nightfox.txt
 
 $(pandocdir):
-	mkdir -p tmp
-	git clone $(pandocrepo) $(pandocdir)
+	git clone --depth=1 --no-single-branch $(pandocrepo) $(pandocdir)
+	@rm -rf doc/panvimdoc/.git
