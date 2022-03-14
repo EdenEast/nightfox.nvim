@@ -1,0 +1,31 @@
+# Nightfox Alacritty Colors
+# Style: dayfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_alacritty.yml
+colors:
+  # Default colors
+  primary:
+    background: '0xeaeaea'
+    foreground: '0x1d344f'
+  # Normal colors
+  normal:
+    black:   '0x1d344f'
+    red:     '0xb95d76'
+    green:   '0x618774'
+    yellow:  '0xba793e'
+    blue:    '0x4d688e'
+    magenta: '0x8e6f98'
+    cyan:    '0x6ca7bd'
+    white:   '0xcdd1d5'
+  # Bright colors
+  bright:
+    black:   '0x24476f'
+    red:     '0xc76882'
+    green:   '0x629f81'
+    yellow:  '0xca884a'
+    blue:    '0x4e75aa'
+    magenta: '0x9f75ac'
+    cyan:    '0x74b2c9'
+    white:   '0xcfd6dd'
+  indexed_colors:
+    - { index: 16, color: '0xe3786c' }
+    - { index: 17, color: '0xd685af' }

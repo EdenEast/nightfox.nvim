@@ -1,5 +1,6 @@
--- This file is to be run with
--- `nvim --headless --clean -u precompiled.lua`
+-- This file is to be run with from the root of the project
+-- `nvim --headless --clean -u misc/precompiled.lua`
+
 vim.opt.runtimepath:append("./.")
 
 require("nightfox.config").set_options({

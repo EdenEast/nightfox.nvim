@@ -339,6 +339,18 @@ require('lualine').setup({
 })
 ```
 
+## Extra
+
+There are [extra](./extra) configuration files for the following:
+
+- [alacritty](https://github.com/alacritty/alacritty)
+- [fish](https://fishshell.com/)
+- [iterm](https://iterm2.com/index.html)
+- [kitty](https://sw.kovidgoyal.net/kitty/overview/#configuring-kitty)
+- [tmux](https://github.com/tmux/tmux)
+- [wezterm](https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file)
+- [xresources](https://wiki.archlinux.org/title/X_resources)
+
 [lualine]: https://github.com/nvim-lualine/lualine.nvim
 
 ## Acknowledgements

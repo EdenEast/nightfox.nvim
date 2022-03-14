@@ -11,13 +11,14 @@ The following is a set of guidelines for contributing to this project.
   - Make sure that the project's `stylua.toml` file is used for stylua settings.
 - Run `make compile` from project root to write precompiled files.
   - Nightfox precompiles its default settings into the folder `lua/nightfox/precompiled`.
+- If changes are made to pallets, run `make extra` to update `extra`'s folder with changes.
 
 ## Recommendations
 
 - Create a topic branch on your fork for your specific PR.
 - Consider using [conventional commits][concom] rules for creating explicit and meaningful commit messages.
 - If your change creates a breaking change for others make sure that in your commit you have a line `BREAKING CHANGE:`
-    that explains the breaking change.
+  that explains the breaking change.
 - If it's your first time contributing to a project then read [About pull requests][about-pr] on Github's docs.
 
 [concom]: https://www.conventionalcommits.org/en/v1.0.0/

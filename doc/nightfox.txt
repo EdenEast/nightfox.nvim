@@ -42,8 +42,7 @@ just want to use the theme out of the box simply set the colorscheme with the
 
 Nightfox is built to be customizable. There are four main components that can
 be customized. These are |nightfox-option|, |nightfox-pallet|, |nightfox-spec|,
-and |nightfox-group|. To understand how nightfox loads the colorscheme before
-applying it see |nightfox-building| section.
+and |nightfox-group|.
 
 CONFIGURATION                                         *nightfox-configuration*
 

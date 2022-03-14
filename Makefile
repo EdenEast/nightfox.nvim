@@ -1,8 +1,13 @@
 pandocrepo = https://github.com/kdheepak/panvimdoc
 pandocdir = doc/panvimdoc
 
+all: compile extra docgen
+
 compile:
-	@nvim --headless --clean -u precompile.lua
+	nvim --headless --clean -u misc/precompile.lua
+
+extra:
+	nvim --headless --clean -u misc/extra.lua
 
 docgen: | $(pandocdir)
 	@pandoc \

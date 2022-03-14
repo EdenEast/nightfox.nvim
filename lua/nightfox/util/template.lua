@@ -37,4 +37,18 @@ function M.parse(template, spec)
   return result
 end
 
+function M.parse_template_str(template, spec)
+  return (
+      template:gsub("($%b{})", function(w)
+        local path = w:sub(3, -2)
+        local value = get_path(spec, path) or w
+        if type(value) == "table" then
+          return value.base and value.base or value
+        else
+          return value or w
+        end
+      end)
+    )
+end
+
 return M
