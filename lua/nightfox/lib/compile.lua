@@ -8,68 +8,19 @@ local header = [[
 -- Do not make changes directly to this file.
 ]]
 
-local vim_highlight_func = [[
-local function highlight(list)
-  local cmds = {}
-  for group, opts in pairs(list) do
-    table.insert(cmds, string.format(
-      "highlight %s guifg=%s guibg=%s gui=%s guisp=%s",
-      group,
-      opts.fg or "NONE",
-      opts.bg or "NONE",
-      opts.style or "NONE",
-      opts.sp or "NONE"
-    ))
-  end
-  vim.cmd(table.concat(cmds, "\n"))
+local clear_block = [[
+if vim.g.colors_name then
+  vim.cmd("hi clear")
 end
 ]]
 
-local vim_link_func = [[
-local function link(list)
-  local cmds = {}
-  for group, opts in pairs(list) do
-    table.insert(cmds, string.format("highlight! link %s %s", group, opts))
-  end
-  vim.cmd(table.concat(cmds, "\n"))
-end
-]]
-
-local clear_func = [[
-local function clear()
-  if vim.g.colors_name then
-    vim.cmd("hi clear")
-  end
-end
-]]
-
-local function gen_main_func()
+local function gen_set_info_block(meta)
   local lines = {}
-
-  -- stylua: ignore
-  table.insert(lines, [[
-clear()
-highlight(highlights)
-link(links)
-set_info()]])
-
-  if config.terminal_colors then
-    table.insert(lines, "set_terminal()")
-  end
-
-  return table.concat(lines, "\n")
-end
-
-local function gen_set_info_func(meta)
-  local lines = {}
-  table.insert(lines, "local function set_info()")
 
   local background = meta.light and "light" or "dark"
-  table.insert(lines, [[  vim.cmd("set termguicolors")]])
-  table.insert(lines, fmt([[  vim.cmd("set background=%s")]], background))
-  table.insert(lines, fmt([[  vim.g.colors_name = "%s"]], meta.name))
-
-  table.insert(lines, "end")
+  table.insert(lines, [[vim.cmd("set termguicolors")]])
+  table.insert(lines, fmt([[vim.cmd("set background=%s")]], background))
+  table.insert(lines, fmt([[vim.g.colors_name = "%s"]], meta.name))
   table.insert(lines, "")
 
   return table.concat(lines, "\n")
@@ -107,6 +58,8 @@ local function gen_terminal_func(spec)
     vim.g.terminal_ansi_colors = vim.list(colors)
   end
 end
+
+set_terminal()
 ]])
 
   return table.concat(lines, "\n")
@@ -123,49 +76,47 @@ function M.compile()
   local specs = require("nightfox.spec").load()
 
   for specname, spec in pairs(specs) do
-    local lines = { header }
+    local lines = {}
     local hlgroups = {}
     local hllinks = {}
 
     local groups = require("nightfox.group").load(spec)
     for name, opts in pairs(groups) do
       if opts.link and opts.link ~= "" then
-        table.insert(hllinks, fmt([[  %s = "%s",]], name, opts.link))
+        table.insert(hllinks, string.format("highlight! link %s %s", name, opts.link))
       else
-        local rhs = {}
-        for key, value in pairs(opts) do
-          table.insert(rhs, fmt([[%s = "%s"]], key, value))
-        end
-        table.sort(rhs)
-        table.insert(hlgroups, fmt([[  %s = { %s },]], name, table.concat(rhs, ", ")))
+        table.insert(
+          hlgroups,
+          fmt(
+            "highlight %s guifg=%s guibg=%s gui=%s guisp=%s",
+            name,
+            opts.fg or "NONE",
+            opts.bg or "NONE",
+            opts.style or "NONE",
+            opts.sp or "NONE"
+          )
+        )
       end
     end
 
-    -- Write highlight groups
-    table.sort(hlgroups)
-    table.insert(lines, [[local highlights = {]])
-    table.insert(lines, table.concat(hlgroups, "\n"))
-    table.insert(lines, [[}]])
-    table.insert(lines, "")
+    table.insert(lines, header)
+    table.insert(lines, clear_block)
 
-    -- Write link groups
-    table.sort(hllinks)
-    table.insert(lines, [[local links = {]])
-    table.insert(lines, table.concat(hllinks, "\n"))
-    table.insert(lines, [[}]])
-    table.insert(lines, "")
+    table.insert(lines, [[-- Highlight group definitions]])
+    table.insert(lines, "vim.cmd([[")
+    table.insert(lines, table.concat(hlgroups, " |\n"))
+    table.insert(lines, "]])\n")
 
-    -- Write helper functions
-    table.insert(lines, vim_highlight_func)
-    table.insert(lines, vim_link_func)
-    table.insert(lines, clear_func)
-    table.insert(lines, gen_set_info_func(spec.pallet.meta))
+    table.insert(lines, [[-- Highlight link definitions]])
+    table.insert(lines, "vim.cmd([[")
+    table.insert(lines, table.concat(hllinks, " |\n"))
+    table.insert(lines, "]])\n")
+
+    table.insert(lines, gen_set_info_block(spec.pallet.meta))
 
     if config.terminal_colors then
       table.insert(lines, gen_terminal_func(spec))
     end
-
-    table.insert(lines, gen_main_func())
 
     local output_file = util.join_paths(output_path, specname .. file_suffix .. ".lua")
     local file = io.open(output_file, "w")
@@ -185,7 +136,5 @@ function M.clean()
     os.remove(output_file)
   end
 end
-
-M.clean()
 
 return M
