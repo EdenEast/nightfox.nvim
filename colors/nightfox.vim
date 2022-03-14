@@ -1,3 +1,4 @@
+lua << EOF
 -- Useful when debugging
 if vim.g.nightfox_debug then
   local ignore = { "config", "deprication", "override" }
@@ -14,5 +15,6 @@ if vim.g.nightfox_debug then
   end
 end
 
-require("nightfox.config").set_fox("dawnfox")
+require("nightfox.config").set_fox("nightfox")
 require("nightfox.main").load()
+EOF
