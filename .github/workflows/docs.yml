@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - readme.md
+      - usage.md
     branches:
       - main
 
@@ -24,8 +24,8 @@ jobs:
         uses: kdheepak/panvimdoc@v2.7.1
         with:
           vimdoc: nightfox
-          pandoc: readme.md
-          description: Soft dark, vim and neovim colorscheme
+          pandoc: usage.md
+          description: A highly customizable theme for vim and neovim
           version: Neovim v0.5.0
 
       - uses: stefanzweifel/git-auto-commit-action@v4
