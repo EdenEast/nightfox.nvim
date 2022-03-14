@@ -1,18 +1,19 @@
-local name = require('nightfox.config').fox
-local spec = require('nightfox.spec').load(name)
+local Color = require("nightfox.lib.color")
+local name = require("nightfox.config").fox
+local spec = require("nightfox.spec").load(name)
 
 local pal = spec.pallet
-local bg = spec.bg0
+local bg = Color.from_hex(spec.bg0)
 local fg = spec.fg2
 
 local function generate_mode(color, amount)
   amount = amount or 0.3
-  local fade = bg:blend(color, amount):to_css()
+  local fade = bg:blend(Color.from_hex(color), amount):to_css()
   local b = bg:to_css()
-  local f = fg:to_css()
+  local f = fg
 
   return {
-    a = { bg = color:to_css(), fg = b },
+    a = { bg = color, fg = b },
     b = { bg = fade, fg = f },
     c = { bg = b, fg = f },
   }
