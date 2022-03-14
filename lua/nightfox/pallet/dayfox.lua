@@ -23,14 +23,14 @@ local pallet = {
 
   bg0     = "#dbdbdb", -- Dark bg (status line and float)
   bg1     = "#eaeaea", -- Default bg
-  bg2     = "#DBCECE", -- Lighter bg (colorcolm folds)
-  bg3     = "#CED6DB", -- Lighter bg (cursor line)
+  bg2     = "#dbcece", -- Lighter bg (colorcolm folds)
+  bg3     = "#ced6db", -- Lighter bg (cursor line)
   bg4     = "#bebebe", -- Conceal, border fg
 
   fg0     = "#182a40", -- Lighter fg
   fg1     = "#1d344f", -- Default fg
   fg2     = "#233f5e", -- Darker fg (status line)
-  fg3     = "#2E537D", -- Darker fg (line numbers, fold colums)
+  fg3     = "#2e537d", -- Darker fg (line numbers, fold colums)
   -- fg3  = "#848f9c", -- Darker fg (line numbers, fold colums)
 
   sel0    = "#ced5de", -- Popup bg, visual selection bg

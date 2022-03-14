@@ -31,11 +31,11 @@ highlight CmpItemAbbr guifg=#e0def4 guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemAbbrDeprecated guifg=#555169 guibg=NONE gui=strikethrough guisp=NONE |
 highlight CmpItemAbbrMatch guifg=#65b1cd guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemAbbrMatchFuzzy guifg=#65b1cd guibg=NONE gui=NONE guisp=NONE |
-highlight CmpItemKindDefault guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
-highlight CmpItemKindSnippet guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
-highlight ColorColumn guifg=NONE guibg=#2D2A45 gui=NONE guisp=NONE |
+highlight CmpItemKindDefault guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
+highlight CmpItemKindSnippet guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
+highlight ColorColumn guifg=NONE guibg=#2d2a45 gui=NONE guisp=NONE |
 highlight Comment guifg=#817c9c guibg=NONE gui=NONE guisp=NONE |
-highlight Conceal guifg=#4B4673 guibg=NONE gui=NONE guisp=NONE |
+highlight Conceal guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
 highlight Conditional guifg=#ccb1ed guibg=NONE gui=NONE guisp=NONE |
 highlight Constant guifg=#f0a4a2 guibg=NONE gui=NONE guisp=NONE |
 highlight Cursor guifg=#232136 guibg=#e0def4 gui=NONE guisp=NONE |
@@ -115,11 +115,11 @@ highlight LspSagaSignatureHelpBorder guifg=#eb6f92 guibg=NONE gui=NONE guisp=NON
 highlight LspSignatureActiveParameter guifg=#2d3a50 guibg=NONE gui=NONE guisp=NONE |
 highlight LspTroubleCount guifg=#c4a7e7 guibg=#555169 gui=NONE guisp=NONE |
 highlight LspTroubleNormal guifg=#555169 guibg=#191726 gui=NONE guisp=NONE |
-highlight LspTroubleText guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
+highlight LspTroubleText guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
 highlight MatchParen guifg=#f6c177 guibg=NONE gui=bold guisp=NONE |
 highlight ModeMsg guifg=#f6c177 guibg=NONE gui=bold guisp=NONE |
 highlight MoreMsg guifg=#569fba guibg=NONE gui=bold guisp=NONE |
-highlight MsgArea guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
+highlight MsgArea guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitBranch guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#3d4047 gui=NONE guisp=NONE |
@@ -132,7 +132,7 @@ highlight NeogitNotificationError guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationInfo guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationWarning guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitRemote guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
-highlight NonText guifg=#4B4673 guibg=NONE gui=NONE guisp=NONE |
+highlight NonText guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
 highlight Normal guifg=#e0def4 guibg=#232136 gui=NONE guisp=NONE |
 highlight NormalFloat guifg=#e0def4 guibg=#191726 gui=NONE guisp=NONE |
 highlight NormalNC guifg=#e0def4 guibg=#232136 gui=NONE guisp=NONE |
@@ -144,14 +144,14 @@ highlight NvimTreeGitDeleted guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitDirty guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitNew guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeImageFile guifg=#b1acde guibg=NONE gui=NONE guisp=NONE |
-highlight NvimTreeIndentMarker guifg=#4B4673 guibg=NONE gui=NONE guisp=NONE |
+highlight NvimTreeIndentMarker guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeNormal guifg=#e0def4 guibg=#191726 gui=NONE guisp=NONE |
 highlight NvimTreeOpenedFile guifg=#f0a6cc guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeOpenedFolderName guifg=#65b1cd guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeRootFolder guifg=#ea9a97 guibg=NONE gui=bold guisp=NONE |
 highlight NvimTreeSpecialFile guifg=#9ccfd8 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeSymlink guifg=#d871a6 guibg=NONE gui=NONE guisp=NONE |
-highlight Operator guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
+highlight Operator guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
 highlight Pmenu guifg=#e0def4 guibg=#433c59 gui=NONE guisp=NONE |
 highlight PmenuSel guifg=NONE guibg=#2d3a50 gui=NONE guisp=NONE |
 highlight PmenuThumb guifg=NONE guibg=#2d3a50 gui=NONE guisp=NONE |
@@ -166,7 +166,7 @@ highlight SpellCap guifg=NONE guibg=NONE gui=undercurl guisp=#f6c177 |
 highlight SpellLocal guifg=NONE guibg=NONE gui=undercurl guisp=#569fba |
 highlight SpellRare guifg=NONE guibg=NONE gui=undercurl guisp=#569fba |
 highlight Statement guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
-highlight StatusLine guifg=#D3D1E6 guibg=#191726 gui=NONE guisp=NONE |
+highlight StatusLine guifg=#d3d1e6 guibg=#191726 gui=NONE guisp=NONE |
 highlight StatusLineNC guifg=#555169 guibg=#191726 gui=NONE guisp=NONE |
 highlight String guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight Substitute guifg=#232136 guibg=#eb6f92 gui=NONE guisp=NONE |
@@ -178,13 +178,13 @@ highlight TSField guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
 highlight TSFuncBuiltin guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight TSFuncMacro guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight TSKeywordFunction guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSKeywordOperator guifg=#D3D1E6 guibg=NONE gui=bold guisp=NONE |
+highlight TSKeywordOperator guifg=#d3d1e6 guibg=NONE gui=bold guisp=NONE |
 highlight TSNamespace guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
 highlight TSNote guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
-highlight TSOperator guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
-highlight TSPunctBracket guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
-highlight TSPunctDelimiter guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
-highlight TSPunctSpecial guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE |
+highlight TSOperator guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
+highlight TSPunctBracket guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
+highlight TSPunctDelimiter guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
+highlight TSPunctSpecial guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE |
 highlight TSStringEscape guifg=#f9cb8c guibg=NONE gui=bold guisp=NONE |
 highlight TSStringRegex guifg=#f9cb8c guibg=NONE gui=NONE guisp=NONE |
 highlight TSTextReference guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
@@ -193,10 +193,10 @@ highlight TSURI guifg=#9ccfd8 guibg=NONE gui=bold guisp=NONE |
 highlight TSVariable guifg=#e0def4 guibg=NONE gui=NONE guisp=NONE |
 highlight TSVariableBuiltin guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight TSWarning guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
-highlight TabLine guifg=#555169 guibg=#2D2A45 gui=NONE guisp=NONE |
+highlight TabLine guifg=#555169 guibg=#2d2a45 gui=NONE guisp=NONE |
 highlight TabLineFill guifg=NONE guibg=#191726 gui=NONE guisp=NONE |
-highlight TabLineSel guifg=#D3D1E6 guibg=#4B4673 gui=NONE guisp=NONE |
-highlight TelescopeBorder guifg=#4B4673 guibg=NONE gui=NONE guisp=NONE |
+highlight TabLineSel guifg=#d3d1e6 guibg=#4b4673 gui=NONE guisp=NONE |
+highlight TelescopeBorder guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
 highlight TelescopeMatching guifg=#e0def4 guibg=#2d3a50 gui=NONE guisp=NONE |
 highlight TelescopeSelection guifg=NONE guibg=#433c59 gui=NONE guisp=NONE |
 highlight TelescopeSelectionCaret guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
@@ -204,11 +204,11 @@ highlight Title guifg=#65b1cd guibg=NONE gui=NONE guisp=NONE |
 highlight Todo guifg=#232136 guibg=#569fba gui=NONE guisp=NONE |
 highlight Type guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight Underlined guifg=NONE guibg=NONE gui=underline guisp=NONE |
-highlight VertSplit guifg=#4B4673 guibg=NONE gui=NONE guisp=NONE |
+highlight VertSplit guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
 highlight Visual guifg=NONE guibg=#433c59 gui=NONE guisp=NONE |
 highlight WarningMsg guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight WhichKeyFloat guifg=NONE guibg=#191726 gui=NONE guisp=NONE |
-highlight Whitespace guifg=#2D2A45 guibg=NONE gui=NONE guisp=NONE |
+highlight Whitespace guifg=#2d2a45 guibg=NONE gui=NONE guisp=NONE |
 highlight diffAdded guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight diffChanged guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight diffFile guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
@@ -224,7 +224,7 @@ highlight rainboecol4 guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
 highlight rainboecol5 guifg=#9ccfd8 guibg=NONE gui=NONE guisp=NONE |
 highlight rainboecol6 guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
 highlight rainboecol7 guifg=#eb98c3 guibg=NONE gui=NONE guisp=NONE |
-highlight rustTSField guifg=#D3D1E6 guibg=NONE gui=NONE guisp=NONE
+highlight rustTSField guifg=#d3d1e6 guibg=NONE gui=NONE guisp=NONE
 ]])
 
 -- Highlight link definitions
