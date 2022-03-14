@@ -141,4 +141,17 @@ function M.clean()
   end
 end
 
+function M.status()
+  local foxes = require("nightfox.pallet").foxes
+
+  local output_path = config.compile_path
+  local file_suffix = config.compile_file_suffix
+
+  for _, name in ipairs(foxes) do
+    local file = util.join_paths(output_path, name .. file_suffix .. ".lua")
+    local status = util.exists(file) and "✓" or "x"
+    print(fmt("[%s]: %-10s %s", status, name, file))
+  end
+end
+
 return M

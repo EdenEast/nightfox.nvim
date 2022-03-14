@@ -28,6 +28,10 @@ function M.clean()
   require("nightfox.lib.compile").clean()
 end
 
+function M.status()
+  require("nightfox.lib.compile").status()
+end
+
 function M.setup(opts)
   if opts.options then
     M.init(opts.options)
