@@ -18,6 +18,7 @@
           packages = with pkgs; [
             pandoc
             gnumake
+            stylua
           ];
         };
       in
