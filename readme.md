@@ -184,7 +184,7 @@ local specs = {
 local groups = {
   -- By default nightfox links some groups together. `CursorLine` is one of these groups. When overriding
   -- Make sure `link` is cleared to `""` so that the link will be removed.
-  CursorLine = { bg = "sel1", link = "" },
+  CursorLine = { bg = "sel0", link = "" },
 
   -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
   IncSearch = { bg = "pallet.cyan" },
@@ -213,7 +213,7 @@ local pallets = require('nightfox.pallet').load()
 -- Returns the pallet of the specified colorscheme
 local pallet = require('nightfox.pallet').load("nightfox")
 
-print(vim.insepct(pallet.red))
+print(vim.inspect(pallet.red))
 -- {
 --   base = "#c94f6d",
 --   bright = "#d16983",
@@ -264,7 +264,7 @@ print(red_bg:to_css())
 
 -- Brighten bg by adding 10 to the value of the color as a hsv
 local alt_bg = bg:brighten(10)
-print(alt_bg:to_hsv())
+print(vim.inspect(alt_bg:to_hsv()))
 -- {
 --   hue = 213.91304347826,
 --   saturation = 47.916666666667,

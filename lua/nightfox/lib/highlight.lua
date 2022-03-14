@@ -61,15 +61,20 @@ end
 local function nvim_hl(highlights)
   for group, opts in pairs(highlights) do
     local style = parse_style(opts.style)
-    vim.api.nvim_set_hl(0, group, {
-      background = opts.bg,
-      foreground = opts.fg,
-      link = should_link(opts.link) and opts.link or nil,
-      bold = style.bold,
-      italic = style.italic,
-      underline = style.underline,
-      undercurl = style.undercurl,
-    })
+    if opts.link and opts.link ~= "" then
+      vim.api.nvim_set_hl(0, group, {
+        link = opts.link,
+      })
+    else
+      vim.api.nvim_set_hl(0, group, {
+        background = opts.bg,
+        foreground = opts.fg,
+        bold = style.bold,
+        italic = style.italic,
+        underline = style.underline,
+        undercurl = style.undercurl,
+      })
+    end
   end
 end
 

@@ -25,6 +25,10 @@ end
 ---@param spec Spec
 ---@return any
 local function parse_string(str, spec)
+  if str == "" then
+    return str
+  end
+
   if str:match("^#") then
     return str
   end
