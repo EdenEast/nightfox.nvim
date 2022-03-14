@@ -3,7 +3,7 @@
 A dark (Neo)vim theme written in lua.
 
 <div align="center">
-<img src="https://github.com/EdenEast/nightfox.nvim/wiki/resources/banner.svg" alt="banner" />
+<img src="https://user-images.githubusercontent.com/2746374/158089930-f1802adf-e6f5-4d58-a0c1-64e7d933d718.svg" alt="banner" />
 </div>
 
 ## Styles
@@ -12,23 +12,23 @@ Which _fox_ will you choose?
 
 ### Nightfox
 
-![nightfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nightfox-example.png)
+![nightfox-example](https://user-images.githubusercontent.com/2746374/158089942-59b6964e-da36-4178-828d-86a30c459e92.png)
 
 ### Nordfox
 
-![nordfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png)
+![nordfox-example](https://user-images.githubusercontent.com/2746374/158089990-fd3135f9-7cd5-4e15-ac66-dd38367e1142.png)
 
 ### Dayfox
 
-![dayfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dayfox-example.png)
+![dayfox-example](https://user-images.githubusercontent.com/2746374/158090131-7d88803e-6902-405f-a817-d173f99b3980.png)
 
 ### Dawnfox
 
-![dawnfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dawnfox-example.png)
+![dawnfox-example](https://user-images.githubusercontent.com/2746374/158090165-0a079d08-3ea8-4ca0-99e9-2e967e762542.png)
 
 ### Duskfox
 
-![duskfox-example](https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-duskfox-example.png)
+![duskfox-example](https://user-images.githubusercontent.com/2746374/158090299-fc836b05-65d7-4a03-86b1-bc3d71f7c603.png)
 
 ### Randfox
 
