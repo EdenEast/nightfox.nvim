@@ -1,9 +1,16 @@
 local M = {}
 
-local function to_value(tbl)
-  return tbl.base and tbl.base or tbl.to_css()
+---Convert a Shade or Color to a css string
+---@param value Shade | Color
+---@return string css hex string
+local function to_value(value)
+  return value.base and value.base or value.to_css()
 end
 
+---Walk path (one.two.three) in a table and return value
+---@param t table
+---@param path string
+---@return any
 local function get_path(t, path)
   for segment in path:gmatch("[^.]+") do
     if type(t) == "table" then
@@ -13,6 +20,10 @@ local function get_path(t, path)
   return t
 end
 
+---Parse string for configuration template
+---@param str string
+---@param spec Spec
+---@return any
 local function parse_string(str, spec)
   if str:match("^#") then
     return str

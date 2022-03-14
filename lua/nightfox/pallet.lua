@@ -1,5 +1,37 @@
-local Color = require("nightfox.lib.color")
 local collect = require("nightfox.lib.collect")
+
+--#region Types
+
+---@class PalletMeta
+---@field name string
+---@field light boolean
+
+---@class Pallet
+---@field meta PalletMeta
+---@field black Shade
+---@field red Shade
+---@field green Shade
+---@field yellow Shade
+---@field blue Shade
+---@field magenta Shade
+---@field cyan Shade
+---@field white Shade
+---@field orange Shade
+---@field pink Shade
+---@field comment string
+---@field bg0 string
+---@field bg1 string
+---@field bg2 string
+---@field bg3 string
+---@field bg4 string
+---@field fg0 string
+---@field fg1 string
+---@field fg2 string
+---@field fg3 string
+---@field sel0 string
+---@field sel1 string
+
+--#endregion
 
 local M = {}
 

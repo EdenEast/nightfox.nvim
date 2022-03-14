@@ -50,12 +50,6 @@ end
 
 function M.ensure_dir(path)
   os.execute(string.format("mkdir %s %s", M.is_windows and "" or "-p", path))
-  -- if M.is_windows then
-  --   io.execute("mkdir")
-  --   vim.cmd("!mkdir " .. path)
-  -- else
-  --   vim.cmd("!mkdir -p " .. path)
-  -- end
 end
 
 return M

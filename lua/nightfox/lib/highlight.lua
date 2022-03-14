@@ -1,4 +1,3 @@
-local util = require("nightfox.util")
 local fmt = string.format
 
 local M = {}

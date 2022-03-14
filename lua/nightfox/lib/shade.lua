@@ -1,5 +1,15 @@
 local Color = require("nightfox.lib.color")
 
+--#region TYPES
+
+---@class Shade
+---@field base string
+---@field bright string
+---@field dim string
+---@field light boolean
+
+--#endregion
+
 local Shade = {}
 Shade.__index = Shade
 
