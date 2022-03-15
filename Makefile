@@ -1,5 +1,5 @@
 pandocrepo = https://github.com/kdheepak/panvimdoc
-pandocdir = doc/panvimdoc
+pandocdir = misc/panvimdoc
 
 all: compile extragen docgen
 
@@ -13,9 +13,9 @@ docgen: | $(pandocdir)
 	@pandoc \
 		--metadata=project:nightfox \
 		--metadata="description:A highly customizable theme for vim and neovim" \
-		--lua-filter doc/panvimdoc/scripts/skip-blocks.lua \
-		--lua-filter doc/panvimdoc/scripts/include-files.lua \
-		-t doc/panvimdoc/scripts/panvimdoc.lua \
+		--lua-filter misc/panvimdoc/scripts/skip-blocks.lua \
+		--lua-filter misc/panvimdoc/scripts/include-files.lua \
+		-t misc/panvimdoc/scripts/panvimdoc.lua \
 		usage.md \
 		-o doc/nightfox.txt
 

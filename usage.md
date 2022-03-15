@@ -360,7 +360,7 @@ The {hue} is a float ranging `[0,360]`. {sat} and {lightness} are floats ranging
 Convert a `Color` object to a integer number. If {with_alpha} is true the hex value will be returned with the alpha
 value added. This is defaulted to `false`.
 
-#### color:to_hex({with_alpha})
+#### color:to_css({with_alpha})
 
 Convert a `Color` object to a `css_style` string (`"#RRGGBB[AA]"`). If {with_alpha} is true the hex value will be
 returned with the alpha value added. This is defaulted to `false`.
