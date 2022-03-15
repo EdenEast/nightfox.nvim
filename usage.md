@@ -428,7 +428,7 @@ Compile nightfox settings for each `style` and write compiled file to [compile_p
 
 #### clean()
 
-Delete compiled files in [compiled_path].
+Delete compiled files in [compile_path].
 
 #### :NightfoxCompile
 
@@ -436,6 +436,6 @@ Compile nightfox settings for each `style` and write compiled file to [compile_p
 
 #### :NightfoxClean
 
-Delete compiled files in [compiled_path].
+Delete compiled files in [compile_path].
 
 [compile_path]: #compile_path-%7Bpath%7D
