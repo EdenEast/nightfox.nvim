@@ -45,6 +45,7 @@ M.options = {
     neogit = true,
     nvimtree = true,
     sneak = true,
+    symbol_outline = true,
     telescope = true,
     treesitter = true,
     tsrainbow = true,

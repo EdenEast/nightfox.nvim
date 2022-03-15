@@ -307,6 +307,7 @@ Current list of modules are:
 - neogit
 - nvimtree
 - sneak
+- symbol_outline
 - telescope
 - treesitter
 - tsrainbow

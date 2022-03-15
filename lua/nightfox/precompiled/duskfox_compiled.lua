@@ -268,6 +268,7 @@ highlight! link Exception Keyword |
 highlight! link FidgetTask LineNr |
 highlight! link FidgetTitle Title |
 highlight! link Float Number |
+highlight! link FocusedSymbol Search |
 highlight! link Include PreProc |
 highlight! link Label Conditional |
 highlight! link LspSagaBorderTitle Title |
@@ -286,6 +287,7 @@ highlight! link SpecialComment Special |
 highlight! link SpecialKey NonText |
 highlight! link StorageClass Type |
 highlight! link Structure Type |
+highlight! link SymbolOutlineConnector Conceal |
 highlight! link TSAttribute Constant |
 highlight! link TSProperty TSField |
 highlight! link Tag Special |

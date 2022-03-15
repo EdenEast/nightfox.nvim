@@ -321,6 +321,7 @@ Nightfox provides the following commands that wrap these functions above:
 - [neogit](https://github.com/TimUntersberger/neogit)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
+- [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
