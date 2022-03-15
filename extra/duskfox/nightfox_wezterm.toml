@@ -1,6 +1,6 @@
 # Nightfox Wezterm Colors
 # Style: duskfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_wezterm.toml
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/duskfox/nightfox_wezterm.toml
 [colors]
 foreground = "#e0def4"
 background = "#232136"

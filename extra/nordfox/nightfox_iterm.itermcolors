@@ -3,7 +3,7 @@
 <plist version="1.0">
 <!-- Nightfox ITerm Colors -->
 <!-- Style: nordfox -->
-<!-- Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_iterm.itermcolors -->
+<!-- Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_iterm.itermcolors -->
 <dict>
   <key>Ansi 0 Color</key>
   <dict>

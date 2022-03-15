@@ -1,6 +1,6 @@
 # Nightfox Color Palette
 # Style: dawnfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_fish.fish
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dawnfox/nightfox_fish.fish
 set -l foreground 575279
 set -l selection d0d8d8
 set -l comment 9893a5

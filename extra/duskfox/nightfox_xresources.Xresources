@@ -1,6 +1,6 @@
 ! Nightfox colors for Xresources
 ! Style: duskfox
-! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_xresources.Xresources
+! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/duskfox/nightfox_xresources.Xresources
 *background: #232136
 *foreground: #e0def4
 *color0:  #393552

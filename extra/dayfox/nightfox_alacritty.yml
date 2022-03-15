@@ -1,6 +1,6 @@
 # Nightfox Alacritty Colors
 # Style: dayfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_alacritty.yml
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_alacritty.yml
 colors:
   # Default colors
   primary:

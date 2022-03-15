@@ -1,6 +1,6 @@
 # Nightfox Color Palette
 # Style: duskfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_fish.fish
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/duskfox/nightfox_fish.fish
 set -l foreground e0def4
 set -l selection 433c59
 set -l comment 817c9c

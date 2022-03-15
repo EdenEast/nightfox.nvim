@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Nightfox colors for Tmux
 # Style: nightfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox_tmux.tmux
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_tmux.tmux
 set -g mode-style "fg=#719cd6,bg=#aeafb0"
 set -g message-style "fg=#719cd6,bg=#aeafb0"
 set -g message-command-style "fg=#719cd6,bg=#aeafb0"
