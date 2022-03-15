@@ -21,8 +21,8 @@
 
 ## Notice ℹ️
 
-Nightfox has recently been rewritten and has depricated most of the previous interface. If you are not ready to update
-yet you can point your package manager to use the tag [`v1.0.0`][v1-tag] for the mean time.
+Nightfox has recently been [rewritten][rewrite-pr] and has depricated most of the previous interface. If you are not
+ready to update yet you can point your package manager to use the tag [`v1.0.0`][v1-tag] for the mean time.
 
 <details>
 <summary>Plugin Managers</summary>
@@ -51,6 +51,7 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 - `hlgroups` has been replaced with the concept of [groups](#customize-pallets-and-groups)
 
 [v1-tag]: https://github.com/EdenEast/nightfox.nvim/tree/v1.0.0
+[rewrite-pr]: https://github.com/EdenEast/nightfox.nvim/pull/77
 
 ## Features
 
