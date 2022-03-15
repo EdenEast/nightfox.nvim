@@ -19,6 +19,39 @@
   <h3>Nordfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png" alt="nordfox" />
 </div>
 
+## Notice ℹ️
+
+Nightfox has recently been rewritten and has depricated most of the previous interface. If you are not ready to update
+yet you can point your package manager to use the tag [`v1.0.0`][v1-tag] for the mean time.
+
+<details>
+<summary>Plugin Managers</summary>
+
+```lua
+use { "EdenEast/nightfox.nvim", tag = "v1.0.0" } -- Packer
+```
+
+```vim
+Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
+```
+
+</details>
+
+### Changes
+
+- `nightfox.load()` has been removed in favour of setting colorschemes using the builtin `:colorscheme` command
+- `nightfox.setup()` function now takes configuration options as an optional key
+- `fox` has been removed in favour of setting colorschemes using the builtin `:colorscheme` command
+- `transparent` has been moved to `options.transparent`
+- `terminal_color` has been moved to `options.terminal_color`
+- `alt_nc` has been moved to `options.dim_inactive`
+- `styles` has been moved to `options.styles`
+- `inverse` has been moved to `options.inverse`
+- `colors` has been replaced with the concept of [pallets](#pallets)
+- `hlgroups` has been replaced with the concept of [groups](#customize-pallets-and-groups)
+
+[v1-tag]: https://github.com/EdenEast/nightfox.nvim/tree/v1.0.0
+
 ## Features
 
 - Support both vim and neovim
