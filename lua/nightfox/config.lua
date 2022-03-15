@@ -1,7 +1,7 @@
 local collect = require("nightfox.lib.collect")
 local util = require("nightfox.util")
 
-local M = { fox = "nightfox", checked_deprication = false, has_options = false }
+local M = { fox = "nightfox", has_options = false }
 
 M.options = {
   compile_path = util.join_paths(vim.fn.stdpath("cache"), "nightfox"),
