@@ -53,6 +53,25 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 [v1-tag]: https://github.com/EdenEast/nightfox.nvim/tree/v1.0.0
 [rewrite-pr]: https://github.com/EdenEast/nightfox.nvim/pull/77
 
+<details>
+<summary>Color Migration table</summary>
+
+| V1 color     | V2 pallet |
+|--------------|-----------|
+| bg           | bg1       |
+| bg_alt       | bg0       |
+| bg_sidebar   | bg0       |
+| bg_float     | bg0       |
+| bg_popup     | bg0       |
+| bg_highlight | bg3       |
+| bg_visual    | sel0      |
+| bg_search    | sel1      |
+| fg           | fg1       |
+| fg_alt       | fg2       |
+| fg_gutter    | fg3       |
+
+</details>
+
 ## Features
 
 - Support both vim and neovim
