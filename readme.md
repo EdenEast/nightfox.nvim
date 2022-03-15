@@ -12,11 +12,11 @@
 </p>
 
 <div align="center">
-  <h3>Nightfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nightfox-example.png" alt="nightfox" />
-  <h3>Dayfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dayfox-example.png" alt="dayfox" />
-  <h3>Dawnfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-dawnfox-example.png" alt="dawnfox" />
-  <h3>Duskfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-duskfox-example.png" alt="duskfox" />
-  <h3>Nordfox</h3><img src="https://github.com/EdenEast/nightfox.nvim/wiki/images/gallery-nordfox-example.png" alt="nordfox" />
+  <h3>Nightfox</h3><img src="https://user-images.githubusercontent.com/2746374/158411310-efbeebd1-5364-4afd-8af4-b4eb0f22da4b.png" alt="nightfox" style="border-radius:1%" />
+  <h3>Dayfox</h3><img src="https://user-images.githubusercontent.com/2746374/158411366-fbae878c-95aa-4672-9859-0c179c805036.png" alt="dayfox" style="border-radius:1%" />
+  <h3>Dawnfox</h3><img src="https://user-images.githubusercontent.com/2746374/158411637-c1518a23-724e-4090-ab92-4e316c5c34d3.png" alt="dawnfox" style="border-radius:1%" />
+  <h3>Duskfox</h3><img src="https://user-images.githubusercontent.com/2746374/158411670-10f6feb1-bc5d-44fc-a040-45d8c5370adb.png" alt="duskfox" style="border-radius:1%" />
+  <h3>Nordfox</h3><img src="https://user-images.githubusercontent.com/2746374/158411691-cc9ad494-6520-42e8-a7fe-8dba7039688c.png" alt="nordfox" style="border-radius:1%" />
 </div>
 
 ## Notice ℹ️
