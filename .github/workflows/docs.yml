@@ -21,7 +21,7 @@ jobs:
           printf 'VIMDOC_BRANCH=bot/vimdoc/%s\n' ${GITHUB_REF#refs/heads/} >> $GITHUB_ENV
 
       - name: pandocvim
-        uses: kdheepak/panvimdoc@v2.7.1
+        uses: kdheepak/panvimdoc@v2.7.3
         with:
           vimdoc: nightfox
           pandoc: usage.md
