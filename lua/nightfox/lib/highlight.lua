@@ -73,6 +73,7 @@ local function nvim_hl(highlights)
         italic = style.italic,
         underline = style.underline,
         undercurl = style.undercurl,
+        reverse = style.inverse,
       })
     end
   end
