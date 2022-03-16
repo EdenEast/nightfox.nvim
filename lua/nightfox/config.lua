@@ -1,65 +1,66 @@
+local collect = require("nightfox.lib.collect")
 local util = require("nightfox.util")
-local M = {}
 
-local config = {
-  fox = "nightfox", -- Which fox style should be applied
-  transparent = false, -- Disable setting the background color
-  alt_nc = false, -- Non current window bg to alt color
-  terminal_colors = true, -- Configure the colors used when opening :terminal
+local M = { fox = "nightfox", has_options = false }
+
+M.options = {
+  compile_path = util.join_paths(vim.fn.stdpath("cache"), "nightfox"),
+  compile_file_suffix = "_compiled",
+  transparent = false,
+  terminal_colors = true,
+  dim_inactive = false,
   styles = {
-    comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
-    functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
-    keywords = "NONE", -- Style that is applied to keywords: see `highlight-args` for options
-    strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
-    variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
+    comments = "NONE",
+    functions = "NONE",
+    keywords = "NONE",
+    numbers = "NONE",
+    strings = "NONE",
+    types = "NONE",
+    variables = "NONE",
   },
   inverse = {
-    match_paren = false, -- Enable/Disable inverse highlighting for match parens
-    visual = false, -- Enable/Disable inverse highlighting for visual selection
-    search = false, -- Enable/Disable inverse highlights for search highlights
+    match_paren = false,
+    visual = false,
+    search = false,
   },
-  colors = {}, -- Override default colors
-  hlgroups = {}, -- Override highlight groups
+  modules = {
+    barbar = true,
+    cmp = true,
+    dashboard = true,
+    diagnostic = {
+      enable = true,
+      background = true,
+    },
+    fern = true,
+    fidget = true,
+    gitgutter = true,
+    gitsigns = true,
+    glyph_pallet = true,
+    hop = true,
+    illuminate = true,
+    lightspeed = true,
+    lsp_saga = true,
+    lsp_trouble = true,
+    native_lsp = true,
+    neogit = true,
+    nvimtree = true,
+    sneak = true,
+    symbol_outline = true,
+    telescope = true,
+    treesitter = true,
+    tsrainbow = true,
+    whichkey = true,
+  },
 }
 
-M.options = {}
+function M.set_fox(name)
+  M.fox = name
+end
 
 function M.set_options(opts)
   opts = opts or {}
-  M.options = util.tbl_deep_extend(M.options, opts)
+  M.options = collect.deep_extend(M.options, opts)
+  M.has_options = true
 end
-
-function M.check_depricated_options()
-  local keys = {
-    "style",
-    "transparent",
-    "italic_comments",
-    "italic_functions",
-    "italic_keywords",
-    "italic_strings",
-    "italic_variables",
-    "terminal_colors",
-    "color_delimiter",
-    "colors",
-  }
-
-  local results = {}
-
-  for _, k in ipairs(keys) do
-    local key = "nightfox_" .. k
-    if vim.g[key] ~= nil then
-      table.insert(results, "Warning config using '" .. key .. "' is deprecated in favor of lua setup configuration")
-    end
-  end
-
-  if #results > 0 then
-    table.insert(results, "See https://github.com/edeneast/nightfox.nvim for more info")
-    util.warn(unpack(results))
-  end
-end
-
-M.check_depricated_options()
-
-M.set_options(config)
 
 return M

@@ -2,7 +2,7 @@
 ! Style: nordfox
 ! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_xresources.Xresources
 *background: #2e3440
-*foreground: #b9bfca
+*foreground: #cdcecf
 *color0:  #3b4252
 *color1:  #bf616a
 *color2:  #a3be8c
@@ -19,4 +19,3 @@
 *color13: #c895bf
 *color14: #93ccdc
 *color15: #e7ecf4
-

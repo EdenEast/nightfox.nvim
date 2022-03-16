@@ -1,9 +1,7 @@
 {
     "name" : "nightfox",
-
     "background" : "#192330",
     "foreground" : "#cdcecf",
-
     "black" : "#393b44",
     "blue" : "#719cd6",
     "cyan" : "#63cdcf",
@@ -12,14 +10,12 @@
     "red" : "#c94f6d",
     "white" : "#dfdfe0",
     "yellow" : "#dbc074",
-
-    "brightBlack" : "#475072",
-    "brightBlue" : "#84cee4",
-    "brightCyan" : "#59f0ff",
-    "brightGreen" : "#58cd8b",
-    "brightPurple" : "#b8a1e3",
-    "brightRed" : "#d6616b",
-    "brightWhite" : "#f2f2f2",
-    "brightYellow" : "#ffe37e"
-},
-  
+    "brightBlack" : "#575860",
+    "brightBlue" : "#86abdc",
+    "brightCyan" : "#7ad4d6",
+    "brightGreen" : "#8ebaa4",
+    "brightPurple" : "#baa1e2",
+    "brightRed" : "#d16983",
+    "brightWhite" : "#e4e4e5",
+    "brightYellow" : "#e0c989"
+}

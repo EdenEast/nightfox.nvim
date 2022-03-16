@@ -1,6 +1,8 @@
 " Load only once
 if exists('g:loaded_nightfox') | finish | endif
 
-command! -nargs=* -complete=customlist,v:lua.require'nightfox'.load_complete NightfoxLoad lua require('nightfox').load(<q-args>)
+command! NightfoxCompile lua require('nightfox').compile()
+command! NightfoxClean lua require("nightfox").clean()
+command! NightfoxStatus lua require("nightfox").status()
 
 let g:loaded_nightfox = 1

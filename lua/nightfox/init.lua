@@ -1,64 +1,66 @@
-local util = require("nightfox.util")
-
 local M = {}
 
--- Set the configuration values for nightfox.
--- This functions sets the configuration options for nightfox. These settings will be used when the colorscheme is
--- applied. The colorscheme is applied with the `load` function.
--- @param opts table
-function M.setup(opts)
+local override = {}
+
+function override.pallets(pallets)
+  require("nightfox.override").pallets = pallets
+end
+
+function override.specs(specs)
+  require("nightfox.override").specs = specs
+end
+
+function override.groups(groups)
+  require("nightfox.override").groups = groups
+end
+
+M.override = override
+
+function M.init(opts)
   require("nightfox.config").set_options(opts)
 end
 
--- Loads colorscheme and applies the highlight groups.
--- If a name is passed it will override what was set in the configuration setup.
--- @param name string
-function M.load(name)
-  local colors = require("nightfox.colors").load(name)
-  local theme = require("nightfox.theme").apply(colors)
-
-  util.load(theme, true)
+function M.compile()
+  require("nightfox.lib.compile").compile()
 end
 
--- Loads colorscheme and applies the highlight groups.
--- If a name is passed it will override what was set in the configuration setup.
---
--- This function is internal and should not be called by the user. This funciton is
--- to be called from the `colors/*.vim` files. This function will not execute the
--- autocmd `ColorScheme`. The command `:colorscheme` is already handling this.
--- @param name string
-function M._colorscheme_load()
-  local colors = require("nightfox.colors").load()
-  local theme = require("nightfox.theme").apply(colors)
-
-  util.load(theme, false)
+function M.clean()
+  require("nightfox.lib.compile").clean()
 end
 
--- Completion function for the NightfoxLoad command
--- @param lead string The current typed string
-function M.load_complete(lead, _, _)
-  local foxes = require("nightfox.colors").foxes
+function M.status()
+  require("nightfox.lib.compile").status()
+end
 
-  if lead == "" then
-    return foxes
+function M.setup(opts)
+  if opts.options then
+    M.init(opts.options)
   end
 
-  local completion_list = {}
-  for _, name in pairs(foxes) do
-    if name:sub(1, #lead) == lead then
-      table.insert(completion_list, name)
-    end
+  if opts.pallets then
+    M.override.pallets(opts.pallets)
   end
 
-  return completion_list
+  if opts.specs then
+    M.override.specs(opts.specs)
+  end
+
+  if opts.groups then
+    M.override.groups(opts.groups)
+  end
+
+  require("nightfox.util.deprication").check_deprication(opts)
 end
 
-function M.set()
-  util.warn(
-    "`set()` has been deprecated in favor of `load()`",
-    "See https://github.com/edeneast/nightfox.nvim for more info"
+function M.load()
+  require("nightfox.lib.deprication").write(
+    "  ",
+    { "nightfox.load()", "WarningMsg" },
+    " has been Deprecated. To apply the colorscheme use the builtin ",
+    { ":colorscheme", "WarningMsg" },
+    " command ",
+    { ":colorscheme nightfox", "WarningMsg" }
   )
-  M.load()
 end
 
 return M

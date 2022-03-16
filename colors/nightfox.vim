@@ -1,14 +1,20 @@
 lua << EOF
--- Useful for me when I am trying to debug and reload my changes
-if vim.g.nightfox_debug == true then
-  package.loaded['nightfox'] = nil
-  package.loaded['nightfox.colors'] = nil
-  package.loaded["nightfox.colors.nightfox"] = nil
-  package.loaded['nightfox.theme'] = nil
-  package.loaded['nightfox.util'] = nil
+-- Useful when debugging
+if vim.g.nightfox_debug then
+  local ignore = { "config", "deprication", "override" }
+  for name, _ in pairs(package.loaded) do
+    if name:match("^nightfox") then
+      for _, ign in ipairs(ignore) do
+        if name:match(ign) then
+          goto continue
+        end
+      end
+      package.loaded[name] = nil
+      ::continue::
+    end
+  end
 end
 
-local nightfox = require('nightfox')
-nightfox.setup({fox = "nightfox"})
-nightfox._colorscheme_load()
+require("nightfox.config").set_fox("nightfox")
+require("nightfox.main").load()
 EOF

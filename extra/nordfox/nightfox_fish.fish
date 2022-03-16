@@ -1,8 +1,8 @@
 # Nightfox Color Palette
 # Style: nordfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_fish.fish
-set -l foreground b9bfca
-set -l selection 3e4655
+set -l foreground cdcecf
+set -l selection 3e4a5b
 set -l comment 60728a
 set -l red bf616a
 set -l orange c9826b
@@ -33,5 +33,3 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
-
-  

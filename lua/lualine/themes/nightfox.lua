@@ -1,37 +1,32 @@
-local colors = require("nightfox.colors").load()
+local Color = require("nightfox.lib.color")
+local name = require("nightfox.config").fox
+local spec = require("nightfox.spec").load(name)
 
-local nightfox = {}
+local pal = spec.pallet
+local bg = Color.from_hex(spec.bg0)
+local fg = spec.fg2
 
-nightfox.normal = {
-  a = { bg = colors.blue, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.blue },
-  c = { bg = colors.bg_statusline, fg = colors.fg_sidebar },
-}
+local function generate_mode(color, amount)
+  amount = amount or 0.3
+  local fade = bg:blend(Color.from_hex(color), amount):to_css()
+  local b = bg:to_css()
+  local f = fg
 
-nightfox.insert = {
-  a = { bg = colors.green, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.green },
-}
+  return {
+    a = { bg = color, fg = b },
+    b = { bg = fade, fg = f },
+    c = { bg = b, fg = f },
+  }
+end
 
-nightfox.command = {
-  a = { bg = colors.yellow, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.yellow },
-}
-
-nightfox.visual = {
-  a = { bg = colors.magenta, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.magenta },
-}
-
-nightfox.replace = {
-  a = { bg = colors.red, fg = colors.black },
-  b = { bg = colors.fg_gutter, fg = colors.red },
-}
-
-nightfox.inactive = {
-  a = { bg = colors.bg_statusline, fg = colors.blue },
-  b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = "bold" },
-  c = { bg = colors.bg_statusline, fg = colors.fg_gutter },
+-- stylua: ignore
+local nightfox =  {
+  normal   = generate_mode(pal.blue.base),
+  insert   = generate_mode(pal.green.base),
+  command  = generate_mode(pal.yellow.base),
+  visual   = generate_mode(pal.magenta.base),
+  replace  = generate_mode(pal.red.base),
+  inactive = generate_mode(spec.fg3),
 }
 
 return nightfox

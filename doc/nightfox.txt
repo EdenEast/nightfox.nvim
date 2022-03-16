@@ -1,468 +1,604 @@
-*nightfox.txt*                           Soft dark, vim and neovim colorscheme
+*nightfox.txt*                  A highly customizable theme for vim and neovim
 
 ==============================================================================
 Table of Contents                                 *nightfox-table-of-contents*
 
-1. 🦊 Nightfox                                      |nightfox-🦊-nightfox|
-  - Styles                                                   |nightfox-styles|
-  - ✨ Features                                       |nightfox-✨-features|
-  - ⚡️ Requirements                         |nightfox-⚡️-requirements|
-  - 📦 Installation                             |nightfox-📦-installation|
-  - 🚀 Usage                                           |nightfox-🚀-usage|
-  - Status lines                                       |nightfox-status-lines|
-  - Command                                                 |nightfox-command|
-  - ⚙️ Configuration                       |nightfox-⚙️-configuration|
-  - ⚙️ Advanced Configuration     |nightfox-⚙️-advanced-configuration|
-  - 🍬 Extra                                           |nightfox-🍬-extra|
-  - 🔥Contributing                               |nightfox-🔥contributing|
-  - Credits                                                 |nightfox-credits|
+  - Overview                                               |nightfox-overview|
+  - Usage                                                     |nightfox-usage|
+  - Configuration                                     |nightfox-configuration|
+  - Option                                                   |nightfox-option|
+  - Shade                                                     |nightfox-shade|
+  - Pallet                                                   |nightfox-pallet|
+  - Spec                                                       |nightfox-spec|
+  - Group                                                     |nightfox-group|
+  - Module                                                   |nightfox-module|
+  - Color                                                     |nightfox-color|
+  - Compile                                                 |nightfox-compile|
 
-==============================================================================
-1. 🦊 Nightfox                                      *nightfox-🦊-nightfox*
+OVERVIEW                                                   *nightfox-overview*
 
-A dark (Neo)vim theme written in lua.
-
-<img
-src="https://user-images.githubusercontent.com/2746374/158089930-f1802adf-e6f5-4d58-a0c1-64e7d933d718.svg"
-alt="banner" />
-
-STYLES                                                       *nightfox-styles*
-
-Which _fox_ will you choose?
-
-NIGHTFOX ~
-
-<div class="figure">
-<img src="https://user-images.githubusercontent.com/2746374/158089942-59b6964e-da36-4178-828d-86a30c459e92.png" title="fig:"/>
-<p class="caption">nightfox-example</p>
-</div>
-
-NORDFOX ~
-
-<div class="figure">
-<img src="https://user-images.githubusercontent.com/2746374/158089990-fd3135f9-7cd5-4e15-ac66-dd38367e1142.png" title="fig:"/>
-<p class="caption">nordfox-example</p>
-</div>
-
-DAYFOX ~
-
-<div class="figure">
-<img src="https://user-images.githubusercontent.com/2746374/158090131-7d88803e-6902-405f-a817-d173f99b3980.png" title="fig:"/>
-<p class="caption">dayfox-example</p>
-</div>
-
-DAWNFOX ~
-
-<div class="figure">
-<img src="https://user-images.githubusercontent.com/2746374/158090165-0a079d08-3ea8-4ca0-99e9-2e967e762542.png" title="fig:"/>
-<p class="caption">dawnfox-example</p>
-</div>
-
-DUSKFOX ~
-
-<div class="figure">
-<img src="https://user-images.githubusercontent.com/2746374/158090299-fc836b05-65d7-4a03-86b1-bc3d71f7c603.png" title="fig:"/>
-<p class="caption">duskfox-example</p>
-</div>
-
-RANDFOX ~
-
-Having trouble picking a fox. Let the dice decide! Set `style` to `randfox` to
-get a random fox every time the colorsheme is applied.
-
-✨ FEATURES                                           *nightfox-✨-features*
-
-Supported plugins
+Nightfox is a highly customizable theme for vim and neovim with support for
+lsp, treesitter and a variety of plugins. It comes with multiple different
+styles to suite your preference. These are:
 
 
-- TreeSitter <https://github.com/nvim-treesitter/nvim-treesitter>
-- |LSP Diagnostics|
-- LSP Trouble <https://github.com/folke/lsp-trouble.nvim>
-- LSP Saga <https://github.com/glepnir/lspsaga.nvim>
-- Git Signs <https://github.com/lewis6991/gitsigns.nvim>
-- Git Gutter <https://github.com/airblade/vim-gitgutter>
-- Glyph Palette <https://github.com/lambdalisue/glyph-palette.vim/>
-- Telescope <https://github.com/nvim-telescope/telescope.nvim>
-- NvimTree <https://github.com/kyazdani42/nvim-tree.lua>
-- WhichKey <https://github.com/liuchengxu/vim-which-key>
-- Indent Blankline <https://github.com/lukas-reineke/indent-blankline.nvim>
-- Dashboard <https://github.com/glepnir/dashboard-nvim>
-- Lualine <https://github.com/hoob3rt/lualine.nvim>
-- Lightline <https://github.com/itchyny/lightline.vim>
-- Neogit <https://github.com/TimUntersberger/neogit>
-- vim-sneak <https://github.com/justinmk/vim-sneak>
-- Fern <https://github.com/lambdalisue/fern.vim>
-- Barbar <https://github.com/romgrk/barbar.nvim>
-- nvim-ts-rainbow <https://github.com/p00f/nvim-ts-rainbow>
+- `Nightfox`
+- `Dayfox`
+- `Dawnfox`
+- `Duskfox`
+- `Nordfox`
 
 
-⚡️ REQUIREMENTS                             *nightfox-⚡️-requirements*
+USAGE                                                         *nightfox-usage*
 
-
-- `Neovim` >= 0.5.0 **- or -** `Vim` with Lua >= 5.2
-- Gui or Terminal with `true color` support
-    - Some example Terminals:
-        - Alacritty <https://alacritty.org/>
-        - Kitty <https://sw.kovidgoyal.net/kitty/>
-        - WezTerm <https://wezfurlong.org/wezterm/>
-
-
-
-  Note for MacOS: `terminal.app` does not support `true color` use either
-  `Iterm2` or another `true color` terminal.
-
-
-📦 INSTALLATION                                 *nightfox-📦-installation*
-
-Install the theme with a package manager:
+At it’s core nightfox is simply a colorscheme just like any other. If you
+just want to use the theme out of the box simply set the colorscheme with the
+`:colorscheme` command
 
 >
-    " For Vim-Plug
-    Plug 'EdenEast/nightfox.nvim'
+    :colorscheme nightfox
 <
 
 
+Nightfox is built to be customizable. There are four main components that can
+be customized. These are |nightfox-option|, |nightfox-pallet|, |nightfox-spec|,
+and |nightfox-group|.
+
+CONFIGURATION                                         *nightfox-configuration*
+
+Nightfox allows you to set individual components separately as apposed to using
+the default `setup` function.
+
+INIT ~
+
+The `init()` function set nightfox’s config |nightfox-options|.
+
 >
-    -- For Packer
-    use 'EdenEast/nightfox.nvim'
+    require('nightfox').init({
+      dim_inactive = true,
+    })
 <
 
 
-🚀 USAGE                                               *nightfox-🚀-usage*
+OVERRIDES ~
 
-VIMSCRIPT ~
-
-Enable the colorscheme:
-
->
-    colorscheme nightfox
-<
-
-
-Nightfox also defines the other styles as colorschemes, `nordfox`, `dayfox`,
-`dawnfox` and `duskfox`.
-
-LUA ~
-
-If you prefer to use lua:
+The individual components: |nightfox-pallets|, |nightfox-specs| and
+|nightfox-groups| can be set separately.
 
 >
-    require('nightfox').load(<fox_name>)
-<
-
-
-If `<fox_name>` is not passed load will apply the fox specified in the config.
-
-STATUS LINES                                           *nightfox-status-lines*
-
-For all status lines `nightfox` is the only valid name. The other names are
-names of styles.
-
-LUALINE <HTTPS://GITHUB.COM/HOOB3RT/LUALINE.NVIM> ~
-
->
-    require('lualine').setup {
-      options = {
-        -- ... your lualine config
-        theme = "nightfox"
-      }
-    }
-<
-
-
-**Note:** Use lualine fork shadmansaleh/lualine.nvim
-<https://github.com/shadmansaleh/lualine.nvim> while waiting for pr #311
-<https://github.com/hoob3rt/lualine.nvim/pull/311> to be merged
-
-LIGHTLINE <HTTPS://GITHUB.COM/ITCHYNY/LIGHTLINE.VIM> ~
-
-To enable `Nightfox` from `Lightline`:
-
->
-    " Vim Script
-    let g:lightline = {'colorscheme': 'nightfox'}
-<
-
-
-COMMAND                                                     *nightfox-command*
-
-Nightfox also provides the following command to load a specific fox’s style.
-
-
-- `:NightfoxLoad <fox>` load and applies the passed `<fox>` (Use tab completion to view options)
-
-
-⚙️ CONFIGURATION                           *nightfox-⚙️-configuration*
-
-Nightfox is configured in lua. Nightfox comes with default configuration
-values. You can view them here:
-
->
-    {
-      fox = "nightfox", -- Which fox style should be applied
-      transparent = false, -- Disable setting the background color
-      alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
-      terminal_colors = true, -- Configure the colors used when opening :terminal
-      styles = {
-        comments = "NONE", -- Style that is applied to comments: see `highlight-args` for options
-        functions = "NONE", -- Style that is applied to functions: see `highlight-args` for options
-        keywords = "NONE", -- Style that is applied to keywords: see `highlight-args` for options
-        strings = "NONE", -- Style that is applied to strings: see `highlight-args` for options
-        variables = "NONE", -- Style that is applied to variables: see `highlight-args` for options
+    local override = require('nightfox').override
+    override.pallets({
+      nightfox = {
+        red = "#c94f6d",
       },
-      inverse = {
-        match_paren = false, -- Enable/Disable inverse highlighting for match parens
-        visual = false, -- Enable/Disable inverse highlighting for visual selection
-        search = false, -- Enable/Disable inverse highlights for search highlights
+      nordfox = {
+        comment = "#60728a",
       },
-      colors = {}, -- Override default colors
-      hlgroups = {}, -- Override highlight groups
-    }
-<
-
-
-You can override these values to suite your preferences. An example of this
-would be as follows:
-
->
-    local nightfox = require('nightfox')
-    
-    -- This function set the configuration of nightfox. If a value is not passed in the setup function
-    -- it will be taken from the default configuration above
-    nightfox.setup({
-      fox = "nordfox", -- change the colorscheme to use nordfox
-      styles = {
-        comments = "italic", -- change style of comments to be italic
-        keywords = "bold", -- change style of keywords to be bold
-        functions = "italic,bold" -- styles can be a comma separated list
-      },
-      inverse = {
-        match_paren = true, -- inverse the highlighting of match_parens
-      },
-      colors = {
-        red = "#FF000", -- Override the red color for MAX POWER
-        bg_alt = "#000000",
-      },
-      hlgroups = {
-        TSPunctDelimiter = { fg = "${red}" }, -- Override a highlight group with the color red
-        LspCodeLens = { bg = "#000000", style = "italic" },
+    })
+    override.specs({
+      nightfox = {
+        syntax = {
+          keyword = "magenta"
+        }
       }
     })
-    
-    -- Load the configuration set above and apply the colorscheme
-    nightfox.load()
+    override.groups({
+      IncSearch = { bg = "pallet.cyan" },
+    })
 <
 
 
-For configuration in `vimscript`, wrap the above example in a lua script block.
+SETUP ~
+
+The setup function is a convince wrapper for the above components. It takes
+each component as seperate keys and calls the correct init/override function.
 
 >
-    " vimscript
-    lua << EOF
-    -- example above here
-    EOF
+    local options = {
+      dim_inactive = true,
+    }
+    local pallets = {
+      nightfox = {
+        red = "#c94f6d",
+      },
+      nordfox = {
+        comment = "#60728a",
+      },
+    }
+    local specs = {
+      nightfox = {
+        syntax = {
+          keyword = "magenta"
+        }
+      }
+    }
+    local groups = {
+      IncSearch = { bg = "pallet.cyan" },
+    }
+    require('nightfox').setup({
+      options = options,
+      pallets = pallets,
+      specs = specs,
+      groups = groups,
+    })
 <
 
 
-**Note:** The `colorscheme` command sets the `fox` value to the colorscheme
-that is being supplied, before loading the colorscheme.
+OPTION                                                       *nightfox-option*
 
-You can also find this information in vim’s help `:help nightfox`.
+                                                       *nightfox-compile_path*
 
-GENERAL ~
-
-These are general settings and are unrelated to any group of settings.
-
-
-- `fox`: **{string}** The name of the fox you which to base the colorscheme on. See |nightfox-styles|.
-- `transparent`: **{boolean}** If set to true the background color will not be set.
-- `alt_nc`: **{boolean}** If set non-current (unfocused) windows Will have an alt bg color.
-- `terminal_colors`: **{boolean}** If set to true nightfox will set the terminal colors for `:terminal`.
+compile_path {path}                    The output directory {path} where the
+                                       compiled results will be written to.
+                                       Default:
+                                       `vim.fn.stdpath("cache")/nightfox`.
 
 
-STYLES ~
+                                                *nightfox-compile_file_suffix*
 
-These options set the style for their respective highlight groups. See `:help
-highlight-args`.
-
-
-- `comments`: **{string}** Style to the applied to comments
-- `functions`: **{string}** Style to the applied to functions
-- `keywords`: **{string}** Style to the applied to keywords
-- `strings`: **{string}** Style to the applied to strings
-- `variables`: **{string}** Style to the applied to variables
+compile_file_suffix {suffix}           The string appended to the compiled
+                                       file. Each `style` outputs to its own
+                                       file. These files will append the
+                                       {suffix} to the end of the file.
+                                       Default: `_compiled`
 
 
-INVERSE ~
+                                                        *nightfox-transparent*
 
-These options set the style of selection groups. If set, The selection will
-swap foreground and background (inverse).
-
-
-- `match_paren`: **{bool}** The character under the cursor or just before it, if it is a paired bracket, and its match. See `:help pi_paren.txt`
-- `search`: **{bool}** Highlighted search matches and incremental searches. See `:help hlsearch`
-- `visual`: **{bool}** Visual selection mode
-
-
-COLORS ~
-
-`colors` is a table that defines hex color overrides for the colors returned by
-`require('nightfox.colors').load()`. To see what values can be overridden, use
-`vim.inspect` (for neovim) to print out the returned color table.
-
->
-    print(vim.inspect(require('nightfox.colors').init()))
-<
+transparent {bool}                     A boolean value that if set will disable
+                                       setting the background of `Normal`,
+                                       `NormalNC` and other highlight groups.
+                                       This lets you use the colors of the
+                                       colorscheme but use the background of
+                                       your terminal. Default: `false`.
 
 
-Colors with the suffix `_br` are brighter colors. Colors with the suffix `_dm`
-are dimmer colors.
+                                                    *nightfox-terminal_colors*
 
-To see what colors are defined to what highlight group you can reference the
-file theme.lua <./lua/nightfox/theme.lua>.
-
-HLGROUP ~
-
-`hlgroups` is a table that defines overrides for highlight groups. The table
-consists of the highlight group name as the key. The value is a table that
-defines optional values of the highlight group. These values can be:
+terminal_colors {bool}                 A boolean value that if set will define
+                                       the terminal colors for the builtin
+                                       `terminal` (vim.g.terminal_color_*).
+                                       Default: `true`.
 
 
-- `fg`: The foreground color of the highlight group
-- `bg`: The background color of the highlight group
-- `style`: The style applied to the highlight group (see `:help hightlight-args`)
-- `sp`: Special colors use in GUI. (see `:help hightlight-guisp`)
+                                                       *nightfox-dim_inactive*
+
+dim_inactive {bool}                    A boolean value that if set will set the
+                                       background of Non current windows to be
+                                       darker. See `:h hl-NormalNC`.
 
 
-To use a color defined by nightfox’s you can use the template format: `${}`.
-Any value that you can override in the |nightfox-colors| section can be added
-in the template format. Some examples would be: `${red}`, `${blue_br}`,
-`${bg_alt}`.
+                                                             *nightfox-styles*
 
-To see examples of highlight groups that can be overridden reference the file
-theme.lua <./lua/nightfox/theme.lua>.
-
-To find the hightlight group being applied to a piece of syntax refer to
-|nightfox-syntax-highlight-group| section.
-
-⚙️ ADVANCED CONFIGURATION         *nightfox-⚙️-advanced-configuration*
-
-GET COLOR VALUES FROM NIGHTFOX ~
-
-There are different ways to get colors from nightfox. Here are some examples:
-
->
-    -- Get the colors defined in nightfox with the color overrides from config applied
-    local colors = require('nightfox.colors').load()
-    
-    -- Get the color of a specific theme with the color overrides applied from the config
-    local colors = require('nightfox.colors').load('nordfox')
-    
-    -- Get the colors defined in nightfox without the color overrides applied from the config
-    local colors = require('nightfox.colors').init()
-    
-    -- Get the color of a specific theme without the color overrides applied from the config
-    local colors = require('nightfox.colors').init("nordfox")
-<
-
-
-SYNTAX HIGHLIGHT GROUPS ~
-
-This section will help you determine what highlight group is being applied to a
-piece of syntax. These sections will output the highlight group for the value
-under the cursor.
-
-                                                         *nightfox-Treesitter*
-
-Treesitter                             If treesitter is the highlighting method
-                                       for the language in question you can use
-                                       the command:
-                                       `:TSHighlightCapturesUnderCursor`. This
-                                       command comes from the treesitter
-                                       playground
-                                       <https://github.com/nvim-treesitter/playground>
-                                       plugin. Make sure you have this
-                                       installed as well as nvim-treesitter
-                                       <https://github.com/nvim-treesitter/nvim-treesitter>.
-
-
-                                                   *nightfox-Vim-highlighting*
-
-Vim highlighting                       Add this vimscript function to your
-                                       configuration.
+styles {table}                         `styles` is a table that contains a list
+                                       of syntax components and their
+                                       corresponding style. These styles can be
+                                       any combination of |highlight-args|. The
+                                       syntax components are the :
 
 
 >
-    " plugin/syntax.vim
-    
-    " Output the highlight group under the cursor
-    "
-    " This function will output the entire stack of hightlight groups being applied. The stack is
-    " outputted in the correct order from top to bottom. Vim will walk through the stack from top to
-    " bottom and apply the first defined highlight group found.
-    function! SynStack()
-      for i1 in synstack(line("."), col("."))
-        let i2 = synIDtrans(i1)
-        let n1 = synIDattr(i1, "name")
-        let n2 = synIDattr(i2, "name")
-        echo n1 "->" n2
-      endfor
-    endfunction
-    
-    " You can also create a convenience mapping
-    map <F2> <cmd>call SynStack()<cr>
+    local options = {
+      styles = {
+        comments = "italic",
+        functions = "italic,bold",
+      }
+    }
 <
 
 
-🍬 EXTRA                                               *nightfox-🍬-extra*
+                                                            *nightfox-inverse*
 
-There are extra <./extra> configuration files for:
-
-
-- alacritty <https://github.com/alacritty/alacritty>
-- fish <https://fishshell.com/>
-- iterm <https://iterm2.com/index.html>
-- kitty <https://sw.kovidgoyal.net/kitty/overview/#configuring-kitty>
-- tmux <https://github.com/tmux/tmux>
-- wezterm <https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file>
-- xresources <https://wiki.archlinux.org/title/X_resources>
-
-
-The generation method used is based off of tokyonight
-<https://github.com/folke/tokyonight.nvim>. They are generated by executing lua
-on the file `lua/nightfox/extras/init.lua`. The generated results are output to
-the extra <./extra> folder.
-
-🔥CONTRIBUTING                                   *nightfox-🔥contributing*
-
-Pull requests are welcome. For contributing to `extras`, they are generated
-with a template and run with each colorscheme style. To add a new template
-follow these steps:
+inverse {table}                        `inverse` is a table that contains a
+                                       list of highlight types. If a highlight
+                                       type is enabled it will inverse the
+                                       foreground and background colors instead
+                                       of applying the normal highlight group.
+                                       Thees highlight types are:
+                                       `match_paren`, `visual`, `search`. For
+                                       an example if search is enabled instead
+                                       of highlighting a search term with the
+                                       default search color it will inverse the
+                                       foureground and background colors.
 
 
-1. Create new `lua` file under `./lua/nightfox/extras/`
-1. Add the name and file extension into the `extras` table in `./lua/nightfox/extras/init.lua`
-1. To execute the template generation `:luafile ./lua/nightfox/extras/init.lua`
-1. Commit any files generated in `./extra`
+                                                            *nightfox-modules*
+
+modules {table}                        `modules` store configuration
+                                       information for various plugins and
+                                       other neovim modules. A module can
+                                       either be a boolean or a table that
+                                       contains additional configuration for
+                                       that module. If the value is a table it
+                                       also has a field called `enable` that
+                                       will tell nightfox to load it. See
+                                       |nightfox-modules| for more information.
 
 
-Found a new fox? Follow this checklist to capture the fox:
+SHADE                                                         *nightfox-shade*
+
+A `shade` is a way to group a `base` color with a `bright` and `dim` version.
+This is the base struct/object that pallet colors will be defined from. For
+example:
+
+>
+    local Shade = require("nightfox.lib.shade")
+    local red = Shade.new("#bf616a", "#d06f79", "#a54e56"),
+    print(vim.inspect(red))
+    -- {
+    --   base = "#bf616a",
+    --   bright = "#d06f79",
+    --   dim = "#a54e56",
+    -- }
+<
 
 
-1. Create a new `lua` file under `./lua/nightfox/colors` folder with the fox’s name
-1. Copy the contents of another fox into the file that was created
-1. Update the color table with new foxes hex colors
-1. Add the fox’s name into the `M.foxes` table in `./lua/nightfox/colors/init.lua`
+This is just a convience structure for building pallet for nightfox and should
+not be used outside of it. This is noted here to help understand the structure
+of a |nightfox-pallet|.
+
+PALLET                                                       *nightfox-pallet*
+
+A `pallet` is the base color definitions of a style. Each style defines its own
+pallet to be used by the other components. A pallet defines base colors, as
+well as foreground and background shades. Along with the foreground and
+background colors a pallet also defines other colors such as selection and
+comment colors.
+
+The base colors are |nightfox-shade| objects that define a `base`, `bright`,
+and `dim` color. These base colors are: `black`, `red`, `green`, `yellow`,
+`blue`, `magenta`, `cyan`, `white`, `orange`, `pink`.
+
+│  Key  │             Description             │
+│black  │Shade Color (Base, Bright, Dim)      │
+│red    │Shade Color (Base, Bright, Dim)      │
+│green  │Shade Color (Base, Bright, Dim)      │
+│yellow │Shade Color (Base, Bright, Dim)      │
+│blue   │Shade Color (Base, Bright, Dim)      │
+│magenta│Shade Color (Base, Bright, Dim)      │
+│cyan   │Shade Color (Base, Bright, Dim)      │
+│white  │Shade Color (Base, Bright, Dim)      │
+│orange │Shade Color (Base, Bright, Dim)      │
+│pink   │Shade Color (Base, Bright, Dim)      │
+│comment│Comment color                        │
+│bg0    │Darker bg (status line and float)    │
+│bg1    │Default bg                           │
+│bg2    │Lighter bg (colorcolumn folds)       │
+│bg3    │Lighter bg (cursor line)             │
+│bg4    │Lighter bg (Conceal, boarder fg)     │
+│fg0    │Lighter fg                           │
+│fg1    │Default fg                           │
+│fg2    │Darker fg (status line)              │
+│fg3    │Darker fg (line numbers, fold colums)│
+│sel0   │Popup bg, visual selection bg        │
+│sel1   │Popup sel bg, search bg              │
 
 
-CREDITS                                                     *nightfox-credits*
+SPEC                                                           *nightfox-spec*
 
-These themes were used as references and based off this:
+A `spec` or specification is a mapping of a pallet values to a logical group
+that is used by the |nightfox-group|.
+
+The base of a `spec` is a re-export of the |nightfox-pallet|’s `fg` `bg` and
+`sel`. The values that are re-exported are: `bg0`, `bg1`, `bg2`, `bg3`, `bg4`,
+`fg0`, `fg1`, `fg2`, `fg3`, `sel0`, `sel1`.
+
+                                                        *nightfox-spec.syntax*
+
+spec.syntax                            The `syntax` table maps
+                                       |nightfox-pallet| color values to syntax
+                                       values to be used by the
+                                       |nightfox-group|.
 
 
-- tokyonight.nvim <https://github.com/folke/tokyonight.nvim/>
-- material.nvim <https://github.com/marko-cerovac/material.nvim>
-- rose-pine <https://github.com/rose-pine/neovim> (dawnfox / duskfox)
+│    Key    │          Description          │
+│bracket    │Brackets and Punctuation       │
+│builtin0   │Builtin variable               │
+│builtin1   │Builtin type                   │
+│builtin2   │Builtin const                  │
+│comment    │Comment                        │
+│conditional│Conditional and loop           │
+│const      │Constants, imports and booleans│
+│dep        │Deprecated                     │
+│field      │Field                          │
+│func       │Functions and Titles           │
+│ident      │Identifiers                    │
+│keyword    │Keywords                       │
+│number     │Numbers                        │
+│operator   │Operators                      │
+│preproc    │PreProc                        │
+│regex      │Regex                          │
+│statement  │Statements                     │
+│string     │Strings                        │
+│type       │Types                          │
+│variable   │Variables                      │
+
+
+                                                          *nightfox-spec.diag*
+
+spec.diag                              The `diag` table maps |nightfox-pallet|
+                                       colors to vim diagnostic colors values.
+                                       These values are: `error`, `warn`,
+                                       `info` and `hint`.
+
+
+                                                       *nightfox-spec.diag_bg*
+
+spec.diag_bg                           The `diag_bg` table maps
+                                       |nightfox-pallet| colors to vim
+                                       diagnostic background colors. These
+                                       values are: `error`, `warn`, `info` and
+                                       `hint`.
+
+
+                                                          *nightfox-spec.diff*
+
+spec.diff                              The `diff` table maps |nightfox-pallet|
+                                       colors to vimdiff highlight colors.
+                                       These values are: `add`, `delete`,
+                                       `change` and `text`.
+
+
+                                                           *nightfox-spec.git*
+
+spec.git                               The `git` table maps |nightfox-pallet|
+                                       colors to git colors. These values are:
+                                       `add`, `removed`, and `changed`
+
+
+GROUP                                                         *nightfox-group*
+
+A `group` is the definition of a `highlight-group`. The key of the group table
+is the `highlight-group` that will be defined, and the table value is the
+arguments to the |:highlight| command.
+
+│ Key │      Help       │                         Description                          │
+│fg   │|highlight-guifg|│The color value of the foreground of the highlight group      │
+│bg   │|highlight-guibg|│The color value of the background of the highlight group      │
+│sp   │|highlight-guisp|│The color for underlines and undercurls                       │
+│style│|highlight-gui|  │The style of the highlight group. Ex italic, bold, etc        │
+│link │|highlight-link| │Link one highlight-group to another                           │
+
+
+If the value of `link` is present and is not empty, nightfox will link the
+group to the corresponding value.
+
+MODULE                                                       *nightfox-module*
+
+Modules are a way to adding extra information for various plugins or features.
+This also allows them to be enabled or disabled. There are two types of
+modules, `base` modules and `extended` modules. A `base` modules do not have
+any other information and are just a `boolean` denoting if it is enabled. An
+`extended` module is a module that has extra customization information. It is a
+table that contains the additional configuration as well as a field called
+`enable` to determine if the module is applied.
+
+Current list of modules are:
+
+
+- barbar
+- cmp
+- dashboard
+- diagnostic
+- fern
+- fidget
+- gitgutter
+- gitsigns
+- glyph_pallet
+- hop
+- illuminate
+- lightspeed
+- lsp_saga
+- lsp_trouble
+- native_lsp
+- neogit
+- nvimtree
+- sneak
+- symbol_outline
+- telescope
+- treesitter
+- tsrainbow
+- whichkey
+
+
+EXTENDED MODULES ~
+
+                                                 *nightfox-modules.diagnostic*
+
+modules.diagnostic                     This module sets highlight groups from
+                                       `vim.diagnostic`.
+
+
+│   key    │ type  │default │           description           │
+│background│boolean│true    │Set virtual text background color│
+
+
+COLOR                                                         *nightfox-color*
+
+Nightfox exposes a color utility library to help with manipulating colors. This
+library can be required using the following module:
+
+>
+    local Color = require('nightfox.lib.color')
+<
+
+
+                                                   *nightfox-color.from_hex()*
+
+color.from_hex({hex})                  Create a `Color` object from either a
+                                       {hex} number or a `css-style` hex string
+                                       (`"#RRGGBB[AA]"`).
+
+
+                                                  *nightfox-color.from_rgba()*
+
+color.from_rgba({red}, {green}, {blue}, {alpha}) Create a `Color` object from a
+                                       `RGBA` value. The {red}, {green} and
+                                       {blue} components ranging from
+                                       `[0,255]`. {alpha} is optional and
+                                       defaults to `1`. The {alpha} value’s
+                                       is from `[0,1]`.
+
+
+                                                   *nightfox-color.from_hsv()*
+
+color.from_hsv({hue}, {sat}, {value}, {alpha}) Create a `Color` object from a
+                                       `HSV` value. The {hue} is a float
+                                       ranging `[0,360]`. {sat} and {value} are
+                                       floats ranging from `[0,100]`. {alpha}
+                                       is optional and defaults to `1`. The
+                                       {alpha} value’s is from `[0,1]`.
+
+
+                                                   *nightfox-color.from_hsl()*
+
+color.from_hsl({hue}, {sat}, {lightness}, {alpha}) Create a `Color` object from
+                                       a `HSL` value. The {hue} is a float
+                                       ranging `[0,360]`. {sat} and {lightness}
+                                       are floats ranging from `[0,100]`.
+                                       {alpha} is optional and defaults to `1`.
+                                       The {alpha} value’s is from `[0,1]`.
+
+
+                                                     *nightfox-color:to_hex()*
+
+color:to_hex({with_alpha})             Convert a `Color` object to a integer
+                                       number. If {with_alpha} is true the hex
+                                       value will be returned with the alpha
+                                       value added. This is defaulted to
+                                       `false`.
+
+
+                                                     *nightfox-color:to_css()*
+
+color:to_css({with_alpha})             Convert a `Color` object to a
+                                       `css_style` string (`"#RRGGBB[AA]"`). If
+                                       {with_alpha} is true the hex value will
+                                       be returned with the alpha value added.
+                                       This is defaulted to `false`.
+
+
+                                                    *nightfox-color:to_rgba()*
+
+color:to_rgba()                        Convert a `Color` object to a `RGBA`
+                                       table. The resulting table will have
+                                       `red`, `green`, `blue` and `alpha`
+                                       components as keys of the table.
+
+
+                                                     *nightfox-color:to_hsv()*
+
+color:to_hsv()                         Convert a `Color` object to a `HSV`
+                                       table. The resulting table will have
+                                       `hue`, `saturation` and `value`
+                                       components as keys of the table.
+
+
+                                                     *nightfox-color:to_hsl()*
+
+color:to_hsl()                         Convert a `Color` object to a `HSL`
+                                       table. The resulting table will have
+                                       `hue`, `saturation` and `lightness`
+                                       components as keys of the table.
+
+
+                                                      *nightfox-color:blend()*
+
+color:blend({other}, {factor})         Returns a new `Color` that is a linear
+                                       blend between two colors. {other} is the
+                                       other color to blend. {factor} is the
+                                       percentage of the {other} color that
+                                       will be blended. This percentage is
+                                       represented `[0,1]` where `0` is no
+                                       color blending and `1` is entirely the
+                                       {other} color.
+
+
+                                                      *nightfox-color:shade()*
+
+color:shade({factor})                  Returns a new `Color` that has been
+                                       `shaded` by the {factor}. The factor is
+                                       a precentage from `[0,1]` where `0` is
+                                       black and `1` is white.
+
+
+                                                   *nightfox-color:brighten()*
+
+color:brighten({value})                Returns a new `Color` with {value} added
+                                       to the `value` (`hsv`) of the current
+                                       color. This returns a lighter version of
+                                       of the current color if {value} is
+                                       positive and a darker color is {value}
+                                       is negative.
+
+
+                                                    *nightfox-color:lighten()*
+
+color:lighten({value})                 Returns a new `Color` with {value} added
+                                       to the `lightness` (`hsl`) of the
+                                       current color. This returns a lighter
+                                       version of of the current color if
+                                       {value} is positive and a darker color
+                                       is {value} is negative.
+
+
+                                                   *nightfox-color:saturate()*
+
+color:saturate({value})                Returns a new `Color` with {value} added
+                                       to the `saturation` (`hsv`) of the
+                                       current color. This returns either a
+                                       more or less saturated version depending
+                                       of +/- v.
+
+
+                                                     *nightfox-color:rotate()*
+
+color:rotate({value})                  Returns a new `Color` with {value} added
+                                       to the `hue` (`hsv`) of the current
+                                       color. The resulting value of `hue` will
+                                       be wrapped from `[0,360]`, meaning that
+                                       if the value exceeds `360` it will be
+                                       wrapped back to `0`.
+
+
+COMPILE                                                     *nightfox-compile*
+
+Nightfox is a highly customizable and configurable colorscheme. There are
+endless ways to customize nightfox. This does however come at the cost of
+complexity and execution time. Nightfox can pre compute the results of your
+configuration and store the results in a compiled lua file. After nightfox use
+these precached values to set it’s highlights.
+
+By default nightfox writes the compiled results into the system’s `cache`
+directory. On unix this is `$XDG_CACHE_HOME/nvim/nightfox` and on windows this
+is `%localappdata%\\Temp\\nvim\\nightfox`.
+
+COMPILE COMMANDS ~
+
+                                                          *nightfox-compile()*
+
+compile()                              Compile nightfox settings for each
+                                       `style` and write compiled file to
+                                       |nightfox-compile_path|.
+
+
+                                                            *nightfox-clean()*
+
+clean()                                Delete compiled files in
+                                       [compiled_path].
+
+
+                                                   *nightfox-:NightfoxCompile*
+
+:NightfoxCompile                       Compile nightfox settings for each
+                                       `style` and write compiled file to
+                                       |nightfox-compile_path|.
+
+
+                                                     *nightfox-:NightfoxClean*
+
+:NightfoxClean                         Delete compiled files in
+                                       [compiled_path].
 
 
 Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>

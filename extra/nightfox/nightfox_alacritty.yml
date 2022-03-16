@@ -18,15 +18,14 @@ colors:
     white:   '0xdfdfe0'
   # Bright colors
   bright:
-    black:   '0x475072'
-    red:     '0xd6616b'
-    green:   '0x58cd8b'
-    yellow:  '0xffe37e'
-    blue:    '0x84cee4'
-    magenta: '0xb8a1e3'
-    cyan:    '0x59f0ff'
-    white:   '0xf2f2f2'
+    black:   '0x575860'
+    red:     '0xd16983'
+    green:   '0x8ebaa4'
+    yellow:  '0xe0c989'
+    blue:    '0x86abdc'
+    magenta: '0xbaa1e2'
+    cyan:    '0x7ad4d6'
+    white:   '0xe4e4e5'
   indexed_colors:
     - { index: 16, color: '0xf4a261' }
     - { index: 17, color: '0xd67ad2' }
-  

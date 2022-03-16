@@ -2,7 +2,7 @@
 # Style: dawnfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dawnfox/nightfox_fish.fish
 set -l foreground 575279
-set -l selection E1DCD5
+set -l selection d0d8d8
 set -l comment 9893a5
 set -l red b4637a
 set -l orange d7827e
@@ -10,7 +10,7 @@ set -l yellow ea9d34
 set -l green 618774
 set -l purple 907aa9
 set -l cyan 56949f
-set -l pink D685AF
+set -l pink d685af
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
@@ -33,5 +33,3 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
-
-  
