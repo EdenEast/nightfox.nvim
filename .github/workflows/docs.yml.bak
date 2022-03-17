@@ -1,0 +1,34 @@
+name: pandocvim
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - usage.md
+    branches:
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    name: markdown to vimdoc
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup git
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          printf 'VIMDOC_BRANCH=bot/vimdoc/%s\n' ${GITHUB_REF#refs/heads/} >> $GITHUB_ENV
+
+      - name: pandocvim
+        uses: kdheepak/panvimdoc@v2.7.3
+        with:
+          vimdoc: nightfox
+          pandoc: usage.md
+          description: A highly customizable theme for vim and neovim
+          version: Neovim v0.5.0
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(docs): Auto generate docs"
+          branch: ${{ github.head_ref }}
