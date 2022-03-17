@@ -1,5 +1,5 @@
 local Color = require("nightfox.lib.color")
-local spec = require("nightfox.spec").load("nightfox")
+local spec = require("nightfox.spec").load("nordfox")
 
 local pal = spec.pallet
 local bg = Color.from_hex(spec.bg0)
