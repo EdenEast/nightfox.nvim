@@ -57,7 +57,7 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 <summary>Color Migration table</summary>
 
 | V1 color     | V2 pallet |
-|--------------|-----------|
+| ------------ | --------- |
 | bg           | bg1       |
 | bg_alt       | bg0       |
 | bg_sidebar   | bg0       |
@@ -381,16 +381,14 @@ Nightfox provides the following commands that wrap these functions above:
 
 ## Status lines
 
-**Note:** For all status lines `nightfox` is the only valid name.
-
 ### [Lualine]
 
+Lualine checks the value of `vim.g.colors_name` (set when using `:colorscheme` command) to determine the theme to load.
+Set your colorscheme before calling setup.
+
 ```lua
-require('lualine').setup({
-  options = {
-    theme = "nightfox"
-  }
-})
+vim.cmd("colorscheme nightfox")
+require('lualine').setup({ ... })
 ```
 
 ## Extra
