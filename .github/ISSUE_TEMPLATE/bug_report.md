@@ -1,15 +1,17 @@
 ---
 name: Bug report
-about: 'Report issues or unexpected behavior '
-title: ''
+about: "Report issues or unexpected behavior "
+title: ""
 labels: bug
-assignees: ''
-
+assignees: ""
 ---
 
 ## Description
 
 A description of the issue.....
+
+**Note:** If you are not seeing your changes make sure that you clean your compiled files. See status of compiled files
+with `:NightfoxStatus` and clean the compiled files with `:NightfoxClean`.
 
 ## Behavior
 
