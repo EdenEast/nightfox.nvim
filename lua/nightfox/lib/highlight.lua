@@ -79,10 +79,16 @@ local function nvim_hl(highlights)
   end
 end
 
-if vim.fn.has("nvim-0.7") then
-  M.highlight = nvim_hl
+if vim.fn.has("nvim-0.7") == 1 then
+  -- Not everyone on nightly would have updated to a version that has `nvim_set_hl`
+  if vim.api["nvim_set_hl"] then
+    M.highlight = nvim_hl
+  else
+    M.highlight = viml_hl
+  end
 else
   M.highlight = viml_hl
 end
+M.highlight = viml_hl
 
 return M
