@@ -25,7 +25,7 @@ local pallet = {
   bg1     = "#192330", -- Default bg
   bg2     = "#212e3f", -- Lighter bg (colorcolm folds)
   bg3     = "#29394e", -- Lighter bg (cursor line)
-  bg4     = "#3c4b5e", -- Conceal, border fg
+  bg4     = "#415166", -- Conceal, border fg
 
   fg0     = "#d6d6d7", -- Lighter fg
   fg1     = "#cdcecf", -- Default fg
