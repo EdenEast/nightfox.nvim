@@ -35,7 +35,7 @@ highlight CmpItemKindDefault guifg=#aeafb0 guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemKindSnippet guifg=#aeafb0 guibg=NONE gui=NONE guisp=NONE |
 highlight ColorColumn guifg=NONE guibg=#212e3f gui=NONE guisp=NONE |
 highlight Comment guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
-highlight Conceal guifg=#3c4b5e guibg=NONE gui=NONE guisp=NONE |
+highlight Conceal guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight Conditional guifg=#baa1e2 guibg=NONE gui=NONE guisp=NONE |
 highlight Constant guifg=#f6b079 guibg=NONE gui=NONE guisp=NONE |
 highlight Cursor guifg=#192330 guibg=#cdcecf gui=NONE guisp=NONE |
@@ -132,7 +132,7 @@ highlight NeogitNotificationError guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationInfo guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationWarning guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitRemote guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
-highlight NonText guifg=#3c4b5e guibg=NONE gui=NONE guisp=NONE |
+highlight NonText guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight Normal guifg=#cdcecf guibg=#192330 gui=NONE guisp=NONE |
 highlight NormalFloat guifg=#cdcecf guibg=#131a24 gui=NONE guisp=NONE |
 highlight NormalNC guifg=#cdcecf guibg=#192330 gui=NONE guisp=NONE |
@@ -144,7 +144,7 @@ highlight NvimTreeGitDeleted guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitDirty guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitNew guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeImageFile guifg=#bebebe guibg=NONE gui=NONE guisp=NONE |
-highlight NvimTreeIndentMarker guifg=#3c4b5e guibg=NONE gui=NONE guisp=NONE |
+highlight NvimTreeIndentMarker guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeNormal guifg=#cdcecf guibg=#131a24 gui=NONE guisp=NONE |
 highlight NvimTreeOpenedFile guifg=#dc8ed9 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeOpenedFolderName guifg=#86abdc guibg=NONE gui=NONE guisp=NONE |
@@ -195,8 +195,8 @@ highlight TSVariableBuiltin guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight TSWarning guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight TabLine guifg=#71839b guibg=#212e3f gui=NONE guisp=NONE |
 highlight TabLineFill guifg=NONE guibg=#131a24 gui=NONE guisp=NONE |
-highlight TabLineSel guifg=#aeafb0 guibg=#3c4b5e gui=NONE guisp=NONE |
-highlight TelescopeBorder guifg=#3c4b5e guibg=NONE gui=NONE guisp=NONE |
+highlight TabLineSel guifg=#aeafb0 guibg=#415166 gui=NONE guisp=NONE |
+highlight TelescopeBorder guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight TelescopeMatching guifg=#cdcecf guibg=#3a567d gui=NONE guisp=NONE |
 highlight TelescopeSelection guifg=NONE guibg=#223249 gui=NONE guisp=NONE |
 highlight TelescopeSelectionCaret guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
@@ -204,7 +204,7 @@ highlight Title guifg=#86abdc guibg=NONE gui=NONE guisp=NONE |
 highlight Todo guifg=#192330 guibg=#719cd6 gui=NONE guisp=NONE |
 highlight Type guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight Underlined guifg=NONE guibg=NONE gui=underline guisp=NONE |
-highlight VertSplit guifg=#3c4b5e guibg=NONE gui=NONE guisp=NONE |
+highlight VertSplit guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight Visual guifg=NONE guibg=#223249 gui=NONE guisp=NONE |
 highlight WarningMsg guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight WhichKeyFloat guifg=NONE guibg=#131a24 gui=NONE guisp=NONE |

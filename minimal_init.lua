@@ -33,7 +33,7 @@ _G.load_config = function()
     -- ...
   })
 
-  vim.cmd('colorscheme nightfox')
+  vim.cmd("colorscheme nightfox")
 end
 
 if vim.fn.isdirectory(install_path) == 0 then
