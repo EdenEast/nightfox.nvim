@@ -1,6 +1,8 @@
 pandocrepo = https://github.com/kdheepak/panvimdoc
 pandocdir = misc/panvimdoc
 
+root_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+
 all: compile extragen docgen
 
 compile:
@@ -8,6 +10,10 @@ compile:
 
 extragen:
 	nvim --headless --clean -u misc/extra.lua
+
+minimal:
+	sed -i "s|EdenEast/nightfox.nvim|${root_dir}|g" minimal_init.lua
+	nvim --clean -u minimal_init.lua minimal_init.lua
 
 docgen: | $(pandocdir)
 	@pandoc \
