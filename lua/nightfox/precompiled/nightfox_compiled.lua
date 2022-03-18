@@ -39,7 +39,7 @@ highlight Conceal guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight Conditional guifg=#baa1e2 guibg=NONE gui=NONE guisp=NONE |
 highlight Constant guifg=#f6b079 guibg=NONE gui=NONE guisp=NONE |
 highlight Cursor guifg=#192330 guibg=#cdcecf gui=NONE guisp=NONE |
-highlight CursorColumn guifg=NONE guibg=#29394e gui=NONE guisp=NONE |
+highlight CursorLine guifg=NONE guibg=#29394e gui=NONE guisp=NONE |
 highlight CursorLineNr guifg=#dbc074 guibg=NONE gui=bold guisp=NONE |
 highlight DashboardFooter guifg=#f6b079 guibg=NONE gui=italic guisp=NONE |
 highlight DiagnosticError guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
@@ -256,8 +256,8 @@ highlight! link CmpItemKindUnit Constant |
 highlight! link CmpItemKindValue Keyword |
 highlight! link CmpItemKindVariable TSVariable |
 highlight! link CmpItemMenu Comment |
+highlight! link CursorColumn CursorLine |
 highlight! link CursorIM Cursor |
-highlight! link CursorLine CursorColumn |
 highlight! link DashboardCenter String |
 highlight! link DashboardHeader Title |
 highlight! link DashboardShortCut Identifier |
