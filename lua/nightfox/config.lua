@@ -41,6 +41,7 @@ M.options = {
     lightspeed = true,
     lsp_saga = true,
     lsp_trouble = true,
+    modes = true,
     native_lsp = true,
     neogit = true,
     nvimtree = true,

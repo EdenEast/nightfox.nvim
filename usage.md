@@ -303,6 +303,7 @@ Current list of modules are:
 - lightspeed
 - lsp_saga
 - lsp_trouble
+- modes
 - native_lsp
 - neogit
 - nvimtree

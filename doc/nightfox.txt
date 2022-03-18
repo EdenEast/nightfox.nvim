@@ -352,17 +352,12 @@ A `group` is the definition of a `highlight-group`. The key of the group table
 is the `highlight-group` that will be defined, and the table value is the
 arguments to the |:highlight| command.
 
-│ Key │     Help     │                     Description                     │
-│fg   │|highlight-gui│The color value of the foreground of the highlight gr│
-│     │fg|           │oup                                                  │
-│bg   │|highlight-gui│The color value of the background of the highlight gr│
-│     │bg|           │oup                                                  │
-│sp   │|highlight-gui│The color for underlines and undercurls              │
-│     │sp|           │                                                     │
-│style│|highlight-gui│The style of the highlight group. Ex italic, bold, et│
-│     │|             │c                                                    │
-│link │|highlight-lin│Link one highlight-group to another                  │
-│     │k|            │                                                     │
+│ Key │      Help       │                         Description                          │
+│fg   │|highlight-guifg|│The color value of the foreground of the highlight group      │
+│bg   │|highlight-guibg|│The color value of the background of the highlight group      │
+│sp   │|highlight-guisp|│The color for underlines and undercurls                       │
+│style│|highlight-gui|  │The style of the highlight group. Ex italic, bold, etc        │
+│link │|highlight-link| │Link one highlight-group to another                           │
 
 
 If the value of `link` is present and is not empty, nightfox will link the
@@ -395,6 +390,7 @@ Current list of modules are:
 - lightspeed
 - lsp_saga
 - lsp_trouble
+- modes
 - native_lsp
 - neogit
 - nvimtree

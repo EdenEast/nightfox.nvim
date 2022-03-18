@@ -371,6 +371,7 @@ Nightfox provides the following commands that wrap these functions above:
 - [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
 - [lsp-trouble.nvim](https://github.com/simrat39/lsp-trouble.nvim)
+- [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [neogit](https://github.com/TimUntersberger/neogit)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
