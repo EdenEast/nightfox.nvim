@@ -1,0 +1,13 @@
+# Nightfox Wezterm Colors
+# Style: frostfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/frostfox/nightfox_wezterm.toml
+[colors]
+foreground = "#fffadf"
+background = "#282e44"
+cursor_bg = "#fffadf"
+cursor_border = "#fffadf"
+cursor_fg = "#282e44"
+selection_bg = "#364765"
+selection_fg = "#fffadf"
+ansi = ["#393552", "#ff8089", "#56e2c4", "#fff38d", "#75beff", "#c2acff", "#79e0ff", "#f1f1f1"]
+brights = ["#4b456c", "#ff8089", "#60fbda", "#fff59e", "#8ac8ff", "#cbb8ff", "#8de5ff", "#ffffff"]

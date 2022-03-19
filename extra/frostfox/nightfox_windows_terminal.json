@@ -1,0 +1,21 @@
+{
+    "name" : "frostfox",
+    "background" : "#282e44",
+    "foreground" : "#fffadf",
+    "black" : "#393552",
+    "blue" : "#75beff",
+    "cyan" : "#79e0ff",
+    "green" : "#56e2c4",
+    "purple" : "#c2acff",
+    "red" : "#ff8089",
+    "white" : "#f1f1f1",
+    "yellow" : "#fff38d",
+    "brightBlack" : "#4b456c",
+    "brightBlue" : "#8ac8ff",
+    "brightCyan" : "#8de5ff",
+    "brightGreen" : "#60fbda",
+    "brightPurple" : "#cbb8ff",
+    "brightRed" : "#ff8089",
+    "brightWhite" : "#ffffff",
+    "brightYellow" : "#fff59e"
+}

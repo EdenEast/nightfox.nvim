@@ -1,0 +1,21 @@
+! Nightfox colors for Xresources
+! Style: frostfox
+! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/frostfox/nightfox_xresources.Xresources
+*background: #282e44
+*foreground: #fffadf
+*color0:  #393552
+*color1:  #ff8089
+*color2:  #56e2c4
+*color3:  #fff38d
+*color4:  #75beff
+*color5:  #c2acff
+*color6:  #79e0ff
+*color7:  #f1f1f1
+*color8:  #4b456c
+*color9:  #ff8089
+*color10: #60fbda
+*color11: #fff59e
+*color12: #8ac8ff
+*color13: #cbb8ff
+*color14: #8de5ff
+*color15: #ffffff
