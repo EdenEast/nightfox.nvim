@@ -307,6 +307,7 @@ Current list of modules are:
 - native_lsp
 - neogit
 - nvimtree
+- pounce
 - sneak
 - symbol_outline
 - telescope
@@ -322,6 +323,7 @@ This module sets highlight groups from `vim.diagnostic`.
 
 | key        | type    | default | description                       |
 | ---------- | ------- | ------- | --------------------------------- |
+| enable     | boolean | `true`  | Enable the module to be included  |
 | background | boolean | `true`  | Set virtual text background color |
 
 ## Color

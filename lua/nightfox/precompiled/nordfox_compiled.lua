@@ -159,6 +159,10 @@ highlight Operator guifg=#abb1bb guibg=NONE gui=NONE guisp=NONE |
 highlight Pmenu guifg=#cdcecf guibg=#3e4a5b gui=NONE guisp=NONE |
 highlight PmenuSel guifg=NONE guibg=#4f6074 gui=NONE guisp=NONE |
 highlight PmenuThumb guifg=NONE guibg=#4f6074 gui=NONE guisp=NONE |
+highlight PounceAccept guifg=#2e3440 guibg=#d89079 gui=NONE guisp=NONE |
+highlight PounceAcceptBest guifg=#2e3440 guibg=#93ccdc gui=NONE guisp=NONE |
+highlight PounceGap guifg=#cdcecf guibg=#3e4a5b gui=NONE guisp=NONE |
+highlight PounceMatch guifg=#cdcecf guibg=#4f6074 gui=NONE guisp=NONE |
 highlight PreProc guifg=#d092ce guibg=NONE gui=NONE guisp=NONE |
 highlight Search guifg=#cdcecf guibg=#4f6074 gui=NONE guisp=NONE |
 highlight SignColumn guifg=#7e8188 guibg=NONE gui=NONE guisp=NONE |

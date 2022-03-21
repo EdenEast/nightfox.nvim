@@ -45,6 +45,7 @@ M.options = {
     native_lsp = true,
     neogit = true,
     nvimtree = true,
+    pounce = true,
     sneak = true,
     symbol_outline = true,
     telescope = true,
