@@ -11,7 +11,12 @@ The following is a set of guidelines for contributing to this project.
   - Make sure that the project's `stylua.toml` file is used for stylua settings.
 - Run `make compile` from project root to write precompiled files.
   - Nightfox precompiles its default settings into the folder `lua/nightfox/precompiled`.
-- If changes are made to pallets, run `make extragen` to update `extra`'s folder with changes.
+- Run `make extragen` to update `extra`'s folder with changes.
+  - If changes are made to pallets
+  - If adding a new extra template add it to the list in `misc/extra.lua`
+- Run `make docgen` if changes are made to `usage.md`.
+  - Requires `pandoc` to be installed. If using `nix` there is a `devShell` in the `flake.nix`
+- Run `make all` to execute the above make recipes.
 
 ## Recommendations
 
