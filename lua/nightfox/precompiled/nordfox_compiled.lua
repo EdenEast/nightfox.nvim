@@ -238,7 +238,7 @@ highlight rustTSField guifg=#abb1bb guibg=NONE gui=NONE guisp=NONE
 -- Highlight link definitions
 vim.cmd([[
 highlight! link Boolean Number |
-highlight! link Character Character |
+highlight! link Character String |
 highlight! link CmpItemKindClass Type |
 highlight! link CmpItemKindConstant TSConstant |
 highlight! link CmpItemKindConstructor Function |
