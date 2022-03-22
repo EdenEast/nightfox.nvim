@@ -125,13 +125,13 @@ There is no need to call `setup` if you don't require to change the default opti
 require('nightfox').setup({
   options = {
     -- Compiled file's destination location
-    compile_path = util.join_paths(vim.fn.stdpath("cache"), "nightfox"),
+    compile_path = vim.fn.stdpath("cache") .. "/nightfox",
     compile_file_suffix = "_compiled", -- Compiled file suffix
     transparent = false,    -- Disable setting background
-    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*)
+    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = false,   -- Non focused panes set to alternative background
     styles = {              -- Style to be applied to different syntax groups
-      comments = "NONE",
+      comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
       functions = "NONE",
       keywords = "NONE",
       numbers = "NONE",
@@ -152,6 +152,22 @@ require('nightfox').setup({
 
 -- setup must be called before loading
 vim.cmd("colorscheme nightfox")
+```
+
+If you would like to change any of the default options above you only have to define the options that change. If an
+option is not present in your options table the default option will be used. For example if chaning the styles of
+certain syntax is the only desired change then your options table would look like:
+
+```lua
+require('nightfox').setup({
+  options = {
+    styles = {
+      commnets = "italic",
+      keywords = "bold"
+      types = "italic,bold",
+    }
+  }
+})
 ```
 
 To see a detailed explanation of nightfox's config settings consult either the builtin help `:help nightfox` or
