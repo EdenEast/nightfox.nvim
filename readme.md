@@ -251,9 +251,9 @@ local specs = {
 --
 -- Just like `spec` groups support templates. This time the template is based on a spec object.
 local groups = {
-  -- By default nightfox links some groups together. `CursorLine` is one of these groups. When overriding
+  -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
   -- Make sure `link` is cleared to `""` so that the link will be removed.
-  CursorLine = { bg = "sel0", link = "" },
+  CursorColumn = { bg = "sel0", link = "" },
 
   -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
   IncSearch = { bg = "pallet.cyan" },

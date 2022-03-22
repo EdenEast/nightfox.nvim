@@ -67,6 +67,62 @@ override.groups({
 })
 ```
 
+Overrides for [pallets][pallet] and [specs][spec] are defined per style. The purpose of overriding these components is
+to change colors. Colors are only relevant to a specific style. [Groups][group] on the other hand are not defined per
+style. These mainly use the color defined in the [pallet] and [spec] objects in order to set values using `templates`.
+
+### Templates
+
+Templates allow for referencing of other lower level objects in nightfox's config. For example instead of setting an
+absolute color value, you can refer to a lower object's value instead. The base of nightfox is a [pallet]. A pallet
+does not use a template as it is the base that others built off of. [Pallets][pallet] are used as the template source
+for [spec] objects. [Specs][spec] objects are used as template source for [group] objects.
+
+If a value does not start with `#` symbol it will be treated as the template path. Everything in lua is a table. This
+means that `pallets` and `specs` are just lua tables. A template `path` is the keys to index into the table separated by
+`.` characters.
+
+Note: If the resulting value of a template is a [shade] then the `base` value will be used.
+
+**Example:**
+
+```lua
+-- Specs use pallets as the template source
+local specs = {
+  nightfox = {
+    syntax = {
+      -- Value does not start with `#` so is treated as a template.
+      -- Since `magenta` is a `shade` object the `base` value will be used.
+      keyword = "magenta",
+
+      -- Adding either `.bright` or `.dim` will change the value
+      conditional = "magenta.bright",
+      number = "orange.dim",
+    },
+    git = {
+      -- A color define can also be used
+      changed = "#f4a261",
+    }
+  }
+}
+
+-- Groups use specs as the template source
+local groups = {
+  -- The template path is parsed to [`syntax`, `string`]. This is like calling into a lua table like:
+  -- `spec.syntax.string`.
+  String = { fg = "syntax.string" },
+
+  -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
+  -- Make sure `link` is cleared to `""` so that the link will be removed.
+  CursorColumn = { bg = "sel0", link = "" },
+
+  -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
+  IncSearch = { bg = "pallet.cyan" },
+}
+
+require('nightfox').setup({ specs = specs, groups = groups })
+```
+
 ### Setup
 
 The setup function is a convince wrapper for the above components. It takes each component as seperate keys and calls
