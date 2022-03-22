@@ -17,8 +17,9 @@ end
 local extras = {
   alacritty = "yml",
   fish = "fish",
-  kitty = "conf",
   iterm = "itermcolors",
+  kitty = "conf",
+  konsole = "colorscheme",
   tmux = "tmux",
   wezterm = "toml",
   windows_terminal = "json",
