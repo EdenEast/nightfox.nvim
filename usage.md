@@ -69,9 +69,45 @@ override.groups({
 
 Overrides for [pallets][pallet] and [specs][spec] are defined per style. The purpose of overriding these components is
 to change colors. Colors are only relevant to a specific style. [Groups][group] on the other hand are not defined per
-style. These mainly use the color defined in the [pallet] and [spec] objects in order to set values using `templates`.
+style. These mainly use the color defined in the [pallet] and [spec] objects in order to set values using
+[templates](#templates).
 
-### Templates
+### Setup
+
+The setup function is a convince wrapper for the above components. It takes each component as seperate keys and calls
+the correct init/override function.
+
+```lua
+local options = {
+  dim_inactive = true,
+}
+local pallets = {
+  nightfox = {
+    red = "#c94f6d",
+  },
+  nordfox = {
+    comment = "#60728a",
+  },
+}
+local specs = {
+  nightfox = {
+    syntax = {
+      keyword = "magenta"
+    }
+  }
+}
+local groups = {
+  IncSearch = { bg = "pallet.cyan" },
+}
+require('nightfox').setup({
+  options = options,
+  pallets = pallets,
+  specs = specs,
+  groups = groups,
+})
+```
+
+## Templates
 
 Templates allow for referencing of other lower level objects in nightfox's config. For example instead of setting an
 absolute color value, you can refer to a lower object's value instead. The base of nightfox is a [pallet]. A pallet
@@ -121,41 +157,6 @@ local groups = {
 }
 
 require('nightfox').setup({ specs = specs, groups = groups })
-```
-
-### Setup
-
-The setup function is a convince wrapper for the above components. It takes each component as seperate keys and calls
-the correct init/override function.
-
-```lua
-local options = {
-  dim_inactive = true,
-}
-local pallets = {
-  nightfox = {
-    red = "#c94f6d",
-  },
-  nordfox = {
-    comment = "#60728a",
-  },
-}
-local specs = {
-  nightfox = {
-    syntax = {
-      keyword = "magenta"
-    }
-  }
-}
-local groups = {
-  IncSearch = { bg = "pallet.cyan" },
-}
-require('nightfox').setup({
-  options = options,
-  pallets = pallets,
-  specs = specs,
-  groups = groups,
-})
 ```
 
 ## Option

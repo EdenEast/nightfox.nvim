@@ -6,6 +6,7 @@ Table of Contents                                 *nightfox-table-of-contents*
   - Overview                                               |nightfox-overview|
   - Usage                                                     |nightfox-usage|
   - Configuration                                     |nightfox-configuration|
+  - Templates                                             |nightfox-templates|
   - Option                                                   |nightfox-option|
   - Shade                                                     |nightfox-shade|
   - Pallet                                                   |nightfox-pallet|
@@ -92,9 +93,45 @@ Overrides for |nightfox-pallets| and |nightfox-specs| are defined per style.
 The purpose of overriding these components is to change colors. Colors are only
 relevant to a specific style. |nightfox-groups| on the other hand are not
 defined per style. These mainly use the color defined in the |nightfox-pallet|
-and |nightfox-spec| objects in order to set values using `templates`.
+and |nightfox-spec| objects in order to set values using |nightfox-templates|.
 
-TEMPLATES ~
+SETUP ~
+
+The setup function is a convince wrapper for the above components. It takes
+each component as seperate keys and calls the correct init/override function.
+
+>
+    local options = {
+      dim_inactive = true,
+    }
+    local pallets = {
+      nightfox = {
+        red = "#c94f6d",
+      },
+      nordfox = {
+        comment = "#60728a",
+      },
+    }
+    local specs = {
+      nightfox = {
+        syntax = {
+          keyword = "magenta"
+        }
+      }
+    }
+    local groups = {
+      IncSearch = { bg = "pallet.cyan" },
+    }
+    require('nightfox').setup({
+      options = options,
+      pallets = pallets,
+      specs = specs,
+      groups = groups,
+    })
+<
+
+
+TEMPLATES                                                 *nightfox-templates*
 
 Templates allow for referencing of other lower level objects in nightfox’s
 config. For example instead of setting an absolute color value, you can refer
@@ -149,42 +186,6 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
     }
     
     require('nightfox').setup({ specs = specs, groups = groups })
-<
-
-
-SETUP ~
-
-The setup function is a convince wrapper for the above components. It takes
-each component as seperate keys and calls the correct init/override function.
-
->
-    local options = {
-      dim_inactive = true,
-    }
-    local pallets = {
-      nightfox = {
-        red = "#c94f6d",
-      },
-      nordfox = {
-        comment = "#60728a",
-      },
-    }
-    local specs = {
-      nightfox = {
-        syntax = {
-          keyword = "magenta"
-        }
-      }
-    }
-    local groups = {
-      IncSearch = { bg = "pallet.cyan" },
-    }
-    require('nightfox').setup({
-      options = options,
-      pallets = pallets,
-      specs = specs,
-      groups = groups,
-    })
 <
 
 
