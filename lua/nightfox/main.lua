@@ -53,7 +53,7 @@ function M.load(name)
 
   if util.exists(precompiled_file) then
     vim.cmd("luafile " .. precompiled_file)
-  elseif not override.has_override and not config.has_options then
+  elseif not override.has_override and not config.has_options and not vim.g.nightfox_debug then
     require("nightfox.precompiled." .. name .. "_compiled")
   else
     local spec = require("nightfox.spec").load(name)
