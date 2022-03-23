@@ -33,7 +33,8 @@ function M.get(spec, config)
     CursorLineNr    = { fg = spec.diag.warn, style = "bold" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen      = { fg = spec.diag.warn, style = inv.match_paren and "inverse,bold" or "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg         = { fg = spec.diag.warn, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea         = { fg = spec.fg2 }, -- Area for messages and cmdline
+    -- NOTE: This was commented out as there is an issue with seting this highlight group see issue #98
+    -- MsgArea         = { fg = spec.fg2 }, -- Area for messages and cmdline
     -- MsgSeparator    = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg         = { fg = spec.diag.info, style = "bold" }, -- |more-prompt|
     NonText         = { fg = spec.bg4 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.

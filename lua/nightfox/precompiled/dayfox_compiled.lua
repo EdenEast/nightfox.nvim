@@ -123,7 +123,6 @@ highlight ModesDelete guifg=NONE guibg=#b95d76 gui=NONE guisp=NONE |
 highlight ModesInsert guifg=NONE guibg=#6ca7bd gui=NONE guisp=NONE |
 highlight ModesVisual guifg=NONE guibg=#8e6f98 gui=NONE guisp=NONE |
 highlight MoreMsg guifg=#4d688e guibg=NONE gui=bold guisp=NONE |
-highlight MsgArea guifg=#233f5e guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitBranch guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#cfd6d2 gui=NONE guisp=NONE |
