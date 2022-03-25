@@ -44,6 +44,7 @@ M.options = {
     modes = true,
     native_lsp = true,
     neogit = true,
+    neotree = true,
     nvimtree = true,
     pounce = true,
     sneak = true,

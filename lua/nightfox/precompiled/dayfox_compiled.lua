@@ -123,6 +123,16 @@ highlight ModesDelete guifg=NONE guibg=#b95d76 gui=NONE guisp=NONE |
 highlight ModesInsert guifg=NONE guibg=#6ca7bd gui=NONE guisp=NONE |
 highlight ModesVisual guifg=NONE guibg=#8e6f98 gui=NONE guisp=NONE |
 highlight MoreMsg guifg=#4d688e guibg=NONE gui=bold guisp=NONE |
+highlight NeoTreeDirectoryIcon guifg=#4d688e guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeDirectoryName guifg=#4d688e guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeFileNameOpened guifg=#c9709e guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitAdded guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitDeleted guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitModified guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeIndentMarker guifg=#bebebe guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeNormal guifg=#1d344f guibg=#dbdbdb gui=NONE guisp=NONE |
+highlight NeoTreeRootName guifg=#e3786c guibg=NONE gui=bold guisp=NONE |
+highlight NeoTreeSymbolicLinkTarget guifg=#de8db7 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitBranch guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#cfd6d2 gui=NONE guisp=NONE |

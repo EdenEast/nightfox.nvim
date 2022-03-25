@@ -363,6 +363,7 @@ Current list of modules are:
 - modes
 - native_lsp
 - neogit
+- neotree
 - nvimtree
 - pounce
 - sneak

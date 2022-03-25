@@ -389,6 +389,7 @@ Nightfox provides the following commands that wrap these functions above:
 - [lsp-trouble.nvim](https://github.com/simrat39/lsp-trouble.nvim)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [neogit](https://github.com/TimUntersberger/neogit)
+- [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [pounce.nvim](https://github.com/rlane/pounce.nvim)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
