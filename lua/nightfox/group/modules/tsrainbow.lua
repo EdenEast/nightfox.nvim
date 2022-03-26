@@ -7,13 +7,13 @@ function M.get(spec, config, opts)
 
   -- stylua: ignore
   return {
-    rainboecol1 = { fg = c.red.base },
-    rainboecol2 = { fg = c.yellow.base },
-    rainboecol3 = { fg = c.green.base },
-    rainboecol4 = { fg = c.blue.base },
-    rainboecol5 = { fg = c.cyan.base },
-    rainboecol6 = { fg = c.magenta.base },
-    rainboecol7 = { fg = c.pink.base },
+    rainbowcol1 = { fg = c.red.base },
+    rainbowcol2 = { fg = c.yellow.base },
+    rainbowcol3 = { fg = c.green.base },
+    rainbowcol4 = { fg = c.blue.base },
+    rainbowcol5 = { fg = c.cyan.base },
+    rainbowcol6 = { fg = c.magenta.base },
+    rainbowcol7 = { fg = c.pink.base },
   }
 end
 
