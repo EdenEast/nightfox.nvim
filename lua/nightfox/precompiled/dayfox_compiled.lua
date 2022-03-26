@@ -234,13 +234,13 @@ highlight diffLine guifg=#d76558 guibg=NONE gui=NONE guisp=NONE |
 highlight diffNewFile guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
 highlight diffOldFile guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
 highlight diffRemoved guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol1 guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol2 guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol3 guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol4 guifg=#4d688e guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol5 guifg=#6ca7bd guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol6 guifg=#8e6f98 guibg=NONE gui=NONE guisp=NONE |
-highlight rainboecol7 guifg=#d685af guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol1 guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol2 guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol3 guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol4 guifg=#4d688e guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol5 guifg=#6ca7bd guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol6 guifg=#8e6f98 guibg=NONE gui=NONE guisp=NONE |
+highlight rainbowcol7 guifg=#d685af guibg=NONE gui=NONE guisp=NONE |
 highlight rustTSField guifg=#233f5e guibg=NONE gui=NONE guisp=NONE
 ]])
 
