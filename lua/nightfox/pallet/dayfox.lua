@@ -101,9 +101,11 @@ local function generate_spec(pal)
   }
 
   spec.git = {
-    add     = pal.green.base,
-    removed = pal.red.base,
-    changed = pal.yellow.base,
+    add      = pal.green.base,
+    removed  = pal.red.base,
+    changed  = pal.yellow.base,
+    conflict = pal.orange.base,
+    ignored  = pal.comment,
   }
 
   -- stylua: ignore start

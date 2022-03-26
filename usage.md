@@ -319,7 +319,7 @@ These values are: `add`, `delete`, `change` and `text`.
 #### spec.git
 
 The `git` table maps [pallet] colors to git colors.
-These values are: `add`, `removed`, and `changed`
+These values are: `add`, `removed`, `changed`, `conflict`, and `ignored`.
 
 ## Group
 

@@ -408,7 +408,8 @@ spec.diff                              The `diff` table maps |nightfox-pallet|
 
 spec.git                               The `git` table maps |nightfox-pallet|
                                        colors to git colors. These values are:
-                                       `add`, `removed`, and `changed`
+                                       `add`, `removed`, `changed`, `conflict`,
+                                       and `ignored`.
 
 
 GROUP                                                         *nightfox-group*

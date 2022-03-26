@@ -125,10 +125,15 @@ highlight ModesVisual guifg=NONE guibg=#907aa9 gui=NONE guisp=NONE |
 highlight MoreMsg guifg=#286983 guibg=NONE gui=bold guisp=NONE |
 highlight NeoTreeDirectoryIcon guifg=#286983 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeDirectoryName guifg=#286983 guibg=NONE gui=NONE guisp=NONE |
-highlight NeoTreeFileNameOpened guifg=#c9709e guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeDotfile guifg=#2d81a3 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeFileName guifg=#625c87 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeFileNameOpened guifg=#575279 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeGitAdded guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitConflict guifg=#d7827e guibg=NONE gui=italic guisp=NONE |
 highlight NeoTreeGitDeleted guifg=#b4637a guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitIgnored guifg=#9893a5 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeGitModified guifg=#ea9d34 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitUntracked guifg=#9a80b9 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeIndentMarker guifg=#bdbfc9 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeNormal guifg=#575279 guibg=#ebe5df gui=NONE guisp=NONE |
 highlight NeoTreeRootName guifg=#d7827e guibg=NONE gui=bold guisp=NONE |
@@ -292,6 +297,8 @@ highlight! link LspSagaBorderTitle Title |
 highlight! link LspSagaCodeActionContent String |
 highlight! link LspSagaCodeActionTitle Title |
 highlight! link Macro PreProc |
+highlight! link NeoTreeDimText Conceal |
+highlight! link NeoTreeNormalNC NeoTreeNormal |
 highlight! link NvimTreeVertSplit VertSplit |
 highlight! link PmenuSbar Pmenu |
 highlight! link PreCondit PreProc |
