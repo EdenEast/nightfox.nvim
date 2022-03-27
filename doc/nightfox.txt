@@ -28,6 +28,7 @@ styles to suite your preference. These are:
 - `Dawnfox`
 - `Duskfox`
 - `Nordfox`
+- `Terafox`
 
 
 USAGE                                                         *nightfox-usage*

@@ -1,0 +1,21 @@
+{
+    "name" : "terafox",
+    "background" : "#152528",
+    "foreground" : "#e6eaea",
+    "black" : "#2f3239",
+    "blue" : "#5a93aa",
+    "cyan" : "#a1cdd8",
+    "green" : "#7aa4a1",
+    "purple" : "#ad5c7c",
+    "red" : "#e85c51",
+    "white" : "#ebebeb",
+    "yellow" : "#fda47f",
+    "brightBlack" : "#4e5157",
+    "brightBlue" : "#73a3b7",
+    "brightCyan" : "#afd4de",
+    "brightGreen" : "#8eb2af",
+    "brightPurple" : "#b97490",
+    "brightRed" : "#eb746b",
+    "brightWhite" : "#eeeeee",
+    "brightYellow" : "#fdb292"
+}
