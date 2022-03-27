@@ -160,6 +160,7 @@ highlight NvimTreeFolderIcon guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeFolderName guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitDeleted guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitDirty guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
+highlight NvimTreeGitMerge guifg=NONE guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitNew guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeImageFile guifg=#b1acde guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeIndentMarker guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
@@ -299,6 +300,8 @@ highlight! link LspSagaCodeActionTitle Title |
 highlight! link Macro PreProc |
 highlight! link NeoTreeDimText Conceal |
 highlight! link NeoTreeNormalNC NeoTreeNormal |
+highlight! link NvimTreeGitRenamed NvimTreeGitDeleted |
+highlight! link NvimTreeGitStaged NvimTreeGitStaged |
 highlight! link NvimTreeVertSplit VertSplit |
 highlight! link PmenuSbar Pmenu |
 highlight! link PreCondit PreProc |

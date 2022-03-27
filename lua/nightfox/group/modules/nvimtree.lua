@@ -21,9 +21,12 @@ function M.get(spec, config, opts)
     NvimTreeImageFile        = { fg = c.white:subtle() },
     NvimTreeOpenedFile       = { fg = c.pink:harsh() }, -- TODO: not working
 
-    NvimTreeGitDirty         = { fg = spec.git.changed },
-    NvimTreeGitNew           = { fg = spec.git.add },
     NvimTreeGitDeleted       = { fg = spec.git.removed },
+    NvimTreeGitDirty         = { fg = spec.git.changed},
+    NvimTreeGitMerge         = { fg = spec.git.confict },
+    NvimTreeGitNew           = { fg = spec.git.add },
+    NvimTreeGitRenamed       = { link = "NvimTreeGitDeleted" },
+    NvimTreeGitStaged        = { link = "NvimTreeGitStaged" },
   }
 end
 
