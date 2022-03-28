@@ -71,8 +71,8 @@ highlight GitGutterAdd guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight GitGutterChange guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight GitGutterDelete guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight GitSignsAdd guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
-highlight GitSignsChange guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
-highlight GitSignsDelete guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
+highlight GitSignsChange guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
+highlight GitSignsDelete guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight GlyphPallet0 guifg=#393b44 guibg=NONE gui=NONE guisp=NONE |
 highlight GlyphPallet1 guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight GlyphPallet10 guifg=#8ebaa4 guibg=NONE gui=NONE guisp=NONE |
