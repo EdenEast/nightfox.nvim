@@ -15,7 +15,7 @@ highlight BufferCurrentSign guifg=#569fba guibg=#555169 gui=NONE guisp=NONE |
 highlight BufferCurrentTarget guifg=#eb6f92 guibg=#555169 gui=NONE guisp=NONE |
 highlight BufferInactive guifg=#817c9c guibg=#191726 gui=NONE guisp=NONE |
 highlight BufferInactiveIndex guifg=#817c9c guibg=#191726 gui=NONE guisp=NONE |
-highlight BufferInactiveMod guifg=#4a3a24 guibg=#191726 gui=NONE guisp=NONE |
+highlight BufferInactiveMod guifg=#433940 guibg=#191726 gui=NONE guisp=NONE |
 highlight BufferInactiveSign guifg=#373354 guibg=#191726 gui=NONE guisp=NONE |
 highlight BufferInactiveTarget guifg=#eb6f92 guibg=#191726 gui=NONE guisp=NONE |
 highlight BufferTabpage guifg=#373354 guibg=#191726 gui=NONE guisp=NONE |
@@ -49,10 +49,10 @@ highlight DiagnosticUnderlineError guifg=NONE guibg=NONE gui=undercurl guisp=#eb
 highlight DiagnosticUnderlineHint guifg=NONE guibg=NONE gui=undercurl guisp=#a3be8c |
 highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE gui=undercurl guisp=#569fba |
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE gui=undercurl guisp=#f6c177 |
-highlight DiagnosticVirtualTextError guifg=#eb6f92 guibg=#3b1c24 gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextHint guifg=#a3be8c guibg=#31392a gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextInfo guifg=#569fba guibg=#1a3038 gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextWarn guifg=#f6c177 guibg=#4a3a24 gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextError guifg=#eb6f92 guibg=#412d44 gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextHint guifg=#a3be8c guibg=#363943 gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextInfo guifg=#569fba guibg=#2b344a gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextWarn guifg=#f6c177 guibg=#433940 gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#3d4047 gui=NONE guisp=NONE |
 highlight DiffChange guifg=NONE guibg=#2d3a50 gui=NONE guisp=NONE |

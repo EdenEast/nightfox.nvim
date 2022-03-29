@@ -86,10 +86,10 @@ local function generate_spec(pal)
   }
 
   spec.diag_bg = {
-    error = C(spec.diag.error):shade(-0.75):to_css(),
-    warn  = C(spec.diag.warn):shade(-0.7):to_css(),
-    info  = C(spec.diag.info):shade(-0.7):to_css(),
-    hint  = C(spec.diag.hint):shade(-0.7):to_css(),
+    error = C(spec.bg1):blend(C(spec.diag.error), 0.15):to_css(),
+    warn  = C(spec.bg1):blend(C(spec.diag.warn), 0.15):to_css(),
+    info  = C(spec.bg1):blend(C(spec.diag.info), 0.15):to_css(),
+    hint  = C(spec.bg1):blend(C(spec.diag.hint), 0.15):to_css(),
   }
 
   spec.diff = {
