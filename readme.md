@@ -431,7 +431,6 @@ There are [extra](./extra) configuration files for the following:
 
 - [catppuccin](https://github.com/catppuccin/nvim/) (integration/modules)
 - [rose-pine](https://github.com/rose-pine/nvim) (dawnfox/duskfox)
-- [nord](https://i.imgur.com/LzJYkpS.jpeg) (nordfox reference image)
 - [coolers](https://coolers.co) (useful color information and pallet tool)
 - [colorhexa](https://www.colorhexa.com/) (detailed color information)
 - [neogit](https://github.com/TimUntersberger/neogit/blob/b688a2c/lua/neogit/lib/color.lua) (base for color lib)
