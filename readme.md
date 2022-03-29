@@ -17,6 +17,7 @@
   <h3>Dawnfox</h3><img src="https://user-images.githubusercontent.com/2746374/158456278-c5d656de-c445-44b8-9813-9fc91ffbce4c.png" alt="dawnfox" style="border-radius:1%" />
   <h3>Duskfox</h3><img src="https://user-images.githubusercontent.com/2746374/158456284-b6ff583f-c0bb-417c-b2d5-60b8364049a7.png" alt="duskfox" style="border-radius:1%" />
   <h3>Nordfox</h3><img src="https://user-images.githubusercontent.com/2746374/158456289-eee096df-7ea7-4161-9199-808fdba58e06.png" alt="nordfox" style="border-radius:1%" />
+  <h3>Terafox</h3><img src="https://user-images.githubusercontent.com/2746374/160268126-cd417690-3660-4a04-9040-183c35f127f7.png" alt="terafox" style="border-radius:1%" />
 </div>
 
 ## Notice ℹ️
@@ -434,3 +435,17 @@ There are [extra](./extra) configuration files for the following:
 - [coolers](https://coolers.co) (useful color information and pallet tool)
 - [colorhexa](https://www.colorhexa.com/) (detailed color information)
 - [neogit](https://github.com/TimUntersberger/neogit/blob/b688a2c/lua/neogit/lib/color.lua) (base for color lib)
+
+## References
+
+Some themes were inspired by wallpapers.
+
+<details>
+<summary>Nordfox</summary>
+<img src="https://i.imgur.com/LzJYkpS.jpeg" alt="nordfox_reference" />
+</details>
+
+<details>
+<summary>Terafox</summary>
+<img src="https://torako.wakarimasen.moe/file/torako/wg/image/1622/83/1622838138777.jpg" alt="terafox_reference" />
+</details>

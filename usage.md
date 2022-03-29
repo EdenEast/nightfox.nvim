@@ -8,6 +8,7 @@ It comes with multiple different styles to suite your preference. These are:
 - `Dawnfox`
 - `Duskfox`
 - `Nordfox`
+- `Terafox`
 
 ## Usage
 
