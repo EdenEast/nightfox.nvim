@@ -19,6 +19,15 @@ function M.check_deprication(opts)
     )
   end
 
+  if opts.pallets then
+    dep.write(
+      "  ",
+      { "pallet", "WarningMsg" },
+      " has been changed to use the correct spelling ",
+      { "palette", "WarningMsg" }
+    )
+  end
+
   local function check_opt(name, o)
     if opts[name] then
       local replace = o and o.replace or string.format("options.%s", name)
