@@ -5,25 +5,25 @@ local M = {}
 function M.generate(spec)
   local content = [[
 {
-    "name" : "${pallet.meta.name}",
+    "name" : "${palette.meta.name}",
     "background" : "${bg1}",
     "foreground" : "${fg1}",
-    "black" : "${pallet.black}",
-    "blue" : "${pallet.blue}",
-    "cyan" : "${pallet.cyan}",
-    "green" : "${pallet.green}",
-    "purple" : "${pallet.magenta}",
-    "red" : "${pallet.red}",
-    "white" : "${pallet.white}",
-    "yellow" : "${pallet.yellow}",
-    "brightBlack" : "${pallet.black.bright}",
-    "brightBlue" : "${pallet.blue.bright}",
-    "brightCyan" : "${pallet.cyan.bright}",
-    "brightGreen" : "${pallet.green.bright}",
-    "brightPurple" : "${pallet.magenta.bright}",
-    "brightRed" : "${pallet.red.bright}",
-    "brightWhite" : "${pallet.white.bright}",
-    "brightYellow" : "${pallet.yellow.bright}"
+    "black" : "${palette.black}",
+    "blue" : "${palette.blue}",
+    "cyan" : "${palette.cyan}",
+    "green" : "${palette.green}",
+    "purple" : "${palette.magenta}",
+    "red" : "${palette.red}",
+    "white" : "${palette.white}",
+    "yellow" : "${palette.yellow}",
+    "brightBlack" : "${palette.black.bright}",
+    "brightBlue" : "${palette.blue.bright}",
+    "brightCyan" : "${palette.cyan.bright}",
+    "brightGreen" : "${palette.green.bright}",
+    "brightPurple" : "${palette.magenta.bright}",
+    "brightRed" : "${palette.red.bright}",
+    "brightWhite" : "${palette.white.bright}",
+    "brightYellow" : "${palette.yellow.bright}"
 }
 ]]
 

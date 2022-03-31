@@ -19,6 +19,15 @@ function M.check_deprication(opts)
     )
   end
 
+  if opts.pallets then
+    dep.write(
+      "  ",
+      { "pallet", "WarningMsg" },
+      " has been changed to use the correct spelling ",
+      { "palette", "WarningMsg" }
+    )
+  end
+
   local function check_opt(name, o)
     if opts[name] then
       local replace = o and o.replace or string.format("options.%s", name)
@@ -40,7 +49,7 @@ function M.check_deprication(opts)
   check_opt("styles")
   check_opt("inverse")
   check_opt("alt_nc", { replace = "options.dim_inactive" })
-  check_opt("colors", { replace = "pallets" })
+  check_opt("colors", { replace = "palettes" })
   check_opt("hlgroups", { replace = "groups" })
 
   M.checked_deprication = true

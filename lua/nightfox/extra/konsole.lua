@@ -19,14 +19,14 @@ end
 
 function M.generate(spec)
   local colors = {
-    black = conv_shade(spec.pallet.black),
-    red = conv_shade(spec.pallet.red),
-    green = conv_shade(spec.pallet.green),
-    yellow = conv_shade(spec.pallet.yellow),
-    blue = conv_shade(spec.pallet.blue),
-    magenta = conv_shade(spec.pallet.magenta),
-    cyan = conv_shade(spec.pallet.cyan),
-    white = conv_shade(spec.pallet.white),
+    black = conv_shade(spec.palette.black),
+    red = conv_shade(spec.palette.red),
+    green = conv_shade(spec.palette.green),
+    yellow = conv_shade(spec.palette.yellow),
+    blue = conv_shade(spec.palette.blue),
+    magenta = conv_shade(spec.palette.magenta),
+    cyan = conv_shade(spec.palette.cyan),
+    white = conv_shade(spec.palette.white),
     bg1 = conv(spec.bg1),
     bg0 = conv(spec.bg0),
     bg3 = conv(spec.bg3),

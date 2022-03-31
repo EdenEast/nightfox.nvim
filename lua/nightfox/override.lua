@@ -1,7 +1,7 @@
 local collect = require("nightfox.lib.collect")
 
 local store = {
-  pallets = {},
+  palettes = {},
   specs = {},
   groups = {},
   has_override = false,

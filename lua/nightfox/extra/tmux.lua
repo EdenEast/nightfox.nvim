@@ -4,12 +4,12 @@ local M = {}
 
 function M.generate(spec)
   local colors = {
-    meta = spec.pallet.meta,
+    meta = spec.palette.meta,
     bg = spec.bg0,
     fg = spec.fg2,
     fg_alt = spec.fg3,
-    blue = spec.pallet.blue,
-    black = spec.pallet.black,
+    blue = spec.palette.blue,
+    black = spec.palette.black,
   }
 
   local content = [[

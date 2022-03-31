@@ -2,8 +2,8 @@ local M = {}
 
 local override = {}
 
-function override.pallets(pallets)
-  require("nightfox.override").pallets = pallets
+function override.palettes(palettes)
+  require("nightfox.override").palettes = palettes
 end
 
 function override.specs(specs)
@@ -37,8 +37,8 @@ function M.setup(opts)
     M.init(opts.options)
   end
 
-  if opts.pallets then
-    M.override.pallets(opts.pallets)
+  if opts.palettes then
+    M.override.palettes(opts.palettes)
   end
 
   if opts.specs then

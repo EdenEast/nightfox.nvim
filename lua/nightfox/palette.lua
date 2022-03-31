@@ -2,12 +2,12 @@ local collect = require("nightfox.lib.collect")
 
 --#region Types
 
----@class PalletMeta
+---@class PaletteMeta
 ---@field name string
 ---@field light boolean
 
----@class Pallet
----@field meta PalletMeta
+---@class Palette
+---@field meta PaletteMeta
 ---@field black Shade
 ---@field red Shade
 ---@field green Shade
@@ -69,23 +69,23 @@ local function override(color, ovr)
 end
 
 function M.load(name)
-  local ovr = require("nightfox.override").pallets
+  local ovr = require("nightfox.override").palettes
 
   if name then
     local valid = collect.contains(M.foxes, name)
-    local raw = valid and require("nightfox.pallet." .. name) or require("nightfox.pallet.nightfox")
-    local pallet = ovr[name] and override(raw.pallet, ovr[name]) or raw.pallet
-    pallet.meta = raw.meta
-    pallet.generate_spec = raw.generate_spec
-    return pallet
+    local raw = valid and require("nightfox.palette." .. name) or require("nightfox.palette.nightfox")
+    local palette = ovr[name] and override(raw.palette, ovr[name]) or raw.palette
+    palette.meta = raw.meta
+    palette.generate_spec = raw.generate_spec
+    return palette
   else
     local result = {}
     for _, mod in ipairs(M.foxes) do
-      local raw = require("nightfox.pallet." .. mod)
-      local pallet = ovr[mod] and override(raw.pallet, ovr[mod]) or raw.pallet
-      pallet.meta = raw.meta
-      pallet.generate_spec = raw.generate_spec
-      result[mod] = pallet
+      local raw = require("nightfox.palette." .. mod)
+      local palette = ovr[mod] and override(raw.palette, ovr[mod]) or raw.palette
+      palette.meta = raw.meta
+      palette.generate_spec = raw.generate_spec
+      result[mod] = palette
     end
     return result
   end

@@ -48,8 +48,8 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 - `alt_nc` has been moved to `options.dim_inactive`
 - `styles` has been moved to `options.styles`
 - `inverse` has been moved to `options.inverse`
-- `colors` has been replaced with the concept of [pallets](#pallets)
-- `hlgroups` has been replaced with the concept of [groups](#customize-pallets-and-groups)
+- `colors` has been replaced with the concept of [palettes](#palettes)
+- `hlgroups` has been replaced with the concept of [groups](#customize-palettes-and-groups)
 
 [v1-tag]: https://github.com/EdenEast/nightfox.nvim/tree/v1.0.0
 [rewrite-pr]: https://github.com/EdenEast/nightfox.nvim/pull/77
@@ -57,7 +57,7 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 <details>
 <summary>Color Migration table</summary>
 
-| V1 color     | V2 pallet |
+| V1 color     | V2 palette |
 | ------------ | --------- |
 | bg           | bg1       |
 | bg_alt       | bg0       |
@@ -181,16 +181,16 @@ either set the module to `true` or if the module has additional configuration in
 
 To see a list of modules check, see [Usage](./usage.md#module) or `:help` for more information.
 
-### Customize pallets and groups
+### Customize palettes and groups
 
-You can change the color `pallet` and the highlight `group` of nightfox. Here is a brief example:
+You can change the color `palette` and the highlight `group` of nightfox. Here is a brief example:
 
 ```lua
--- Pallets are the base color defines of a colorscheme.
--- You can override these pallets for each colorscheme defined by nightfox
-local pallets = {
+-- Palettes are the base color defines of a colorscheme.
+-- You can override these palettes for each colorscheme defined by nightfox
+local palettes = {
   nightfox = {
-    -- Each pallet defines these colors:
+    -- Each palette defines these colors:
     --   black, red, green, yellow, blue, magenta, cyan, white, orange, pink
     --
     -- These colors have 3 shades: base, bright, and dim
@@ -203,7 +203,7 @@ local pallets = {
     blue = { base = "#4d688e", bright = "#4e75aa", dim = "#485e7d", }
   },
   nordfox = {
-    -- A pallet also defines the following:
+    -- A palette also defines the following:
     --   bg0, bg1, bg2, bg3, bg4, fg0, fg1, fg2, fg3, sel0, sel1, comment
     --
     -- These are the different foreground and background shades used by the theme.
@@ -220,18 +220,18 @@ local pallets = {
   }
 }
 
--- Spec's (specifications) are a mapping of pallets to logical groups that will be
+-- Spec's (specifications) are a mapping of palettes to logical groups that will be
 -- used by the groups. Some examples of the groups that specs map would be:
 --   - syntax groups (functions, types, keywords, ...)
 --   - diagnostic groups (error, warning, info, hints)
 --   - git groups (add, removed, changed)
 --
--- You can override these just like pallets
+-- You can override these just like palettes
 local specs = {
   nightfox = {
     syntax = {
       -- Specs allow you to define a value using either a color or template. If the string does
-      -- start with `#` the string will be used as the path of the pallet table. Defining just
+      -- start with `#` the string will be used as the path of the palette table. Defining just
       -- a color uses the base version of that color.
       keyword = "magenta",
 
@@ -256,11 +256,11 @@ local groups = {
   -- Make sure `link` is cleared to `""` so that the link will be removed.
   CursorColumn = { bg = "sel0", link = "" },
 
-  -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
-  IncSearch = { bg = "pallet.cyan" },
+  -- Specs are used for the template. Specs have their palette's as a field that can be accessed
+  IncSearch = { bg = "palette.cyan" },
 }
 
-require("nightfox").setup({ pallets = pallets, specs = specs, groups = groups })
+require("nightfox").setup({ palettes = palettes, specs = specs, groups = groups })
 
 -- setup must be called before loading
 vim.cmd("colorscheme nightfox")
@@ -272,18 +272,18 @@ To get more information check out [Usage](./usage.md#configuration) or the help 
 
 Nightfox exposes some Api's and utility classes that let you fetch data from nightfox.
 
-### Pallets
+### Palettes
 
-You can get the pallets used by each colorscheme:
+You can get the palettes used by each colorscheme:
 
 ```lua
--- Returns a table with each colorscheme and the pallet associated with it
-local pallets = require('nightfox.pallet').load()
+-- Returns a table with each colorscheme and the palette associated with it
+local palettes = require('nightfox.palette').load()
 
--- Returns the pallet of the specified colorscheme
-local pallet = require('nightfox.pallet').load("nightfox")
+-- Returns the palette of the specified colorscheme
+local palette = require('nightfox.palette').load("nightfox")
 
-print(vim.inspect(pallet.red))
+print(vim.inspect(palette.red))
 -- {
 --   base = "#c94f6d",
 --   bright = "#d16983",
@@ -291,7 +291,7 @@ print(vim.inspect(pallet.red))
 -- }
 ```
 
-See [Usage](./usage.md#pallet) for more information on pallets.
+See [Usage](./usage.md#palette) for more information on palettes.
 
 ### Specs
 
@@ -319,10 +319,10 @@ See [Usage](./usage.md#spec) for more information on specs.
 Nightfox uses a color library internally to manipulate colors. You can use this library as well.
 
 ```lua
-local pallet = require('nightfox.pallet').load('nightfox')
+local palette = require('nightfox.palette').load('nightfox')
 local Color = require("nightfox.lib.color")
 
-local bg = Color.from_hex(pallet.bg1)
+local bg = Color.from_hex(palette.bg1)
 local red = Color.from_hex("#ff0000")
 
 -- Blend the bg with red. The blend factor is from 0 to 1
@@ -431,7 +431,7 @@ There are [extra](./extra) configuration files for the following:
 
 - [catppuccin](https://github.com/catppuccin/nvim/) (integration/modules)
 - [rose-pine](https://github.com/rose-pine/nvim) (dawnfox/duskfox)
-- [coolers](https://coolers.co) (useful color information and pallet tool)
+- [coolers](https://coolers.co) (useful color information and palette tool)
 - [colorhexa](https://www.colorhexa.com/) (detailed color information)
 - [neogit](https://github.com/TimUntersberger/neogit/blob/b688a2c/lua/neogit/lib/color.lua) (base for color lib)
 

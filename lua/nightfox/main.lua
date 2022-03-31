@@ -11,7 +11,7 @@ local function clear_hl()
 end
 
 local function set_info(spec)
-  local meta = spec.pallet.meta
+  local meta = spec.palette.meta
   local background = meta.light and "light" or "dark"
   cmd("set background=" .. background)
   cmd("set termguicolors")
@@ -19,7 +19,7 @@ local function set_info(spec)
 end
 
 local function set_terminal_colors(spec)
-  local c = spec.pallet
+  local c = spec.palette
 
   -- stylua: ignore
   local colors = {

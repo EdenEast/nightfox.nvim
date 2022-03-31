@@ -5,7 +5,7 @@ local M = {}
 function M.get(spec, config, opts)
   -- stylua: ignore
   return {
-    FernBranchText = { fg = spec.pallet.blue.base },
+    FernBranchText = { fg = spec.palette.blue.base },
   }
 end
 

@@ -15,7 +15,7 @@ end
 
 function M.generate(spec)
   -- Remove '#' from color
-  local p = spec.pallet
+  local p = spec.palette
   local colors = {
     meta = p.meta,
     bg = conv(spec.bg1),

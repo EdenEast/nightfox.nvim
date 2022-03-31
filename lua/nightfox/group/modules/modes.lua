@@ -3,7 +3,7 @@
 local M = {}
 
 function M.get(spec, config, opts)
-  local pal = spec.pallet
+  local pal = spec.palette
 
   -- stylua: ignore
   return {
