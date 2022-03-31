@@ -26,6 +26,8 @@ else
   M.is_windows = package.config:sub(1, 1) == "\\"
 end
 
+M.is_nvim = vim.fn.has("nvim") == 1
+
 function M.get_separator()
   if M.is_windows then
     return "\\"
@@ -51,5 +53,16 @@ end
 function M.ensure_dir(path)
   os.execute(string.format("mkdir %s %s", M.is_windows and "" or "-p", path))
 end
+
+local function vim_cache_home()
+  if M.s_windows then
+    return M.join_paths(vim.fn.expand("%localappdata%"), "Temp", "nvim")
+  end
+  local xdg = os.getenv("XDG_CACHE_HOME")
+  local root = xdg or vim.fn.expand("$HOME/.cache/nvim")
+  return M.join_paths(root, "nvim")
+end
+
+M.cache_home = M.is_nvim and vim.fn.stdpath("cache") or vim_cache_home()
 
 return M
