@@ -20,10 +20,10 @@ simply set the colorscheme with the `:colorscheme` command
 ```
 
 Nightfox is built to be customizable. There are four main components that can be customized. These are [option],
-[pallet], [spec], and [group].
+[palette], [spec], and [group].
 
 [option]: #option
-[pallet]: #pallet
+[palette]: #palette
 [spec]: #spec
 [group]: #group
 [building]: #building
@@ -44,11 +44,11 @@ require('nightfox').init({
 
 ### Overrides
 
-The individual components: [pallets][pallet], [specs][spec] and [groups][group] can be set separately.
+The individual components: [palettes][palette], [specs][spec] and [groups][group] can be set separately.
 
 ```lua
 local override = require('nightfox').override
-override.pallets({
+override.palettes({
   nightfox = {
     red = "#c94f6d",
   },
@@ -64,13 +64,13 @@ override.specs({
   }
 })
 override.groups({
-  IncSearch = { bg = "pallet.cyan" },
+  IncSearch = { bg = "palette.cyan" },
 })
 ```
 
-Overrides for [pallets][pallet] and [specs][spec] are defined per style. The purpose of overriding these components is
+Overrides for [palettes][palette] and [specs][spec] are defined per style. The purpose of overriding these components is
 to change colors. Colors are only relevant to a specific style. [Groups][group] on the other hand are not defined per
-style. These mainly use the color defined in the [pallet] and [spec] objects in order to set values using
+style. These mainly use the color defined in the [palette] and [spec] objects in order to set values using
 [templates](#templates).
 
 ### Setup
@@ -82,7 +82,7 @@ the correct init/override function.
 local options = {
   dim_inactive = true,
 }
-local pallets = {
+local palettes = {
   nightfox = {
     red = "#c94f6d",
   },
@@ -98,11 +98,11 @@ local specs = {
   }
 }
 local groups = {
-  IncSearch = { bg = "pallet.cyan" },
+  IncSearch = { bg = "palette.cyan" },
 }
 require('nightfox').setup({
   options = options,
-  pallets = pallets,
+  palettes = palettes,
   specs = specs,
   groups = groups,
 })
@@ -111,12 +111,12 @@ require('nightfox').setup({
 ## Templates
 
 Templates allow for referencing of other lower level objects in nightfox's config. For example instead of setting an
-absolute color value, you can refer to a lower object's value instead. The base of nightfox is a [pallet]. A pallet
-does not use a template as it is the base that others built off of. [Pallets][pallet] are used as the template source
+absolute color value, you can refer to a lower object's value instead. The base of nightfox is a [palette]. A palette
+does not use a template as it is the base that others built off of. [Palettes][palette] are used as the template source
 for [spec] objects. [Specs][spec] objects are used as template source for [group] objects.
 
 If a value does not start with `#` symbol it will be treated as the template path. Everything in lua is a table. This
-means that `pallets` and `specs` are just lua tables. A template `path` is the keys to index into the table separated by
+means that `palettes` and `specs` are just lua tables. A template `path` is the keys to index into the table separated by
 `.` characters.
 
 Note: If the resulting value of a template is a [shade] then the `base` value will be used.
@@ -124,7 +124,7 @@ Note: If the resulting value of a template is a [shade] then the `base` value wi
 **Example:**
 
 ```lua
--- Specs use pallets as the template source
+-- Specs use palettes as the template source
 local specs = {
   nightfox = {
     syntax = {
@@ -153,8 +153,8 @@ local groups = {
   -- Make sure `link` is cleared to `""` so that the link will be removed.
   CursorColumn = { bg = "sel0", link = "" },
 
-  -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
-  IncSearch = { bg = "pallet.cyan" },
+  -- Specs are used for the template. Specs have their palette's as a field that can be accessed
+  IncSearch = { bg = "palette.cyan" },
 }
 
 require('nightfox').setup({ specs = specs, groups = groups })
@@ -217,7 +217,7 @@ or a table that contains additional configuration for that module. If the value 
 
 ## Shade
 
-A `shade` is a way to group a `base` color with a `bright` and `dim` version. This is the base struct/object that pallet
+A `shade` is a way to group a `base` color with a `bright` and `dim` version. This is the base struct/object that palette
 colors will be defined from. For example:
 
 ```lua
@@ -231,14 +231,14 @@ print(vim.inspect(red))
 -- }
 ```
 
-This is just a convience structure for building pallet for nightfox and should not be used outside of it. This is noted
-here to help understand the structure of a [pallet].
+This is just a convience structure for building palette for nightfox and should not be used outside of it. This is noted
+here to help understand the structure of a [palette].
 
-## Pallet
+## Palette
 
-A `pallet` is the base color definitions of a style. Each style defines its own pallet to be used by the other
-components. A pallet defines base colors, as well as foreground and background shades. Along with the foreground and
-background colors a pallet also defines other colors such as selection and comment colors.
+A `palette` is the base color definitions of a style. Each style defines its own palette to be used by the other
+components. A palette defines base colors, as well as foreground and background shades. Along with the foreground and
+background colors a palette also defines other colors such as selection and comment colors.
 
 The base colors are [shade] objects that define a `base`, `bright`, and `dim` color. These base colors are:
 `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`, `orange`, `pink`.
@@ -270,14 +270,14 @@ The base colors are [shade] objects that define a `base`, `bright`, and `dim` co
 
 ## Spec
 
-A `spec` or specification is a mapping of a pallet values to a logical group that is used by the [group].
+A `spec` or specification is a mapping of a palette values to a logical group that is used by the [group].
 
-The base of a `spec` is a re-export of the [pallet]'s `fg` `bg` and `sel`. The values that are re-exported are:
+The base of a `spec` is a re-export of the [palette]'s `fg` `bg` and `sel`. The values that are re-exported are:
 `bg0`, `bg1`, `bg2`, `bg3`, `bg4`, `fg0`, `fg1`, `fg2`, `fg3`, `sel0`, `sel1`.
 
 #### spec.syntax
 
-The `syntax` table maps [pallet] color values to syntax values to be used by the [group].
+The `syntax` table maps [palette] color values to syntax values to be used by the [group].
 
 | Key         | Description                     |
 | ----------- | ------------------------------- |
@@ -304,22 +304,22 @@ The `syntax` table maps [pallet] color values to syntax values to be used by the
 
 #### spec.diag
 
-The `diag` table maps [pallet] colors to vim diagnostic colors values.
+The `diag` table maps [palette] colors to vim diagnostic colors values.
 These values are: `error`, `warn`, `info` and `hint`.
 
 #### spec.diag_bg
 
-The `diag_bg` table maps [pallet] colors to vim diagnostic background colors.
+The `diag_bg` table maps [palette] colors to vim diagnostic background colors.
 These values are: `error`, `warn`, `info` and `hint`.
 
 #### spec.diff
 
-The `diff` table maps [pallet] colors to vimdiff highlight colors.
+The `diff` table maps [palette] colors to vimdiff highlight colors.
 These values are: `add`, `delete`, `change` and `text`.
 
 #### spec.git
 
-The `git` table maps [pallet] colors to git colors.
+The `git` table maps [palette] colors to git colors.
 These values are: `add`, `removed`, `changed`, `conflict`, and `ignored`.
 
 ## Group
@@ -355,7 +355,7 @@ Current list of modules are:
 - fidget
 - gitgutter
 - gitsigns
-- glyph_pallet
+- glyph_palette
 - hop
 - illuminate
 - lightspeed

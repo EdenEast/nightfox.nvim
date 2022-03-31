@@ -7,7 +7,7 @@ local meta = {
 }
 
 -- stylua: ignore
-local pallet = {
+local palette = {
   black   = Shade.new("#575279", "#5f5695", "#504c6b", true),
   red     = Shade.new("#b4637a", "#c26d85", "#a5576d", true),
   green   = Shade.new("#618774", "#629f81", "#597668", true),
@@ -112,4 +112,4 @@ local function generate_spec(pal)
   return spec
 end
 
-return { meta = meta, pallet = pallet, generate_spec = generate_spec }
+return { meta = meta, palette = palette, generate_spec = generate_spec }

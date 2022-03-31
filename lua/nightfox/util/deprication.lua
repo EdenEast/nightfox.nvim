@@ -40,7 +40,7 @@ function M.check_deprication(opts)
   check_opt("styles")
   check_opt("inverse")
   check_opt("alt_nc", { replace = "options.dim_inactive" })
-  check_opt("colors", { replace = "pallets" })
+  check_opt("colors", { replace = "palettes" })
   check_opt("hlgroups", { replace = "groups" })
 
   M.checked_deprication = true

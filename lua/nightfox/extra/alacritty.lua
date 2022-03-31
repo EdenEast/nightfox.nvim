@@ -15,7 +15,7 @@ end
 
 function M.generate(spec)
   -- Convert default hex string format to Alacritty `0x` format
-  local p = spec.pallet
+  local p = spec.palette
   local colors = {
     meta = p.meta,
     bg = conv(spec.bg1),

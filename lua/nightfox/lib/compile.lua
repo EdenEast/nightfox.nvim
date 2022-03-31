@@ -31,7 +31,7 @@ local function gen_set_info_block(meta)
 end
 
 local function gen_terminal_func(spec)
-  local c = spec.pallet
+  local c = spec.palette
 
   local lines = {}
 
@@ -121,7 +121,7 @@ function M.compile()
     table.insert(lines, table.concat(hllinks, " |\n"))
     table.insert(lines, "]])\n")
 
-    table.insert(lines, gen_set_info_block(spec.pallet.meta))
+    table.insert(lines, gen_set_info_block(spec.palette.meta))
 
     if config.terminal_colors then
       table.insert(lines, gen_terminal_func(spec))
@@ -135,7 +135,7 @@ function M.compile()
 end
 
 function M.clean()
-  local foxes = require("nightfox.pallet").foxes
+  local foxes = require("nightfox.palette").foxes
 
   local output_path = config.compile_path
   local file_suffix = config.compile_file_suffix
@@ -147,7 +147,7 @@ function M.clean()
 end
 
 function M.status()
-  local foxes = require("nightfox.pallet").foxes
+  local foxes = require("nightfox.palette").foxes
 
   local output_path = config.compile_path
   local file_suffix = config.compile_file_suffix

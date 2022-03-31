@@ -9,7 +9,7 @@ Table of Contents                                 *nightfox-table-of-contents*
   - Templates                                             |nightfox-templates|
   - Option                                                   |nightfox-option|
   - Shade                                                     |nightfox-shade|
-  - Pallet                                                   |nightfox-pallet|
+  - Palette                                                 |nightfox-palette|
   - Spec                                                       |nightfox-spec|
   - Group                                                     |nightfox-group|
   - Module                                                   |nightfox-module|
@@ -43,8 +43,8 @@ just want to use the theme out of the box simply set the colorscheme with the
 
 
 Nightfox is built to be customizable. There are four main components that can
-be customized. These are |nightfox-option|, |nightfox-pallet|, |nightfox-spec|,
-and |nightfox-group|.
+be customized. These are |nightfox-option|, |nightfox-palette|,
+|nightfox-spec|, and |nightfox-group|.
 
 CONFIGURATION                                         *nightfox-configuration*
 
@@ -64,12 +64,12 @@ The `init()` function set nightfox’s config |nightfox-options|.
 
 OVERRIDES ~
 
-The individual components: |nightfox-pallets|, |nightfox-specs| and
+The individual components: |nightfox-palettes|, |nightfox-specs| and
 |nightfox-groups| can be set separately.
 
 >
     local override = require('nightfox').override
-    override.pallets({
+    override.palettes({
       nightfox = {
         red = "#c94f6d",
       },
@@ -85,15 +85,15 @@ The individual components: |nightfox-pallets|, |nightfox-specs| and
       }
     })
     override.groups({
-      IncSearch = { bg = "pallet.cyan" },
+      IncSearch = { bg = "palette.cyan" },
     })
 <
 
 
-Overrides for |nightfox-pallets| and |nightfox-specs| are defined per style.
+Overrides for |nightfox-palettes| and |nightfox-specs| are defined per style.
 The purpose of overriding these components is to change colors. Colors are only
 relevant to a specific style. |nightfox-groups| on the other hand are not
-defined per style. These mainly use the color defined in the |nightfox-pallet|
+defined per style. These mainly use the color defined in the |nightfox-palette|
 and |nightfox-spec| objects in order to set values using |nightfox-templates|.
 
 SETUP ~
@@ -105,7 +105,7 @@ each component as seperate keys and calls the correct init/override function.
     local options = {
       dim_inactive = true,
     }
-    local pallets = {
+    local palettes = {
       nightfox = {
         red = "#c94f6d",
       },
@@ -121,11 +121,11 @@ each component as seperate keys and calls the correct init/override function.
       }
     }
     local groups = {
-      IncSearch = { bg = "pallet.cyan" },
+      IncSearch = { bg = "palette.cyan" },
     }
     require('nightfox').setup({
       options = options,
-      pallets = pallets,
+      palettes = palettes,
       specs = specs,
       groups = groups,
     })
@@ -137,13 +137,13 @@ TEMPLATES                                                 *nightfox-templates*
 Templates allow for referencing of other lower level objects in nightfox’s
 config. For example instead of setting an absolute color value, you can refer
 to a lower object’s value instead. The base of nightfox is a
-|nightfox-pallet|. A pallet does not use a template as it is the base that
-others built off of. |nightfox-pallets| are used as the template source for
+|nightfox-palette|. A palette does not use a template as it is the base that
+others built off of. |nightfox-palettes| are used as the template source for
 |nightfox-spec| objects. |nightfox-specs| objects are used as template source
 for |nightfox-group| objects.
 
 If a value does not start with `#` symbol it will be treated as the template
-path. Everything in lua is a table. This means that `pallets` and `specs` are
+path. Everything in lua is a table. This means that `palettes` and `specs` are
 just lua tables. A template `path` is the keys to index into the table
 separated by `.` characters.
 
@@ -153,7 +153,7 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
 **Example:**
 
 >
-    -- Specs use pallets as the template source
+    -- Specs use palettes as the template source
     local specs = {
       nightfox = {
         syntax = {
@@ -182,8 +182,8 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
       -- Make sure `link` is cleared to `""` so that the link will be removed.
       CursorColumn = { bg = "sel0", link = "" },
     
-      -- Specs are used for the template. Specs have their pallet's as a field that can be accessed
-      IncSearch = { bg = "pallet.cyan" },
+      -- Specs are used for the template. Specs have their palette's as a field that can be accessed
+      IncSearch = { bg = "palette.cyan" },
     }
     
     require('nightfox').setup({ specs = specs, groups = groups })
@@ -284,7 +284,7 @@ modules {table}                        `modules` store configuration
 SHADE                                                         *nightfox-shade*
 
 A `shade` is a way to group a `base` color with a `bright` and `dim` version.
-This is the base struct/object that pallet colors will be defined from. For
+This is the base struct/object that palette colors will be defined from. For
 example:
 
 >
@@ -299,16 +299,16 @@ example:
 <
 
 
-This is just a convience structure for building pallet for nightfox and should
+This is just a convience structure for building palette for nightfox and should
 not be used outside of it. This is noted here to help understand the structure
-of a |nightfox-pallet|.
+of a |nightfox-palette|.
 
-PALLET                                                       *nightfox-pallet*
+PALETTE                                                     *nightfox-palette*
 
-A `pallet` is the base color definitions of a style. Each style defines its own
-pallet to be used by the other components. A pallet defines base colors, as
-well as foreground and background shades. Along with the foreground and
-background colors a pallet also defines other colors such as selection and
+A `palette` is the base color definitions of a style. Each style defines its
+own palette to be used by the other components. A palette defines base colors,
+as well as foreground and background shades. Along with the foreground and
+background colors a palette also defines other colors such as selection and
 comment colors.
 
 The base colors are |nightfox-shade| objects that define a `base`, `bright`,
@@ -342,18 +342,18 @@ and `dim` color. These base colors are: `black`, `red`, `green`, `yellow`,
 
 SPEC                                                           *nightfox-spec*
 
-A `spec` or specification is a mapping of a pallet values to a logical group
+A `spec` or specification is a mapping of a palette values to a logical group
 that is used by the |nightfox-group|.
 
-The base of a `spec` is a re-export of the |nightfox-pallet|’s `fg` `bg` and
+The base of a `spec` is a re-export of the |nightfox-palette|’s `fg` `bg` and
 `sel`. The values that are re-exported are: `bg0`, `bg1`, `bg2`, `bg3`, `bg4`,
 `fg0`, `fg1`, `fg2`, `fg3`, `sel0`, `sel1`.
 
                                                         *nightfox-spec.syntax*
 
 spec.syntax                            The `syntax` table maps
-                                       |nightfox-pallet| color values to syntax
-                                       values to be used by the
+                                       |nightfox-palette| color values to
+                                       syntax values to be used by the
                                        |nightfox-group|.
 
 
@@ -382,7 +382,7 @@ spec.syntax                            The `syntax` table maps
 
                                                           *nightfox-spec.diag*
 
-spec.diag                              The `diag` table maps |nightfox-pallet|
+spec.diag                              The `diag` table maps |nightfox-palette|
                                        colors to vim diagnostic colors values.
                                        These values are: `error`, `warn`,
                                        `info` and `hint`.
@@ -391,7 +391,7 @@ spec.diag                              The `diag` table maps |nightfox-pallet|
                                                        *nightfox-spec.diag_bg*
 
 spec.diag_bg                           The `diag_bg` table maps
-                                       |nightfox-pallet| colors to vim
+                                       |nightfox-palette| colors to vim
                                        diagnostic background colors. These
                                        values are: `error`, `warn`, `info` and
                                        `hint`.
@@ -399,7 +399,7 @@ spec.diag_bg                           The `diag_bg` table maps
 
                                                           *nightfox-spec.diff*
 
-spec.diff                              The `diff` table maps |nightfox-pallet|
+spec.diff                              The `diff` table maps |nightfox-palette|
                                        colors to vimdiff highlight colors.
                                        These values are: `add`, `delete`,
                                        `change` and `text`.
@@ -407,7 +407,7 @@ spec.diff                              The `diff` table maps |nightfox-pallet|
 
                                                            *nightfox-spec.git*
 
-spec.git                               The `git` table maps |nightfox-pallet|
+spec.git                               The `git` table maps |nightfox-palette|
                                        colors to git colors. These values are:
                                        `add`, `removed`, `changed`, `conflict`,
                                        and `ignored`.
@@ -451,7 +451,7 @@ Current list of modules are:
 - fidget
 - gitgutter
 - gitsigns
-- glyph_pallet
+- glyph_palette
 - hop
 - illuminate
 - lightspeed

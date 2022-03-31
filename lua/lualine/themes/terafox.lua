@@ -1,7 +1,7 @@
 local Color = require("nightfox.lib.color")
 local spec = require("nightfox.spec").load("terafox")
 
-local pal = spec.pallet
+local pal = spec.palette
 local bg = Color.from_hex(spec.bg0)
 local fg = spec.fg2
 
