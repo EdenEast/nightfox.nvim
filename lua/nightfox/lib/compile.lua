@@ -8,9 +8,13 @@ local header = [[
 -- Do not make changes directly to this file.
 ]]
 
+local cmd_compat_block = [[
+local cmd = vim.fn.has("nvim") == 0 and vim.command or vim.cmd
+]]
+
 local clear_block = [[
 if vim.g.colors_name then
-  vim.cmd("hi clear")
+  cmd("hi clear")
 end
 ]]
 
@@ -18,8 +22,8 @@ local function gen_set_info_block(meta)
   local lines = {}
 
   local background = meta.light and "light" or "dark"
-  table.insert(lines, [[vim.cmd("set termguicolors")]])
-  table.insert(lines, fmt([[vim.cmd("set background=%s")]], background))
+  table.insert(lines, [[cmd("set termguicolors")]])
+  table.insert(lines, fmt([[cmd("set background=%s")]], background))
   table.insert(lines, fmt([[vim.g.colors_name = "%s"]], meta.name))
   table.insert(lines, "")
 
@@ -104,15 +108,16 @@ function M.compile()
     table.sort(hllinks)
 
     table.insert(lines, header)
+    table.insert(lines, cmd_compat_block)
     table.insert(lines, clear_block)
 
     table.insert(lines, [[-- Highlight group definitions]])
-    table.insert(lines, "vim.cmd([[")
+    table.insert(lines, "cmd([[")
     table.insert(lines, table.concat(hlgroups, " |\n"))
     table.insert(lines, "]])\n")
 
     table.insert(lines, [[-- Highlight link definitions]])
-    table.insert(lines, "vim.cmd([[")
+    table.insert(lines, "cmd([[")
     table.insert(lines, table.concat(hllinks, " |\n"))
     table.insert(lines, "]])\n")
 

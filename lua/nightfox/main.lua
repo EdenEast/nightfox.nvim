@@ -1,19 +1,20 @@
 local hl = require("nightfox.lib.highlight")
 local util = require("nightfox.util")
+local cmd = util.is_nvim and vim.cmd or vim.command
 
 local M = {}
 
 local function clear_hl()
   if vim.g.colors_name then
-    vim.cmd("hi clear")
+    cmd("hi clear")
   end
 end
 
 local function set_info(spec)
   local meta = spec.pallet.meta
   local background = meta.light and "light" or "dark"
-  vim.cmd("set background=" .. background)
-  vim.cmd("set termguicolors")
+  cmd("set background=" .. background)
+  cmd("set termguicolors")
   vim.g.colors_name = meta.name
 end
 
@@ -52,7 +53,7 @@ function M.load(name)
   )
 
   if util.exists(precompiled_file) then
-    vim.cmd("luafile " .. precompiled_file)
+    cmd("luafile " .. precompiled_file)
   elseif not override.has_override and not config.has_options and not vim.g.nightfox_debug then
     local modname = "nightfox.precompiled." .. name .. "_compiled"
     package.loaded[modname] = nil

@@ -1,4 +1,7 @@
+local util = require("nightfox.util")
 local fmt = string.format
+
+local cmd = util.is_nvim and vim.cmd or vim.command
 
 local M = {}
 
@@ -44,18 +47,20 @@ local function viml_hl(highlights)
     if should_link(opts.link) then
       table.insert(highlight_cmds, fmt("highlight! link %s %s", group, opts.link))
     else
-      local cmd = fmt(
-        "highlight %s guifg=%s guibg=%s gui=%s guisp=%s",
-        group,
-        validate(opts.fg),
-        validate(opts.bg),
-        validate(opts.style),
-        validate(opts.sp)
+      table.insert(
+        highlight_cmds,
+        fmt(
+          "highlight %s guifg=%s guibg=%s gui=%s guisp=%s",
+          group,
+          validate(opts.fg),
+          validate(opts.bg),
+          validate(opts.style),
+          validate(opts.sp)
+        )
       )
-      table.insert(highlight_cmds, cmd)
     end
   end
-  vim.cmd(table.concat(highlight_cmds, "\n"))
+  cmd(table.concat(highlight_cmds, "\n"))
 end
 
 local function nvim_hl(highlights)
