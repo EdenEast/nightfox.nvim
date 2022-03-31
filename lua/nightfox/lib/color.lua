@@ -23,6 +23,8 @@ local util = require("nightfox.util")
 
 --#region Helpers --------------------------------------------------------------
 
+local bitopt = util.is_nvim and bit or bit32
+
 local function calc_hue(r, g, b)
   local max = math.max(r, g, b)
   local min = math.min(r, g, b)
@@ -100,15 +102,15 @@ function Color.from_hex(c)
     local s = c:lower():match("#?([a-f0-9]+)")
     n = tonumber(s, 16)
     if #s <= 6 then
-      n = bit.lshift(n, 8) + 0xff
+      n = bitopt.lshift(n, 8) + 0xff
     end
   end
 
   return Color.init(
-    bit.rshift(n, 24) / 0xff,
-    bit.band(bit.rshift(n, 16), 0xff) / 0xff,
-    bit.band(bit.rshift(n, 8), 0xff) / 0xff,
-    bit.band(n, 0xff) / 0xff
+    bitopt.rshift(n, 24) / 0xff,
+    bitopt.band(bitopt.rshift(n, 16), 0xff) / 0xff,
+    bitopt.band(bitopt.rshift(n, 8), 0xff) / 0xff,
+    bitopt.band(n, 0xff) / 0xff
   )
 end
 
@@ -200,8 +202,11 @@ end
 ---@param with_alpha boolean Include the alpha component.
 ---@return integer
 function Color:to_hex(with_alpha)
-  local n = bit.bor(bit.bor((self.blue * 0xff), bit.lshift((self.green * 0xff), 8)), bit.lshift((self.red * 0xff), 16))
-  return with_alpha and bit.lshift(n, 8) + (self.alpha * 0xff) or n
+  local n = bitopt.bor(
+    bitopt.bor((self.blue * 0xff), bitopt.lshift((self.green * 0xff), 8)),
+    bitopt.lshift((self.red * 0xff), 16)
+  )
+  return with_alpha and bitopt.lshift(n, 8) + (self.alpha * 0xff) or n
 end
 
 ---Convert the color to a css hex color (`#RRGGBB[AA]`).

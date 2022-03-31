@@ -84,7 +84,7 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 
 ## Requirements
 
-- Neovim >= 0.5 **or** Vim with lua >= 5.2
+- Neovim >= 0.5 **or** Vim 8.2 with lua >= 5.2
 - True color support
 - Undercurl terminal support (optional)
 
