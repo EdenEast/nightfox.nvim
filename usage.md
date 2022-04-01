@@ -450,7 +450,7 @@ blending and `1` is entirely the {other} color.
 
 #### color:shade({factor})
 
-Returns a new `Color` that has been `shaded` by the {factor}. The factor is a precentage from `[0,1]` where `0` is black
+Returns a new `Color` that has been `shaded` by the {factor}. The factor is a precentage from `[-1,1]` where `-1` is black
 and `1` is white.
 
 #### color:brighten({value})
