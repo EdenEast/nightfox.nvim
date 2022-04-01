@@ -456,17 +456,17 @@ and `1` is white.
 #### color:brighten({value})
 
 Returns a new `Color` with {value} added to the `value` (`hsv`) of the current color. This returns a lighter version of
-of the current color if {value} is positive and a darker color is {value} is negative.
+of the current color if {value} is positive and a darker color is {value} is negative. {value} is Float [-100, 100].
 
 #### color:lighten({value})
 
 Returns a new `Color` with {value} added to the `lightness` (`hsl`) of the current color. This returns a lighter version of
-of the current color if {value} is positive and a darker color is {value} is negative.
+of the current color if {value} is positive and a darker color is {value} is negative. {value} is Float [-100, 100].
 
 #### color:saturate({value})
 
 Returns a new `Color` with {value} added to the `saturation` (`hsv`) of the current color. This returns either a more
-or less saturated version depending of +/- v.
+or less saturated version depending of +/- v. {value} is Float [-100, 100].
 
 #### color:rotate({value})
 
