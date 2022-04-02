@@ -600,7 +600,7 @@ color:brighten({value})                Returns a new `Color` with {value} added
                                        color. This returns a lighter version of
                                        of the current color if {value} is
                                        positive and a darker color is {value}
-                                       is negative.
+                                       is negative. {value} is Float `[-100, 100]` .
 
 
                                                     *nightfox-color:lighten()*
@@ -610,7 +610,7 @@ color:lighten({value})                 Returns a new `Color` with {value} added
                                        current color. This returns a lighter
                                        version of of the current color if
                                        {value} is positive and a darker color
-                                       is {value} is negative.
+                                       is {value} is negative. {value} is Float `[-100, 100]` .
 
 
                                                    *nightfox-color:saturate()*
@@ -619,7 +619,7 @@ color:saturate({value})                Returns a new `Color` with {value} added
                                        to the `saturation` (`hsv`) of the
                                        current color. This returns either a
                                        more or less saturated version depending
-                                       of +/- v.
+                                       of +/- v. {value} is Float `[-100, 100]` .
 
 
                                                      *nightfox-color:rotate()*
