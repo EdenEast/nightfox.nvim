@@ -240,8 +240,20 @@ styles {table}                         `styles` is a table that contains a list
                                        of syntax components and their
                                        corresponding style. These styles can be
                                        any combination of |highlight-args|. The
-                                       syntax components are the :
+                                       list of syntax components are:
 
+
+
+- comments
+- functions
+- keywords
+- numbers
+- strings
+- types
+- variables
+
+
+Example:
 
 >
     local options = {
@@ -601,7 +613,8 @@ color:brighten({value})                Returns a new `Color` with {value} added
                                        color. This returns a lighter version of
                                        of the current color if {value} is
                                        positive and a darker color is {value}
-                                       is negative. {value} is Float `[-100, 100]` .
+                                       is negative. {value} is Float [-100,
+                                       100].
 
 
                                                     *nightfox-color:lighten()*
@@ -611,7 +624,8 @@ color:lighten({value})                 Returns a new `Color` with {value} added
                                        current color. This returns a lighter
                                        version of of the current color if
                                        {value} is positive and a darker color
-                                       is {value} is negative. {value} is Float `[-100, 100]` .
+                                       is {value} is negative. {value} is Float
+                                       [-100, 100].
 
 
                                                    *nightfox-color:saturate()*
@@ -620,7 +634,7 @@ color:saturate({value})                Returns a new `Color` with {value} added
                                        to the `saturation` (`hsv`) of the
                                        current color. This returns either a
                                        more or less saturated version depending
-                                       of +/- v. {value} is Float `[-100, 100]` .
+                                       of +/- v. {value} is Float [-100, 100].
 
 
                                                      *nightfox-color:rotate()*

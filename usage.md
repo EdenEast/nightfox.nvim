@@ -189,8 +189,17 @@ A boolean value that if set will set the background of Non current windows to be
 #### styles {table}
 
 `styles` is a table that contains a list of syntax components and their corresponding style. These styles can be any
-combination of |highlight-args|. The syntax components are the
-:
+combination of |highlight-args|. The list of syntax components are:
+
+- comments
+- functions
+- keywords
+- numbers
+- strings
+- types
+- variables
+
+Example:
 
 ```lua
 local options = {
