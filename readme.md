@@ -376,6 +376,7 @@ Nightfox provides the following commands that wrap these functions above:
 ## Supported Plugins
 
 - [barbar.nvim](https://github.com/romgrk/barbar.nvim)
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)

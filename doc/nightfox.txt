@@ -444,6 +444,7 @@ Current list of modules are:
 
 
 - barbar
+- bufferline
 - cmp
 - dashboard
 - diagnostic
