@@ -7,8 +7,8 @@ function M.get(spec, config, opts)
   return {
     TelescopeBorder         = { fg = spec.bg4 },
     TelescopeSelectionCaret = { fg = spec.diag.hint },
-    TelescopeSelection      = { bg = spec.sel0 },
-    TelescopeMatching       = { fg = spec.fg1, bg = spec.sel1 },
+    TelescopeSelection      = { link = "CursorLine" },
+    TelescopeMatching       = { link = "Search" },
   }
 end
 

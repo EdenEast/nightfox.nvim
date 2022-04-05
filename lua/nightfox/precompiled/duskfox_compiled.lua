@@ -241,8 +241,6 @@ highlight TabLine guifg=#555169 guibg=#2d2a45 gui=NONE guisp=NONE |
 highlight TabLineFill guifg=NONE guibg=#191726 gui=NONE guisp=NONE |
 highlight TabLineSel guifg=#d3d1e6 guibg=#4b4673 gui=NONE guisp=NONE |
 highlight TelescopeBorder guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
-highlight TelescopeMatching guifg=#e0def4 guibg=#2d3a50 gui=NONE guisp=NONE |
-highlight TelescopeSelection guifg=NONE guibg=#433c59 gui=NONE guisp=NONE |
 highlight TelescopeSelectionCaret guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight Title guifg=#65b1cd guibg=NONE gui=NONE guisp=NONE |
 highlight Todo guifg=#232136 guibg=#569fba gui=NONE guisp=NONE |
@@ -339,6 +337,8 @@ highlight! link SymbolOutlineConnector Conceal |
 highlight! link TSAttribute Constant |
 highlight! link TSProperty TSField |
 highlight! link Tag Special |
+highlight! link TelescopeMatching Search |
+highlight! link TelescopeSelection CursorLine |
 highlight! link Typedef Type |
 highlight! link VisualNOS visual |
 highlight! link WhichKey Identifier |
