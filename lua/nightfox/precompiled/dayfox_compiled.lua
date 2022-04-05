@@ -115,7 +115,7 @@ highlight HopNextKey1 guifg=#4d688e guibg=NONE gui=bold guisp=NONE |
 highlight HopNextKey2 guifg=#4e75aa guibg=NONE gui=NONE guisp=NONE |
 highlight HopUnmatched guifg=#7f848e guibg=NONE gui=NONE guisp=NONE |
 highlight Identifier guifg=#6ca7bd guibg=NONE gui=NONE guisp=NONE |
-highlight IncSearch guifg=#b6c4d9 guibg=#618774 gui=NONE guisp=NONE |
+highlight IncSearch guifg=#ced5de guibg=#618774 gui=NONE guisp=NONE |
 highlight Italic guifg=NONE guibg=NONE gui=italic guisp=NONE |
 highlight Keyword guifg=#8e6f98 guibg=NONE gui=NONE guisp=NONE |
 highlight LightspeedGreyWash guifg=#7f848e guibg=NONE gui=NONE guisp=NONE |
