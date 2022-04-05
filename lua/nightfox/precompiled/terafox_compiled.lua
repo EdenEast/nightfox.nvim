@@ -133,7 +133,7 @@ highlight LspSagaFinderSelection guifg=#293e40 guibg=NONE gui=NONE guisp=NONE |
 highlight LspSagaHoverBorder guifg=#587b7b guibg=NONE gui=NONE guisp=NONE |
 highlight LspSagaRenameBorder guifg=#587b7b guibg=NONE gui=NONE guisp=NONE |
 highlight LspSagaSignatureHelpBorder guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
-highlight LspSignatureActiveParameter guifg=#3d5858 guibg=NONE gui=NONE guisp=NONE |
+highlight LspSignatureActiveParameter guifg=#425e5e guibg=NONE gui=NONE guisp=NONE |
 highlight LspTroubleCount guifg=#ad5c7c guibg=#587b7b gui=NONE guisp=NONE |
 highlight LspTroubleNormal guifg=#587b7b guibg=#0f1c1e gui=NONE guisp=NONE |
 highlight LspTroubleText guifg=#cbd9d8 guibg=NONE gui=NONE guisp=NONE |
@@ -193,14 +193,14 @@ highlight NvimTreeSpecialFile guifg=#a1cdd8 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeSymlink guifg=#ad6771 guibg=NONE gui=NONE guisp=NONE |
 highlight Operator guifg=#cbd9d8 guibg=NONE gui=NONE guisp=NONE |
 highlight Pmenu guifg=#e6eaea guibg=#293e40 gui=NONE guisp=NONE |
-highlight PmenuSel guifg=NONE guibg=#3d5858 gui=NONE guisp=NONE |
-highlight PmenuThumb guifg=NONE guibg=#3d5858 gui=NONE guisp=NONE |
+highlight PmenuSel guifg=NONE guibg=#425e5e gui=NONE guisp=NONE |
+highlight PmenuThumb guifg=NONE guibg=#425e5e gui=NONE guisp=NONE |
 highlight PounceAccept guifg=#152528 guibg=#ff9664 gui=NONE guisp=NONE |
 highlight PounceAcceptBest guifg=#152528 guibg=#afd4de gui=NONE guisp=NONE |
 highlight PounceGap guifg=#e6eaea guibg=#293e40 gui=NONE guisp=NONE |
-highlight PounceMatch guifg=#e6eaea guibg=#3d5858 gui=NONE guisp=NONE |
+highlight PounceMatch guifg=#e6eaea guibg=#425e5e gui=NONE guisp=NONE |
 highlight PreProc guifg=#d38d97 guibg=NONE gui=NONE guisp=NONE |
-highlight Search guifg=#e6eaea guibg=#3d5858 gui=NONE guisp=NONE |
+highlight Search guifg=#e6eaea guibg=#425e5e gui=NONE guisp=NONE |
 highlight SignColumn guifg=#587b7b guibg=NONE gui=NONE guisp=NONE |
 highlight Sneak guifg=#0f1c1e guibg=#ad5c7c gui=NONE guisp=NONE |
 highlight SneakScope guifg=NONE guibg=#293e40 gui=NONE guisp=NONE |
