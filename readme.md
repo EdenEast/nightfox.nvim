@@ -58,18 +58,18 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 <summary>Color Migration table</summary>
 
 | V1 color     | V2 palette |
-| ------------ | --------- |
-| bg           | bg1       |
-| bg_alt       | bg0       |
-| bg_sidebar   | bg0       |
-| bg_float     | bg0       |
-| bg_popup     | bg0       |
-| bg_highlight | bg3       |
-| bg_visual    | sel0      |
-| bg_search    | sel1      |
-| fg           | fg1       |
-| fg_alt       | fg2       |
-| fg_gutter    | fg3       |
+| ------------ | ---------- |
+| bg           | bg1        |
+| bg_alt       | bg0        |
+| bg_sidebar   | bg0        |
+| bg_float     | bg0        |
+| bg_popup     | bg0        |
+| bg_highlight | bg3        |
+| bg_visual    | sel0       |
+| bg_search    | sel1       |
+| fg           | fg1        |
+| fg_alt       | fg2        |
+| fg_gutter    | fg3        |
 
 </details>
 
@@ -266,7 +266,17 @@ require("nightfox").setup({ palettes = palettes, specs = specs, groups = groups 
 vim.cmd("colorscheme nightfox")
 ```
 
+To find the list of syntax highlight groups defined for vim use the help `:help group-name` and `:help nvim-treesitter-highlights` for treesitter. If you would also like to see how nightfox defines these highlight groups
+you can see [syntax.lua] for vim's syntax and [treesitter.lua] for treesitter. These files list out all all highlight
+groups and have a comment describing them. Another file to note is [editor.lua] which is the highlight groups respncible
+for how vim looks (background, cursorline, tabline, etc...). To get the highlight group under your cursor see [here](#syntax-highlight-groups) for
+more information
+
 To get more information check out [Usage](./usage.md#configuration) or the help file `:help nightfox` for more detailed information.
+
+[editor.lua]: https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/group/editor.lua
+[syntax.lua]: https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/group/syntax.lua
+[treesitter.lua]: https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/group/modules/treesitter.lua
 
 ## Api
 
@@ -411,6 +421,50 @@ Set your colorscheme before calling setup.
 vim.cmd("colorscheme nightfox")
 require('lualine').setup({ ... })
 ```
+
+## Syntax highlight groups
+
+This section will help you determine what highlight group is being applied to a piece of syntax. These sections will
+output the highlight group for the value under the cursor.
+
+#### Treesitter highlighting
+
+If treesitter is the highlighting method for the language in question you can use the command:
+`:TSHighlightCapturesUnderCursor`. This command comes from the treesitter [playground] plugin. Make
+sure you have this installed as well as [nvim-treesitter].
+
+[playground]: https://github.com/nvim-treesitter/playground#show-treesitter-and-syntax-highlight-groups-under-the-cursor
+[nvim-treesitter]: https://github.com/nvim-treesitter/nvim-treesitter
+
+#### Vim highlighting
+
+Add this vimscript function to your configuration.
+
+<details>
+<summary>vimscript highlight function</summary>
+
+```vim
+" plugin/syntax.vim
+
+" Output the highlight group under the cursor
+"
+" This function will output the entire stack of hightlight groups being applied. The stack is
+" outputted in the correct order from top to bottom. Vim will walk through the stack from top to
+" bottom and apply the first defined highlight group found.
+function! SynStack()
+  for i1 in synstack(line("."), col("."))
+    let i2 = synIDtrans(i1)
+    let n1 = synIDattr(i1, "name")
+    let n2 = synIDattr(i2, "name")
+    echo n1 "->" n2
+  endfor
+endfunction
+
+" You can also create a convenience mapping
+map <F2> <cmd>call SynStack()<cr>
+```
+
+</details>
 
 ## Extra
 
