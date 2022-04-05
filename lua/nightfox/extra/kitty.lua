@@ -15,6 +15,11 @@ selection_foreground ${fg1}
 url_color ${palette.green}
 cursor ${fg1}
 
+# Border
+active_border_color ${palette.blue}
+inactive_border_color ${bg4}
+bell_border_color ${palette.orange}
+
 # Tabs
 active_tab_background ${palette.blue}
 active_tab_foreground ${bg0}
