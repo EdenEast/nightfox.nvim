@@ -85,8 +85,8 @@ highlight Error guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
 highlight ErrorMsg guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
 highlight FernBranchText guifg=#5a93aa guibg=NONE gui=NONE guisp=NONE |
 highlight FloatBorder guifg=#587b7b guibg=NONE gui=NONE guisp=NONE |
-highlight FoldColumn guifg=#254147 guibg=NONE gui=NONE guisp=NONE |
-highlight Folded guifg=#587b7b guibg=#254147 gui=NONE guisp=NONE |
+highlight FoldColumn guifg=#587b7b guibg=NONE gui=NONE guisp=NONE |
+highlight Folded guifg=#587b7b guibg=#1d3337 gui=NONE guisp=NONE |
 highlight Function guifg=#73a3b7 guibg=NONE gui=NONE guisp=NONE |
 highlight GitGutterAdd guifg=#7aa4a1 guibg=NONE gui=NONE guisp=NONE |
 highlight GitGutterChange guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
