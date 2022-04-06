@@ -1,5 +1,5 @@
 {
-  description = "Rust application and setup env";
+  description = "A highly customizable theme for vim and neovim";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils = {
