@@ -175,6 +175,16 @@ highlight NonText guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight Normal guifg=#cdcecf guibg=#192330 gui=NONE guisp=NONE |
 highlight NormalFloat guifg=#cdcecf guibg=#131a24 gui=NONE guisp=NONE |
 highlight NormalNC guifg=#cdcecf guibg=#192330 gui=NONE guisp=NONE |
+highlight NotifyDEBUGBorder guifg=#4d6a65 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyDEBUGTitle guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyERRORBorder guifg=#71394e guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyERRORTitle guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyINFOBorder guifg=#456083 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyINFOTitle guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyTRACEBorder guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyTRACETitle guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyWARNBorder guifg=#7a7252 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyWARNTitle guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight Number guifg=#f4a261 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeEmptyFolderName guifg=#71839b guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeFolderIcon guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
@@ -319,6 +329,11 @@ highlight! link LspSagaCodeActionTitle Title |
 highlight! link Macro PreProc |
 highlight! link NeoTreeDimText Conceal |
 highlight! link NeoTreeNormalNC NeoTreeNormal |
+highlight! link NotifyDEBUGIcon NotifyDEBUGTitle |
+highlight! link NotifyERRORIcon NotifyERRORTitle |
+highlight! link NotifyINFOIcon NotifyINFOTitle |
+highlight! link NotifyTRACEIcon NotifyTRACETitle |
+highlight! link NotifyWARNIcon NotifyWARNTitle |
 highlight! link NvimTreeGitRenamed NvimTreeGitDeleted |
 highlight! link NvimTreeGitStaged NvimTreeGitStaged |
 highlight! link NvimTreeVertSplit VertSplit |
