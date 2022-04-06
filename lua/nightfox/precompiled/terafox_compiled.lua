@@ -76,9 +76,9 @@ highlight DiagnosticVirtualTextInfo guifg=#5a93aa guibg=#1f353c gui=NONE guisp=N
 highlight DiagnosticVirtualTextWarn guifg=#fda47f guibg=#383835 gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#293e40 gui=NONE guisp=NONE |
-highlight DiffChange guifg=NONE guibg=#264048 gui=NONE guisp=NONE |
+highlight DiffChange guifg=NONE guibg=#31474b gui=NONE guisp=NONE |
 highlight DiffDelete guifg=NONE guibg=#4a3332 gui=NONE guisp=NONE |
-highlight DiffText guifg=NONE guibg=#31515c gui=NONE guisp=NONE |
+highlight DiffText guifg=NONE guibg=#466066 gui=NONE guisp=NONE |
 highlight Directory guifg=#73a3b7 guibg=NONE gui=NONE guisp=NONE |
 highlight EndOfBuffer guifg=#152528 guibg=NONE gui=NONE guisp=NONE |
 highlight Error guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
@@ -162,7 +162,7 @@ highlight NeoTreeSymbolicLinkTarget guifg=#ad6771 guibg=NONE gui=NONE guisp=NONE
 highlight NeogitBranch guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#7aa4a1 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#293e40 gui=NONE guisp=NONE |
-highlight NeogitDiffContextHighlight guifg=NONE guibg=#264048 gui=NONE guisp=NONE |
+highlight NeogitDiffContextHighlight guifg=NONE guibg=#31474b gui=NONE guisp=NONE |
 highlight NeogitDiffDelete guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffDeleteHighlight guifg=NONE guibg=#4a3332 gui=NONE guisp=NONE |
 highlight NeogitHunkHeader guifg=#5a93aa guibg=#254147 gui=NONE guisp=NONE |
