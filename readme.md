@@ -402,6 +402,7 @@ Nightfox provides the following commands that wrap these functions above:
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [neogit](https://github.com/TimUntersberger/neogit)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [pounce.nvim](https://github.com/rlane/pounce.nvim)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)

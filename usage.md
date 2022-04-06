@@ -375,6 +375,7 @@ Current list of modules are:
 - native_lsp
 - neogit
 - neotree
+- notify
 - nvimtree
 - pounce
 - sneak
