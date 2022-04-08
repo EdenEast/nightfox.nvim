@@ -163,8 +163,8 @@ certain syntax is the only desired change then your options table would look lik
 require('nightfox').setup({
   options = {
     styles = {
-      commnets = "italic",
-      keywords = "bold"
+      comments = "italic",
+      keywords = "bold",
       types = "italic,bold",
     }
   }
