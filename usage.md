@@ -515,3 +515,26 @@ Compile nightfox settings for each `style` and write compiled file to [compile_p
 Delete compiled files in [compile_path].
 
 [compile_path]: #compile_path-%7Bpath%7D
+
+## Interactive
+
+Nightfox makes it easy to make changes to its config and see the results. For this nightfox exposes the command:
+
+```
+NightfoxInteractive
+```
+
+This command will attach an autocmd to the current buffer that executes on `BufferWritePost`. The
+autocmd will clear nightfox's internal state and re-source it's config from the newly saved file. It will then reset the
+colorscheme.
+
+There are a few things to note:
+
+- This will not take effect if you have any [compiled](#compile) files. Make sure to `NightfoxClean`.
+- This requires executing `luafile` on the current file. Any syntax errors will throw errors.
+- If you are using packer and have nightfox's config in a `config = function() end` block, this will not work as packer
+  would require to be re-compiled and the compiled file sourced.
+
+#### :NightfoxInteractive
+
+Enable Nightfox configuration reloading on buffer save.
