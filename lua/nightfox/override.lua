@@ -7,7 +7,14 @@ local store = {
   has_override = false,
 }
 
-return setmetatable({}, {
+local function reset()
+  store.palettes = {}
+  store.specs = {}
+  store.groups = {}
+  store.has_override = false
+end
+
+return setmetatable({ reset = reset }, {
   __index = function(_, value)
     if store[value] then
       return store[value]

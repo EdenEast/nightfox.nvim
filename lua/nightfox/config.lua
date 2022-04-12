@@ -3,7 +3,7 @@ local util = require("nightfox.util")
 
 local M = { fox = "nightfox", has_options = false }
 
-M.options = {
+local defaults = {
   compile_path = util.join_paths(util.cache_home, "nightfox"),
   compile_file_suffix = "_compiled",
   transparent = false,
@@ -61,6 +61,8 @@ M.options = {
   },
 }
 
+M.options = collect.deep_copy(defaults)
+
 function M.set_fox(name)
   M.fox = name
 end
@@ -69,6 +71,10 @@ function M.set_options(opts)
   opts = opts or {}
   M.options = collect.deep_extend(M.options, opts)
   M.has_options = true
+end
+
+function M.reset()
+  M.options = collect.deep_copy(defaults)
 end
 
 return M
