@@ -4,6 +4,10 @@ local fmt = string.format
 
 local M = {}
 
+local function get_filetype()
+  return vim["bo"] and vim.bo.filetype or vim.eval("&filetype")
+end
+
 function M.attach()
   vim.g.nightfox_debug = true
   cmd([[
@@ -15,15 +19,19 @@ function M.attach()
 end
 
 function M.execute()
+  local source_method = get_filetype() == "lua" and "luafile" or "source"
+  local name = vim["g"] and vim.g.colors_name or vim.eval("g:colors_name")
+
   require("nightfox.config").reset()
   require("nightfox.override").reset()
   cmd(fmt(
     [[
-      luafile %%
+      %s %%
       colorscheme %s
-      doautocmd ColorScheme
+      doautoall ColorScheme
     ]],
-    vim.g.colors_name
+    source_method,
+    name
   ))
 end
 
