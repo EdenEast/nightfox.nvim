@@ -403,7 +403,7 @@ colorscheme.
 
 There are a few things to note:
 
-- This will not take effect if you have any [compiled](#compile) files. Make sure to `NightfoxClean`.
+- Enabling interactive mode will clean any [compiled](#compile) files.
 - This requires executing `luafile` on the current file. Any syntax errors will throw errors.
 - If you are using packer and have nightfox's config in a `config = function() end` block, this will not work as packer
   would require to be re-compiled and the compiled file sourced.
