@@ -13,7 +13,10 @@ foreground ${fg1}
 selection_background ${sel0}
 selection_foreground ${fg1}
 url_color ${palette.green}
+
+# Cursor
 cursor ${fg1}
+# cursor none # uncomment for reverse background
 
 # Border
 active_border_color ${palette.blue}
