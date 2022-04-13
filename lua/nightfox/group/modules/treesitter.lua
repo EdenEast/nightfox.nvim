@@ -12,7 +12,7 @@ function M.get(spec, config, opts)
     -- TSComment            = {}, -- Line comments and block comments.
     -- TSConditional        = {}, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
     -- TSConstant           = {}, -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python.
-    TSConstBuiltin       = { fg = syn.builtin2 }, -- Built-in constant values: `nil` in Lua.
+    TSConstBuiltin       = { fg = syn.builtin2, style = stl.constants }, -- Built-in constant values: `nil` in Lua.
     -- TSConstMacro         = {}, -- Constants defined by macros: `NULL` in C.
     TSConstructor        = { fg = syn.keyword }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSError              = { fg = spec.diag.error }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
@@ -20,8 +20,8 @@ function M.get(spec, config, opts)
     TSField              = { fg = syn.field }, -- Object and struct fields.
     -- TSFloat              = {}, -- Floating-point number literals.
     -- TSFunction           = {}, -- Function calls and definitions.
-    TSFuncBuiltin        = { fg = syn.builtin0 }, -- Built-in functions: `print` in Lua.
-    TSFuncMacro          = { fg = syn.builtin0 }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
+    TSFuncBuiltin        = { fg = syn.builtin0, style = stl.functions }, -- Built-in functions: `print` in Lua.
+    TSFuncMacro          = { fg = syn.builtin0, style = stl.functions }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude            = {}, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
     -- TSKeyword            = {}, -- Keywords that don't fit into other categories.
     TSKeywordFunction    = { fg = syn.builtin0, style = stl.functions }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
@@ -32,7 +32,7 @@ function M.get(spec, config, opts)
     TSNamespace          = { fg = syn.builtin1 }, -- Identifiers referring to modules and namespaces.
     -- TSNone               = {}, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
     -- TSNumber             = {}, -- Numeric literals that don't fit into other categories.
-    TSOperator           = { fg = syn.operator }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
+    TSOperator           = { fg = syn.operator, style = stl.operators }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
     -- TSParameter          = {}, -- Parameters of a function.
     -- TSParameterReference = {}, -- References to parameters of a function.
     TSProperty           = { link = "TSField" }, -- Same as `TSField`.

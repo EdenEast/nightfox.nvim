@@ -8,7 +8,7 @@ function M.get(spec, config)
   -- stylua: ignore
   return {
     Comment        = { fg = syn.comment, style = stl.comments }, -- any comment
-    Constant       = { fg = syn.const }, -- (preferred) any constant
+    Constant       = { fg = syn.const, style = stl.constants }, -- (preferred) any constant
     String         = { fg = syn.string, style = stl.strings }, -- a string constant: "this is a string"
     Character      = { link = "String" }, -- a character constant: 'c', '\n'
     Number         = { fg = syn.number, style = stl.numbers }, -- a number constant: 234, 0xff
@@ -19,11 +19,11 @@ function M.get(spec, config)
     Function       = { fg = syn.func, style = stl.functions }, -- function name (also: methods for classes)
 
     Statement      = { fg = syn.keyword, style = stl.keywords }, -- (preferred) any statement
-    Conditional    = { fg = syn.conditional }, -- if, then, else, endif, switch, etc.
+    Conditional    = { fg = syn.conditional, style = stl.conditionals }, -- if, then, else, endif, switch, etc.
     Repeat         = { link = "Conditional" }, -- for, do, while, etc.
     Label          = { link = "Conditional" }, -- case, default, etc.
 
-    Operator       = { fg = syn.operator }, -- "sizeof", "+", "*", etc.
+    Operator       = { fg = syn.operator, style = stl.operators }, -- "sizeof", "+", "*", etc.
     Keyword        = { fg = syn.keyword, style = stl.keywords }, -- any other keyword
     Exception      = { link = "Keyword" }, -- try, catch, throw
 

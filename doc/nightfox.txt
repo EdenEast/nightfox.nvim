@@ -245,9 +245,12 @@ styles {table}                         `styles` is a table that contains a list
 
 
 - comments
+- conditionals
+- constants
 - functions
 - keywords
 - numbers
+- operators
 - strings
 - types
 - variables

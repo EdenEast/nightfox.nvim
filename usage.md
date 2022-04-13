@@ -192,9 +192,12 @@ A boolean value that if set will set the background of Non current windows to be
 combination of |highlight-args|. The list of syntax components are:
 
 - comments
+- conditionals
+- constants
 - functions
 - keywords
 - numbers
+- operators
 - strings
 - types
 - variables
