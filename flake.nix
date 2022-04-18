@@ -24,6 +24,7 @@
             gnumake
             stylua
             vim-lua
+            luajit
           ];
         };
 
