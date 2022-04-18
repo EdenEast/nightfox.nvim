@@ -25,7 +25,7 @@ local function validate(input)
 end
 
 local function parse_style(style)
-  if not style then
+  if not style or style == "NONE" then
     return {}
   end
 
@@ -36,6 +36,11 @@ local function parse_style(style)
 
   return result
 end
+
+---Validate input input from opts table and return a hex string if opt exists
+---@param input string|Color|nil
+---@return string
+M.parse_style = parse_style
 
 local function should_link(link)
   return link and link ~= ""
@@ -65,35 +70,23 @@ end
 
 local function nvim_hl(highlights)
   for group, opts in pairs(highlights) do
-    local style = parse_style(opts.style)
     if opts.link and opts.link ~= "" then
       vim.api.nvim_set_hl(0, group, {
         link = opts.link,
       })
     else
-      vim.api.nvim_set_hl(0, group, {
-        background = opts.bg,
-        foreground = opts.fg,
-        bold = style.bold,
-        italic = style.italic,
-        underline = style.underline,
-        undercurl = style.undercurl,
-        reverse = style.inverse,
-      })
+      local values = parse_style(opts.style)
+      values.bg = opts.bg
+      values.fg = opts.fg
+      vim.api.nvim_set_hl(0, group, values)
     end
   end
 end
 
--- if vim.fn.has("nvim-0.7") == 1 then
---   -- Not everyone on nightly would have updated to a version that has `nvim_set_hl`
---   if vim.api["nvim_set_hl"] then
---     M.highlight = nvim_hl
---   else
---     M.highlight = viml_hl
---   end
--- else
---   M.highlight = viml_hl
--- end
-M.highlight = viml_hl
+if util.use_nvim_api then
+  M.highlight = nvim_hl
+else
+  M.highlight = viml_hl
+end
 
 return M
