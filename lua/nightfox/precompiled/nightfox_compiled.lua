@@ -191,7 +191,7 @@ highlight NvimTreeFolderIcon guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeFolderName guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitDeleted guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitDirty guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
-highlight NvimTreeGitMerge guifg=NONE guibg=NONE gui=NONE guisp=NONE |
+highlight NvimTreeGitMerge guifg=#f4a261 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeGitNew guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeImageFile guifg=#bebebe guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeIndentMarker guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
