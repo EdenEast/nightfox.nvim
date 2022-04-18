@@ -1,5 +1,6 @@
 local config = require("nightfox.config").options
 local util = require("nightfox.util")
+local parse_styles = require("nightfox.lib.highlight").parse_style
 
 local fmt = string.format
 
@@ -17,6 +18,67 @@ if vim.g.colors_name then
   cmd("hi clear")
 end
 ]]
+
+local function inspect(t)
+  local list = {}
+  for k, v in pairs(t) do
+    local q = type(v) == "string" and [["]] or ""
+    table.insert(list, fmt([[%s = %s%s%s]], k, q, v, q))
+  end
+
+  table.sort(list)
+  return fmt([[{ %s }]], table.concat(list, ", "))
+end
+
+local function gen_nvim_highlight_block(lines, spec)
+  local list = {}
+  local groups = require("nightfox.group").load(spec)
+  for name, values in pairs(groups) do
+    if values.link then
+      table.insert(list, fmt([[vim.api.nvim_set_hl(0, "%s", { link = "%s" })]], name, values.link))
+    else
+      local opts = parse_styles(values.style)
+      opts.bg = values.bg
+      opts.fg = values.fg
+      table.insert(list, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], name, inspect(opts)))
+    end
+  end
+
+  table.sort(list)
+  table.insert(lines, table.concat(list, "\n"))
+  table.insert(lines, "")
+end
+
+local function gen_viml_highlight_block(lines, spec)
+  local list = {}
+  local groups = require("nightfox.group").load(spec)
+  for name, values in pairs(groups) do
+    if values.link then
+      table.insert(list, fmt([[highlight! link %s %s]], name, values.link))
+    else
+      local opts = parse_styles(values.style)
+      opts.bg = values.bg
+      opts.fg = values.fg
+      table.insert(
+        list,
+        fmt(
+          [[highlight %s guifg=%s guibg=%s gui=%s guisp=%s]],
+          name,
+          values.fg or "NONE",
+          values.bg or "NONE",
+          values.style or "NONE",
+          values.sp or "NONE"
+        )
+      )
+    end
+  end
+
+  table.sort(list)
+  table.insert(lines, "cmd([[")
+  table.insert(lines, table.concat(list, " |\n"))
+  table.insert(lines, "]])")
+  table.insert(lines, "")
+end
 
 local function gen_set_info_block(meta)
   local lines = {}
@@ -72,56 +134,35 @@ end
 
 local M = {}
 
-function M.compile()
-  local output_path = config.compile_path
-  local file_suffix = config.compile_file_suffix
+function M.compile(opts)
+  local output_path = opts.compile_path or config.compile_path
+  local file_suffix = opts.file_suffix or config.compile_file_suffix
 
   util.ensure_dir(output_path)
+
+  local compile_nvim_api = util.use_nvim_api
+  if opts["nvim_api"] ~= nil then
+    compile_nvim_api = opts.nvim_api
+  end
 
   local specs = require("nightfox.spec").load()
 
   for specname, spec in pairs(specs) do
     local lines = {}
-    local hlgroups = {}
-    local hllinks = {}
-
-    local groups = require("nightfox.group").load(spec)
-    for name, opts in pairs(groups) do
-      if opts.link and opts.link ~= "" then
-        table.insert(hllinks, string.format("highlight! link %s %s", name, opts.link))
-      else
-        table.insert(
-          hlgroups,
-          fmt(
-            "highlight %s guifg=%s guibg=%s gui=%s guisp=%s",
-            name,
-            opts.fg or "NONE",
-            opts.bg or "NONE",
-            opts.style or "NONE",
-            opts.sp or "NONE"
-          )
-        )
-      end
-    end
-
-    table.sort(hlgroups)
-    table.sort(hllinks)
 
     table.insert(lines, header)
     table.insert(lines, cmd_compat_block)
     table.insert(lines, clear_block)
 
-    table.insert(lines, [[-- Highlight group definitions]])
-    table.insert(lines, "cmd([[")
-    table.insert(lines, table.concat(hlgroups, " |\n"))
-    table.insert(lines, "]])\n")
-
-    table.insert(lines, [[-- Highlight link definitions]])
-    table.insert(lines, "cmd([[")
-    table.insert(lines, table.concat(hllinks, " |\n"))
-    table.insert(lines, "]])\n")
-
+    -- NOTE: There is an issue with `nvim_set_hl` where if `set background=dark` is called after it clears some of the
+    -- highlights like comments calling it before solves the issue.
     table.insert(lines, gen_set_info_block(spec.palette.meta))
+
+    if compile_nvim_api then
+      gen_nvim_highlight_block(lines, spec)
+    else
+      gen_viml_highlight_block(lines, spec)
+    end
 
     if config.terminal_colors then
       table.insert(lines, gen_terminal_func(spec))

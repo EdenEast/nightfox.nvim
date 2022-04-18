@@ -3,8 +3,18 @@
 
 vim.opt.runtimepath:append("./.")
 
-require("nightfox.config").set_options({
-  compile_path = "./lua/nightfox/precompiled",
+local lib = require("nightfox.lib.compile")
+
+-- Precompile nvim api for 0.7+ with `vim.api.nvim_set_hl()`
+lib.compile({
+  compile_path = "./lua/nightfox/precompiled/nvim",
+  nvim_api = true,
 })
-require("nightfox.lib.compile").compile(output_file)
+
+-- Precompile viml compile file
+lib.compile({
+  compile_path = "./lua/nightfox/precompiled/viml",
+  nvim_api = false,
+})
+
 vim.cmd("quit")

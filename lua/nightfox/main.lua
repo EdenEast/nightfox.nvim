@@ -1,6 +1,7 @@
 local hl = require("nightfox.lib.highlight")
 local util = require("nightfox.util")
 local cmd = util.is_nvim and vim.cmd or vim.command
+local fmt = string.format
 
 local M = {}
 
@@ -55,7 +56,8 @@ function M.load(name)
   if util.exists(precompiled_file) then
     cmd("luafile " .. precompiled_file)
   elseif not override.has_override and not config.has_options and not vim.g.nightfox_debug then
-    local modname = "nightfox.precompiled." .. name .. "_compiled"
+    local api_type = util.use_nvim_api and "nvim" or "viml"
+    local modname = fmt("nightfox.precompiled.%s.%s_compiled", api_type, name)
     package.loaded[modname] = nil
     require(modname)
   else

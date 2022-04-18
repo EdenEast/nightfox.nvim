@@ -7,7 +7,10 @@ if vim.g.colors_name then
   cmd("hi clear")
 end
 
--- Highlight group definitions
+cmd("set termguicolors")
+cmd("set background=dark")
+vim.g.colors_name = "terafox"
+
 cmd([[
 highlight Bold guifg=NONE guibg=NONE gui=bold guisp=NONE |
 highlight BufferCurrent guifg=#e6eaea guibg=#587b7b gui=NONE guisp=NONE |
@@ -276,11 +279,7 @@ highlight rainbowcol4 guifg=#5a93aa guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol5 guifg=#a1cdd8 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#ad5c7c guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#cb7985 guibg=NONE gui=NONE guisp=NONE |
-highlight rustTSField guifg=#cbd9d8 guibg=NONE gui=NONE guisp=NONE
-]])
-
--- Highlight link definitions
-cmd([[
+highlight rustTSField guifg=#cbd9d8 guibg=NONE gui=NONE guisp=NONE |
 highlight! link Boolean Number |
 highlight! link Character String |
 highlight! link CmpItemKindClass Type |
@@ -369,10 +368,6 @@ highlight! link lCursor Cursor |
 highlight! link qfFileName Directory |
 highlight! link qfLineNr lineNr
 ]])
-
-cmd("set termguicolors")
-cmd("set background=dark")
-vim.g.colors_name = "terafox"
 
 local function set_terminal()
    -- stylua: ignore
