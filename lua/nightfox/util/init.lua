@@ -27,6 +27,7 @@ else
 end
 
 M.is_nvim = vim.fn.has("nvim") == 1
+M.use_nvim_api = M.is_nvim and vim.fn.has("nvim-0.7") == 1
 
 function M.get_separator()
   if M.is_windows then

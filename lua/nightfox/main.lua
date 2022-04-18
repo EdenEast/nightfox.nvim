@@ -1,6 +1,7 @@
 local hl = require("nightfox.lib.highlight")
 local util = require("nightfox.util")
 local cmd = util.is_nvim and vim.cmd or vim.command
+local fmt = string.format
 
 local M = {}
 
@@ -42,10 +43,11 @@ local function set_terminal_colors(spec)
   end
 end
 
-function M.load(name)
+function M.load(opts)
+  opts = {}
   local config = require("nightfox.config")
   local override = require("nightfox.override")
-  name = name or config.fox
+  local name = opts.name or config.fox
 
   local precompiled_file = util.join_paths(
     config.options.compile_path,
@@ -55,7 +57,12 @@ function M.load(name)
   if util.exists(precompiled_file) then
     cmd("luafile " .. precompiled_file)
   elseif not override.has_override and not config.has_options and not vim.g.nightfox_debug then
-    local modname = "nightfox.precompiled." .. name .. "_compiled"
+    local api_type = util.use_nvim_api and "nvim" or "viml"
+    if opts["use_nvim_api"] ~= nil then
+      api_type = opts.use_nvim_api and "nvim" or "viml"
+    end
+
+    local modname = fmt("nightfox.precompiled.%s.%s_compiled", api_type, name)
     package.loaded[modname] = nil
     require(modname)
   else

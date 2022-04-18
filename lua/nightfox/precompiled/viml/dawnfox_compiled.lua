@@ -7,7 +7,10 @@ if vim.g.colors_name then
   cmd("hi clear")
 end
 
--- Highlight group definitions
+cmd("set termguicolors")
+cmd("set background=light")
+vim.g.colors_name = "dawnfox"
+
 cmd([[
 highlight Bold guifg=NONE guibg=NONE gui=bold guisp=NONE |
 highlight BufferCurrent guifg=#575279 guibg=#a8a3b3 gui=NONE guisp=NONE |
@@ -276,11 +279,7 @@ highlight rainbowcol4 guifg=#286983 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol5 guifg=#56949f guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#907aa9 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#d685af guibg=NONE gui=NONE guisp=NONE |
-highlight rustTSField guifg=#625c87 guibg=NONE gui=NONE guisp=NONE
-]])
-
--- Highlight link definitions
-cmd([[
+highlight rustTSField guifg=#625c87 guibg=NONE gui=NONE guisp=NONE |
 highlight! link Boolean Number |
 highlight! link Character String |
 highlight! link CmpItemKindClass Type |
@@ -369,10 +368,6 @@ highlight! link lCursor Cursor |
 highlight! link qfFileName Directory |
 highlight! link qfLineNr lineNr
 ]])
-
-cmd("set termguicolors")
-cmd("set background=light")
-vim.g.colors_name = "dawnfox"
 
 local function set_terminal()
    -- stylua: ignore
