@@ -45,36 +45,32 @@ M.foxes = {
 }
 
 local function override(color, ovr)
-  local color_list = { "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "orange", "pink" }
-  local single_list = { "comment", "bg0", "bg1", "bg2", "bg3", "bg4", "fg0", "fg1", "fg2", "fg3", "sel0", "sel1" }
-
-  for _, name in ipairs(color_list) do
-    if ovr[name] then
-      if type(ovr[name]) == "string" then
-        color[name].base = ovr[name]
-      else
-        for k, v in pairs(ovr[name]) do
-          color[name][k] = type(v) == "table" and v:to_css() or v
-        end
+  for key, value in pairs(ovr) do
+    if type(value) == "string" then
+      color[key].base = value
+    else
+      for k, v in pairs(value) do
+        color[key][k] = v
       end
     end
   end
 
-  for _, name in ipairs(single_list) do
-    if ovr[name] then
-      local v = ovr[name]
-      color[name] = type(v) == "table" and v:to_css() or v
-    end
-  end
+  return color
 end
 
 function M.load(name)
   local ovr = require("nightfox.override").palettes
 
+  local function apply_ovr(key, palette)
+    return ovr[key] and override(palette, ovr[key]) or palette
+  end
+
   if name then
     local valid = collect.contains(M.foxes, name)
     local raw = valid and require("nightfox.palette." .. name) or require("nightfox.palette.nightfox")
-    local palette = ovr[name] and override(raw.palette, ovr[name]) or raw.palette
+    local palette = raw.palette
+    palette = apply_ovr("all", palette)
+    palette = apply_ovr(name, palette)
     palette.meta = raw.meta
     palette.generate_spec = raw.generate_spec
     return palette
@@ -82,7 +78,9 @@ function M.load(name)
     local result = {}
     for _, mod in ipairs(M.foxes) do
       local raw = require("nightfox.palette." .. mod)
-      local palette = ovr[mod] and override(raw.palette, ovr[mod]) or raw.palette
+      local palette = raw.palette
+      palette = apply_ovr("all", palette)
+      palette = apply_ovr(mod, palette)
       palette.meta = raw.meta
       palette.generate_spec = raw.generate_spec
       result[mod] = palette

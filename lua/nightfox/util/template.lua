@@ -41,12 +41,15 @@ function M.parse(template, spec)
   local result = {}
 
   for group, opts in pairs(template) do
-    local new = {}
-    for key, value in pairs(opts) do
-      new[key] = type(value) == "table" and to_value(value) or parse_string(value, spec)
+    if type(opts) == "table" then
+      local new = {}
+      for key, value in pairs(opts) do
+        new[key] = type(value) == "table" and to_value(value) or parse_string(value, spec)
+      end
+      result[group] = new
+    else
+      result[group] = parse_string(opts, spec)
     end
-
-    result[group] = new
   end
 
   return result
