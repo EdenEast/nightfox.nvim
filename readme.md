@@ -191,20 +191,25 @@ You can change the color `palette` and the highlight `group` of nightfox. Here i
 
 ```lua
 -- Palettes are the base color defines of a colorscheme.
--- You can override these palettes for each colorscheme defined by nightfox
+-- You can override these palettes for each colorscheme defined by nightfox.
 local palettes = {
-  nightfox = {
+  -- Everything defined under `all` will be applied to each style.
+  all = {
     -- Each palette defines these colors:
     --   black, red, green, yellow, blue, magenta, cyan, white, orange, pink
     --
     -- These colors have 3 shades: base, bright, and dim
     --
     -- Defining just a color defines it's base color
+    red = "#ff0000",
+  },
+  nightfox = {
+    -- A specific style's value will be used over the `all`'s value
     red = "#c94f6d",
   },
   dayfox = {
     -- Defining multiple shades is done by passing a table
-    blue = { base = "#4d688e", bright = "#4e75aa", dim = "#485e7d", }
+    blue = { base = "#4d688e", bright = "#4e75aa", dim = "#485e7d" },
   },
   nordfox = {
     -- A palette also defines the following:
@@ -221,7 +226,7 @@ local palettes = {
 
     -- comment is the definition of the comment color.
     comment = "#60728a",
-  }
+  },
 }
 
 -- Spec's (specifications) are a mapping of palettes to logical groups that will be
@@ -232,7 +237,8 @@ local palettes = {
 --
 -- You can override these just like palettes
 local specs = {
-  nightfox = {
+  -- As with palettes, the values defined under `all` will be applied to every style.
+  all = {
     syntax = {
       -- Specs allow you to define a value using either a color or template. If the string does
       -- start with `#` the string will be used as the path of the palette table. Defining just
@@ -246,8 +252,14 @@ local specs = {
     git = {
       -- A color define can also be used
       changed = "#f4a261",
-    }
-  }
+    },
+  },
+  nightfox = {
+    syntax = {
+      -- As with palettes, a specific style's value will be used over the `all`'s value.
+      operator = "orange",
+    },
+  },
 }
 
 -- Groups are the highlight group definitions. The keys of this table are the name of the highlight
@@ -270,11 +282,12 @@ require("nightfox").setup({ palettes = palettes, specs = specs, groups = groups 
 vim.cmd("colorscheme nightfox")
 ```
 
-To find the list of syntax highlight groups defined for vim use the help `:help group-name` and `:help nvim-treesitter-highlights` for treesitter. If you would also like to see how nightfox defines these highlight groups
+To find the list of syntax highlight groups defined for vim use the help `:help group-name` and `:help
+nvim-treesitter-highlights` for treesitter. If you would also like to see how nightfox defines these highlight groups
 you can see [syntax.lua] for vim's syntax and [treesitter.lua] for treesitter. These files list out all all highlight
 groups and have a comment describing them. Another file to note is [editor.lua] which is the highlight groups respncible
-for how vim looks (background, cursorline, tabline, etc...). To get the highlight group under your cursor see [here](#syntax-highlight-groups) for
-more information
+for how vim looks (background, cursorline, tabline, etc...). To get the highlight group under your cursor see
+[here](#syntax-highlight-groups) for more information
 
 To get more information check out [Usage](./usage.md#configuration) or the help file `:help nightfox` for more detailed information.
 

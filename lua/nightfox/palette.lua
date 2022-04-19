@@ -44,11 +44,25 @@ M.foxes = {
   "terafox",
 }
 
+local function override(color, ovr)
+  for key, value in pairs(ovr) do
+    if type(value) == "string" then
+      color[key].base = value
+    else
+      for k, v in pairs(value) do
+        color[key][k] = v
+      end
+    end
+  end
+
+  return color
+end
+
 function M.load(name)
   local ovr = require("nightfox.override").palettes
 
   local function apply_ovr(key, palette)
-    return ovr[key] and collect.deep_extend(palette, ovr[key]) or palette
+    return ovr[key] and override(palette, ovr[key]) or palette
   end
 
   if name then
