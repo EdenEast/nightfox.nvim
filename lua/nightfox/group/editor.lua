@@ -31,7 +31,7 @@ function M.get(spec, config)
     Substitute      = { fg = spec.bg1, bg = spec.diag.error }, -- |:substitute| replacement text highlighting
     LineNr          = { fg = spec.fg3 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr    = { fg = spec.diag.warn, style = "bold" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen      = { fg = spec.diag.warn, style = inv.match_paren and "inverse,bold" or "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen      = { fg = spec.diag.warn, style = inv.match_paren and "reverse,bold" or "bold" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg         = { fg = spec.diag.warn, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- NOTE: This was commented out as there is an issue with seting this highlight group see issue #98
     -- MsgArea         = { fg = spec.fg2 }, -- Area for messages and cmdline
@@ -48,8 +48,8 @@ function M.get(spec, config)
     PmenuThumb      = { bg = spec.sel1 }, -- Popup menu: Thumb of the scrollbar.
     Question        = { link = "MoreMsg" }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine    = { link = "CursorLine" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search          = inv.search and { style = "inverse" } or { fg = spec.fg1, bg = spec.sel1 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    IncSearch       = inv.search and { style = "inverse" } or { fg = spec.sel0, bg = spec.diag.hint }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Search          = inv.search and { style = "reverse" } or { fg = spec.fg1, bg = spec.sel1 }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    IncSearch       = inv.search and { style = "reverse" } or { fg = spec.sel0, bg = spec.diag.hint }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     SpecialKey      = { link = "NonText" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad        = { sp = spec.diag.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap        = { sp = spec.diag.warn, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -61,8 +61,8 @@ function M.get(spec, config)
     TabLineFill     = { bg = spec.bg0 }, -- tab pages line, where there are no labels
     TabLineSel      = { fg = spec.fg2, bg = spec.bg4 }, -- tab pages line, active tab page label
     Title           = { fg = spec.syntax.func }, -- titles for output from ":set all", ":autocmd" etc.
-    Visual          = inv.visual and { style = "inverse" } or { bg = spec.sel0 }, -- Visual mode selection
-    VisualNOS       = inv.visual and { style = "inverse" } or { link = "visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
+    Visual          = inv.visual and { style = "reverse" } or { bg = spec.sel0 }, -- Visual mode selection
+    VisualNOS       = inv.visual and { style = "reverse" } or { link = "visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg      = { fg = spec.diag.warn }, -- warning messages
     Whitespace      = { fg = spec.bg2 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu        = { link = "Pmenu" }, -- current match in 'wildmenu' completion
