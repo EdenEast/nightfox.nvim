@@ -135,6 +135,7 @@ end
 local M = {}
 
 function M.compile(opts)
+  opts = opts or {}
   local output_path = opts.compile_path or config.compile_path
   local file_suffix = opts.file_suffix or config.compile_file_suffix
 
