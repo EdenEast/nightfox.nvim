@@ -1,3 +1,4 @@
+local collect = require("nightfox.lib.collect")
 local template = require("nightfox.util.template")
 
 --#region Types
@@ -72,36 +73,21 @@ local M = {}
 
 local function override(spec, palette, ovr)
   ovr = template.parse(ovr, palette)
-  local tbl_list = { "syntax", "diag", "diag_bg", "diff", "git" }
-  local single_list = { "comment", "bg0", "bg1", "bg2", "bg3", "bg4", "fg0", "fg1", "fg2", "fg3", "sel0", "sel1" }
-
-  for _, name in ipairs(single_list) do
-    if ovr[name] then
-      local value = ovr[name]
-      spec[name] = type(value) == "table" and value:to_css() or value
-    end
-  end
-
-  for _, name in ipairs(tbl_list) do
-    if ovr[name] then
-      for k, v in pairs(ovr[name]) do
-        spec[name][k] = type(v) == "table" and v:to_css() or v
-      end
-    end
-  end
-
-  return spec
+  return collect.deep_extend(spec, ovr)
 end
 
 function M.load(name)
   local ovr = require("nightfox.override").specs
 
+  local function apply_ovr(key, spec, palette)
+    return ovr[key] and override(spec, palette, ovr[key]) or spec
+  end
+
   if name then
     local palette = require("nightfox.palette").load(name)
     local spec = palette.generate_spec(palette)
-    if ovr[name] then
-      spec = override(spec, palette, ovr[name])
-    end
+    spec = apply_ovr("all", spec, palette)
+    spec = apply_ovr(name, spec, palette)
     spec.palette = palette
     return spec
   else
@@ -110,9 +96,8 @@ function M.load(name)
     for _, mod in ipairs(foxes) do
       local palette = require("nightfox.palette").load(mod)
       local spec = palette.generate_spec(palette)
-      if ovr[mod] then
-        spec = override(spec, palette, ovr[mod])
-      end
+      spec = apply_ovr("all", spec, palette)
+      spec = apply_ovr(name, spec, palette)
       spec.palette = palette
       result[mod] = spec
     end
