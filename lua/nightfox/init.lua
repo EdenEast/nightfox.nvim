@@ -32,6 +32,11 @@ function M.status()
   require("nightfox.lib.compile").status()
 end
 
+function M.reset()
+  require("nightfox.config").reset()
+  require("nightfox.override").reset()
+end
+
 function M.setup(opts)
   if opts.options then
     M.init(opts.options)
