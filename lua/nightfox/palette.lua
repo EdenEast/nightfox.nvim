@@ -45,13 +45,18 @@ M.foxes = {
 }
 
 local function override(color, ovr)
+  local color_list = { "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "orange", "pink" }
   for key, value in pairs(ovr) do
-    if type(value) == "string" then
-      color[key].base = value
-    else
-      for k, v in pairs(value) do
-        color[key][k] = v
+    if collect.contains(color_list, key) then
+      if type(value) == "string" then
+        color[key].base = value
+      else
+        for k, v in pairs(value) do
+          color[key][k] = v
+        end
       end
+    else
+      color[key] = value
     end
   end
 
