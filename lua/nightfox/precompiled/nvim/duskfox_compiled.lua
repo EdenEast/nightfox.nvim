@@ -348,6 +348,10 @@ vim.api.nvim_set_hl(0, "rainbowcol6", { fg = "#c4a7e7" })
 vim.api.nvim_set_hl(0, "rainbowcol7", { fg = "#eb98c3" })
 vim.api.nvim_set_hl(0, "rustTSField", { fg = "#cdcbe0" })
 
+-- This is a hack as currently `nvim_set_hl` returns `{ [true] = 6 }`
+-- if `Normal` is requested from `nvim_get_hl_by_name("Normal", true)`
+vim.cmd("highlight Normal guifg=#e0def4 guibg=#232136 gui=NONE guisp=NONE")
+
 local function set_terminal()
    -- stylua: ignore
   local colors = {

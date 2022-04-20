@@ -84,6 +84,7 @@ local function nvim_hl(highlights)
 end
 
 if util.use_nvim_api then
+  M.alt_highlight = viml_hl
   M.highlight = nvim_hl
 else
   M.highlight = viml_hl
