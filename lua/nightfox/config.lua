@@ -28,7 +28,6 @@ local defaults = {
   },
   modules = {
     barbar = true,
-    bufferline = true,
     cmp = true,
     dashboard = true,
     diagnostic = {

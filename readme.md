@@ -282,8 +282,8 @@ require("nightfox").setup({ palettes = palettes, specs = specs, groups = groups 
 vim.cmd("colorscheme nightfox")
 ```
 
-To find the list of syntax highlight groups defined for vim use the help `:help group-name` and `:help
-nvim-treesitter-highlights` for treesitter. If you would also like to see how nightfox defines these highlight groups
+To find the list of syntax highlight groups defined for vim use the help `:help group-name` and
+`:help nvim-treesitter-highlights` for treesitter. If you would also like to see how nightfox defines these highlight groups
 you can see [syntax.lua] for vim's syntax and [treesitter.lua] for treesitter. These files list out all all highlight
 groups and have a comment describing them. Another file to note is [editor.lua] which is the highlight groups respncible
 for how vim looks (background, cursorline, tabline, etc...). To get the highlight group under your cursor see
@@ -424,7 +424,6 @@ There are a few things to note:
 ## Supported Plugins
 
 - [barbar.nvim](https://github.com/romgrk/barbar.nvim)
-- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
