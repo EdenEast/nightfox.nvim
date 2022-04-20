@@ -360,7 +360,6 @@ to determine if the module is applied.
 Current list of modules are:
 
 - barbar
-- bufferline
 - cmp
 - dashboard
 - diagnostic
