@@ -1,14 +1,9 @@
 local function reload()
-  local ignore = { "config", "deprication", "override" }
   for name, _ in pairs(package.loaded) do
     if name:match("^nightfox") then
-      for _, ign in ipairs(ignore) do
-        if name:match(ign) then
-          goto continue
-        end
+      if not name:match("config") and not name:match("deprication") and not name:match("override") then
+        package.loaded[name] = nil
       end
-      package.loaded[name] = nil
-      ::continue::
     end
   end
 end
