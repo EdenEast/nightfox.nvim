@@ -14,7 +14,7 @@ local function reload()
 end
 
 return setmetatable({}, {
-  __call = function (_)
+  __call = function(_)
     reload()
-  end
+  end,
 })
