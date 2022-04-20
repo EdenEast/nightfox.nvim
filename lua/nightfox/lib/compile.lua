@@ -33,7 +33,13 @@ end
 local function gen_nvim_highlight_block(lines, spec)
   local list = {}
   local groups = require("nightfox.group").load(spec)
+  local normal = nil
   for name, values in pairs(groups) do
+    -- HACK: This is because of the current issue with `nvim_set_hl` and Normal highlight.
+    -- Saving it to be called with :highlight as hacky workaround.
+    if name == "Normal" then
+      normal = values
+    end
     if values.link then
       table.insert(list, fmt([[vim.api.nvim_set_hl(0, "%s", { link = "%s" })]], name, values.link))
     else
@@ -47,6 +53,27 @@ local function gen_nvim_highlight_block(lines, spec)
   table.sort(list)
   table.insert(lines, table.concat(list, "\n"))
   table.insert(lines, "")
+
+  -- Not sure why we would not have found this but... hack away!!!!!!
+  if normal then
+    table.insert(lines, [[-- This is a hack as currently `nvim_set_hl` returns `{ [true] = 6 }`]])
+    table.insert(lines, [[-- if `Normal` is requested from `nvim_get_hl_by_name("Normal", true)`]])
+    if normal.link then
+      table.insert(lines, fmt([[vim.cmd("highlight! link Normal %s")]], name, normal.link))
+    else
+      table.insert(
+        lines,
+        fmt(
+          [[vim.cmd("highlight Normal guifg=%s guibg=%s gui=%s guisp=%s")]],
+          normal.fg or "NONE",
+          normal.bg or "NONE",
+          normal.style or "NONE",
+          normal.sp or "NONE"
+        )
+      )
+    end
+    table.insert(lines, "")
+  end
 end
 
 local function gen_viml_highlight_block(lines, spec)
@@ -56,9 +83,6 @@ local function gen_viml_highlight_block(lines, spec)
     if values.link then
       table.insert(list, fmt([[highlight! link %s %s]], name, values.link))
     else
-      local opts = parse_styles(values.style)
-      opts.bg = values.bg
-      opts.fg = values.fg
       table.insert(
         list,
         fmt(
