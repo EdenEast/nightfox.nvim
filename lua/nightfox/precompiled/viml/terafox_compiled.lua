@@ -284,6 +284,7 @@ highlight! link CmpItemKindUnit Constant |
 highlight! link CmpItemKindValue Keyword |
 highlight! link CmpItemKindVariable TSVariable |
 highlight! link CmpItemMenu Comment |
+highlight! link CurSearch IncSearch |
 highlight! link CursorColumn CursorLine |
 highlight! link CursorIM Cursor |
 highlight! link DashboardCenter String |
