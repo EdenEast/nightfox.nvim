@@ -295,6 +295,40 @@ To get more information check out [Usage](./usage.md#configuration) or the help 
 [syntax.lua]: https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/group/syntax.lua
 [treesitter.lua]: https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/group/modules/treesitter.lua
 
+### Custom template values
+
+Nightfox's `palettes` and `specs` can be extended with your own values. This is useful for users that want to
+distinguish a spec value being used for multiple group definitions. This is best understood with an example:
+
+`bg0` is used as the dark alternative background color. This is used in multiple areas (non-current file, status line,
+normal float, etc...). If you would like to have the inactive color diffferent then the float / statusline color you can
+define your own value in the `specs` table.
+
+```lua
+require("nightfox").setup({
+  palettes = {
+    -- Custom duskfox with black background
+    duskfox = {
+      bg1 = "#000000", -- Black background
+      bg0 = "#1d1d2b", -- Alt backgrounds (floats, statusline, ...)
+      bg3 = "#121820", -- 55% darkened from stock
+      sel0 = "#131b24", -- 55% darkened from stock
+    },
+  },
+  specs = {
+    all = {
+      inactive = "bg0", -- Default value for other styles
+    },
+    duskfox = {
+      inactive = "#090909", -- Slightly lighter then black background
+    },
+  },
+  groups = {
+    NormalNC = { fg = "fg1", bg = "inactive" }, -- Non-current windows
+  },
+})
+```
+
 ## Api
 
 Nightfox exposes some Api's and utility classes that let you fetch data from nightfox.
