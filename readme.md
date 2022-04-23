@@ -494,6 +494,16 @@ vim.cmd("colorscheme nightfox")
 require('lualine').setup({ ... })
 ```
 
+### [Lightline]
+
+Lightline check the value of `vim.g.lightline.colorscheme`. It is not depend on
+the position of `:colorscheme` command, Please set it.
+
+```lua
+vim.cmd("colorscheme nightfox")
+vim.g.lightline = { colorscheme = "nightfox" }
+```
+
 ## Syntax highlight groups
 
 This section will help you determine what highlight group is being applied to a piece of syntax. These sections will
@@ -553,6 +563,7 @@ There are [extra](./extra) configuration files for the following:
 - [xresources](https://wiki.archlinux.org/title/X_resources)
 
 [lualine]: https://github.com/nvim-lualine/lualine.nvim
+[lightline]: https://github.com/itchyny/lightline.vim
 
 ## Acknowledgements
 
