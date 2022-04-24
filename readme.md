@@ -497,11 +497,11 @@ require('lualine').setup({ ... })
 ### [Lightline]
 
 Lightline check the value of `vim.g.lightline.colorscheme`. It is not depend on
-the position of `:colorscheme` command, Please set it.
+the value of `:colorscheme` command, Please set it.
 
 ```lua
 vim.cmd("colorscheme nightfox")
-vim.g.lightline = { colorscheme = "nightfox" }
+vim.g.lightline = { colorscheme = "nightfox" } -- Or the name of colorscheme you use
 ```
 
 ## Syntax highlight groups
