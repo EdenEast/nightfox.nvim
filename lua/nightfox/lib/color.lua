@@ -23,7 +23,7 @@ local util = require("nightfox.util")
 
 --#region Helpers --------------------------------------------------------------
 
-local bitopt = util.is_nvim and bit or bit32
+local bitopt = util.is_nvim and bit or bit32 or bit
 
 local function calc_hue(r, g, b)
   local max = math.max(r, g, b)
