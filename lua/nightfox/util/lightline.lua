@@ -37,51 +37,57 @@ function M.generate(name)
   }
 end
 
----@param name string
+---@param obj unknown
 ---@return string
-function M.dump(name)
-  local obj = M.generate(name)
-  if type(obj) ~= 'table' then
+local function inner_dump(obj)
+  if type(obj) ~= "table" then
     return "'" .. tostring(obj) .. "'"
   end
 
   local i = 0
-  local ret = ''
+  local ret = ""
   local is_arr = 0
-  for k,v in pairs(obj) do
-    if type(k) ~= 'number' then
+  for k, v in pairs(obj) do
+    if type(k) ~= "number" then
       -- the `obj` is a dict
       if i == 0 then
         -- first item
-        ret = '{'
+        ret = "{"
       else
-        ret = ret .. ', '
+        ret = ret .. ", "
       end
 
       -- wrap the key with single quotes
       k = "'" .. k .. "'"
-      ret = ret .. k .. ': ' .. M.dump(v)
+      ret = ret .. k .. ": " .. inner_dump(v)
     else
       -- the `obj` is an array
       if i == 0 then
         -- first item
-        ret = '['
+        ret = "["
         is_arr = 1
       else
-        ret = ret .. ', '
+        ret = ret .. ", "
       end
 
-      ret = ret .. M.dump(v)
+      ret = ret .. inner_dump(v)
     end
 
     i = i + 1
   end
 
   if is_arr == 0 then
-    return ret .. '}'
+    return ret .. "}"
   else
-    return ret .. ']'
+    return ret .. "]"
   end
+end
+
+---@param name string
+---@return string
+function M.dump(name)
+  local obj = M.generate(name)
+  return inner_dump(obj)
 end
 
 return M
