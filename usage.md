@@ -359,6 +359,7 @@ to determine if the module is applied.
 
 Current list of modules are:
 
+- aerial
 - barbar
 - cmp
 - dashboard

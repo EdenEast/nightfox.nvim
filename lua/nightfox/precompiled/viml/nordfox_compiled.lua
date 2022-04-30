@@ -12,6 +12,7 @@ cmd("set background=dark")
 vim.g.colors_name = "nordfox"
 
 cmd([[
+highlight AerialGuide guifg=#5a657d guibg=NONE gui=NONE guisp=NONE |
 highlight Bold guifg=NONE guibg=NONE gui=bold guisp=NONE |
 highlight BufferCurrent guifg=#cdcecf guibg=#7e8188 gui=NONE guisp=NONE |
 highlight BufferCurrentIndex guifg=#81a1c1 guibg=#7e8188 gui=NONE guisp=NONE |
@@ -261,6 +262,7 @@ highlight rainbowcol5 guifg=#88c0d0 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#b48ead guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#bf88bc guibg=NONE gui=NONE guisp=NONE |
 highlight rustTSField guifg=#abb1bb guibg=NONE gui=NONE guisp=NONE |
+highlight! link AerialLine Search |
 highlight! link Boolean Number |
 highlight! link Character String |
 highlight! link CmpItemKindClass Type |

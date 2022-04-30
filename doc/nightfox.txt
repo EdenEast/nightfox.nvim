@@ -459,6 +459,7 @@ table that contains the additional configuration as well as a field called
 Current list of modules are:
 
 
+- aerial
 - barbar
 - cmp
 - dashboard

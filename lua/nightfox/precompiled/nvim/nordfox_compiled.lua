@@ -11,6 +11,8 @@ cmd("set termguicolors")
 cmd("set background=dark")
 vim.g.colors_name = "nordfox"
 
+vim.api.nvim_set_hl(0, "AerialGuide", { fg = "#5a657d" })
+vim.api.nvim_set_hl(0, "AerialLine", { link = "Search" })
 vim.api.nvim_set_hl(0, "Bold", { bold = true })
 vim.api.nvim_set_hl(0, "Boolean", { link = "Number" })
 vim.api.nvim_set_hl(0, "BufferCurrent", { bg = "#7e8188", fg = "#cdcecf" })
