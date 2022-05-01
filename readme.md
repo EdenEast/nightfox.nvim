@@ -20,6 +20,15 @@
   <h3>Terafox</h3><img src="https://user-images.githubusercontent.com/2746374/160268126-cd417690-3660-4a04-9040-183c35f127f7.png" alt="terafox" style="border-radius:1%" />
 </div>
 
+> Tabline is [tabby.nvim] and statusline is [feline.nvim]. You can find my config for [tabby] and [feline] here as well
+> as the auto generated [highlight][conf-colors] groups here.
+
+[tabby.nvim]: https://github.com/nanozuki/tabby.nvim
+[feline.nvim]: https://github.com/feline-nvim/feline.nvim
+[tabby]: https://github.com/EdenEast/nyx/blob/573ff3f22da95c00ec71a094b3e1ec166c0afcdd/config/.config/nvim/lua/eden/modules/ui/tabby.lua
+[feline]: https://github.com/EdenEast/nyx/blob/573ff3f22da95c00ec71a094b3e1ec166c0afcdd/config/.config/nvim/lua/eden/modules/ui/feline/init.lua
+[conf-colors]: https://github.com/EdenEast/nyx/blob/573ff3f22da95c00ec71a094b3e1ec166c0afcdd/config/.config/nvim/lua/eden/modules/ui/colors.lua
+
 ## Notice ℹ️
 
 Nightfox has recently been [rewritten][rewrite-pr] and has depricated most of the previous interface. If you are not
