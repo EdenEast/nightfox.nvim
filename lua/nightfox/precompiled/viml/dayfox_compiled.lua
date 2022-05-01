@@ -12,6 +12,7 @@ cmd("set background=light")
 vim.g.colors_name = "dayfox"
 
 cmd([[
+highlight AerialGuide guifg=#bebebe guibg=NONE gui=NONE guisp=NONE |
 highlight Bold guifg=NONE guibg=NONE gui=bold guisp=NONE |
 highlight BufferCurrent guifg=#1d344f guibg=#2e537d gui=NONE guisp=NONE |
 highlight BufferCurrentIndex guifg=#4d688e guibg=#2e537d gui=NONE guisp=NONE |
@@ -261,6 +262,7 @@ highlight rainbowcol5 guifg=#6ca7bd guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#8e6f98 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#d685af guibg=NONE gui=NONE guisp=NONE |
 highlight rustTSField guifg=#233f5e guibg=NONE gui=NONE guisp=NONE |
+highlight! link AerialLine Search |
 highlight! link Boolean Number |
 highlight! link Character String |
 highlight! link CmpItemKindClass Type |

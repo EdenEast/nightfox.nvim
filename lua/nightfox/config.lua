@@ -27,6 +27,7 @@ local defaults = {
     search = false,
   },
   modules = {
+    aerial = true,
     barbar = true,
     cmp = true,
     dashboard = true,

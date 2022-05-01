@@ -12,6 +12,7 @@ cmd("set background=dark")
 vim.g.colors_name = "terafox"
 
 cmd([[
+highlight AerialGuide guifg=#2d4f56 guibg=NONE gui=NONE guisp=NONE |
 highlight Bold guifg=NONE guibg=NONE gui=bold guisp=NONE |
 highlight BufferCurrent guifg=#e6eaea guibg=#587b7b gui=NONE guisp=NONE |
 highlight BufferCurrentIndex guifg=#5a93aa guibg=#587b7b gui=NONE guisp=NONE |
@@ -261,6 +262,7 @@ highlight rainbowcol5 guifg=#a1cdd8 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#ad5c7c guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#cb7985 guibg=NONE gui=NONE guisp=NONE |
 highlight rustTSField guifg=#cbd9d8 guibg=NONE gui=NONE guisp=NONE |
+highlight! link AerialLine Search |
 highlight! link Boolean Number |
 highlight! link Character String |
 highlight! link CmpItemKindClass Type |

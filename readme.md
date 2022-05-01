@@ -457,6 +457,7 @@ There are a few things to note:
 
 ## Supported Plugins
 
+- [aerial.nvim](https://github.com/stevearc/aerial.nvim)
 - [barbar.nvim](https://github.com/romgrk/barbar.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
