@@ -361,6 +361,7 @@ Current list of modules are:
 
 - barbar
 - cmp
+- dap-ui
 - dashboard
 - diagnostic
 - fern

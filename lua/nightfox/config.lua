@@ -29,6 +29,7 @@ local defaults = {
   modules = {
     barbar = true,
     cmp = true,
+    dap_ui = true,
     dashboard = true,
     diagnostic = {
       enable = true,
