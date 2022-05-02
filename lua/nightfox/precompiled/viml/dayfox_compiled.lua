@@ -47,6 +47,16 @@ highlight Constant guifg=#d76558 guibg=NONE gui=NONE guisp=NONE |
 highlight Cursor guifg=#eaeaea guibg=#1d344f gui=NONE guisp=NONE |
 highlight CursorLine guifg=NONE guibg=#ced6db gui=NONE guisp=NONE |
 highlight CursorLineNr guifg=#ba793e guibg=NONE gui=bold guisp=NONE |
+highlight DapUIBreakpointsCurrentLine guifg=#618774 guibg=NONE gui=bold guisp=NONE |
+highlight DapUIBreakpointsDisabledLine guifg=#7f848e guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIBreakpointsInfo guifg=#A9FF68 guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIDecoration guifg=#2e537d guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIModifiedValue guifg=#1d344f guibg=NONE gui=bold guisp=NONE |
+highlight DapUIValue guifg=#1d344f guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIVariable guifg=#1d344f guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIWatchesEmpty guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIWatchesError guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIWatchesValue guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
 highlight DashboardFooter guifg=#d76558 guibg=NONE gui=italic guisp=NONE |
 highlight DiagnosticError guifg=#b95d76 guibg=NONE gui=NONE guisp=NONE |
 highlight DiagnosticHint guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
@@ -289,6 +299,16 @@ highlight! link CmpItemMenu Comment |
 highlight! link CurSearch IncSearch |
 highlight! link CursorColumn CursorLine |
 highlight! link CursorIM Cursor |
+highlight! link DapUIBreakpointsLine DapUILineNumber |
+highlight! link DapUIBreakpointsPath Title |
+highlight! link DapUIFloatBorder FloatBorder |
+highlight! link DapUIFrameName Normal |
+highlight! link DapUILineNumber Number |
+highlight! link DapUIScope Title |
+highlight! link DapUISource Keyword |
+highlight! link DapUIStoppedThread Title |
+highlight! link DapUIThread String |
+highlight! link DapUIType Type |
 highlight! link DashboardCenter String |
 highlight! link DashboardHeader Title |
 highlight! link DashboardShortCut Identifier |

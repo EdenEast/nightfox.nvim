@@ -30,6 +30,7 @@ local defaults = {
     aerial = true,
     barbar = true,
     cmp = true,
+    dap_ui = true,
     dashboard = true,
     diagnostic = {
       enable = true,

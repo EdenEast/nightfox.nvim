@@ -362,6 +362,7 @@ Current list of modules are:
 - aerial
 - barbar
 - cmp
+- dap-ui
 - dashboard
 - diagnostic
 - fern
