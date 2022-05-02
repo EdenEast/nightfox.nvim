@@ -2,6 +2,8 @@
     "name" : "dawnfox",
     "background" : "#faf4ed",
     "foreground" : "#575279",
+    "cursorColor": "#575279",
+    "selectionBackground": "#d0d8d8",
     "black" : "#575279",
     "blue" : "#286983",
     "cyan" : "#56949f",

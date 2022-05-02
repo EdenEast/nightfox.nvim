@@ -2,6 +2,8 @@
     "name" : "duskfox",
     "background" : "#232136",
     "foreground" : "#e0def4",
+    "cursorColor": "#e0def4",
+    "selectionBackground": "#433c59",
     "black" : "#393552",
     "blue" : "#569fba",
     "cyan" : "#9ccfd8",

@@ -2,6 +2,8 @@
     "name" : "terafox",
     "background" : "#152528",
     "foreground" : "#e6eaea",
+    "cursorColor": "#e6eaea",
+    "selectionBackground": "#293e40",
     "black" : "#2f3239",
     "blue" : "#5a93aa",
     "cyan" : "#a1cdd8",

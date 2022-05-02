@@ -2,6 +2,8 @@
     "name" : "dayfox",
     "background" : "#eaeaea",
     "foreground" : "#1d344f",
+    "cursorColor": "#1d344f",
+    "selectionBackground": "#ced5de",
     "black" : "#1d344f",
     "blue" : "#4d688e",
     "cyan" : "#6ca7bd",
