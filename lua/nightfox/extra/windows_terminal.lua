@@ -8,6 +8,8 @@ function M.generate(spec)
     "name" : "${palette.meta.name}",
     "background" : "${bg1}",
     "foreground" : "${fg1}",
+    "cursorColor": "${fg1}",
+    "selectionBackground": "${sel0}",
     "black" : "${palette.black}",
     "blue" : "${palette.blue}",
     "cyan" : "${palette.cyan}",

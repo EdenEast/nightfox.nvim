@@ -2,6 +2,8 @@
     "name" : "nordfox",
     "background" : "#2e3440",
     "foreground" : "#cdcecf",
+    "cursorColor": "#cdcecf",
+    "selectionBackground": "#3e4a5b",
     "black" : "#3b4252",
     "blue" : "#81a1c1",
     "cyan" : "#88c0d0",
