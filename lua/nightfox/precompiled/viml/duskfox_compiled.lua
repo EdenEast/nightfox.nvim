@@ -49,9 +49,12 @@ highlight CursorLine guifg=NONE guibg=#373354 gui=NONE guisp=NONE |
 highlight CursorLineNr guifg=#f6c177 guibg=NONE gui=bold guisp=NONE |
 highlight DapUIBreakpointsCurrentLine guifg=#a3be8c guibg=NONE gui=bold guisp=NONE |
 highlight DapUIBreakpointsDisabledLine guifg=#817c9c guibg=NONE gui=NONE guisp=NONE |
-highlight DapUIBreakpointsInfo guifg=#A9FF68 guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIBreakpointsInfo guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIBreakpointsPath guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIDecoration guifg=#6e6a86 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIModifiedValue guifg=#e0def4 guibg=NONE gui=bold guisp=NONE |
+highlight DapUIScope guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIStoppedThread guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIValue guifg=#e0def4 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIVariable guifg=#e0def4 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIWatchesEmpty guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
@@ -300,13 +303,10 @@ highlight! link CurSearch IncSearch |
 highlight! link CursorColumn CursorLine |
 highlight! link CursorIM Cursor |
 highlight! link DapUIBreakpointsLine DapUILineNumber |
-highlight! link DapUIBreakpointsPath Title |
 highlight! link DapUIFloatBorder FloatBorder |
 highlight! link DapUIFrameName Normal |
 highlight! link DapUILineNumber Number |
-highlight! link DapUIScope Title |
 highlight! link DapUISource Keyword |
-highlight! link DapUIStoppedThread Title |
 highlight! link DapUIThread String |
 highlight! link DapUIType Type |
 highlight! link DashboardCenter String |
