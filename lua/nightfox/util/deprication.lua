@@ -57,8 +57,7 @@ function M.check_deprication(opts)
     local foxes = require("nightfox.palette").foxes
     local invalid = false
     for key, _ in pairs(opts.groups) do
-      print(key)
-      if not collect.contains(foxes, key) then
+      if not collect.contains(foxes, key) and key ~= "all" then
         invalid = true
         break
       end
