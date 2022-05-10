@@ -277,12 +277,19 @@ local specs = {
 --
 -- Just like `spec` groups support templates. This time the template is based on a spec object.
 local groups = {
-  -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
-  -- Make sure `link` is cleared to `""` so that the link will be removed.
-  CursorColumn = { bg = "sel0", link = "" },
+  -- As with specs and palettes, the values defined under `all` will be applied to every style.
+  all = {
+    -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
+    -- Make sure `link` is cleared to `""` so that the link will be removed.
+    CursorColumn = { bg = "sel0", link = "" },
 
-  -- Specs are used for the template. Specs have their palette's as a field that can be accessed
-  IncSearch = { bg = "palette.cyan" },
+    -- Specs are used for the template. Specs have their palette's as a field that can be accessed
+    IncSearch = { bg = "palette.cyan" },
+  },
+  nightfox = {
+    -- As with specs and palettes, a specific style's value will be used over the `all`'s value.
+    PmenuSel = { bg = "#73daca", fg = "bg0" },
+  },
 }
 
 require("nightfox").setup({ palettes = palettes, specs = specs, groups = groups })
@@ -333,7 +340,9 @@ require("nightfox").setup({
     },
   },
   groups = {
-    NormalNC = { fg = "fg1", bg = "inactive" }, -- Non-current windows
+    all = {
+      NormalNC = { fg = "fg1", bg = "inactive" }, -- Non-current windows
+    },
   },
 })
 ```

@@ -67,7 +67,7 @@ function M.load(opts)
     require(modname)
   else
     local spec = require("nightfox.spec").load(name)
-    local groups = require("nightfox.group").load(spec)
+    local groups = require("nightfox.group").from(spec)
 
     clear_hl()
     set_info(spec)
@@ -85,5 +85,7 @@ function M.load(opts)
     end
   end
 end
+
+M.load("nightfox")
 
 return M

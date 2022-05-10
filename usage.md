@@ -64,7 +64,9 @@ override.specs({
   }
 })
 override.groups({
-  IncSearch = { bg = "palette.cyan" },
+  all = {
+    IncSearch = { bg = "palette.cyan" },
+  },
 })
 ```
 
@@ -98,7 +100,9 @@ local specs = {
   }
 }
 local groups = {
-  IncSearch = { bg = "palette.cyan" },
+  all = {
+    IncSearch = { bg = "palette.cyan" },
+  },
 }
 require('nightfox').setup({
   options = options,
@@ -145,16 +149,18 @@ local specs = {
 
 -- Groups use specs as the template source
 local groups = {
-  -- The template path is parsed to [`syntax`, `string`]. This is like calling into a lua table like:
-  -- `spec.syntax.string`.
-  String = { fg = "syntax.string" },
+  all = {
+    -- The template path is parsed to [`syntax`, `string`]. This is like calling into a lua table like:
+    -- `spec.syntax.string`.
+    String = { fg = "syntax.string" },
 
-  -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
-  -- Make sure `link` is cleared to `""` so that the link will be removed.
-  CursorColumn = { bg = "sel0", link = "" },
+    -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
+    -- Make sure `link` is cleared to `""` so that the link will be removed.
+    CursorColumn = { bg = "sel0", link = "" },
 
-  -- Specs are used for the template. Specs have their palette's as a field that can be accessed
-  IncSearch = { bg = "palette.cyan" },
+    -- Specs are used for the template. Specs have their palette's as a field that can be accessed
+    IncSearch = { bg = "palette.cyan" },
+  },
 }
 
 require('nightfox').setup({ specs = specs, groups = groups })
