@@ -32,7 +32,7 @@ end
 
 local function gen_nvim_highlight_block(lines, spec)
   local list = {}
-  local groups = require("nightfox.group").load(spec)
+  local groups = require("nightfox.group").from(spec)
   local normal = nil
   for name, values in pairs(groups) do
     -- HACK: This is because of the current issue with `nvim_set_hl` and Normal highlight.
@@ -78,7 +78,7 @@ end
 
 local function gen_viml_highlight_block(lines, spec)
   local list = {}
-  local groups = require("nightfox.group").load(spec)
+  local groups = require("nightfox.group").from(spec)
   for name, values in pairs(groups) do
     if values.link then
       table.insert(list, fmt([[highlight! link %s %s]], name, values.link))

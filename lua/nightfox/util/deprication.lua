@@ -52,6 +52,29 @@ function M.check_deprication(opts)
   check_opt("colors", { replace = "palettes" })
   check_opt("hlgroups", { replace = "groups" })
 
+  if opts.groups then
+    local collect = require("nightfox.lib.collect")
+    local foxes = require("nightfox.palette").foxes
+    local invalid = false
+    for key, _ in pairs(opts.groups) do
+      print(key)
+      if not collect.contains(foxes, key) then
+        invalid = true
+        break
+      end
+    end
+
+    if invalid then
+      dep.write(
+        "  ",
+        { "groups", "WarningMsg" },
+        " is now per style. Use ",
+        { "all", "WarningMsg" },
+        " to apply for every style."
+      )
+    end
+  end
+
   M.checked_deprication = true
 end
 
