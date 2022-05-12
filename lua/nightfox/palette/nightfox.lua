@@ -19,7 +19,7 @@ local palette = {
   orange  = Shade.new("#f4a261", 0.15, -0.15),
   pink    = Shade.new("#d67ad2", 0.15, -0.15),
 
-  comment = "#526176",
+  comment = "#5d6e85",
 
   bg0     = "#131a24", -- Dark bg (status line and float)
   bg1     = "#192330", -- Default bg

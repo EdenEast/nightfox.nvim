@@ -19,8 +19,8 @@ highlight BufferCurrentIndex guifg=#719cd6 guibg=#71839b gui=NONE guisp=NONE |
 highlight BufferCurrentMod guifg=#dbc074 guibg=#71839b gui=NONE guisp=NONE |
 highlight BufferCurrentSign guifg=#719cd6 guibg=#71839b gui=NONE guisp=NONE |
 highlight BufferCurrentTarget guifg=#c94f6d guibg=#71839b gui=NONE guisp=NONE |
-highlight BufferInactive guifg=#526176 guibg=#131a24 gui=NONE guisp=NONE |
-highlight BufferInactiveIndex guifg=#526176 guibg=#131a24 gui=NONE guisp=NONE |
+highlight BufferInactive guifg=#5d6e85 guibg=#131a24 gui=NONE guisp=NONE |
+highlight BufferInactiveIndex guifg=#5d6e85 guibg=#131a24 gui=NONE guisp=NONE |
 highlight BufferInactiveMod guifg=#40423e guibg=#131a24 gui=NONE guisp=NONE |
 highlight BufferInactiveSign guifg=#29394e guibg=#131a24 gui=NONE guisp=NONE |
 highlight BufferInactiveTarget guifg=#c94f6d guibg=#131a24 gui=NONE guisp=NONE |
@@ -40,7 +40,7 @@ highlight CmpItemAbbrMatchFuzzy guifg=#86abdc guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemKindDefault guifg=#aeafb0 guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemKindSnippet guifg=#aeafb0 guibg=NONE gui=NONE guisp=NONE |
 highlight ColorColumn guifg=NONE guibg=#212e3f gui=NONE guisp=NONE |
-highlight Comment guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight Comment guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight Conceal guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
 highlight Conditional guifg=#baa1e2 guibg=NONE gui=NONE guisp=NONE |
 highlight Constant guifg=#f6b079 guibg=NONE gui=NONE guisp=NONE |
@@ -48,7 +48,7 @@ highlight Cursor guifg=#192330 guibg=#cdcecf gui=NONE guisp=NONE |
 highlight CursorLine guifg=NONE guibg=#29394e gui=NONE guisp=NONE |
 highlight CursorLineNr guifg=#dbc074 guibg=NONE gui=bold guisp=NONE |
 highlight DapUIBreakpointsCurrentLine guifg=#81b29a guibg=NONE gui=bold guisp=NONE |
-highlight DapUIBreakpointsDisabledLine guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight DapUIBreakpointsDisabledLine guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIBreakpointsInfo guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIBreakpointsPath guifg=#7ad4d6 guibg=NONE gui=NONE guisp=NONE |
 highlight DapUIDecoration guifg=#71839b guibg=NONE gui=NONE guisp=NONE |
@@ -111,14 +111,14 @@ highlight GlyphPalette9 guifg=#d16983 guibg=NONE gui=NONE guisp=NONE |
 highlight HopNextKey guifg=#63cdcf guibg=NONE gui=bold guisp=NONE |
 highlight HopNextKey1 guifg=#719cd6 guibg=NONE gui=bold guisp=NONE |
 highlight HopNextKey2 guifg=#6085b6 guibg=NONE gui=NONE guisp=NONE |
-highlight HopUnmatched guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight HopUnmatched guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight Identifier guifg=#63cdcf guibg=NONE gui=NONE guisp=NONE |
 highlight IncSearch guifg=#223249 guibg=#81b29a gui=NONE guisp=NONE |
 highlight Italic guifg=NONE guibg=NONE gui=italic guisp=NONE |
 highlight Keyword guifg=#9d79d6 guibg=NONE gui=NONE guisp=NONE |
-highlight LightspeedGreyWash guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight LightspeedGreyWash guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight LineNr guifg=#71839b guibg=NONE gui=NONE guisp=NONE |
-highlight LspCodeLens guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight LspCodeLens guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight LspCodeLensSeparator guifg=#71839b guibg=NONE gui=NONE guisp=NONE |
 highlight LspFloatWinBorder guifg=#71839b guibg=NONE gui=NONE guisp=NONE |
 highlight LspFloatWinNormal guifg=NONE guibg=#131a24 gui=NONE guisp=NONE |
@@ -150,7 +150,7 @@ highlight NeoTreeFileNameOpened guifg=#cdcecf guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeGitAdded guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeGitConflict guifg=#f4a261 guibg=NONE gui=italic guisp=NONE |
 highlight NeoTreeGitDeleted guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
-highlight NeoTreeGitIgnored guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeGitIgnored guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeGitModified guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeGitUntracked guifg=#8567b6 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeIndentMarker guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
@@ -180,7 +180,7 @@ highlight NotifyERRORTitle guifg=#c94f6d guibg=NONE gui=NONE guisp=NONE |
 highlight NotifyINFOBorder guifg=#456083 guibg=NONE gui=NONE guisp=NONE |
 highlight NotifyINFOTitle guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
 highlight NotifyTRACEBorder guifg=#415166 guibg=NONE gui=NONE guisp=NONE |
-highlight NotifyTRACETitle guifg=#526176 guibg=NONE gui=NONE guisp=NONE |
+highlight NotifyTRACETitle guifg=#5d6e85 guibg=NONE gui=NONE guisp=NONE |
 highlight NotifyWARNBorder guifg=#7a7252 guibg=NONE gui=NONE guisp=NONE |
 highlight NotifyWARNTitle guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight Number guifg=#f4a261 guibg=NONE gui=NONE guisp=NONE |
