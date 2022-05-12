@@ -37,6 +37,11 @@ function M.reset()
   require("nightfox.store").reset()
 end
 
+function M.register(name, palette, opts)
+  opts = opts or {}
+  require("nightfox.palette").register(name, palette, opts)
+end
+
 function M.setup(opts)
   if opts.options then
     M.init(opts.options)
