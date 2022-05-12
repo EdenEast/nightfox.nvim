@@ -46,7 +46,7 @@ end
 function M.load(opts)
   opts = {}
   local config = require("nightfox.config")
-  local override = require("nightfox.override")
+  local store = require("nightfox.store")
   local name = opts.name or config.fox
 
   local precompiled_file = util.join_paths(
@@ -56,7 +56,7 @@ function M.load(opts)
 
   if util.exists(precompiled_file) then
     cmd("luafile " .. precompiled_file)
-  elseif not override.has_override and not config.has_options and not vim.g.nightfox_debug then
+  elseif not store.has_override and not config.has_options and not vim.g.nightfox_debug then
     local api_type = util.use_nvim_api and "nvim" or "viml"
     if opts["use_nvim_api"] ~= nil then
       api_type = opts.use_nvim_api and "nvim" or "viml"

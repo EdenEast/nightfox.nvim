@@ -3,13 +3,13 @@ local template = require("nightfox.util.template")
 
 local M = {}
 
-local function override(groups, spec, ovr)
-  ovr = template.parse(ovr, spec)
-  return collect.deep_extend(groups, ovr)
+local function override(groups, spec, store)
+  store = template.parse(store, spec)
+  return collect.deep_extend(groups, store)
 end
 
 function M.from(spec)
-  local ovr = require("nightfox.override").groups
+  local store = require("nightfox.store").groups
   local config = require("nightfox.config").options
 
   local editor = require("nightfox.group.editor").get(spec, config)
@@ -29,12 +29,12 @@ function M.from(spec)
     end
   end
 
-  local function apply_ovr(key, groups)
-    return ovr[key] and override(groups, spec, ovr[key]) or groups
+  local function apply_store(key, groups)
+    return store[key] and override(groups, spec, store[key]) or groups
   end
 
-  result = apply_ovr("all", result)
-  result = apply_ovr(spec.palette.meta.name, result)
+  result = apply_store("all", result)
+  result = apply_store(spec.palette.meta.name, result)
 
   return result
 end

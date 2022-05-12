@@ -24,7 +24,7 @@ function M.execute()
   local name = vim["g"] and vim.g.colors_name or vim.eval("g:colors_name")
 
   require("nightfox.config").reset()
-  require("nightfox.override").reset()
+  require("nightfox.store").reset()
   cmd(fmt(
     [[
       %s %%

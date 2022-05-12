@@ -71,23 +71,23 @@ local template = require("nightfox.util.template")
 
 local M = {}
 
-local function override(spec, palette, ovr)
-  ovr = template.parse(ovr, palette)
-  return collect.deep_extend(spec, ovr)
+local function override(spec, palette, store)
+  store = template.parse(store, palette)
+  return collect.deep_extend(spec, store)
 end
 
 function M.load(name)
-  local ovr = require("nightfox.override").specs
+  local store = require("nightfox.store").specs
 
-  local function apply_ovr(key, spec, palette)
-    return ovr[key] and override(spec, palette, ovr[key]) or spec
+  local function apply_store(key, spec, palette)
+    return store[key] and override(spec, palette, store[key]) or spec
   end
 
   if name then
     local palette = require("nightfox.palette").load(name)
     local spec = palette.generate_spec(palette)
-    spec = apply_ovr("all", spec, palette)
-    spec = apply_ovr(name, spec, palette)
+    spec = apply_store("all", spec, palette)
+    spec = apply_store(name, spec, palette)
     spec.palette = palette
     return spec
   else
@@ -96,8 +96,8 @@ function M.load(name)
     for _, mod in ipairs(foxes) do
       local palette = require("nightfox.palette").load(mod)
       local spec = palette.generate_spec(palette)
-      spec = apply_ovr("all", spec, palette)
-      spec = apply_ovr(name, spec, palette)
+      spec = apply_store("all", spec, palette)
+      spec = apply_store(name, spec, palette)
       spec.palette = palette
       result[mod] = spec
     end

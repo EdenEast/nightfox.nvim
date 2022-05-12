@@ -44,9 +44,9 @@ M.foxes = {
   "terafox",
 }
 
-local function override(color, ovr)
+local function override(color, store)
   local color_list = { "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "orange", "pink" }
-  for key, value in pairs(ovr) do
+  for key, value in pairs(store) do
     if collect.contains(color_list, key) then
       if type(value) == "string" then
         color[key].base = value
@@ -64,18 +64,18 @@ local function override(color, ovr)
 end
 
 function M.load(name)
-  local ovr = require("nightfox.override").palettes
+  local store = require("nightfox.store").palettes
 
-  local function apply_ovr(key, palette)
-    return ovr[key] and override(palette, ovr[key]) or palette
+  local function apply_store(key, palette)
+    return store[key] and override(palette, store[key]) or palette
   end
 
   if name then
     local valid = collect.contains(M.foxes, name)
     local raw = valid and require("nightfox.palette." .. name) or require("nightfox.palette.nightfox")
     local palette = raw.palette
-    palette = apply_ovr("all", palette)
-    palette = apply_ovr(name, palette)
+    palette = apply_store("all", palette)
+    palette = apply_store(name, palette)
     palette.meta = raw.meta
     palette.generate_spec = raw.generate_spec
     return palette
@@ -84,8 +84,8 @@ function M.load(name)
     for _, mod in ipairs(M.foxes) do
       local raw = require("nightfox.palette." .. mod)
       local palette = raw.palette
-      palette = apply_ovr("all", palette)
-      palette = apply_ovr(mod, palette)
+      palette = apply_store("all", palette)
+      palette = apply_store(mod, palette)
       palette.meta = raw.meta
       palette.generate_spec = raw.generate_spec
       result[mod] = palette
