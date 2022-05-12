@@ -14,7 +14,15 @@ local function reset()
   store.has_override = false
 end
 
-return setmetatable({ reset = reset }, {
+local function is_empty(name)
+  local function impl(value)
+    local r = store.palettes[value] or store.specs[value] or store.groups[value]
+    return not r
+  end
+  return impl("all") or impl(name)
+end
+
+return setmetatable({ reset = reset, is_empty = is_empty }, {
   __index = function(_, value)
     if store[value] then
       return store[value]
