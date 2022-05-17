@@ -2,8 +2,8 @@
 # Style: nightfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_fish.fish
 set -l foreground cdcecf
-set -l selection 223249
-set -l comment 526176
+set -l selection 2b3b51
+set -l comment 738091
 set -l red c94f6d
 set -l orange f4a261
 set -l yellow dbc074
