@@ -19,21 +19,21 @@ local palette = {
   orange  = Shade.new("#f4a261", 0.15, -0.15),
   pink    = Shade.new("#d67ad2", 0.15, -0.15),
 
-  comment = "#526176",
+  comment = "#738091",
 
   bg0     = "#131a24", -- Dark bg (status line and float)
   bg1     = "#192330", -- Default bg
   bg2     = "#212e3f", -- Lighter bg (colorcolm folds)
-  bg3     = "#29394e", -- Lighter bg (cursor line)
-  bg4     = "#415166", -- Conceal, border fg
+  bg3     = "#29394f", -- Lighter bg (cursor line)
+  bg4     = "#39506d", -- Conceal, border fg
 
   fg0     = "#d6d6d7", -- Lighter fg
   fg1     = "#cdcecf", -- Default fg
   fg2     = "#aeafb0", -- Darker fg (status line)
   fg3     = "#71839b", -- Darker fg (line numbers, fold colums)
 
-  sel0    = "#223249", -- Popup bg, visual selection bg
-  sel1    = "#3a567d", -- Popup sel bg, search bg
+  sel0    = "#2b3b51", -- Popup bg, visual selection bg
+  sel1    = "#3c5372", -- Popup sel bg, search bg
 }
 
 local function generate_spec(pal)
