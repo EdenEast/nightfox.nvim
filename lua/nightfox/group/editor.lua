@@ -65,7 +65,7 @@ function M.get(spec, config)
     Visual          = inv.visual and { style = "reverse" } or { bg = spec.sel0 }, -- Visual mode selection
     VisualNOS       = inv.visual and { style = "reverse" } or { link = "visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg      = { fg = spec.diag.warn }, -- warning messages
-    Whitespace      = { fg = spec.bg2 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace      = { fg = spec.bg3 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu        = { link = "Pmenu" }, -- current match in 'wildmenu' completion
 
     -- qfLineNr        = {},

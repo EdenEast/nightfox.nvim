@@ -258,7 +258,7 @@ highlight VertSplit guifg=#39506d guibg=NONE gui=NONE guisp=NONE |
 highlight Visual guifg=NONE guibg=#2b3b51 gui=NONE guisp=NONE |
 highlight WarningMsg guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight WhichKeyFloat guifg=NONE guibg=#131a24 gui=NONE guisp=NONE |
-highlight Whitespace guifg=#212e3f guibg=NONE gui=NONE guisp=NONE |
+highlight Whitespace guifg=#29394f guibg=NONE gui=NONE guisp=NONE |
 highlight diffAdded guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight diffChanged guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight diffFile guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
