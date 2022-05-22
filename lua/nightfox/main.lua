@@ -86,6 +86,4 @@ function M.load(opts)
   end
 end
 
-M.load("nightfox")
-
 return M
