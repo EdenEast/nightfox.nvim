@@ -154,9 +154,8 @@ local groups = {
     -- `spec.syntax.string`.
     String = { fg = "syntax.string" },
 
-    -- By default nightfox links some groups together. `CursorColumn` is one of these groups. When overriding
-    -- Make sure `link` is cleared to `""` so that the link will be removed.
-    CursorColumn = { bg = "sel0", link = "" },
+    -- If `link` is defined it will be applied over any other values defined
+    Whitespace = { link = "Comment" }
 
     -- Specs are used for the template. Specs have their palette's as a field that can be accessed
     IncSearch = { bg = "palette.cyan" },

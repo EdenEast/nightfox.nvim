@@ -14,6 +14,14 @@ local function reset()
   store.has_override = false
 end
 
+local function check_link(tbl)
+  for _, style in pairs(tbl) do
+    for _, opts in pairs(style) do
+      opts.link = opts.link or ""
+    end
+  end
+end
+
 return setmetatable({ reset = reset }, {
   __index = function(_, value)
     if store[value] then
@@ -23,6 +31,9 @@ return setmetatable({ reset = reset }, {
 
   __newindex = function(_, key, value)
     if store[key] then
+      if key == "groups" then
+        check_link(value)
+      end
       store[key] = collect.deep_extend(store[key], value or {})
       store.has_override = true
     end
