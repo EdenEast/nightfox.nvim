@@ -67,6 +67,8 @@ function M.get(spec, config)
     WarningMsg      = { fg = spec.diag.warn }, -- warning messages
     Whitespace      = { fg = spec.bg3 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu        = { link = "Pmenu" }, -- current match in 'wildmenu' completion
+    WinBar          = { fg = spec.fg3, bg = trans and "NONE" or spec.bg1, style = "bold" }, -- Window bar of current window.
+    WinBarNC        = { fg = spec.fg3, bg = trans and "NONE" or alt and spec.bg0 or spec.bg1, style = "bold" }, --Window bar of not-current windows.
 
     -- qfLineNr        = {},
     -- qfFileName      = {},
