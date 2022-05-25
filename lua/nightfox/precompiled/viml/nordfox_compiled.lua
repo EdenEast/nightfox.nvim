@@ -259,6 +259,8 @@ highlight Visual guifg=NONE guibg=#3e4a5b gui=NONE guisp=NONE |
 highlight WarningMsg guifg=#ebcb8b guibg=NONE gui=NONE guisp=NONE |
 highlight WhichKeyFloat guifg=NONE guibg=#232831 gui=NONE guisp=NONE |
 highlight Whitespace guifg=#444c5e guibg=NONE gui=NONE guisp=NONE |
+highlight WinBar guifg=#7e8188 guibg=#2e3440 gui=bold guisp=NONE |
+highlight WinBarNC guifg=#7e8188 guibg=#2e3440 gui=bold guisp=NONE |
 highlight diffAdded guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight diffChanged guifg=#ebcb8b guibg=NONE gui=NONE guisp=NONE |
 highlight diffFile guifg=#81a1c1 guibg=NONE gui=NONE guisp=NONE |
