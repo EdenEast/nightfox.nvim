@@ -30,6 +30,10 @@ local function inspect(t)
   return fmt([[{ %s }]], table.concat(list, ", "))
 end
 
+local function should_link(link)
+  return link and link ~= ""
+end
+
 local function gen_nvim_highlight_block(lines, spec)
   local list = {}
   local groups = require("nightfox.group").from(spec)
@@ -40,7 +44,7 @@ local function gen_nvim_highlight_block(lines, spec)
     if name == "Normal" then
       normal = values
     end
-    if values.link then
+    if should_link(values.link) then
       table.insert(list, fmt([[vim.api.nvim_set_hl(0, "%s", { link = "%s" })]], name, values.link))
     else
       local opts = parse_styles(values.style)
@@ -58,7 +62,7 @@ local function gen_nvim_highlight_block(lines, spec)
   if normal then
     table.insert(lines, [[-- This is a hack as currently `nvim_set_hl` returns `{ [true] = 6 }`]])
     table.insert(lines, [[-- if `Normal` is requested from `nvim_get_hl_by_name("Normal", true)`]])
-    if normal.link then
+    if should_link(normal.link) then
       table.insert(lines, fmt([[vim.cmd("highlight! link Normal %s")]], name, normal.link))
     else
       table.insert(
@@ -80,7 +84,7 @@ local function gen_viml_highlight_block(lines, spec)
   local list = {}
   local groups = require("nightfox.group").from(spec)
   for name, values in pairs(groups) do
-    if values.link then
+    if should_link(values.link) then
       table.insert(list, fmt([[highlight! link %s %s]], name, values.link))
     else
       table.insert(

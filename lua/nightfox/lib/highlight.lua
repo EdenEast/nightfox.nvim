@@ -70,7 +70,7 @@ end
 
 local function nvim_hl(highlights)
   for group, opts in pairs(highlights) do
-    if opts.link and opts.link ~= "" then
+    if should_link(opts.link) then
       vim.api.nvim_set_hl(0, group, {
         link = opts.link,
       })
