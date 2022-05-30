@@ -4,7 +4,7 @@ local M = {}
 ---@param value Shade | Color
 ---@return string css hex string
 local function to_value(value)
-  return value.base and value.base or value.to_css()
+  return value.base and value.base or value:to_css()
 end
 
 ---Walk path (one.two.three) in a table and return value
