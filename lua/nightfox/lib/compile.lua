@@ -50,6 +50,7 @@ local function gen_nvim_highlight_block(lines, spec)
       local opts = parse_styles(values.style)
       opts.bg = values.bg
       opts.fg = values.fg
+      opts.sp = values.sp
       table.insert(list, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], name, inspect(opts)))
     end
   end
