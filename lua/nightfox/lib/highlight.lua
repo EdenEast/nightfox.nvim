@@ -78,6 +78,7 @@ local function nvim_hl(highlights)
       local values = parse_style(opts.style)
       values.bg = opts.bg
       values.fg = opts.fg
+      values.sp = opts.sp
       vim.api.nvim_set_hl(0, group, values)
     end
   end
