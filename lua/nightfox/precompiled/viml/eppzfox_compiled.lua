@@ -227,9 +227,9 @@ highlight TSConstructor guifg=#cea37f guibg=NONE gui=NONE guisp=NONE |
 highlight TSDanger guifg=#b6776b guibg=NONE gui=NONE guisp=NONE |
 highlight TSError guifg=#b6776b guibg=NONE gui=NONE guisp=NONE |
 highlight TSField guifg=#af8b6c guibg=NONE gui=NONE guisp=NONE |
-highlight TSFuncBuiltin guifg=#5262b2 guibg=NONE gui=NONE guisp=NONE |
-highlight TSFuncMacro guifg=#5262b2 guibg=NONE gui=NONE guisp=NONE |
-highlight TSKeywordFunction guifg=#5262b2 guibg=NONE gui=NONE guisp=NONE |
+highlight TSFuncBuiltin guifg=#b8a867 guibg=NONE gui=NONE guisp=NONE |
+highlight TSFuncMacro guifg=#b8a867 guibg=NONE gui=NONE guisp=NONE |
+highlight TSKeywordFunction guifg=#b8a867 guibg=NONE gui=NONE guisp=NONE |
 highlight TSKeywordOperator guifg=#B9B9B5 guibg=NONE gui=bold guisp=NONE |
 highlight TSNamespace guifg=#9b655b guibg=NONE gui=NONE guisp=NONE |
 highlight TSNote guifg=#6173d1 guibg=NONE gui=NONE guisp=NONE |
@@ -243,7 +243,7 @@ highlight TSTextReference guifg=#cea37f guibg=NONE gui=NONE guisp=NONE |
 highlight TSTypeBuiltin guifg=#9b655b guibg=NONE gui=NONE guisp=NONE |
 highlight TSURI guifg=#60c1d2 guibg=NONE gui=bold guisp=NONE |
 highlight TSVariable guifg=#dfcf8d guibg=NONE gui=NONE guisp=NONE |
-highlight TSVariableBuiltin guifg=#5262b2 guibg=NONE gui=NONE guisp=NONE |
+highlight TSVariableBuiltin guifg=#b8a867 guibg=NONE gui=NONE guisp=NONE |
 highlight TSWarning guifg=#d9c679 guibg=NONE gui=NONE guisp=NONE |
 highlight TabLine guifg=#71839b guibg=#212e3f gui=NONE guisp=NONE |
 highlight TabLineFill guifg=NONE guibg=#192330 gui=NONE guisp=NONE |
