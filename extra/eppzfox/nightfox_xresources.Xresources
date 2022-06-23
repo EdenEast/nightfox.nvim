@@ -1,0 +1,21 @@
+! Nightfox colors for Xresources
+! Style: duskfox
+! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/eppzfox/nightfox_xresources.Xresources
+*background: #1d2a39
+*foreground: #A6A6A2
+*color0:  #2b2d35
+*color1:  #b6776b
+*color2:  #4ca585
+*color3:  #d9c679
+*color4:  #6173d1
+*color5:  #cea37f
+*color6:  #60c1d2
+*color7:  #dddcd3
+*color8:  #4b4c53
+*color9:  #c18b81
+*color10: #67b397
+*color11: #dfcf8d
+*color12: #7988d8
+*color13: #d5b192
+*color14: #78cad9
+*color15: #e2e1da

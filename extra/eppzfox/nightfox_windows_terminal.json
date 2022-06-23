@@ -1,0 +1,23 @@
+{
+    "name" : "duskfox",
+    "background" : "#1d2a39",
+    "foreground" : "#A6A6A2",
+    "cursorColor": "#A6A6A2",
+    "selectionBackground": "#2b3b51",
+    "black" : "#2b2d35",
+    "blue" : "#6173d1",
+    "cyan" : "#60c1d2",
+    "green" : "#4ca585",
+    "purple" : "#cea37f",
+    "red" : "#b6776b",
+    "white" : "#dddcd3",
+    "yellow" : "#d9c679",
+    "brightBlack" : "#4b4c53",
+    "brightBlue" : "#7988d8",
+    "brightCyan" : "#78cad9",
+    "brightGreen" : "#67b397",
+    "brightPurple" : "#d5b192",
+    "brightRed" : "#c18b81",
+    "brightWhite" : "#e2e1da",
+    "brightYellow" : "#dfcf8d"
+}

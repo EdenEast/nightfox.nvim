@@ -1,0 +1,13 @@
+# Nightfox Wezterm Colors
+# Style: duskfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/eppzfox/nightfox_wezterm.toml
+[colors]
+foreground = "#A6A6A2"
+background = "#1d2a39"
+cursor_bg = "#A6A6A2"
+cursor_border = "#A6A6A2"
+cursor_fg = "#1d2a39"
+selection_bg = "#2b3b51"
+selection_fg = "#A6A6A2"
+ansi = ["#2b2d35", "#b6776b", "#4ca585", "#d9c679", "#6173d1", "#cea37f", "#60c1d2", "#dddcd3"]
+brights = ["#4b4c53", "#c18b81", "#67b397", "#dfcf8d", "#7988d8", "#d5b192", "#78cad9", "#e2e1da"]
