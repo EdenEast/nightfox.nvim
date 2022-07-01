@@ -21,7 +21,10 @@ local function load_plugins()
   packer.init({ compile_path = compile_path, package_root = pack_path })
 
   use("wbthomason/packer.nvim")
-  use("EdenEast/nightfox.nvim")
+  use("/home/eden/dev/plugins/nightfox.nvim")
+  use("feline-nvim/feline.nvim")
+  use("kyazdani42/nvim-web-devicons")
+  use("nanozuki/tabby.nvim")
   -- ADD PLUGINS THAT ARE _NECESSARY_ FOR REPRODUCING THE ISSUE
 
   packer.install()
@@ -34,6 +37,8 @@ _G.load_config = function()
   })
 
   vim.cmd("colorscheme nightfox")
+  require("nightfox.tabby")
+  require("nightfox.feline")
 end
 
 if vim.fn.isdirectory(install_path) == 0 then
