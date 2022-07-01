@@ -10,13 +10,14 @@
 --    - `kyazdani42/nvim-web-devicons`
 --
 -- This file is required to be in your `lua` folder of your config.  Your colorscheme should also
--- be applied before this file is sourced.
+-- be applied before this file is sourced. This file cannot be located `lua/feline.lua` as this
+-- would clash with the actual plugin require path.
 --
 -- # Example:
 --
 -- ```lua
 -- vim.cmd("colorscheme nightfox")
--- require('user.ui.feline') --
+-- require('user.ui.feline')
 -- ```
 --
 -- This assumes that this file is located at `lua/user/ui/feline.lua`
@@ -109,9 +110,7 @@ local function generate_pallet_from_colorscheme()
   end
 
   pallet.sl = get_highlight("StatusLine")
-  pallet.tab = get_highlight("TabLine")
   pallet.sel = get_highlight("TabLineSel")
-  pallet.fill = get_highlight("TabLineFill")
 
   return pallet
 end
@@ -120,7 +119,7 @@ end
 ---
 ---NOTE: This is a global because I dont known where this file will be in your config
 ---and it is needed for the autocmd below
-_G._generate_user_highlights = function()
+_G._generate_user_statusline_highlights = function()
   local pal = generate_pallet_from_colorscheme()
 
   -- stylua: ignore
@@ -144,6 +143,7 @@ _G._generate_user_highlights = function()
   local status = vim.o.background == "dark" and { fg = pal.black, bg = pal.white } or { fg = pal.white, bg = pal.black }
 
   local groups = {
+    -- statusline
     UserSLHint = { fg = pal.sl.bg, bg = pal.hint, bold = true },
     UserSLInfo = { fg = pal.sl.bg, bg = pal.info, bold = true },
     UserSLWarn = { fg = pal.sl.bg, bg = pal.warn, bold = true },
@@ -160,25 +160,17 @@ _G._generate_user_highlights = function()
     UserSLAlt = pal.sel,
     UserSLAltSep = { fg = pal.sl.bg, bg = pal.sel.bg },
     UserSLGitBranch = { fg = pal.yellow, bg = pal.sl.bg },
-
-    -- tabline
-    UserTLHead = { fg = pal.fill.bg, bg = pal.cyan },
-    UserTLHeadSep = { fg = pal.cyan, bg = pal.fill.bg },
-    UserTLActive = { fg = pal.sel.fg, bg = pal.sel.bg, bold = true },
-    UserTLActiveSep = { fg = pal.sel.bg, bg = pal.fill.bg },
-    UserTLBoldLine = { fg = pal.tab.fg, bg = pal.tab.bg, bold = true },
-    UserTLLineSep = { fg = pal.tab.bg, bg = pal.fill.bg },
   }
 
   set_highlights(vim.tbl_extend("force", colors, groups))
 end
 
-_generate_user_highlights()
+_generate_user_statusline_highlights()
 
-vim.api.nvim_create_augroup("UserHighlightGroups", { clear = true })
+vim.api.nvim_create_augroup("UserStatuslineHighlightGroups", { clear = true })
 vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
   callback = function()
-    _generate_user_highlights()
+    _generate_user_statusline_highlights()
   end,
 })
 
