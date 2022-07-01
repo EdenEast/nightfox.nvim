@@ -1,5 +1,5 @@
 -- Feline
--- https://github.com/EdenEast/nightfox.nvim/tree/main/mics/feline.lua
+-- https://github.com/EdenEast/nightfox.nvim/blob/main/mics/feline.lua
 --
 -- This file is a complete example of creating the feline configuration shown in the readme of
 -- nightfox. This configuration generates its own highlight groups from the currently applied
