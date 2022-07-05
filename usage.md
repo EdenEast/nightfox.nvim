@@ -380,6 +380,7 @@ Current list of modules are:
 - lightspeed
 - lsp_saga
 - lsp_trouble
+- mini
 - modes
 - native_lsp
 - neogit

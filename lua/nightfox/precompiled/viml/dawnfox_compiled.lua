@@ -136,6 +136,35 @@ highlight LspTroubleCount guifg=#907aa9 guibg=#a8a3b3 gui=NONE guisp=NONE |
 highlight LspTroubleNormal guifg=#a8a3b3 guibg=#ebe5df gui=NONE guisp=NONE |
 highlight LspTroubleText guifg=#625c87 guibg=NONE gui=NONE guisp=NONE |
 highlight MatchParen guifg=#ea9d34 guibg=NONE gui=bold guisp=NONE |
+highlight MiniCompletionActiveParameter guifg=NONE guibg=NONE gui=underline guisp=NONE |
+highlight MiniIndentscopePrefix guifg=NONE guibg=NONE gui=nocombine guisp=NONE |
+highlight MiniJump guifg=#ebe5df guibg=#907aa9 gui=NONE guisp=NONE |
+highlight MiniJump2dSpot guifg=#56949f guibg=NONE gui=bold guisp=NONE |
+highlight MiniStarterCurrent guifg=NONE guibg=NONE gui=nocombine guisp=NONE |
+highlight MiniStarterFooter guifg=#ca6e69 guibg=NONE gui=italic guisp=NONE |
+highlight MiniStarterItemBullet guifg=#a8a3b3 guibg=NONE gui=NONE guisp=NONE |
+highlight MiniStarterItemPrefix guifg=#d685af guibg=NONE gui=NONE guisp=NONE |
+highlight MiniStarterQuery guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
+highlight MiniStarterSection guifg=#b4637a guibg=NONE gui=NONE guisp=NONE |
+highlight MiniStatuslineDevinfo guifg=#625c87 guibg=#ebe0df gui=NONE guisp=NONE |
+highlight MiniStatuslineFileinfo guifg=#625c87 guibg=#ebe0df gui=NONE guisp=NONE |
+highlight MiniStatuslineModeCommand guifg=#ebe5df guibg=#ea9d34 gui=bold guisp=NONE |
+highlight MiniStatuslineModeInsert guifg=#ebe5df guibg=#618774 gui=bold guisp=NONE |
+highlight MiniStatuslineModeNormal guifg=#ebe5df guibg=#56949f gui=bold guisp=NONE |
+highlight MiniStatuslineModeOther guifg=#ebe5df guibg=#286983 gui=bold guisp=NONE |
+highlight MiniStatuslineModeReplace guifg=#ebe5df guibg=#b4637a gui=bold guisp=NONE |
+highlight MiniStatuslineModeVisual guifg=#ebe5df guibg=#907aa9 gui=bold guisp=NONE |
+highlight MiniTablineCurrent guifg=#625c87 guibg=#bdbfc9 gui=bold guisp=NONE |
+highlight MiniTablineHidden guifg=#a8a3b3 guibg=#ebe0df gui=NONE guisp=NONE |
+highlight MiniTablineModifiedCurrent guifg=#bdbfc9 guibg=#625c87 gui=bold guisp=NONE |
+highlight MiniTablineModifiedHidden guifg=#ebe0df guibg=#a8a3b3 gui=NONE guisp=NONE |
+highlight MiniTablineModifiedVisible guifg=#ebe0df guibg=#625c87 gui=NONE guisp=NONE |
+highlight MiniTablineTabpagesection guifg=#575279 guibg=#faf4ed gui=bold guisp=NONE |
+highlight MiniTablineVisible guifg=#625c87 guibg=#ebe0df gui=NONE guisp=NONE |
+highlight MiniTestEmphasis guifg=NONE guibg=NONE gui=bold guisp=NONE |
+highlight MiniTestFail guifg=#b4637a guibg=NONE gui=bold guisp=NONE |
+highlight MiniTestPass guifg=#618774 guibg=NONE gui=bold guisp=NONE |
+highlight MiniTrailspace guifg=NONE guibg=#b4637a gui=NONE guisp=NONE |
 highlight ModeMsg guifg=#ea9d34 guibg=NONE gui=bold guisp=NONE |
 highlight ModesCopy guifg=NONE guibg=#ea9d34 gui=NONE guisp=NONE |
 highlight ModesDelete guifg=NONE guibg=#b4637a gui=NONE guisp=NONE |
@@ -332,6 +361,16 @@ highlight! link LspSagaBorderTitle Title |
 highlight! link LspSagaCodeActionContent String |
 highlight! link LspSagaCodeActionTitle Title |
 highlight! link Macro PreProc |
+highlight! link MiniCursorword LspReferenceText |
+highlight! link MiniCursorwordCurrent LspReferenceText |
+highlight! link MiniIndentscopeSymbol Delimiter |
+highlight! link MiniStarterHeader Title |
+highlight! link MiniStarterInactive Comment |
+highlight! link MiniStarterItem Normal |
+highlight! link MiniStatuslineFilename StatusLine |
+highlight! link MiniStatuslineInactive StatusLineNC |
+highlight! link MiniSurround IncSearch |
+highlight! link MiniTablineFill TabLineFill |
 highlight! link NeoTreeDimText Conceal |
 highlight! link NeoTreeNormalNC NeoTreeNormal |
 highlight! link NotifyDEBUGIcon NotifyDEBUGTitle |

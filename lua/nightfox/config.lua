@@ -46,6 +46,7 @@ local defaults = {
     lightspeed = true,
     lsp_saga = true,
     lsp_trouble = true,
+    mini = true,
     modes = true,
     native_lsp = true,
     neogit = true,
