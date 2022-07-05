@@ -492,6 +492,7 @@ There are a few things to note:
 - [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
 - [lsp-trouble.nvim](https://github.com/simrat39/lsp-trouble.nvim)
+- [mini.nvim](https://github.com/echasnovski/mini.nvim)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [neogit](https://github.com/TimUntersberger/neogit)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
