@@ -349,6 +349,44 @@ require("nightfox").setup({
 })
 ```
 
+### Multiple setup calls
+
+The `setup` function can be called multiple times. Each call to `setup` will merge nightfox's internal configuration
+table.
+
+#### Example
+
+```lua
+local nightfox = require("nightfox")
+nightfox.setup({
+  groups = {
+    all = {
+      First  = { fg = "palette.green" },
+      Second = { fg = "palette.green" },
+    },
+  },
+})
+
+nightfox.setup({
+  groups = {
+    all = {
+      First  = { fg = "palette.red" },
+      Third  = { fg = "palette.blue" },
+    },
+  },
+})
+
+-- Resulting nightfox value store
+print(vim.inspect(require('nightfox.override').groups))
+-- {
+--   all = {
+--     First  = { fg = "palette.red",   link = "" },
+--     Second = { fg = "palette.green", link = "" },
+--     Third  = { fg = "palette.blue",  link = "" }
+--   }
+-- }
+```
+
 ## Api
 
 Nightfox exposes some Api's and utility classes that let you fetch data from nightfox.
