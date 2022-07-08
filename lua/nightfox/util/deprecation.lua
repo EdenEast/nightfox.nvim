@@ -1,13 +1,13 @@
 local M = {
-  checked_deprication = false,
+  checked_deprecation = false,
 }
 
-function M.check_deprication(opts)
-  if M.checked_deprication then
+function M.check_deprecation(opts)
+  if M.checked_deprecation then
     return
   end
 
-  local dep = require("nightfox.lib.deprication")
+  local dep = require("nightfox.lib.deprecation")
 
   if opts.fox then
     dep.write(
@@ -74,7 +74,7 @@ function M.check_deprication(opts)
     end
   end
 
-  M.checked_deprication = true
+  M.checked_deprecation = true
 end
 
 return M

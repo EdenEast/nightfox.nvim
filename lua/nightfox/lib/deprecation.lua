@@ -12,9 +12,9 @@ function M.write(...)
 
   if not M._has_registered then
     vim.cmd([[
-      augroup NightfoxDepricationMessage
+      augroup NightfoxdeprecationMessage
         au!
-        autocmd VimEnter * ++once lua require("nightfox.lib.deprication").flush()
+        autocmd VimEnter * ++once lua require("nightfox.lib.deprecation").flush()
       augroup END
     ]])
     M._has_registered = true

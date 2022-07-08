@@ -34,7 +34,7 @@
 
 ## Notice ℹ️
 
-Nightfox has recently been [rewritten][rewrite-pr] and has depricated most of the previous interface. If you are not
+Nightfox has recently been [rewritten][rewrite-pr] and has deprecated most of the previous interface. If you are not
 ready to update yet you can point your package manager to use the tag [`v1.0.0`][v1-tag] for the mean time.
 
 <details>

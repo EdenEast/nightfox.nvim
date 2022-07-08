@@ -54,11 +54,11 @@ function M.setup(opts)
     M.override.groups(opts.groups)
   end
 
-  require("nightfox.util.deprication").check_deprication(opts)
+  require("nightfox.util.deprecation").check_deprecation(opts)
 end
 
 function M.load()
-  require("nightfox.lib.deprication").write(
+  require("nightfox.lib.deprecation").write(
     "  ",
     { "nightfox.load()", "WarningMsg" },
     " has been Deprecated. To apply the colorscheme use the builtin ",
