@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="128" height="128" src="https://user-images.githubusercontent.com/2746374/179428323-6d6b5e7f-6459-47b3-9e03-fea7553d85af.svg" />
+</p>
+
 <h1 align="center">Nightfox</h1>
 
 <p align="center">
@@ -651,5 +655,9 @@ Some themes were inspired by wallpapers.
 
 <details>
 <summary>Terafox</summary>
-<img src="https://torako.wakarimasen.moe/file/torako/wg/image/1622/83/1622838138777.jpg" alt="terafox_reference" />
+<img src="https://user-images.githubusercontent.com/2746374/179428810-69b440d1-7107-49f2-ab2b-aaab1c449cce.jpeg" alt="terafox_reference" />
 </details>
+
+## 💝 Thanks to
+
+- [@keifererikson](https://github.com/keifererikson) for logo
