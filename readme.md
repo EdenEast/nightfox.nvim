@@ -492,6 +492,12 @@ Nightfox provides the following commands that wrap these functions above:
 :NightfoxClean
 ```
 
+For packer users you can create a compile file after nightfox has installed:
+
+```lua
+use { "EdenEast/nightfox.nvim", run = ":NightfoxCompile", },
+```
+
 ## Interactive
 
 Nightfox makes it easy to make changes to its config and see the results. For this nightfox exposes the command:
