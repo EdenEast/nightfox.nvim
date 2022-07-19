@@ -1,6 +1,10 @@
-# Nightfox Wezterm Colors
-# Style: nordfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_wezterm.toml
+[metadata]
+name = "nordfox Wezterm Colors"
+author = "EdenEast"
+style = "nordfox"
+origin_url = "https://github.com/EdenEast/nightfox.nvim"
+upstream = "https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/nightfox_wezterm.toml"
+
 [colors]
 foreground = "#cdcecf"
 background = "#2e3440"

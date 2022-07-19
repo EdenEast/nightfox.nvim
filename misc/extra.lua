@@ -1,5 +1,5 @@
 -- This file is to be run with from the root of the project
--- `nvim --headless --clean -u extra/extra.lua`
+-- `nvim --headless --clean -u misc/extra.lua`
 
 vim.opt.runtimepath:append("./.")
 -- package.path = "./lua/?/init.lua;./lua/?.lua"
