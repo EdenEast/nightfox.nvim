@@ -5,7 +5,7 @@ local M = {}
 function M.generate(spec)
   local content = [[
 [metadata]
-name = "${palette.meta.name} Wezterm Colors"
+name = "${palette.meta.name}"
 author = "EdenEast"
 style = "${palette.meta.name}"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
