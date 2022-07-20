@@ -1,5 +1,5 @@
 [metadata]
-name = "dawnfox Wezterm Colors"
+name = "Dawnfox"
 author = "EdenEast"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
 upstream = "https://github.com/edeneast/nightfox.nvim/raw/main/extra/dawnfox/nightfox_wezterm.toml"
