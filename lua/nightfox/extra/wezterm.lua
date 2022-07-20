@@ -7,10 +7,7 @@ function M.generate(spec)
 [metadata]
 name = "${palette.meta.name}"
 author = "EdenEast"
-style = "${palette.meta.name}"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
-upstream = "${palette.meta.url}"
-
 [colors]
 foreground = "${fg1}"
 background = "${bg1}"
