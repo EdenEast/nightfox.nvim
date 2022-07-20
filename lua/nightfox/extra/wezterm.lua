@@ -4,9 +4,11 @@ local M = {}
 
 function M.generate(spec)
   local content = [[
-# Nightfox Wezterm Colors
-# Style: ${palette.meta.name}
-# Upstream: ${palette.meta.url}
+[metadata]
+name = "${palette.meta.name}"
+author = "EdenEast"
+origin_url = "https://github.com/EdenEast/nightfox.nvim"
+
 [colors]
 foreground = "${fg1}"
 background = "${bg1}"

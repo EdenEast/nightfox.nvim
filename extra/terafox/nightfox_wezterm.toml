@@ -1,6 +1,8 @@
-# Nightfox Wezterm Colors
-# Style: terafox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/nightfox_wezterm.toml
+[metadata]
+name = "terafox"
+author = "EdenEast"
+origin_url = "https://github.com/EdenEast/nightfox.nvim"
+
 [colors]
 foreground = "#e6eaea"
 background = "#152528"
