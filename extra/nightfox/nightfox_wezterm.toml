@@ -1,9 +1,7 @@
 [metadata]
-name = "nightfox Wezterm Colors"
+name = "nightfox"
 author = "EdenEast"
-style = "nightfox"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
-upstream = "https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_wezterm.toml"
 
 [colors]
 foreground = "#cdcecf"

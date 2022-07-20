@@ -1,9 +1,7 @@
 [metadata]
-name = "dayfox Wezterm Colors"
+name = "dayfox"
 author = "EdenEast"
-style = "dayfox"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
-upstream = "https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_wezterm.toml"
 
 [colors]
 foreground = "#1d344f"

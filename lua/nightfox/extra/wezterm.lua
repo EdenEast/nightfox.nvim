@@ -8,6 +8,7 @@ function M.generate(spec)
 name = "${palette.meta.name}"
 author = "EdenEast"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
+
 [colors]
 foreground = "${fg1}"
 background = "${bg1}"
