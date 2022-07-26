@@ -9,6 +9,7 @@ function M.generate(name)
   local pal = spec.palette
   local bg = Color.from_hex(spec.bg0)
   local fg = spec.fg2
+  local b = bg:to_css()
 
   ---@param color string
   ---@param amount number|nil
@@ -16,14 +17,19 @@ function M.generate(name)
   local function generate_mode(color, amount)
     amount = amount or 0.3
     local fade = bg:blend(Color.from_hex(color), amount):to_css()
-    local b = bg:to_css()
-
     return {
       left = { { b, color }, { fg, fade } },
       right = { { fg, fade } },
       middle = { { fg, b } },
     }
   end
+
+  local tabline = {
+    left = { { spec.fg3, spec.bg2 } }, -- Non selected tabs
+    right = { { pal.red.base, b } }, -- Close button
+    middle = { { b, b } }, -- Fill color
+    tabsel = { { spec.fg1, spec.bg4 } }, -- Selected tab
+  }
 
   -- stylua: ignore
   return {
@@ -33,7 +39,7 @@ function M.generate(name)
     visual   = generate_mode(pal.magenta.base),
     replace  = generate_mode(pal.red.base),
     inactive = generate_mode(spec.fg3),
-    tabline  = generate_mode(spec.fg3),
+    tabline  = tabline,
   }
 end
 
