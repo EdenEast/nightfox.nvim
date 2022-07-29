@@ -658,6 +658,10 @@ Some themes were inspired by wallpapers.
 <img src="https://user-images.githubusercontent.com/2746374/179428810-69b440d1-7107-49f2-ab2b-aaab1c449cce.jpeg" alt="terafox_reference" />
 </details>
 
+## Ports to other code editors
+
+- [vscode-nightfox](https://github.com/keifererikson/vscode-nightfox) (Visual Studio Code)
+
 ## 💝 Thanks to
 
 - [@keifererikson](https://github.com/keifererikson) for logo
