@@ -260,30 +260,30 @@ background colors a palette also defines other colors such as selection and comm
 The base colors are [shade] objects that define a `base`, `bright`, and `dim` color. These base colors are:
 `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`, `orange`, `pink`.
 
-| Key     | Description                           |
-| ------- | ------------------------------------- |
-| black   | Shade Color (Base, Bright, Dim)       |
-| red     | Shade Color (Base, Bright, Dim)       |
-| green   | Shade Color (Base, Bright, Dim)       |
-| yellow  | Shade Color (Base, Bright, Dim)       |
-| blue    | Shade Color (Base, Bright, Dim)       |
-| magenta | Shade Color (Base, Bright, Dim)       |
-| cyan    | Shade Color (Base, Bright, Dim)       |
-| white   | Shade Color (Base, Bright, Dim)       |
-| orange  | Shade Color (Base, Bright, Dim)       |
-| pink    | Shade Color (Base, Bright, Dim)       |
-| comment | Comment color                         |
-| bg0     | Darker bg (status line and float)     |
-| bg1     | Default bg                            |
-| bg2     | Lighter bg (colorcolumn folds)        |
-| bg3     | Lighter bg (cursor line)              |
-| bg4     | Lighter bg (Conceal, boarder fg)      |
-| fg0     | Lighter fg                            |
-| fg1     | Default fg                            |
-| fg2     | Darker fg (status line)               |
-| fg3     | Darker fg (line numbers, fold colums) |
-| sel0    | Popup bg, visual selection bg         |
-| sel1    | Popup sel bg, search bg               |
+| Key     | Description                            |
+| ------- | -------------------------------------- |
+| black   | Shade Color (Base, Bright, Dim)        |
+| red     | Shade Color (Base, Bright, Dim)        |
+| green   | Shade Color (Base, Bright, Dim)        |
+| yellow  | Shade Color (Base, Bright, Dim)        |
+| blue    | Shade Color (Base, Bright, Dim)        |
+| magenta | Shade Color (Base, Bright, Dim)        |
+| cyan    | Shade Color (Base, Bright, Dim)        |
+| white   | Shade Color (Base, Bright, Dim)        |
+| orange  | Shade Color (Base, Bright, Dim)        |
+| pink    | Shade Color (Base, Bright, Dim)        |
+| comment | Comment color                          |
+| bg0     | Darker bg (status line and float)      |
+| bg1     | Default bg                             |
+| bg2     | Lighter bg (colorcolumn folds)         |
+| bg3     | Lighter bg (cursor line)               |
+| bg4     | Lighter bg (Conceal, border fg)        |
+| fg0     | Lighter fg                             |
+| fg1     | Default fg                             |
+| fg2     | Darker fg (status line)                |
+| fg3     | Darker fg (line numbers, fold columns) |
+| sel0    | Popup bg, visual selection bg          |
+| sel1    | Popup sel bg, search bg                |
 
 ## Spec
 
