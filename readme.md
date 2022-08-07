@@ -169,6 +169,9 @@ require('nightfox').setup({
       -- ...
     },
   }
+  palettes = {},
+  specs = {},
+  groups = {},
 })
 
 -- setup must be called before loading
