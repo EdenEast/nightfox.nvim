@@ -97,7 +97,7 @@ function M.load(name)
       local palette = require("nightfox.palette").load(mod)
       local spec = palette.generate_spec(palette)
       spec = apply_ovr("all", spec, palette)
-      spec = apply_ovr(name, spec, palette)
+      spec = apply_ovr(mod, spec, palette)
       spec.palette = palette
       result[mod] = spec
     end
