@@ -76,16 +76,6 @@ function M.get(spec, config)
 
     -- debugPC         = {}, -- used for highlighting the current line in terminal-debug
     -- debugBreakpoint = {}, -- used for breakpoint colors in terminal-debug
-
-    -- Diff
-    diffAdded       = { fg = spec.git.add },
-    diffRemoved     = { fg = spec.git.removed },
-    diffChanged     = { fg = spec.git.changed },
-    diffOldFile     = { fg = spec.diag.warn },
-    diffNewFile     = { fg = spec.diag.hint },
-    diffFile        = { fg = spec.diag.info },
-    diffLine        = { fg = spec.syntax.builtin2 }, -- NOTE: not sure what this really is
-    diffIndexLine   = { fg = spec.syntax.preproc }, -- NOTE: not sure what this really is
  }
 end
 
