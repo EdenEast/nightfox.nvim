@@ -13,6 +13,7 @@ local pack_path = join(site_path, "pack")
 local install_path = join(pack_path, "packer", "start", "packer.nvim")
 local compile_path = join(install_path, "plugin", "packer_compiled.lua")
 vim.opt.packpath = site_path
+vim.g.loaded_remote_plugins = 1
 
 local function load_plugins()
   local packer = require("packer")
