@@ -91,7 +91,7 @@ Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
 
 ## Features
 
-- Support both vim and neovim
+- Supports both vim and neovim
 - Highly configurable with template overriding
 - Support for multiple [plugins](#supported-plugins) and [status lines](#status-lines)
   - And many others should "just work"!
@@ -136,7 +136,7 @@ vim.cmd("colorscheme nightfox")
 
 ## Configuration
 
-There is no need to call `setup` if you don't require to change the default options and settings.
+There is no need to call `setup` if you don't want to change the default options and settings.
 
 ```lua
 -- Default options
@@ -179,7 +179,7 @@ vim.cmd("colorscheme nightfox")
 ```
 
 If you would like to change any of the default options above you only have to define the options that change. If an
-option is not present in your options table the default option will be used. For example if chaning the styles of
+option is not present in your options table the default option will be used. For example if changing the styles of
 certain syntax is the only desired change then your options table would look like:
 
 ```lua
@@ -310,7 +310,7 @@ vim.cmd("colorscheme nightfox")
 To find the list of syntax highlight groups defined for vim use the help `:help group-name` and
 `:help nvim-treesitter-highlights` for treesitter. If you would also like to see how nightfox defines these highlight groups
 you can see [syntax.lua] for vim's syntax and [treesitter.lua] for treesitter. These files list out all all highlight
-groups and have a comment describing them. Another file to note is [editor.lua] which is the highlight groups respncible
+groups and have a comment describing them. Another file to note is [editor.lua] which is the highlight groups responsible
 for how vim looks (background, cursorline, tabline, etc...). To get the highlight group under your cursor see
 [here](#syntax-highlight-groups) for more information
 
@@ -475,7 +475,7 @@ See [Usage](./usage.md#color) for more information on `Color`.
 
 Nightfox is a highly customizable and configurable colorscheme. There are endless ways to customize nightfox. This does
 however come at the cost of complexity and execution time. Nightfox can pre compute the results of your configuration
-and store the results in a compiled lua file. After nightfox use these precached values to set it's highlights.
+and store the results in a compiled lua file. After nightfox use these precached values to set its highlights.
 
 By default nightfox writes the compiled results into the system's `cache` directory. On unix this is
 `$XDG_CACHE_HOME/nvim/nightfox` and on windows this is `%localappdata%\\Temp\\nvim\\nightfox`.
@@ -570,8 +570,8 @@ require('lualine').setup({ ... })
 
 ### [Lightline]
 
-Lightline check the value of `vim.g.lightline.colorscheme`. It is not depend on
-the value of `:colorscheme` command, Please set it.
+Lightline checks the value of `vim.g.lightline.colorscheme`. It does not depend on
+the value of the `:colorscheme` command, Please set it.
 
 ```lua
 vim.cmd("colorscheme nightfox")
