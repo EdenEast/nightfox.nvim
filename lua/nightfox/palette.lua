@@ -36,6 +36,7 @@ local collect = require("nightfox.lib.collect")
 local M = {}
 
 M.foxes = {
+  "carbonfox",
   "dawnfox",
   "dayfox",
   "duskfox",
