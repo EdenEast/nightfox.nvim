@@ -30,46 +30,48 @@ brights = ["${palette.black.bright}", "${palette.red.bright}", "${palette.green.
 
 [colors.tab_bar]
 background = "${bg0}"
+inactive_tab_edge = "${bg0}"
+inactive_tab_edge_hover = "${bg2}"
 
 [colors.tab_bar.active_tab]
-background = "${fg3}"
-foreground = "${bg1}"
+bg_color = "${fg3}"
+fg_color = "${bg1}"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.inactive_tab]
-background = "${bg1}"
-foreground = "${fg2}"
+bg_color = "${bg1}"
+fg_color = "${fg2}"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-background = "${bg2}"
-foreground = "${fg1}"
+bg_color = "${bg2}"
+fg_color = "${fg1}"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.new_tab]
-background = "${bg1}"
-foreground = "${fg2}"
+bg_color = "${bg1}"
+fg_color = "${fg2}"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-background = "${bg2}"
-foreground = "${fg1}"
+bg_color = "${bg2}"
+fg_color = "${fg1}"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 ]]
 
