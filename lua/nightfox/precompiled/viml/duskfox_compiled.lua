@@ -189,7 +189,7 @@ highlight NeoTreeSymbolicLinkTarget guifg=#d871a6 guibg=NONE gui=NONE guisp=NONE
 highlight NeogitBranch guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#3d4047 gui=NONE guisp=NONE |
-highlight NeogitDiffContextHighlight guifg=NONE guibg=#2d3a50 gui=NONE guisp=NONE |
+highlight NeogitDiffContextHighlight guifg=NONE guibg=#2d2a45 gui=NONE guisp=NONE |
 highlight NeogitDiffDelete guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffDeleteHighlight guifg=NONE guibg=#4b3148 gui=NONE guisp=NONE |
 highlight NeogitHunkHeader guifg=#569fba guibg=#373354 gui=NONE guisp=NONE |

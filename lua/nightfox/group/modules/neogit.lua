@@ -16,7 +16,7 @@ function M.get(spec, config, opts)
 
     NeogitDiffAddHighlight     = { bg = spec.diff.add },
     NeogitDiffDeleteHighlight  = { bg = spec.diff.delete },
-    NeogitDiffContextHighlight = { bg = spec.diff.change },
+    NeogitDiffContextHighlight = { bg = spec.bg2 },
 
     NeogitNotificationInfo     = { fg = spec.diag.info },
     NeogitNotificationWarning  = { fg = spec.diag.warn },
