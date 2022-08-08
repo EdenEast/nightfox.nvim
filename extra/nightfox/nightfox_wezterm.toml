@@ -24,44 +24,46 @@ brights = ["#575860", "#d16983", "#8ebaa4", "#e0c989", "#86abdc", "#baa1e2", "#7
 
 [colors.tab_bar]
 background = "#131a24"
+inactive_tab_edge = "#131a24"
+inactive_tab_edge_hover = "#212e3f"
 
 [colors.tab_bar.active_tab]
-background = "#71839b"
-foreground = "#192330"
+bg_color = "#71839b"
+fg_color = "#192330"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.inactive_tab]
-background = "#192330"
-foreground = "#aeafb0"
+bg_color = "#192330"
+fg_color = "#aeafb0"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-background = "#212e3f"
-foreground = "#cdcecf"
+bg_color = "#212e3f"
+fg_color = "#cdcecf"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.new_tab]
-background = "#192330"
-foreground = "#aeafb0"
+bg_color = "#192330"
+fg_color = "#aeafb0"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-background = "#212e3f"
-foreground = "#cdcecf"
+bg_color = "#212e3f"
+fg_color = "#cdcecf"
 intensity = "Normal"
 italic = false
 strikethrough = false
-underline = 'None'
+underline = "None"
 
