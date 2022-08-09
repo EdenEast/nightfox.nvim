@@ -24,11 +24,11 @@ local palette = {
 
   comment = bg:blend(fg, 0.4):to_css(),
 
-  bg0     = bg:lighten(-4):to_css(), -- Dark bg (status line and float)
+  bg0     = bg:brighten(-4):to_css(), -- Dark bg (status line and float)
   bg1     = bg:to_css(), -- Default bg
-  bg2     = bg:lighten(6):to_css(), -- Lighter bg (colorcolm folds)
-  bg3     = bg:lighten(12):to_css(), -- Lighter bg (cursor line)
-  bg4     = bg:lighten(24):to_css(), -- Conceal, border fg
+  bg2     = bg:brighten(6):to_css(), -- Lighter bg (colorcolm folds)
+  bg3     = bg:brighten(12):to_css(), -- Lighter bg (cursor line)
+  bg4     = bg:brighten(24):to_css(), -- Conceal, border fg
 
   fg0     = fg:brighten(6):to_css(), -- Lighter fg
   fg1     = fg:to_css(), -- Default fg
