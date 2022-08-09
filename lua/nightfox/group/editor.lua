@@ -59,9 +59,9 @@ function M.get(spec, config)
     StatusLine      = { fg = spec.fg2, bg = spec.bg0 }, -- status line of current window
     StatusLineNC    = { fg = spec.fg3, bg = spec.bg0 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
-    TabLine         = { fg = spec.fg3, bg = spec.bg0 }, -- tab pages line, not active tab page label
-    TabLineFill     = { bg = spec.bg1 }, -- tab pages line, where there are no labels
-    TabLineSel      = { fg = spec.fg1, bg = spec.bg3 }, -- tab pages line, active tab page label
+    TabLine         = { fg = spec.fg2, bg = spec.bg2 }, -- tab pages line, not active tab page label
+    TabLineFill     = { bg = spec.bg0 }, -- tab pages line, where there are no labels
+    TabLineSel      = { fg = spec.bg1, bg = spec.fg3 }, -- tab pages line, active tab page label
     Title           = { fg = spec.syntax.func }, -- titles for output from ":set all", ":autocmd" etc.
     Visual          = inv.visual and { style = "reverse" } or { bg = spec.sel0 }, -- Visual mode selection
     VisualNOS       = inv.visual and { style = "reverse" } or { link = "visual" }, -- Visual mode selection when vim is "Not Owning the Selection".

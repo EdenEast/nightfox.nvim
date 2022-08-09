@@ -36,7 +36,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#152528"
+bg_color = "#1d3337"
 fg_color = "#cbd9d8"
 intensity = "Normal"
 italic = false
@@ -44,7 +44,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#1d3337"
+bg_color = "#254147"
 fg_color = "#e6eaea"
 intensity = "Normal"
 italic = false
@@ -60,7 +60,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#1d3337"
+bg_color = "#254147"
 fg_color = "#e6eaea"
 intensity = "Normal"
 italic = false

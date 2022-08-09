@@ -42,7 +42,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "${bg1}"
+bg_color = "${bg2}"
 fg_color = "${fg2}"
 intensity = "Normal"
 italic = false
@@ -50,7 +50,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "${bg2}"
+bg_color = "${bg3}"
 fg_color = "${fg1}"
 intensity = "Normal"
 italic = false
@@ -66,7 +66,7 @@ strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "${bg2}"
+bg_color = "${bg3}"
 fg_color = "${fg1}"
 intensity = "Normal"
 italic = false

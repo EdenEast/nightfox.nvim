@@ -274,9 +274,9 @@ highlight TSURI guifg=#88c0d0 guibg=NONE gui=bold guisp=NONE |
 highlight TSVariable guifg=#e5e9f0 guibg=NONE gui=NONE guisp=NONE |
 highlight TSVariableBuiltin guifg=#bf616a guibg=NONE gui=NONE guisp=NONE |
 highlight TSWarning guifg=#ebcb8b guibg=NONE gui=NONE guisp=NONE |
-highlight TabLine guifg=#7e8188 guibg=#232831 gui=NONE guisp=NONE |
-highlight TabLineFill guifg=NONE guibg=#2e3440 gui=NONE guisp=NONE |
-highlight TabLineSel guifg=#cdcecf guibg=#444c5e gui=NONE guisp=NONE |
+highlight TabLine guifg=#abb1bb guibg=#39404f gui=NONE guisp=NONE |
+highlight TabLineFill guifg=NONE guibg=#232831 gui=NONE guisp=NONE |
+highlight TabLineSel guifg=#2e3440 guibg=#7e8188 gui=NONE guisp=NONE |
 highlight TelescopeBorder guifg=#5a657d guibg=NONE gui=NONE guisp=NONE |
 highlight TelescopeSelectionCaret guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight Title guifg=#8cafd2 guibg=NONE gui=NONE guisp=NONE |
