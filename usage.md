@@ -9,6 +9,7 @@ It comes with multiple different styles to suite your preference. These are:
 - `Duskfox`
 - `Nordfox`
 - `Terafox`
+- `Carbonfox`
 
 ## Usage
 
