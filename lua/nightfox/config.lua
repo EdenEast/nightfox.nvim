@@ -30,6 +30,10 @@ local defaults = {
     aerial = true,
     barbar = true,
     cmp = true,
+    coc = {
+      enable = true,
+      background = true,
+    },
     dap_ui = true,
     dashboard = true,
     diagnostic = {
@@ -48,7 +52,10 @@ local defaults = {
     lsp_trouble = true,
     mini = true,
     modes = true,
-    native_lsp = true,
+    native_lsp = {
+      enable = true,
+      background = true,
+    },
     neogit = true,
     neotree = true,
     notify = true,

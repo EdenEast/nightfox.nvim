@@ -368,6 +368,7 @@ Current list of modules are:
 - aerial
 - barbar
 - cmp
+- coc
 - dap-ui
 - dashboard
 - diagnostic
@@ -398,9 +399,27 @@ Current list of modules are:
 
 ### Extended modules
 
+#### modules.coc
+
+This module sets highlight groups from `neoclide/coc.nvim`.
+
+| key        | type    | default | description                       |
+| ---------- | ------- | ------- | --------------------------------- |
+| enable     | boolean | `true`  | Enable the module to be included  |
+| background | boolean | `true`  | Set virtual text background color |
+
 #### modules.diagnostic
 
 This module sets highlight groups from `vim.diagnostic`.
+
+| key        | type    | default | description                       |
+| ---------- | ------- | ------- | --------------------------------- |
+| enable     | boolean | `true`  | Enable the module to be included  |
+| background | boolean | `true`  | Set virtual text background color |
+
+#### modules.native_lsp
+
+This module sets highlight groups from neovim's builtin `lsp`.
 
 | key        | type    | default | description                       |
 | ---------- | ------- | ------- | --------------------------------- |

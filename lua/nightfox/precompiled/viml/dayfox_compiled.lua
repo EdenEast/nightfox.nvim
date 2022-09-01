@@ -39,6 +39,7 @@ highlight CmpItemAbbrMatch guifg=#485e7d guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemAbbrMatchFuzzy guifg=#485e7d guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemKindDefault guifg=#233f5e guibg=NONE gui=NONE guisp=NONE |
 highlight CmpItemKindSnippet guifg=#233f5e guibg=NONE gui=NONE guisp=NONE |
+highlight CocInlayHint guifg=#7f848e guibg=#dbcece gui=NONE guisp=NONE |
 highlight ColorColumn guifg=NONE guibg=#dbcece gui=NONE guisp=NONE |
 highlight Comment guifg=#7f848e guibg=NONE gui=NONE guisp=NONE |
 highlight Conceal guifg=#bebebe guibg=NONE gui=NONE guisp=NONE |
@@ -122,6 +123,7 @@ highlight LspCodeLens guifg=#7f848e guibg=NONE gui=NONE guisp=NONE |
 highlight LspCodeLensSeparator guifg=#2e537d guibg=NONE gui=NONE guisp=NONE |
 highlight LspFloatWinBorder guifg=#2e537d guibg=NONE gui=NONE guisp=NONE |
 highlight LspFloatWinNormal guifg=NONE guibg=#dbdbdb gui=NONE guisp=NONE |
+highlight LspInlayHint guifg=#7f848e guibg=#dbcece gui=NONE guisp=NONE |
 highlight LspReferenceRead guifg=NONE guibg=#ced5de gui=NONE guisp=NONE |
 highlight LspReferenceText guifg=NONE guibg=#ced5de gui=NONE guisp=NONE |
 highlight LspReferenceWrite guifg=NONE guibg=#ced5de gui=NONE guisp=NONE |
