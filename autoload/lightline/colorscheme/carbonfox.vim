@@ -5,4 +5,4 @@ else
   let s:palette_str = luaeval('nightfox_vim')
   let s:p = eval(s:palette_str)
 endif
-let g:lightline#colorscheme#terafox#palette = lightline#colorscheme#fill(s:p)
+let g:lightline#colorscheme#carbonfox#palette = lightline#colorscheme#fill(s:p)
