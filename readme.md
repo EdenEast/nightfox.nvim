@@ -169,7 +169,7 @@ require('nightfox').setup({
     modules = {             -- List of various plugins and additional options
       -- ...
     },
-  }
+  },
   palettes = {},
   specs = {},
   groups = {},
