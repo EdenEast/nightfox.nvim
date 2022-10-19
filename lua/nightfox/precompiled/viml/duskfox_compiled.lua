@@ -12,6 +12,30 @@ cmd("set background=dark")
 vim.g.colors_name = "duskfox"
 
 cmd([[
+highlight @constant.builtin guifg=#f0a4a2 guibg=NONE gui=NONE guisp=NONE |
+highlight @constructor guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
+highlight @danger guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
+highlight @error guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
+highlight @field guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
+highlight @field.rust guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
+highlight @function.builtin guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
+highlight @function.macro guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
+highlight @keyword.function guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
+highlight @keyword.operator guifg=#cdcbe0 guibg=NONE gui=bold guisp=NONE |
+highlight @namespace guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
+highlight @note guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
+highlight @operator guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
+highlight @punctuation.bracket guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
+highlight @punctuation.delimiter guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
+highlight @punctuation.special guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
+highlight @string.escape guifg=#f9cb8c guibg=NONE gui=bold guisp=NONE |
+highlight @string.regex guifg=#f9cb8c guibg=NONE gui=NONE guisp=NONE |
+highlight @text.reference guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
+highlight @type.builtin guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
+highlight @uri guifg=#9ccfd8 guibg=NONE gui=bold guisp=NONE |
+highlight @variable guifg=#e0def4 guibg=NONE gui=NONE guisp=NONE |
+highlight @variable.builtin guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
+highlight @warning guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight AerialGuide guifg=#4b4673 guibg=NONE gui=NONE guisp=NONE |
 highlight Bold guifg=NONE guibg=NONE gui=bold guisp=NONE |
 highlight BufferCurrent guifg=#e0def4 guibg=#6e6a86 gui=NONE guisp=NONE |
@@ -253,29 +277,6 @@ highlight StatusLine guifg=#cdcbe0 guibg=#191726 gui=NONE guisp=NONE |
 highlight StatusLineNC guifg=#6e6a86 guibg=#191726 gui=NONE guisp=NONE |
 highlight String guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight Substitute guifg=#232136 guibg=#eb6f92 gui=NONE guisp=NONE |
-highlight TSConstBuiltin guifg=#f0a4a2 guibg=NONE gui=NONE guisp=NONE |
-highlight TSConstructor guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
-highlight TSDanger guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSError guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSField guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
-highlight TSFuncBuiltin guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSFuncMacro guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSKeywordFunction guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSKeywordOperator guifg=#cdcbe0 guibg=NONE gui=bold guisp=NONE |
-highlight TSNamespace guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
-highlight TSNote guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
-highlight TSOperator guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
-highlight TSPunctBracket guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
-highlight TSPunctDelimiter guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
-highlight TSPunctSpecial guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
-highlight TSStringEscape guifg=#f9cb8c guibg=NONE gui=bold guisp=NONE |
-highlight TSStringRegex guifg=#f9cb8c guibg=NONE gui=NONE guisp=NONE |
-highlight TSTextReference guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
-highlight TSTypeBuiltin guifg=#a6dae3 guibg=NONE gui=NONE guisp=NONE |
-highlight TSURI guifg=#9ccfd8 guibg=NONE gui=bold guisp=NONE |
-highlight TSVariable guifg=#e0def4 guibg=NONE gui=NONE guisp=NONE |
-highlight TSVariableBuiltin guifg=#eb6f92 guibg=NONE gui=NONE guisp=NONE |
-highlight TSWarning guifg=#f6c177 guibg=NONE gui=NONE guisp=NONE |
 highlight TabLine guifg=#cdcbe0 guibg=#2d2a45 gui=NONE guisp=NONE |
 highlight TabLineFill guifg=NONE guibg=#191726 gui=NONE guisp=NONE |
 highlight TabLineSel guifg=#232136 guibg=#6e6a86 gui=NONE guisp=NONE |
@@ -307,7 +308,8 @@ highlight rainbowcol4 guifg=#569fba guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol5 guifg=#9ccfd8 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#c4a7e7 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#eb98c3 guibg=NONE gui=NONE guisp=NONE |
-highlight rustTSField guifg=#cdcbe0 guibg=NONE gui=NONE guisp=NONE |
+highlight! link @attribute Constant |
+highlight! link @property TSField |
 highlight! link AerialLine Search |
 highlight! link Boolean Number |
 highlight! link Character String |
@@ -395,8 +397,6 @@ highlight! link SpecialKey NonText |
 highlight! link StorageClass Type |
 highlight! link Structure Type |
 highlight! link SymbolOutlineConnector Conceal |
-highlight! link TSAttribute Constant |
-highlight! link TSProperty TSField |
 highlight! link Tag Special |
 highlight! link TelescopeMatching Search |
 highlight! link TelescopeSelection CursorLine |

@@ -39,56 +39,10 @@
 
 ## Notice ℹ️
 
-Nightfox has recently been [rewritten][rewrite-pr] and has deprecated most of the previous interface. If you are not
-ready to update yet you can point your package manager to use the tag [`v1.0.0`][v1-tag] for the mean time.
+Nightfox has updated to the [latest] highlight groups. The precompiled source files only contain the current highlight
+groups. If your not on neovim version 0.8+ make sure to compile nightfox yourself to get the old highlight groups.
 
-<details>
-<summary>Plugin Managers</summary>
-
-```lua
-use { "EdenEast/nightfox.nvim", tag = "v1.0.0" } -- Packer
-```
-
-```vim
-Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' } " Vim-Plug
-```
-
-</details>
-
-### Changes
-
-- `nightfox.load()` has been removed in favour of setting colorschemes using the builtin `:colorscheme` command
-- `nightfox.setup()` function now takes configuration options as an optional key
-- `fox` has been removed in favour of setting colorschemes using the builtin `:colorscheme` command
-- `transparent` has been moved to `options.transparent`
-- `terminal_color` has been moved to `options.terminal_color`
-- `alt_nc` has been moved to `options.dim_inactive`
-- `styles` has been moved to `options.styles`
-- `inverse` has been moved to `options.inverse`
-- `colors` has been replaced with the concept of [palettes](#palettes)
-- `hlgroups` has been replaced with the concept of [groups](#customize-palettes-and-groups)
-
-[v1-tag]: https://github.com/EdenEast/nightfox.nvim/tree/v1.0.0
-[rewrite-pr]: https://github.com/EdenEast/nightfox.nvim/pull/77
-
-<details>
-<summary>Color Migration table</summary>
-
-| V1 color     | V2 palette |
-| ------------ | ---------- |
-| bg           | bg1        |
-| bg_alt       | bg0        |
-| bg_sidebar   | bg0        |
-| bg_float     | bg0        |
-| bg_popup     | bg0        |
-| bg_highlight | bg3        |
-| bg_visual    | sel0       |
-| bg_search    | sel1       |
-| fg           | fg1        |
-| fg_alt       | fg2        |
-| fg_gutter    | fg3        |
-
-</details>
+[latest]: https://github.com/nvim-treesitter/nvim-treesitter/pull/3656#issuecomment-1279998539
 
 ## Features
 
