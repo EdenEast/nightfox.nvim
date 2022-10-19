@@ -36,7 +36,7 @@ function M.get(spec, config, opts)
     ["@operator"]               = { fg = syn.operator, style = stl.operators }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
     -- ["@parameter"]           = {}, -- Parameters of a function.
     -- ["@parameter.reference"] = {}, -- References to parameters of a function.
-    ["@property"]               = { link = "TSField" }, -- Same as `TSField`.
+    ["@property"]               = { link = "@field" }, -- Same as `@field`.
     ["@punctuation.delimiter"]  = { fg = syn.bracket }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
     ["@punctuation.bracket"]    = { fg = syn.bracket }, -- Brackets, braces, parentheses, etc.
     ["@punctuation.special"]    = { fg = syn.bracket }, -- Special punctuation that doesn't fit into the previous categories.

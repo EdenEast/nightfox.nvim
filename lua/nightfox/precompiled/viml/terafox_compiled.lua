@@ -309,7 +309,7 @@ highlight rainbowcol5 guifg=#a1cdd8 guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol6 guifg=#ad5c7c guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#cb7985 guibg=NONE gui=NONE guisp=NONE |
 highlight! link @attribute Constant |
-highlight! link @property TSField |
+highlight! link @property @field |
 highlight! link AerialLine Search |
 highlight! link Boolean Number |
 highlight! link Character String |
