@@ -310,6 +310,9 @@ highlight rainbowcol6 guifg=#be95ff guibg=NONE gui=NONE guisp=NONE |
 highlight rainbowcol7 guifg=#ff7eb6 guibg=NONE gui=NONE guisp=NONE |
 highlight! link @attribute Constant |
 highlight! link @property @field |
+highlight! link @tag Keyword |
+highlight! link @tag.attribute Function |
+highlight! link @tag.delimiter Delimiter |
 highlight! link AerialLine Search |
 highlight! link Boolean Number |
 highlight! link Character String |
