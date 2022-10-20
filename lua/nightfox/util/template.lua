@@ -29,7 +29,7 @@ local function parse_string(str, spec)
     return str
   end
 
-  if str:match("^#") then
+  if str[1] == "#" then
     return str
   end
 
