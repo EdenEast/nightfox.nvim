@@ -53,7 +53,7 @@ local defaults = {
     mini = true,
     modes = true,
     native_lsp = {
-      enable = true,
+      enable = util.is_nvim,
       background = true,
     },
     neogit = true,
@@ -64,7 +64,7 @@ local defaults = {
     sneak = true,
     symbol_outline = true,
     telescope = true,
-    treesitter = true,
+    treesitter = util.is_nvim,
     tsrainbow = true,
     whichkey = true,
   },
