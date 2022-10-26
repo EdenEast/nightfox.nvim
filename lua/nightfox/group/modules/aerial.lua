@@ -1,4 +1,4 @@
--- https://github.com/simrat39/symbols-outline.nvim
+-- https://github.com/stevearc/aerial.nvim
 
 local M = {}
 

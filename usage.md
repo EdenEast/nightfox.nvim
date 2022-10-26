@@ -386,6 +386,7 @@ Current list of modules are:
 - modes
 - native_lsp
 - neogit
+- neotest
 - neotree
 - notify
 - nvimtree

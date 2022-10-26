@@ -57,6 +57,7 @@ local defaults = {
       background = true,
     },
     neogit = true,
+    neotest = true,
     neotree = true,
     notify = true,
     nvimtree = true,
