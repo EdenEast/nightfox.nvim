@@ -95,7 +95,7 @@ highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE gui=undercurl guisp=#719
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE gui=undercurl guisp=#dbc074 |
 highlight DiagnosticVirtualTextError guifg=#c94f6d guibg=#3c2c3c gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextHint guifg=#81b29a guibg=#2e4045 gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextInfo guifg=#719cd6 guibg=#2a3b51 gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextInfo guifg=#719cd6 guibg=#2b3b51 gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextWarn guifg=#dbc074 guibg=#40423e gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#26343c gui=NONE guisp=NONE |
@@ -211,7 +211,7 @@ highlight NeoTreeGitUntracked guifg=#8567b6 guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeIndentMarker guifg=#39506d guibg=NONE gui=NONE guisp=NONE |
 highlight NeoTreeNormal guifg=#cdcecf guibg=#131a24 gui=NONE guisp=NONE |
 highlight NeoTreeRootName guifg=#f4a261 guibg=NONE gui=bold guisp=NONE |
-highlight NeoTreeSymbolicLinkTarget guifg=#b567b2 guibg=NONE gui=NONE guisp=NONE |
+highlight NeoTreeSymbolicLinkTarget guifg=#b668b2 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitBranch guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#26343c gui=NONE guisp=NONE |
@@ -259,11 +259,11 @@ highlight NvimTreeGitNew guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeImageFile guifg=#bebebe guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeIndentMarker guifg=#39506d guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeNormal guifg=#cdcecf guibg=#131a24 gui=NONE guisp=NONE |
-highlight NvimTreeOpenedFile guifg=#dc8dd8 guibg=NONE gui=NONE guisp=NONE |
+highlight NvimTreeOpenedFile guifg=#dc8ed9 guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeOpenedFolderName guifg=#86abdc guibg=NONE gui=NONE guisp=NONE |
 highlight NvimTreeRootFolder guifg=#f4a261 guibg=NONE gui=bold guisp=NONE |
 highlight NvimTreeSpecialFile guifg=#63cdcf guibg=NONE gui=NONE guisp=NONE |
-highlight NvimTreeSymlink guifg=#b567b2 guibg=NONE gui=NONE guisp=NONE |
+highlight NvimTreeSymlink guifg=#b668b2 guibg=NONE gui=NONE guisp=NONE |
 highlight Operator guifg=#aeafb0 guibg=NONE gui=NONE guisp=NONE |
 highlight Pmenu guifg=#cdcecf guibg=#2b3b51 gui=NONE guisp=NONE |
 highlight PmenuSel guifg=NONE guibg=#3c5372 gui=NONE guisp=NONE |
@@ -272,7 +272,7 @@ highlight PounceAccept guifg=#192330 guibg=#f6b079 gui=NONE guisp=NONE |
 highlight PounceAcceptBest guifg=#192330 guibg=#7ad4d6 gui=NONE guisp=NONE |
 highlight PounceGap guifg=#cdcecf guibg=#2b3b51 gui=NONE guisp=NONE |
 highlight PounceMatch guifg=#cdcecf guibg=#3c5372 gui=NONE guisp=NONE |
-highlight PreProc guifg=#dc8dd8 guibg=NONE gui=NONE guisp=NONE |
+highlight PreProc guifg=#dc8ed9 guibg=NONE gui=NONE guisp=NONE |
 highlight Search guifg=#cdcecf guibg=#3c5372 gui=NONE guisp=NONE |
 highlight SignColumn guifg=#71839b guibg=NONE gui=NONE guisp=NONE |
 highlight Sneak guifg=#131a24 guibg=#9d79d6 gui=NONE guisp=NONE |
@@ -306,7 +306,7 @@ highlight WinBarNC guifg=#71839b guibg=#192330 gui=bold guisp=NONE |
 highlight diffAdded guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight diffChanged guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |
 highlight diffFile guifg=#719cd6 guibg=NONE gui=NONE guisp=NONE |
-highlight diffIndexLine guifg=#dc8dd8 guibg=NONE gui=NONE guisp=NONE |
+highlight diffIndexLine guifg=#dc8ed9 guibg=NONE gui=NONE guisp=NONE |
 highlight diffLine guifg=#f6b079 guibg=NONE gui=NONE guisp=NONE |
 highlight diffNewFile guifg=#81b29a guibg=NONE gui=NONE guisp=NONE |
 highlight diffOldFile guifg=#dbc074 guibg=NONE gui=NONE guisp=NONE |

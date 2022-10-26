@@ -95,7 +95,7 @@ highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE gui=undercurl guisp=#5a9
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE gui=undercurl guisp=#fda47f |
 highlight DiagnosticVirtualTextError guifg=#e85c51 guibg=#352d2e gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextHint guifg=#7aa4a1 guibg=#24383a gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextInfo guifg=#5a93aa guibg=#1f363b gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextInfo guifg=#5a93aa guibg=#1f353c gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextWarn guifg=#fda47f guibg=#383835 gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#293e40 gui=NONE guisp=NONE |

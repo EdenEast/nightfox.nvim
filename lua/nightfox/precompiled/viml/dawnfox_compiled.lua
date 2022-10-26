@@ -98,7 +98,7 @@ highlight DiagnosticVirtualTextHint guifg=#618774 guibg=#ccd3c9 gui=NONE guisp=N
 highlight DiagnosticVirtualTextInfo guifg=#286983 guibg=#bbcacd gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextWarn guifg=#ea9d34 guibg=#f5dab6 gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#ea9d34 guibg=NONE gui=NONE guisp=NONE |
-highlight DiffAdd guifg=NONE guibg=#dbded4 gui=NONE guisp=NONE |
+highlight DiffAdd guifg=NONE guibg=#dbded5 gui=NONE guisp=NONE |
 highlight DiffChange guifg=NONE guibg=#d0d8d8 gui=NONE guisp=NONE |
 highlight DiffDelete guifg=NONE guibg=#ecd7d6 gui=NONE guisp=NONE |
 highlight DiffText guifg=NONE guibg=#a6bcc3 gui=NONE guisp=NONE |
@@ -214,7 +214,7 @@ highlight NeoTreeRootName guifg=#d7827e guibg=NONE gui=bold guisp=NONE |
 highlight NeoTreeSymbolicLinkTarget guifg=#de8db7 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitBranch guifg=#ea9d34 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAdd guifg=#618774 guibg=NONE gui=NONE guisp=NONE |
-highlight NeogitDiffAddHighlight guifg=NONE guibg=#dbded4 gui=NONE guisp=NONE |
+highlight NeogitDiffAddHighlight guifg=NONE guibg=#dbded5 gui=NONE guisp=NONE |
 highlight NeogitDiffContextHighlight guifg=NONE guibg=#ebe0df gui=NONE guisp=NONE |
 highlight NeogitDiffDelete guifg=#b4637a guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffDeleteHighlight guifg=NONE guibg=#ecd7d6 gui=NONE guisp=NONE |

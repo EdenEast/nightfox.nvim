@@ -45,7 +45,7 @@ highlight BufferCurrentSign guifg=#4d688e guibg=#2e537d gui=NONE guisp=NONE |
 highlight BufferCurrentTarget guifg=#b95d76 guibg=#2e537d gui=NONE guisp=NONE |
 highlight BufferInactive guifg=#7f848e guibg=#dbdbdb gui=NONE guisp=NONE |
 highlight BufferInactiveIndex guifg=#7f848e guibg=#dbdbdb gui=NONE guisp=NONE |
-highlight BufferInactiveMod guifg=#dbc8b6 guibg=#dbdbdb gui=NONE guisp=NONE |
+highlight BufferInactiveMod guifg=#dcc8b6 guibg=#dbdbdb gui=NONE guisp=NONE |
 highlight BufferInactiveSign guifg=#ced6db guibg=#dbdbdb gui=NONE guisp=NONE |
 highlight BufferInactiveTarget guifg=#b95d76 guibg=#dbdbdb gui=NONE guisp=NONE |
 highlight BufferTabpage guifg=#ced6db guibg=#dbdbdb gui=NONE guisp=NONE |
@@ -96,7 +96,7 @@ highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE gui=undercurl guisp=#ba7
 highlight DiagnosticVirtualTextError guifg=#b95d76 guibg=#dbc0c7 gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextHint guifg=#618774 guibg=#c1ccc7 gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextInfo guifg=#4d688e guibg=#bbc3ce gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextWarn guifg=#ba793e guibg=#dbc8b6 gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextWarn guifg=#ba793e guibg=#dcc8b6 gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#ba793e guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#cfd6d2 gui=NONE guisp=NONE |
 highlight DiffChange guifg=NONE guibg=#cbd0d8 gui=NONE guisp=NONE |
