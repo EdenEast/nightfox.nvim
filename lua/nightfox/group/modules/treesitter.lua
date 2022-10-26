@@ -49,7 +49,7 @@ function M.get(spec, config, opts)
     ["@tag"]                    = { link = "Keyword" }, -- Tags like HTML tag names.
     ["@tag.attribute"]          = { link = "Function" }, -- HTML tag attributes.
     ["@tag.delimiter"]          = { link = "Delimiter" }, -- Tag delimiters like `<` `>` `/`.
-    -- ["@text"]                = {}, -- Non-structured text. Like text in a markup language.
+    ["@text"]                   = { fg = spec.fg1 }, -- Non-structured text. Like text in a markup language.
     -- ["@strong"]              = {}, -- Text to be represented in bold.
     -- ["@emphasis"]            = {}, -- Text to be represented with emphasis.
     -- ["@underline"]           = {}, -- Text to be represented with an underline.
