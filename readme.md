@@ -501,6 +501,7 @@ There are a few things to note:
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [neogit](https://github.com/TimUntersberger/neogit)
+- [neotest](https://github.com/nvim-neotest/neotest)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)

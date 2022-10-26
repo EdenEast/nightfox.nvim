@@ -100,7 +100,7 @@ highlight DiagnosticVirtualTextWarn guifg=#ebcb8b guibg=#54524f gui=NONE guisp=N
 highlight DiagnosticWarn guifg=#ebcb8b guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#3c4548 gui=NONE guisp=NONE |
 highlight DiffChange guifg=NONE guibg=#364150 gui=NONE guisp=NONE |
-highlight DiffDelete guifg=NONE guibg=#403843 gui=NONE guisp=NONE |
+highlight DiffDelete guifg=NONE guibg=#3f3743 gui=NONE guisp=NONE |
 highlight DiffText guifg=NONE guibg=#3d515e gui=NONE guisp=NONE |
 highlight Directory guifg=#8cafd2 guibg=NONE gui=NONE guisp=NONE |
 highlight EndOfBuffer guifg=#2e3440 guibg=NONE gui=NONE guisp=NONE |
@@ -217,13 +217,23 @@ highlight NeogitDiffAdd guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitDiffAddHighlight guifg=NONE guibg=#3c4548 gui=NONE guisp=NONE |
 highlight NeogitDiffContextHighlight guifg=NONE guibg=#39404f gui=NONE guisp=NONE |
 highlight NeogitDiffDelete guifg=#bf616a guibg=NONE gui=NONE guisp=NONE |
-highlight NeogitDiffDeleteHighlight guifg=NONE guibg=#403843 gui=NONE guisp=NONE |
+highlight NeogitDiffDeleteHighlight guifg=NONE guibg=#3f3743 gui=NONE guisp=NONE |
 highlight NeogitHunkHeader guifg=#81a1c1 guibg=#444c5e gui=NONE guisp=NONE |
 highlight NeogitHunkHeaderHighlight guifg=#81a1c1 guibg=#3e4a5b gui=NONE guisp=NONE |
 highlight NeogitNotificationError guifg=#bf616a guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationInfo guifg=#81a1c1 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationWarning guifg=#ebcb8b guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitRemote guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestAdapterName guifg=#bf88bc guibg=NONE gui=bold guisp=NONE |
+highlight NeotestDir guifg=#88c0d0 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestFailed guifg=#bf616a guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestFile guifg=#81a1c1 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestFocused guifg=NONE guibg=NONE gui=underline guisp=NONE |
+highlight NeotestMarked guifg=#cdcecf guibg=NONE gui=bold guisp=NONE |
+highlight NeotestNamespace guifg=#69a7ba guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestPassed guifg=#a3be8c guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestRunning guifg=#c9826b guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestSkipped guifg=#ebcb8b guibg=NONE gui=NONE guisp=NONE |
 highlight NonText guifg=#5a657d guibg=NONE gui=NONE guisp=NONE |
 highlight Normal guifg=#cdcecf guibg=#2e3440 gui=NONE guisp=NONE |
 highlight NormalFloat guifg=#cdcecf guibg=#232831 gui=NONE guisp=NONE |
@@ -380,6 +390,9 @@ highlight! link MiniSurround IncSearch |
 highlight! link MiniTablineFill TabLineFill |
 highlight! link NeoTreeDimText Conceal |
 highlight! link NeoTreeNormalNC NeoTreeNormal |
+highlight! link NeotestExpandMarker Conceal |
+highlight! link NeotestIndent Conceal |
+highlight! link NeotestTest Normal |
 highlight! link NotifyDEBUGIcon NotifyDEBUGTitle |
 highlight! link NotifyERRORIcon NotifyERRORTitle |
 highlight! link NotifyINFOIcon NotifyINFOTitle |
