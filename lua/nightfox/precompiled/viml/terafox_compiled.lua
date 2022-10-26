@@ -95,7 +95,7 @@ highlight DiagnosticUnderlineInfo guifg=NONE guibg=NONE gui=undercurl guisp=#5a9
 highlight DiagnosticUnderlineWarn guifg=NONE guibg=NONE gui=undercurl guisp=#fda47f |
 highlight DiagnosticVirtualTextError guifg=#e85c51 guibg=#352d2e gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextHint guifg=#7aa4a1 guibg=#24383a gui=NONE guisp=NONE |
-highlight DiagnosticVirtualTextInfo guifg=#5a93aa guibg=#1f353c gui=NONE guisp=NONE |
+highlight DiagnosticVirtualTextInfo guifg=#5a93aa guibg=#1f363b gui=NONE guisp=NONE |
 highlight DiagnosticVirtualTextWarn guifg=#fda47f guibg=#383835 gui=NONE guisp=NONE |
 highlight DiagnosticWarn guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
 highlight DiffAdd guifg=NONE guibg=#293e40 gui=NONE guisp=NONE |
@@ -224,6 +224,16 @@ highlight NeogitNotificationError guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationInfo guifg=#5a93aa guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitNotificationWarning guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
 highlight NeogitRemote guifg=#7aa4a1 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestAdapterName guifg=#cb7985 guibg=NONE gui=bold guisp=NONE |
+highlight NeotestDir guifg=#a1cdd8 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestFailed guifg=#e85c51 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestFile guifg=#5a93aa guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestFocused guifg=NONE guibg=NONE gui=underline guisp=NONE |
+highlight NeotestMarked guifg=#e6eaea guibg=NONE gui=bold guisp=NONE |
+highlight NeotestNamespace guifg=#89aeb8 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestPassed guifg=#7aa4a1 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestRunning guifg=#ff8349 guibg=NONE gui=NONE guisp=NONE |
+highlight NeotestSkipped guifg=#fda47f guibg=NONE gui=NONE guisp=NONE |
 highlight NonText guifg=#2d4f56 guibg=NONE gui=NONE guisp=NONE |
 highlight Normal guifg=#e6eaea guibg=#152528 gui=NONE guisp=NONE |
 highlight NormalFloat guifg=#e6eaea guibg=#0f1c1e gui=NONE guisp=NONE |
@@ -380,6 +390,9 @@ highlight! link MiniSurround IncSearch |
 highlight! link MiniTablineFill TabLineFill |
 highlight! link NeoTreeDimText Conceal |
 highlight! link NeoTreeNormalNC NeoTreeNormal |
+highlight! link NeotestExpandMarker Conceal |
+highlight! link NeotestIndent Conceal |
+highlight! link NeotestTest Normal |
 highlight! link NotifyDEBUGIcon NotifyDEBUGTitle |
 highlight! link NotifyERRORIcon NotifyERRORTitle |
 highlight! link NotifyINFOIcon NotifyINFOTitle |
