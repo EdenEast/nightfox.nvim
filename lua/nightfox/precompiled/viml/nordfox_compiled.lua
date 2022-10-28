@@ -30,6 +30,8 @@ highlight @punctuation.delimiter guifg=#abb1bb guibg=NONE gui=NONE guisp=NONE |
 highlight @punctuation.special guifg=#abb1bb guibg=NONE gui=NONE guisp=NONE |
 highlight @string.escape guifg=#f0d399 guibg=NONE gui=bold guisp=NONE |
 highlight @string.regex guifg=#f0d399 guibg=NONE gui=NONE guisp=NONE |
+highlight @tag.javascript guifg=#bf616a guibg=NONE gui=NONE guisp=NONE |
+highlight @tag.typescript guifg=#bf616a guibg=NONE gui=NONE guisp=NONE |
 highlight @text guifg=#cdcecf guibg=NONE gui=NONE guisp=NONE |
 highlight @text.reference guifg=#b48ead guibg=NONE gui=NONE guisp=NONE |
 highlight @type.builtin guifg=#93ccdc guibg=NONE gui=NONE guisp=NONE |
