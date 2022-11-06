@@ -245,7 +245,7 @@ local groups = {
   -- As with specs and palettes, the values defined under `all` will be applied to every style.
   all = {
     -- If `link` is defined it will be applied over any other values defined
-    Whitespace = { link = "Comment" }
+    Whitespace = { link = "Comment" },
 
     -- Specs are used for the template. Specs have their palette's as a field that can be accessed
     IncSearch = { bg = "palette.cyan" },
