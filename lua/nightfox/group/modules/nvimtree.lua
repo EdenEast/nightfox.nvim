@@ -4,6 +4,7 @@ local M = {}
 
 function M.get(spec, config, opts)
   local c = spec.palette
+  local image = spec.palette.meta.light and c.black:subtle() or c.white:subtle()
 
   -- stylua: ignore
   return {
@@ -18,7 +19,7 @@ function M.get(spec, config, opts)
     NvimTreeEmptyFolderName  = { fg = spec.syntax.dep },
     NvimTreeSymlink          = { fg = c.pink:subtle() },
     NvimTreeSpecialFile      = { fg = c.cyan.base },
-    NvimTreeImageFile        = { fg = c.white:subtle() },
+    NvimTreeImageFile        = { fg = image },
     NvimTreeOpenedFile       = { fg = c.pink:harsh() }, -- TODO: not working
 
     NvimTreeGitDeleted       = { fg = spec.git.removed },
