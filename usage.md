@@ -192,6 +192,10 @@ Default: `true`.
 
 A boolean value that if set will set the background of Non current windows to be darker. See `:h hl-NormalNC`.
 
+#### module_default {bool}
+
+The default value of a module that has not been overridden in the modules table.
+
 #### styles {table}
 
 `styles` is a table that contains a list of syntax components and their corresponding style. These styles can be any
@@ -230,6 +234,8 @@ the foureground and background colors.
 `modules` store configuration information for various plugins and other neovim modules. A module can either be a boolean
 or a table that contains additional configuration for that module. If the value is a table it also has a field called
 `enable` that will tell nightfox to load it. See [modules] for more information.
+
+By default modules will be enabled. To change this behaviour change `options.module_default` to `false`.
 
 [modules]: #modules
 
@@ -397,6 +403,12 @@ Current list of modules are:
 - treesitter
 - tsrainbow
 - whichkey
+
+### Neovim specific modules
+
+The following modules are enabled by default only when on neovim, `diagnostic`, `native_lsp`, `treesitter`. These
+modules are part of the core neovim experience and are liked to by other modules. This also means that they will still
+be enabled when setting `module_default` to `false`.
 
 ### Extended modules
 
