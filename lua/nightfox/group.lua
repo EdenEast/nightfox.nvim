@@ -17,15 +17,17 @@ function M.from(spec)
 
   local result = collect.deep_extend(editor, syntax)
 
-  for name, opts in pairs(config.modules or {}) do
-    if type(opts) == "table" then
-      if opts.enable then
-        result = collect.deep_extend(result, require("nightfox.group.modules." .. name).get(spec, config, opts))
-      end
-    else
-      if opts then
-        result = collect.deep_extend(result, require("nightfox.group.modules." .. name).get(spec, config, {}))
-      end
+  local default_enable_value = config.module_default
+  local mod_names = require("nightfox.config").module_names
+  for _, name in ipairs(mod_names) do
+    local kind = type(config.modules[name])
+    local opts = kind == "boolean" and { enable = config.modules[name] }
+      or kind == "table" and config.modules[name]
+      or {}
+    opts.enable = opts.enable == nil and default_enable_value or opts.enable
+
+    if opts.enable then
+      result = collect.deep_extend(result, require("nightfox.group.modules." .. name).get(spec, config, opts))
     end
   end
 

@@ -103,6 +103,7 @@ require('nightfox').setup({
     transparent = false,    -- Disable setting background
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = false,   -- Non focused panes set to alternative background
+    module_default = true,  -- Default enable value for modules
     styles = {              -- Style to be applied to different syntax groups
       comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
@@ -156,6 +157,8 @@ To see a detailed explanation of nightfox's config settings consult either the b
 
 Nightfox's modules store configuration information for various plugins and other neovim modules. To enable a module
 either set the module to `true` or if the module has additional configuration information set `enable` to `true`.
+
+By default modules will be enabled. To change this behaviour change `options.module_default` to `false`.
 
 To see a list of modules check, see [Usage](./usage.md#module) or `:help` for more information.
 
