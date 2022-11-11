@@ -241,6 +241,13 @@ dim_inactive {bool}                    A boolean value that if set will set the
                                        darker. See `:h hl-NormalNC`.
 
 
+                                                     *nightfox-module_default*
+
+module_default {bool}                  The default value of a module that has
+                                       not been overridden in the modules
+                                       table.
+
+
                                                              *nightfox-styles*
 
 styles {table}                         `styles` is a table that contains a list
@@ -302,6 +309,9 @@ modules {table}                        `modules` store configuration
                                        will tell nightfox to load it. See
                                        |nightfox-modules| for more information.
 
+
+By default modules will be enabled. To change this behaviour change
+`options.module_default` to `false`.
 
 SHADE                                                         *nightfox-shade*
 
@@ -498,6 +508,13 @@ Current list of modules are:
 - tsrainbow
 - whichkey
 
+
+NEOVIM SPECIFIC MODULES ~
+
+The following modules are enabled by default only when on neovim, `diagnostic`,
+`native_lsp`, `treesitter`. These modules are part of the core neovim
+experience and are liked to by other modules. This also means that they will
+still be enabled when setting `module_default` to `false`.
 
 EXTENDED MODULES ~
 
