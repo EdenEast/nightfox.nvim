@@ -5,5 +5,5 @@ if vim.g.nightfox_debug then
 end
 
 require("nightfox.config").set_fox("dawnfox")
-require("nightfox.main").load()
+require("nightfox").load()
 EOF

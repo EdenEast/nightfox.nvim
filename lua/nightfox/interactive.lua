@@ -10,7 +10,6 @@ end
 
 function M.attach()
   vim.g.nightfox_debug = true
-  require("nightfox.lib.compile").clean()
   cmd([[
     augroup NightfoxInteractiveAugroup
       autocmd!

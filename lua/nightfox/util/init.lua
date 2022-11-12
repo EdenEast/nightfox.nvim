@@ -56,12 +56,12 @@ function M.ensure_dir(path)
 end
 
 local function vim_cache_home()
-  if M.s_windows then
-    return M.join_paths(vim.fn.expand("%localappdata%"), "Temp", "nvim")
+  if M.is_windows then
+    return M.join_paths(vim.fn.expand("%localappdata%"), "Temp", "vim")
   end
   local xdg = os.getenv("XDG_CACHE_HOME")
-  local root = xdg or vim.fn.expand("$HOME/.cache/nvim")
-  return M.join_paths(root, "nvim")
+  local root = xdg or vim.fn.expand("$HOME/.cache/vim")
+  return M.join_paths(root, "vim")
 end
 
 M.cache_home = M.is_nvim and vim.fn.stdpath("cache") or vim_cache_home()
