@@ -56,7 +56,7 @@ groups. If your not on neovim version 0.8+ make sure to compile nightfox yoursel
 
 ## Requirements
 
-- Neovim >= 0.5 **or** Vim 8.2 with lua >= 5.2
+- Neovim >= 0.5 **or** Vim 8.2 with lua = 5.1 or 5.2
 - True color support
 - Undercurl terminal support (optional)
 
