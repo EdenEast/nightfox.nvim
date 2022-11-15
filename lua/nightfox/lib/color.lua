@@ -23,7 +23,13 @@ local util = require("nightfox.util")
 
 --#region Helpers --------------------------------------------------------------
 
-local bitopt = util.is_nvim and bit or bit32 or bit
+local bitopt = bit and bit or bit32 and bit32
+if not bopt then
+  require("nightfox.lib.log").error(
+    "Unable to find lua library `bit` or `bit32`. Please make sure lua vesion is 5.1 or 5.2"
+  )
+  return {}
+end
 
 local function calc_hue(r, g, b)
   local max = math.max(r, g, b)

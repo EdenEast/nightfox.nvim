@@ -35,8 +35,7 @@ function M.load(opts)
 
   local ok, msg = pcall(f)
   if not ok then
-    print(string.format([[Failed to load compild path "%s"]], compiled_file))
-    print(msg)
+    require("nightfox.lib.log").error(string.format([[Failed to load compild path "%s"]], compiled_file), msg)
   end
 
   lock = false

@@ -1,6 +1,8 @@
 local bopt = bit and bit or bit32 and bit32
 if not bopt then
-  print("Unable to find lua library `bit` or `bit32`. Please make sure lua vesion is 5.1 or 5.2")
+  require("nightfox.lib.log").error(
+    "Unable to find lua library `bit` or `bit32`. Please make sure lua vesion is 5.1 or 5.2"
+  )
   return {}
 end
 
