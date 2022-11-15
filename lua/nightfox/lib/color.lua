@@ -23,10 +23,11 @@ local util = require("nightfox.util")
 
 --#region Helpers --------------------------------------------------------------
 
-local bitopt = bit and bit or bit32 and bit32
-if not bopt then
+local version = tonumber(string.sub(_VERSION, 5, 7)) -- LuaJIT-compatible
+local bitop = version >= 5.3 and require("nightfox.lib.native_bitops") or (bit and bit or bit32 and bit32)
+if not bitop then
   require("nightfox.lib.log").error(
-    "Unable to find lua library `bit` or `bit32`. Please make sure lua vesion is 5.1 or 5.2"
+    "Unable to find lua library `bit` or `bit32`. Please make sure lua vesion is 5.1, 5.2 or 5.3"
   )
   return {}
 end
