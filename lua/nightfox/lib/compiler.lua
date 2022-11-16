@@ -86,7 +86,8 @@ function M.compile(opts)
   util.ensure_dir(output_path)
 
   local file = io.open(output_file, "wb")
-  loadstring(table.concat(lines, "\n"), "=")()
+  local ld = load or loadstring -- loadstring == 5.1, load >= 5.2
+  ld(table.concat(lines, "\n"), "=")()
   file:write(require("nightfox").compiled)
   file:close()
 end

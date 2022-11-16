@@ -24,7 +24,11 @@
             gnumake
             stylua
             vim-lua
-            luajit
+            # luajit
+            lua5_4
+            # lua5_3
+            # lua5_2
+            # lua5_1
           ];
         };
 
