@@ -109,15 +109,15 @@ function Color.from_hex(c)
     local s = c:lower():match("#?([a-f0-9]+)")
     n = tonumber(s, 16)
     if #s <= 6 then
-      n = bitopt.lshift(n, 8) + 0xff
+      n = bitop.lshift(n, 8) + 0xff
     end
   end
 
   return Color.init(
-    bitopt.rshift(n, 24) / 0xff,
-    bitopt.band(bitopt.rshift(n, 16), 0xff) / 0xff,
-    bitopt.band(bitopt.rshift(n, 8), 0xff) / 0xff,
-    bitopt.band(n, 0xff) / 0xff
+    bitop.rshift(n, 24) / 0xff,
+    bitop.band(bitop.rshift(n, 16), 0xff) / 0xff,
+    bitop.band(bitop.rshift(n, 8), 0xff) / 0xff,
+    bitop.band(n, 0xff) / 0xff
   )
 end
 
@@ -209,11 +209,9 @@ end
 ---@param with_alpha boolean Include the alpha component.
 ---@return integer
 function Color:to_hex(with_alpha)
-  local n = bitopt.bor(
-    bitopt.bor((self.blue * 0xff), bitopt.lshift((self.green * 0xff), 8)),
-    bitopt.lshift((self.red * 0xff), 16)
-  )
-  return with_alpha and bitopt.lshift(n, 8) + (self.alpha * 0xff) or n
+  local n =
+    bitop.bor(bitop.bor((self.blue * 0xff), bitop.lshift((self.green * 0xff), 8)), bitop.lshift((self.red * 0xff), 16))
+  return with_alpha and bitop.lshift(n, 8) + (self.alpha * 0xff) or n
 end
 
 ---Convert the color to a css hex color (`#RRGGBB[AA]`).
