@@ -1,31 +1,53 @@
 local Color = require("nightfox.lib.color")
 
 return function(style)
-  local spec = require("nightfox.spec").load(style)
-  local pal = spec.palette
-  local bg = Color.from_hex(spec.bg0)
-  local fg = spec.fg2
+  local config = require("nightfox.config").options
+  local s = require("nightfox.spec").load(style)
+  local p = s.palette
+  local base = Color.from_hex(s.bg0)
+  local tbg = config.transparent and "NONE" or s.bg0
 
-  local function generate_mode(opts)
-    local amount = opts.amount or 0.3
-    local fade = opts.bg and bg:blend(Color.from_hex(opts.bg), amount):to_css() or "NONE"
-    local b = bg:to_css()
-    local f = fg
-
-    return {
-      a = { bg = opts.bg or "NONE", fg = b, gui = "bold" },
-      b = { bg = fade, fg = f },
-      c = { bg = b, fg = opts.fg or f },
-    }
+  local function fade(color, amount)
+    amount = amount or 0.3
+    return base:blend(Color.from_hex(color), amount):to_css()
   end
 
   return {
-    normal = generate_mode({ bg = pal.blue.base }),
-    insert = generate_mode({ bg = pal.green.base }),
-    terminal = generate_mode({ bg = pal.orange.base }),
-    command = generate_mode({ bg = pal.yellow.base }),
-    visual = generate_mode({ bg = pal.magenta.base }),
-    replace = generate_mode({ bg = pal.red.base }),
-    inactive = generate_mode({ fg = spec.fg3 }),
+    normal = {
+      a = { bg = p.blue.base, fg = s.bg0, gui = "bold" },
+      b = { bg = fade(p.blue.base), fg = s.fg1 },
+      c = { bg = tbg, fg = s.fg2 },
+    },
+
+    insert = {
+      a = { bg = p.green.base, fg = s.bg0, gui = "bold" },
+      b = { bg = fade(p.green.base), fg = s.fg1 },
+    },
+
+    command = {
+      a = { bg = p.yellow.base, fg = s.bg0, gui = "bold" },
+      b = { bg = fade(p.yellow.base), fg = s.fg1 },
+    },
+
+    visual = {
+      a = { bg = p.magenta.base, fg = s.bg0, gui = "bold" },
+      b = { bg = fade(p.magenta.base), fg = s.fg1 },
+    },
+
+    replace = {
+      a = { bg = p.red.base, fg = s.bg0, gui = "bold" },
+      b = { bg = fade(p.red.base), fg = s.fg1 },
+    },
+
+    terminal = {
+      a = { bg = p.orange.base, fg = s.bg0, gui = "bold" },
+      b = { bg = fade(p.orange.base), fg = s.fg1 },
+    },
+
+    inactive = {
+      a = { bg = tbg, fg = p.blue.base },
+      b = { bg = tbg, fg = s.fg3, gui = "bold" },
+      c = { bg = tbg, fg = s.syntax.comment },
+    },
   }
 end
