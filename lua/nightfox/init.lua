@@ -1,3 +1,5 @@
+local config = require("nightfox.config")
+
 local M = {}
 
 function M.compile()
@@ -23,20 +25,16 @@ function M.load(opts)
 
   opts = opts or {}
 
-  local config = require("nightfox.config")
   local _, compiled_file = config.get_compiled_info(opts)
   lock = true
 
-  local ok, f = pcall(loadfile, compiled_file)
-  if not ok then
+  local f = loadfile(compiled_file)
+  if not f then
     M.compile()
     f = loadfile(compiled_file)
   end
 
-  local ok, msg = pcall(f)
-  if not ok then
-    require("nightfox.lib.log").error(string.format([[Failed to load compild path "%s"]], compiled_file), msg)
-  end
+  f()
 
   lock = false
 end
@@ -44,7 +42,6 @@ end
 function M.setup(opts)
   opts = opts or {}
 
-  local config = require("nightfox.config")
   local override = require("nightfox.override")
 
   if opts.options then
