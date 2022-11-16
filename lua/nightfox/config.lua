@@ -1,7 +1,17 @@
 local collect = require("nightfox.lib.collect")
 local util = require("nightfox.util")
 
-local M = { fox = "nightfox", has_options = false }
+local function stub_on_palette(palette, name, color) end
+local function stub_on_spec(spec, name, color) end
+local function stub_on_highlight(spec, hl, name, color) end
+
+local M = {
+  fox = "nightfox",
+  has_options = false,
+  on_palette = stub_on_palette,
+  on_spec = stub_on_spec,
+  on_highlight = stub_on_highlight,
+}
 
 local defaults = {
   compile_path = util.join_paths(util.cache_home, "nightfox"),
@@ -94,6 +104,9 @@ end
 
 function M.reset()
   M.options = collect.deep_copy(defaults)
+  M.on_palette = stub_on_palette
+  M.on_spec = stub_on_spec
+  M.on_highlight = stub_on_highlight
 end
 
 function M.get_compiled_info(opts)
@@ -104,7 +117,14 @@ function M.get_compiled_info(opts)
 end
 
 function M.hash()
-  local hash = require("nightfox.lib.hash").hash(M.options)
+  local contents = {
+    M.options,
+    M.on_palette,
+    M.on_spec,
+    M.on_highlight,
+  }
+
+  local hash = require("nightfox.lib.hash").hash(contents)
   return hash and hash or 0
 end
 

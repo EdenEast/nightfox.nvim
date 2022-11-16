@@ -45,54 +45,34 @@ M.foxes = {
   "terafox",
 }
 
-local function override(color, ovr)
-  local color_list = { "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "orange", "pink" }
-  for key, value in pairs(ovr) do
-    if collect.contains(color_list, key) then
-      if type(value) == "string" then
-        color[key].base = value
-      else
-        for k, v in pairs(value) do
-          color[key][k] = v
-        end
-      end
-    else
-      color[key] = value
-    end
-  end
-
-  return color
-end
-
 function M.load(name)
-  local ovr = require("nightfox.override").palettes
-
-  local function apply_ovr(key, palette)
-    return ovr[key] and override(palette, ovr[key]) or palette
-  end
+  local color = require("nightfox.lib.color")
+  local config = require("nightfox.config")
 
   if name then
-    local valid = collect.contains(M.foxes, name)
-    local raw = valid and require("nightfox.palette." .. name) or require("nightfox.palette.nightfox")
-    local palette = raw.palette
-    palette = apply_ovr("all", palette)
-    palette = apply_ovr(name, palette)
-    palette.meta = raw.meta
-    palette.generate_spec = raw.generate_spec
-    return palette
-  else
-    local result = {}
-    for _, mod in ipairs(M.foxes) do
-      local raw = require("nightfox.palette." .. mod)
-      local palette = raw.palette
-      palette = apply_ovr("all", palette)
-      palette = apply_ovr(mod, palette)
-      palette.meta = raw.meta
-      palette.generate_spec = raw.generate_spec
-      result[mod] = palette
+    local vaild = collect.contains(M.foxes, name)
+    if not vaild then
+      require("nightfox.lib.log").error("Unknown style name: " .. name)
+      name = "nightfox"
     end
-    return result
+    local raw = require("nightfox.palette." .. name)
+    local pal = raw.palette
+    pal.meta = raw.meta
+    config.on_palette(pal, name, color)
+    pal.generate_spec = raw.generate_spec
+    return pal
   end
+
+  local list = {}
+  for _, style in ipairs(M.foxes) do
+    local raw = require("nightfox.palette." .. style)
+    local pal = raw.palette
+    pal.meta = raw.meta
+    config.on_palette(pal, name, color)
+    pal.generate_spec = raw.generate_spec
+    table.insert(list, pal)
+  end
+  return list
 end
 
 return M

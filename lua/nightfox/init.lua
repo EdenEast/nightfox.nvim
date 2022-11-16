@@ -12,7 +12,6 @@ end
 
 function M.reset()
   require("nightfox.config").reset()
-  require("nightfox.override").reset()
 end
 
 -- Avold g:colors_name reloading
@@ -42,22 +41,20 @@ end
 function M.setup(opts)
   opts = opts or {}
 
-  local override = require("nightfox.override")
-
   if opts.options then
     config.set_options(opts)
   end
 
-  if opts.palettes then
-    override.palettes = opts.palettes
+  if opts.on_palette then
+    config.on_palette = opts.on_palette
   end
 
-  if opts.specs then
-    override.specs = opts.specs
+  if opts.on_spec then
+    config.on_spec = opts.on_spec
   end
 
-  if opts.groups then
-    override.groups = opts.groups
+  if opts.on_highlight then
+    config.on_highlight = opts.on_highlight
   end
 
   local util = require("nightfox.util")
@@ -98,7 +95,7 @@ function M.setup(opts)
       io.close(file)
     end
 
-    local current_config_hash = config.hash() + override.hash()
+    local current_config_hash = config.hash()
     if cached_hash ~= tostring(current_config_hash) then
       M.compile()
       file = io.open(cached_config, "wb")

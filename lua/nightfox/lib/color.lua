@@ -81,6 +81,7 @@ end
 
 function Color.init(r, g, b, a)
   local self = setmetatable({}, Color)
+  self._class = "color"
   self.red = util.clamp(r, 0, 1)
   self.green = util.clamp(g, 0, 1)
   self.blue = util.clamp(b, 0, 1)

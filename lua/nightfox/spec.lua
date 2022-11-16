@@ -71,38 +71,28 @@ local template = require("nightfox.util.template")
 
 local M = {}
 
-local function override(spec, palette, ovr)
-  ovr = template.parse(ovr, palette)
-  return collect.deep_extend(spec, ovr)
-end
-
 function M.load(name)
-  local ovr = require("nightfox.override").specs
-
-  local function apply_ovr(key, spec, palette)
-    return ovr[key] and override(spec, palette, ovr[key]) or spec
-  end
+  local color = require("nightfox.lib.color")
+  local config = require("nightfox.config")
 
   if name then
-    local palette = require("nightfox.palette").load(name)
-    local spec = palette.generate_spec(palette)
-    spec = apply_ovr("all", spec, palette)
-    spec = apply_ovr(name, spec, palette)
-    spec.palette = palette
+    local pal = require("nightfox.palette").load(name)
+    local spec = pal.generate_spec(pal)
+    spec.palette = pal
+    config.on_spec(spec, name, color)
     return spec
-  else
-    local result = {}
-    local foxes = require("nightfox.palette").foxes
-    for _, mod in ipairs(foxes) do
-      local palette = require("nightfox.palette").load(mod)
-      local spec = palette.generate_spec(palette)
-      spec = apply_ovr("all", spec, palette)
-      spec = apply_ovr(mod, spec, palette)
-      spec.palette = palette
-      result[mod] = spec
-    end
-    return result
   end
+
+  local list = {}
+  local palettes = require("nightfox.palette").load()
+  for _, pal in ipairs(palettes) do
+    local style = pal.meta.name
+    local spec = pal.generate_spec(pal)
+    spec.palette = pal
+    config.on_spec(spec, style, color)
+    table.insert(list, spec)
+  end
+  return list
 end
 
 return M
