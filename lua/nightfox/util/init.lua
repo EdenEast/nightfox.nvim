@@ -60,7 +60,7 @@ local function vim_cache_home()
     return M.join_paths(vim.fn.expand("%localappdata%"), "Temp", "vim")
   end
   local xdg = os.getenv("XDG_CACHE_HOME")
-  local root = xdg or vim.fn.expand("$HOME/.cache/vim")
+  local root = xdg or vim.fn.expand("$HOME/.cache")
   return M.join_paths(root, "vim")
 end
 
