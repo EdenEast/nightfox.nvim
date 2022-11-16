@@ -209,8 +209,9 @@ end
 ---@param with_alpha boolean Include the alpha component.
 ---@return integer
 function Color:to_hex(with_alpha)
+  local ls, bor, fl = bitop.lshift, bitop.bor, math.floor
   local n =
-    bitop.bor(bitop.bor((self.blue * 0xff), bitop.lshift((self.green * 0xff), 8)), bitop.lshift((self.red * 0xff), 16))
+    bor(bor(ls(fl((self.red * 0xff) + 0.5), 16), ls(fl((self.green * 0xff) + 0.5), 8)), fl((self.blue * 0xff) + 0.5))
   return with_alpha and bitop.lshift(n, 8) + (self.alpha * 0xff) or n
 end
 
