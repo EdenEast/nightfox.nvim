@@ -45,7 +45,7 @@ function M.setup(opts)
   local override = require("nightfox.override")
 
   if opts.options then
-    config.set_options(opts)
+    config.set_options(opts.options)
   end
 
   if opts.palettes then
