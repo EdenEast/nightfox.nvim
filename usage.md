@@ -226,8 +226,9 @@ local options = {
 #### inverse {table}
 
 `inverse` is a table that contains a list of highlight types. If a highlight type is enabled it will inverse the
-foreground and background colors instead of applying the normal highlight group. Thees highlight types are: `match_paren`, `visual`, `search`. For an example if search is enabled instead of highlighting a search term with the default search color it will inverse
-the foureground and background colors.
+foreground and background colors instead of applying the normal highlight group. Thees highlight types are:
+`match_paren`, `visual`, `search`. For an example if search is enabled instead of highlighting a search term with the
+default search color it will inverse the foureground and background colors.
 
 #### modules {table}
 
@@ -529,9 +530,12 @@ wrapped from `[0,360]`, meaning that if the value exceeds `360` it will be wrapp
 
 ## Compile
 
-Nightfox is a highly customizable and configurable colorscheme. There are endless ways to customize nightfox. This does
-however come at the cost of complexity and execution time. Nightfox can pre compute the results of your configuration
-and store the results in a compiled lua file. After nightfox use these precached values to set it's highlights.
+Nightfox is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and
+execution time.
+
+Nightfox pre-computes the result of your configuration and saves the lua bytecode in a cache to be used on next load.
+This significantly speeds up nightfox's execution time. Changes to your configuration will be re-computed and cached
+automatically.
 
 By default nightfox writes the compiled results into the system's `cache` directory. On unix this is
 `$XDG_CACHE_HOME/nvim/nightfox` and on windows this is `%localappdata%\\Temp\\nvim\\nightfox`.
@@ -542,17 +546,9 @@ By default nightfox writes the compiled results into the system's `cache` direct
 
 Compile nightfox settings for each `style` and write compiled file to [compile_path].
 
-#### clean()
-
-Delete compiled files in [compile_path].
-
 #### :NightfoxCompile
 
 Compile nightfox settings for each `style` and write compiled file to [compile_path].
-
-#### :NightfoxClean
-
-Delete compiled files in [compile_path].
 
 [compile_path]: #compile_path-%7Bpath%7D
 
@@ -570,7 +566,6 @@ colorscheme.
 
 There are a few things to note:
 
-- Enabling interactive mode will clean any `compiled` files.
 - This requires executing `luafile` on the current file. Any syntax errors will throw errors.
 - If you are using packer and have nightfox's config in a `config = function() end` block, this will not work as packer
   would require to be re-compiled and the compiled file sourced.

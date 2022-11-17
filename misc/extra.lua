@@ -33,11 +33,8 @@ for extra, ext in pairs(extras) do
   for name, spec in pairs(specs) do
     local folder = util.join_paths("extra", name)
     local filename = "nightfox_" .. extra .. "." .. ext
-    spec.palette.meta.url = string.format(
-      "https://github.com/edeneast/nightfox.nvim/raw/main/extra/%s/%s",
-      name,
-      filename
-    )
+    spec.palette.meta.url =
+      string.format("https://github.com/edeneast/nightfox.nvim/raw/main/extra/%s/%s", name, filename)
     write(mod.generate(spec), folder, filename)
   end
 end

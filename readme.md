@@ -37,26 +37,19 @@
 [misc-feline]: ./misc/feline.lua
 [misc-tabby]: ./misc/tabby.lua
 
-## Notice ℹ️
-
-Nightfox has updated to the [latest] highlight groups. The precompiled source files only contain the current highlight
-groups. If your not on neovim version 0.8+ make sure to compile nightfox yourself to get the old highlight groups.
-
-[latest]: https://github.com/nvim-treesitter/nvim-treesitter/pull/3656#issuecomment-1279998539
-
 ## Features
 
 - Supports both vim and neovim
 - Highly configurable with template overriding
 - Support for multiple [plugins](#supported-plugins) and [status lines](#status-lines)
   - And many others should "just work"!
-- [Compile](#compile) user's configuration
+- [Compile](#compile) user's configuration for fast startup times
 - Export [Color](#color-lib) library utility
-- [Interactive](#interactive) live config realoading
+- [Interactive](#interactive) live config re-loading
 
 ## Requirements
 
-- Neovim >= 0.5 **or** Vim 8.2 with lua = 5.1 or 5.2
+- Neovim >= 0.5 **or** Vim 8.2 with lua = **5.1** or **5.2**
 - True color support
 - Undercurl terminal support (optional)
 
@@ -314,44 +307,6 @@ require("nightfox").setup({
 })
 ```
 
-### Multiple setup calls
-
-The `setup` function can be called multiple times. Each call to `setup` will merge nightfox's internal configuration
-table.
-
-#### Example
-
-```lua
-local nightfox = require("nightfox")
-nightfox.setup({
-  groups = {
-    all = {
-      First  = { fg = "palette.green" },
-      Second = { fg = "palette.green" },
-    },
-  },
-})
-
-nightfox.setup({
-  groups = {
-    all = {
-      First  = { fg = "palette.red" },
-      Third  = { fg = "palette.blue" },
-    },
-  },
-})
-
--- Resulting nightfox value store
-print(vim.inspect(require('nightfox.override').groups))
--- {
---   all = {
---     First  = { fg = "palette.red",   link = "" },
---     Second = { fg = "palette.green", link = "" },
---     Third  = { fg = "palette.blue",  link = "" }
---   }
--- }
-```
-
 ## Api
 
 Nightfox exposes some Api's and utility classes that let you fetch data from nightfox.
@@ -431,36 +386,24 @@ See [Usage](./usage.md#color) for more information on `Color`.
 
 ## Compile
 
-Nightfox is a highly customizable and configurable colorscheme. There are endless ways to customize nightfox. This does
-however come at the cost of complexity and execution time. Nightfox can pre compute the results of your configuration
-and store the results in a compiled lua file. After nightfox use these precached values to set its highlights.
+Nightfox is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and
+execution time.
+
+Nightfox pre-computes the result of your configuration and saves the lua bytecode in a cache to be used on next load.
+This significantly speeds up nightfox's execution time. Changes to your configuration will be re-computed and cached
+automatically.
 
 By default nightfox writes the compiled results into the system's `cache` directory. On unix this is
 `$XDG_CACHE_HOME/nvim/nightfox` and on windows this is `%localappdata%\\Temp\\nvim\\nightfox`.
 
 Nightfox provides functions to work with the nightfox compiler.
 
-```lua
-local nightfox = require('nightfox')
-
--- Create/update the compile files
-nightfox.compile()
-
--- Delete compiled files
-nightfox.clean()
-```
-
-Nightfox provides the following commands that wrap these functions above:
-
 ```vim
-:NightfoxCompile
-:NightfoxClean
+:NightfoxCompile " Manually call nightfox compiler to create/update compiled files
 ```
 
-For packer users you can create a compile file after nightfox has installed:
-
 ```lua
-use { "EdenEast/nightfox.nvim", run = ":NightfoxCompile", },
+require('nightfox').compile() -- lua api version
 ```
 
 ## Interactive
@@ -479,7 +422,6 @@ colorscheme.
 
 There are a few things to note:
 
-- Enabling interactive mode will clean any [compiled](#compile) files.
 - This requires executing `luafile` on the current file. Any syntax errors will throw errors.
 - If you are using packer and have nightfox's config in a `config = function() end` block, this will not work as packer
   would require to be re-compiled and the compiled file sourced.

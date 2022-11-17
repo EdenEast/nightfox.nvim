@@ -1,9 +1,9 @@
 lua << EOF
 -- Useful when debugging
--- if vim.g.nightfox_debug then
+if vim.g.nightfox_debug then
   require("nightfox.util.reload")()
--- end
+end
 
 require("nightfox.config").set_fox("carbonfox")
-require("nightfox.main").load()
+require("nightfox").load()
 EOF

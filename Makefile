@@ -3,10 +3,7 @@ pandocdir = misc/panvimdoc
 
 root_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-all: compile extragen docgen
-
-compile:
-	nvim --headless --clean -u misc/precompile.lua
+all: extragen docgen
 
 extragen:
 	nvim --headless --clean -u misc/extra.lua

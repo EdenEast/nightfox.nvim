@@ -96,4 +96,16 @@ function M.reset()
   M.options = collect.deep_copy(defaults)
 end
 
+function M.get_compiled_info(opts)
+  local output_path = opts.output_path or M.options.compile_path
+  local file_suffix = opts.file_suffix or M.options.compile_file_suffix
+  local style = opts.name or M.fox
+  return output_path, util.join_paths(output_path, style .. file_suffix)
+end
+
+function M.hash()
+  local hash = require("nightfox.lib.hash").hash(M.options)
+  return hash and hash or 0
+end
+
 return M

@@ -6,9 +6,12 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: JohnnyMorganz/stylua-action@1.0.0
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v15
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          args: -f stylua.toml --check .
-          version: "0.13.0"
+          nix_path: nixpkgs=channel:nixos-unstable
+      - uses: workflow/nix-shell-action@v3
+        with:
+          packages: stylua,fd
+          script: |
+            stylua -f stylua.toml --check $(fd . -t f -e lua | grep -v native_bitops)
