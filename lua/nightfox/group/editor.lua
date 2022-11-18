@@ -40,7 +40,7 @@ function M.get(spec, config)
     MoreMsg         = { fg = spec.diag.info, style = "bold" }, -- |more-prompt|
     NonText         = { fg = spec.bg4 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal          = { fg = spec.fg1, bg = trans and "NONE" or spec.bg1 }, -- normal text
-    NormalNC        = { fg = spec.fg1, bg = trans and "NONE" or alt and spec.bg0 or spec.bg1 }, -- normal text in non-current windows
+    NormalNC        = alt and { fg = spec.fg1, bg = spec.bg0 } or { link = "Normal" },
     NormalFloat     = { fg = spec.fg1, bg = spec.bg0 }, -- Normal text in floating windows.
     FloatBorder     = { fg = spec.fg3 }, -- TODO
     Pmenu           = { fg = spec.fg1, bg = spec.sel0 }, -- Popup menu: normal item.
