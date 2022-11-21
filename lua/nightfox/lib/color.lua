@@ -23,14 +23,7 @@ local util = require("nightfox.util")
 
 --#region Helpers --------------------------------------------------------------
 
-local version = tonumber(string.sub(_VERSION, 5, 7)) -- LuaJIT-compatible
-local bitop = version >= 5.3 and require("nightfox.lib.native_bitops") or (bit and bit or bit32 and bit32)
-if not bitop then
-  require("nightfox.lib.log").error(
-    "Unable to find lua library `bit` or `bit32`. Please make sure lua vesion is 5.1, 5.2 or 5.3"
-  )
-  return {}
-end
+local bitop = bit or bit32 or require("nightfox.lib.vim.bit")
 
 local function calc_hue(r, g, b)
   local max = math.max(r, g, b)

@@ -1,20 +1,8 @@
 local config = require("nightfox.config")
 local util = require("nightfox.util")
-local parse_styles = require("nightfox.lib.highlight").parse_style
 local fmt = string.format
 
 local M = {}
-
-local function inspect(t)
-  local list = {}
-  for k, v in pairs(t) do
-    local q = type(v) == "string" and [["]] or ""
-    table.insert(list, fmt([[%s = %s%s%s]], k, q, v, q))
-  end
-
-  table.sort(list)
-  return fmt([[{ %s }]], table.concat(list, ", "))
-end
 
 local function should_link(link)
   return link and link ~= ""
@@ -31,11 +19,13 @@ function M.compile(opts)
     fmt(
       [[
 require("nightfox").compiled = string.dump(function()
-if vim.g.colors_name then vim.cmd("hi clear") end
-vim.o.termguicolors = true
-vim.g.colors_name = "%s"
-vim.o.background = "%s"
-    ]],
+vim.command([[
+if exists("colors_name")
+  hi clear
+endif
+set termguicolors
+let g:colors_name = "%s"
+set background="%s"]],
       style,
       background
     ),
@@ -44,27 +34,32 @@ vim.o.background = "%s"
   if config.options.terminal_colors then
     local terminal = require("nightfox.group.terminal").get(spec)
     for k, v in pairs(terminal) do
-      table.insert(lines, fmt([[vim.g.%s = "%s"]], k, v))
+      table.insert(lines, fmt("let g:%s = '%s'", k, v))
     end
   end
 
   for name, values in pairs(groups) do
     if should_link(values.link) then
-      table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", { link = "%s" })]], name, values.link))
+      table.insert(lines, fmt([[highlight! link %s %s]], name, values.link))
     else
-      local op = parse_styles(values.style)
-      op.bg = values.bg
-      op.fg = values.fg
-      op.sp = values.sp
-      table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], name, inspect(op)))
+      table.insert(
+        lines,
+        fmt(
+          [[highlight %s guifg=%s guibg=%s gui=%s guisp=%s]],
+          name,
+          values.fg or "NONE",
+          values.bg or "NONE",
+          values.style or "NONE",
+          values.sp or "NONE"
+        )
+      )
     end
   end
 
-  table.insert(lines, "end)")
+  table.insert(lines, "]])end)")
 
   opts.name = style
   local output_path, output_file = config.get_compiled_info(opts)
-
   util.ensure_dir(output_path)
 
   local file = io.open(output_file, "wb")
