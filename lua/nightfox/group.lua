@@ -12,6 +12,9 @@ function M.from(spec)
   local ovr = require("nightfox.override").groups
   local config = require("nightfox.config").options
 
+  if not spec then
+    print("there is no spec")
+  end
   local editor = require("nightfox.group.editor").get(spec, config)
   local syntax = require("nightfox.group.syntax").get(spec, config)
 

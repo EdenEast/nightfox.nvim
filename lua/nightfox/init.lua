@@ -1,9 +1,14 @@
+local is_vim = vim.fn.has("nvim") ~= 1
+if is_vim then
+  require("nightfox.lib.vim")
+end
+
 local config = require("nightfox.config")
 
 local M = {}
 
 function M.compile()
-  local compiler = require("nightfox.lib.compiler")
+  local compiler = require("nightfox.lib." .. (is_vim and "vim." or "") .. "compiler")
   local foxes = require("nightfox.palette").foxes
   for _, style in ipairs(foxes) do
     compiler.compile({ style = style })
@@ -61,9 +66,6 @@ function M.setup(opts)
   end
 
   local util = require("nightfox.util")
-  local is_nvim = util.is_nvim
-  local fstat = is_nvim and vim.loop.fs_stat or function(_) end
-
   local cached_stat = util.join_paths(config.options.compile_path, "stat")
   local file = io.open(cached_stat)
   local last_stat = nil
@@ -75,19 +77,17 @@ function M.setup(opts)
   -- Get the file stat of the file that called `setup` and nightfox's ORIG_HEAD file
   -- This means that any changes to either the file that called setup of nightfox itself change
   -- then the stat saved will be different and needs to be re-compiled
-  local user_stat = fstat(debug.getinfo(2).source:sub(2))
-  local nf_git_stat = fstat(util.join_paths(debug.getinfo(1).source:sub(2, -24), ".git", "ORIG_HEAD"))
+  local user_stat = vim.loop.fs_stat(debug.getinfo(2).source:sub(2))
+  local nf_git_stat = vim.loop.fs_stat(util.join_paths(debug.getinfo(1).source:sub(2, -24), ".git", "ORIG_HEAD"))
   local cur_stat = (user_stat and user_stat.mtime.sec or 0) + (nf_git_stat and nf_git_stat.mtime.sec or 0)
 
   if not user_stat or last_stat ~= tostring(cur_stat) then
     util.ensure_dir(config.options.compile_path)
 
-    if is_nvim then
-      file = io.open(cached_stat, "wb")
-      if file then
-        file:write(cur_stat)
-        file:close()
-      end
+    file = io.open(cached_stat, "wb")
+    if file then
+      file:write(cur_stat)
+      file:close()
     end
 
     local cached_config = util.join_paths(config.options.compile_path, "config")
