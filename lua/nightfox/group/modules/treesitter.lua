@@ -3,150 +3,129 @@ local M = {}
 function M.get(spec, config, opts)
   local syn = spec.syntax
   local stl = config.styles
+  local P = spec.palette
 
-  if not vim.treesitter.highlighter.hl_map then -- https://github.com/nvim-treesitter/nvim-treesitter/pull/3365
+  if vim.treesitter.highlighter.hl_map then
+    require("nightfox.lib.log").warn([[nvim-treesitter integration requires neovim 0.8
+If you want to stay on nvim 0.7, disable the module, or pin to commit 15f3b5837a8d07f45cbe16753fbf13630bc167a3
+]])
+    return {}
+  end
+
   -- stylua: ignore
   return {
-    ["@attribute"]              = { link = "Constant" }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-    -- ["@boolean"]             = {}, -- Boolean literals: `True` and `False` in Python.
-    -- ["@character"]           = {}, -- Character literals: `'a'` in C.
-    -- ["@comment"]             = {}, -- Line comments and block comments.
-    -- ["@conditional"]         = {}, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-    -- ["@constant"]            = {}, -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python.
-    ["@constant.builtin"]       = { fg = syn.builtin2, style = stl.constants }, -- Built-in constant values: `nil` in Lua.
-    -- ["@constant.macro"]      = {}, -- Constants defined by macros: `NULL` in C.
-    ["@constructor"]            = { fg = syn.keyword }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    ["@error"]                  = { fg = spec.diag.error }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
-    -- ["@exception"]           = {}, -- Exception related keywords: `try`, `except`, `finally` in Python.
-    ["@field"]                  = { fg = syn.field }, -- Object and struct fields.
-    -- ["@float"]               = {}, -- Floating-point number literals.
-    -- ["@function"]            = {}, -- Function calls and definitions.
-    ["@function.builtin"]       = { fg = syn.builtin0, style = stl.functions }, -- Built-in functions: `print` in Lua.
-    ["@function.macro"]         = { fg = syn.builtin0, style = stl.functions }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-    -- ["@include"]             = {}, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-    -- ["@keyword"]             = {}, -- Keywords that don't fit into other categories.
-    ["@keyword.function"]       = { fg = syn.builtin0, style = stl.functions }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-    ["@keyword.operator"]       = { fg = syn.operator, style = "bold" }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-    -- ["@keyword.return"]      = {}, -- Keywords like `return` and `yield`.
-    -- ["@label"]               = {}, -- GOTO labels: `label:` in C, and `::label::` in Lua.
-    -- ["@method"]              = {}, -- Method calls and definitions.
-    ["@namespace"]              = { fg = syn.builtin1 }, -- Identifiers referring to modules and namespaces.
-    -- ["@none"]                = {}, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
-    -- ["@number"]              = {}, -- Numeric literals that don't fit into other categories.
-    ["@operator"]               = { fg = syn.operator, style = stl.operators }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
-    -- ["@parameter"]           = {}, -- Parameters of a function.
-    -- ["@parameter.reference"] = {}, -- References to parameters of a function.
-    ["@property"]               = { link = "@field" }, -- Same as `@field`.
-    ["@punctuation.delimiter"]  = { fg = syn.bracket }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
-    ["@punctuation.bracket"]    = { fg = syn.bracket }, -- Brackets, braces, parentheses, etc.
-    ["@punctuation.special"]    = { fg = syn.bracket }, -- Special punctuation that doesn't fit into the previous categories.
-    -- ["@repeat"]              = {}, -- Keywords related to loops: `for`, `while`, etc.
-    -- ["@string"]              = {}, -- String literals.
+    -- Misc
+    ["@comment"]                = { link = "Comment" },
+    ["@error"]                  = { link = "Error" },
+    ["@preproc"]                = { link = "PreProc" }, -- various preprocessor directives & shebangs
+    ["@define"]                 = { link = "Define" }, -- preprocessor definition directives
+    ["@operator"]               = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
+
+    -- Punctuation
+    ["@punctuation.delimiter"]  = { fg = syn.bracket }, -- For delimiters ie: .
+    ["@punctuation.bracket"]    = { fg = syn.bracket }, -- For brackets and parenthesis.
+    ["@punctuation.special"]    = { fg = syn.builtin1, style = stl.operators }, -- For special punctutation that does not fall in the catagories before.
+
+    -- Literals
+    ["@string"]                 = { link = "String" }, -- For strings.
     ["@string.regex"]           = { fg = syn.regex, style = stl.strings }, -- Regular expression literals.
     ["@string.escape"]          = { fg = syn.regex, style = "bold" }, -- Escape characters within a string: `\n`, `\t`, etc.
-    -- ["@string.special"]      = {}, -- Strings with special meaning that don't fit into the previous categories.
-    -- ["@symbol"]              = {}, -- Identifiers referring to symbols or atoms.
-    ["@tag"]                    = { link = "Keyword" }, -- Tags like HTML tag names.
-    ["@tag.attribute"]          = { link = "Function" }, -- HTML tag attributes.
-    ["@tag.delimiter"]          = { link = "Delimiter" }, -- Tag delimiters like `<` `>` `/`.
-    ["@text"]                   = { fg = spec.fg1 }, -- Non-structured text. Like text in a markup language.
-    -- ["@strong"]              = {}, -- Text to be represented in bold.
-    -- ["@emphasis"]            = {}, -- Text to be represented with emphasis.
-    -- ["@underline"]           = {}, -- Text to be represented with an underline.
-    -- ["@strike"]              = {}, -- Strikethrough text.
-    -- ["@title"]               = {}, -- Text that is part of a title.
-    -- ["@literal"]             = {}, -- Literal or verbatim text.
-    ["@uri"]                    = { fg = syn.ident, style = "bold" }, -- URIs like hyperlinks or email addresses.
-    -- ["@math"]                = {}, -- Math environments like LaTeX's `$ ... $`
-    ["@text.reference"]         = { fg = syn.keyword }, -- Footnotes, text references, citations, etc.
-    -- ["@environment"]         = {}, -- Text environments of markup languages.
-    -- ["@environment.name"]     = {}, -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
-    ["@note"]                   = { fg = spec.diag.info }, -- Text representation of an informational note.
-    ["@warning"]                = { fg = spec.diag.warn }, -- Text representation of a warning note.
-    ["@danger"]                 = { fg = spec.diag.error }, -- Text representation of a danger note.
-    -- ["@type"]                = {}, -- Type (and class) definitions and annotations.
-    ["@type.builtin"]           = { fg = syn.builtin1, style = stl.types }, -- Built-in types: `i32` in Rust.
-    ["@variable"]               = { fg = syn.variable, style = stl.variables }, -- Variable names that don't fit into other categories.
-    ["@variable.builtin"]       = { fg = syn.builtin0, style = stl.variables }, -- Variable names defined by the language: `this` or `self` in Javascript.
+    ["@string.special"]         = { link = "Special" }, -- other special strings (e.g. dates)
 
-    -- Languages ---------------------------------------------------------------
-    -- Rust
+    ["@character"]              = { link = "Character" }, -- character literals
+    ["@character.special"]      = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
+
+    ["@boolean"]                = { link = "Boolean" }, -- For booleans.
+    ["@number"]                 = { link = "Number" }, -- For all numbers
+    ["@float"]                  = { link = "Number" }, -- For floats.
+
+    -- Functions
+    ["@function"]               = { link = "Function" }, -- For function (calls and definitions).
+    ["@function.builtin"]       = { fg = syn.builtin0, style = stl.functions }, -- For builtin functions: table.insert in Lua.
+    ["@function.call"]          = { link = "@function" }, -- function calls
+    ["@function.macro"]         = { fg = syn.builtin0, style = stl.functions }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
+    ["@method"]                 = { link = "@function"}, -- For method calls and definitions.
+
+    ["@method.call"]            = { link = "@method" }, -- method calls
+
+    ["@constructor"]            = { fg = syn.ident }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+    ["@parameter"]              = { fg = syn.builtin1, stl.variables }, -- For parameters of a function.
+
+    -- Keywords
+    ["@keyword"]                = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
+    ["@keyword.function"]       = { fg = syn.keyword, style = stl.functions }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
+    ["@keyword.operator"]       = { fg = syn.operator, style = stl.operators }, -- For new keyword operator
+    ["@keyword.return"]         = { fg = syn.builtin0, style = stl.keywords },
+
+    ["@conditional"]            = { link = "Conditional" }, -- For keywords related to conditionnals.
+    ["@repeat"]                 = { link = "Repeat" }, -- For keywords related to loops.
+    ["@label"]                  = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
+    ["@include"]                = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+    ["@exception"]              = { fg = syn.builtin0, style = stl.keywords }, -- Exception related keywords: `try`, `except`, `finally` in Python.
+
+    -- Types
+    ["@type"]                   = { link = "Type" }, -- For types.
+    ["@type.builtin"]           = { fg = syn.builtin1, style = stl.types }, -- For builtin types.
+    ["@type.definition"]        = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
+    ["@type.qualifier"]         = { link = "@type" }, -- type qualifiers (e.g. `const`)
+
+    ["@storageclass"]           = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
+    ["@attribute"]              = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
+    ["@field"]                  = { fg = syn.field }, -- For fields.
+    ["@property"]               = { link = "@field" }, -- Same as @field.
+
+    -- Identifiers
+    ["@variable"]               = { fg = syn.variable, style = stl.variables }, -- Any variable name that does not have another highlighC.
+    ["@variable.builtin"]       = { fg = syn.builtin0, style = stl.variables }, -- Variable names that are defined by the languages, like this or self.
+
+    ["@constant"]               = { link = "Constant" }, -- For constants
+    ["@constant.builtin"]       = { fg = syn.builtin2, style = stl.keywords }, -- For constant that are built in the language: nil in Lua.
+    ["@constant.macro"]         = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
+
+    ["@namespace"]              = { fg = syn.builtin1,  }, -- For identifiers referring to modules and namespaces.
+    ["@symbol"]                 = { fg = syn.preproc },
+
+    -- Text
+    ["@text"]                   = { fg = spec.fg1 }, -- For strings considerated text in a markup language.
+    ["@text.strong"]            = { fg = P.red:subtle(), style = "bold" }, -- bold
+    ["@text.emphasis"]          = { fg = P.red:subtle(), style = "italic" }, -- italic
+    ["@text.underline"]         = { link = "Underline" }, -- underlined text
+    ["@text.strike"]            = { fg = spec.fg1, style = "strikethrough" }, -- strikethrough text
+    ["@text.title"]             = { link = "Title"}, -- titles like: # Example
+    ["@text.literal"]           = { fg = syn.ident, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
+    ["@text.uri"]               = { fg = syn.const, style = "italic,underline" }, -- urls, links and emails
+    ["@text.math"]              = { fg = syn.func }, -- math environments (e.g. `$ ... $` in LaTeX)
+    ["@text.environment"]       = { fg = syn.preproc }, -- text environments of markup languages
+    ["@text.environment.name"]  = { fg = syn.func }, -- text indicating the type of an environment
+    ["@text.reference"]         = { fg = syn.keyword, style = "bold" }, -- references
+
+    ["@text.todo"]              = { fg = spec.bg1, bg = spec.diag.hint }, -- todo notes
+    ["@text.note"]              = { fg = spec.bg1, bg = spec.diag.info },
+    ["@text.warning"]           = { fg = spec.bg1, bg = spec.diag.warn },
+    ["@text.danger"]            = { fg = spec.bg1, bg = spec.diag.error },
+
+    ["@text.diff.add"]          = { link = "diffAdd" }, -- added text (for diff files)
+    ["@text.diff.delete"]       = { link = "diffDelete" }, -- deleted text (for diff files)
+
+    -- Tags
+    ["@tag"]                    = { fg = syn.keyword }, -- Tags like html tag names.
+    ["@tag.attribute"]          = { fg = syn.func, style = "italic" }, -- Tags like html tag names.
+    ["@tag.delimiter"]          = { fg = syn.builtin1 }, -- Tag delimiter like < > /
+
+    -- Language specific -------------------------------------------------------
+
+    -- json
+    ["@label.json"]             = { fg = spec.func }, -- For labels: label: in C and :label: in Lua.
+
+    -- lua
+    ["@constructor.lua"]        = { fg = spec.fg2 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+
+    -- rust
     ["@field.rust"]             = { fg = spec.fg2 },
 
-    -- Javascript/Typescript
-    ["@tag.javascript"]         = { fg = syn.builtin0 }, -- Tags like HTML tag names.
-    ["@tag.typescript"]         = { fg = syn.builtin0 }, -- Tags like HTML tag names.
+    -- yaml
+    ["@field.yaml"]             = { fg = spec.func }, -- For fields.
   }
-  else
-    -- stylua: ignore
-    return {
-      TSAttribute             = { link = "Constant" }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-      -- TSBoolean            = {}, -- Boolean literals: `True` and `False` in Python.
-      -- TSCharacter          = {}, -- Character literals: `'a'` in C.
-      -- TSComment            = {}, -- Line comments and block comments.
-      -- TSConditional        = {}, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-      -- TSConstant           = {}, -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python.
-      TSConstBuiltin          = { fg = syn.builtin2, style = stl.constants }, -- Built-in constant values: `nil` in Lua.
-      -- TSConstMacro         = {}, -- Constants defined by macros: `NULL` in C.
-      TSConstructor           = { fg = syn.keyword }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-      TSError                 = { fg = spec.diag.error }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
-      -- TSException          = {}, -- Exception related keywords: `try`, `except`, `finally` in Python.
-      TSField                 = { fg = syn.field }, -- Object and struct fields.
-      -- TSFloat              = {}, -- Floating-point number literals.
-      -- TSFunction           = {}, -- Function calls and definitions.
-      TSFuncBuiltin           = { fg = syn.builtin0, style = stl.functions }, -- Built-in functions: `print` in Lua.
-      TSFuncMacro             = { fg = syn.builtin0, style = stl.functions }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-      -- TSInclude            = {}, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-      -- TSKeyword            = {}, -- Keywords that don't fit into other categories.
-      TSKeywordFunction       = { fg = syn.builtin0, style = stl.functions }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-      TSKeywordOperator       = { fg = syn.operator, style = "bold" }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-      -- TSKeywordReturn      = {}, -- Keywords like `return` and `yield`.
-      -- TSLabel              = {}, -- GOTO labels: `label:` in C, and `::label::` in Lua.
-      -- TSMethod             = {}, -- Method calls and definitions.
-      TSNamespace             = { fg = syn.builtin1 }, -- Identifiers referring to modules and namespaces.
-      -- TSNone               = {}, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
-      -- TSNumber             = {}, -- Numeric literals that don't fit into other categories.
-      TSOperator              = { fg = syn.operator, style = stl.operators }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
-      -- TSParameter          = {}, -- Parameters of a function.
-      -- TSParameterReference = {}, -- References to parameters of a function.
-      TSProperty              = { link = "TSField" }, -- Same as `TSField`.
-      TSPunctDelimiter        = { fg = syn.bracket }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
-      TSPunctBracket          = { fg = syn.bracket }, -- Brackets, braces, parentheses, etc.
-      TSPunctSpecial          = { fg = syn.bracket }, -- Special punctuation that doesn't fit into the previous categories.
-      -- TSRepeat             = {}, -- Keywords related to loops: `for`, `while`, etc.
-      -- TSString             = {}, -- String literals.
-      TSStringRegex           = { fg = syn.regex, style = stl.strings }, -- Regular expression literals.
-      TSStringEscape          = { fg = syn.regex, style = "bold" }, -- Escape characters within a string: `\n`, `\t`, etc.
-      -- TSStringSpecial      = {}, -- Strings with special meaning that don't fit into the previous categories.
-      -- TSSymbol             = {}, -- Identifiers referring to symbols or atoms.
-      -- TSTag                = {}, -- Tags like HTML tag names.
-      -- TSTagAttribute       = {}, -- HTML tag attributes.
-      -- TSTagDelimiter       = {}, -- Tag delimiters like `<` `>` `/`.
-      -- TSText               = {}, -- Non-structured text. Like text in a markup language.
-      -- TSStrong             = {}, -- Text to be represented in bold.
-      -- TSEmphasis           = {}, -- Text to be represented with emphasis.
-      -- TSUnderline          = {}, -- Text to be represented with an underline.
-      -- TSStrike             = {}, -- Strikethrough text.
-      -- TSTitle              = {}, -- Text that is part of a title.
-      -- TSLiteral            = {}, -- Literal or verbatim text.
-      TSURI                = { fg = syn.ident, style = "bold" }, -- URIs like hyperlinks or email addresses.
-      -- TSMath               = {}, -- Math environments like LaTeX's `$ ... $`
-      TSTextReference      = { fg = syn.keyword }, -- Footnotes, text references, citations, etc.
-      -- TSEnvironment        = {}, -- Text environments of markup languages.
-      -- TSEnvironmentName    = {}, -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
-      TSNote               = { fg = spec.diag.info }, -- Text representation of an informational note.
-      TSWarning            = { fg = spec.diag.warn }, -- Text representation of a warning note.
-      TSDanger             = { fg = spec.diag.error }, -- Text representation of a danger note.
-      -- TSType               = {}, -- Type (and class) definitions and annotations.
-      TSTypeBuiltin        = { fg = syn.builtin1, style = stl.types }, -- Built-in types: `i32` in Rust.
-      TSVariable           = { fg = syn.variable, style = stl.variables }, -- Variable names that don't fit into other categories.
-      TSVariableBuiltin    = { fg = syn.builtin0, style = stl.variables }, -- Variable names defined by the language: `this` or `self` in Javascript.
-
-      -- Languages ---------------------------------------------------------------
-      -- Rust
-      rustTSField          = { fg = spec.fg2 },
-    }
-  end
 end
 
 return M
