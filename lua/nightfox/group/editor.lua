@@ -63,7 +63,7 @@ function M.get(spec, config)
     TabLine         = { fg = spec.fg2, bg = spec.bg2 }, -- tab pages line, not active tab page label
     TabLineFill     = { bg = spec.bg0 }, -- tab pages line, where there are no labels
     TabLineSel      = { fg = spec.bg1, bg = spec.fg3 }, -- tab pages line, active tab page label
-    Title           = { fg = spec.syntax.func }, -- titles for output from ":set all", ":autocmd" etc.
+    Title           = { fg = spec.syntax.func, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
     Visual          = inv.visual and { style = "reverse" } or { bg = spec.sel0 }, -- Visual mode selection
     VisualNOS       = inv.visual and { style = "reverse" } or { link = "visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg      = { fg = spec.diag.warn }, -- warning messages
