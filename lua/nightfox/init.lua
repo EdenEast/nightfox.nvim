@@ -5,6 +5,23 @@ end
 
 local config = require("nightfox.config")
 
+local function read_file(filepath)
+  local file = io.open(filepath, "r")
+  if file then
+    local content = file:read()
+    file:close()
+    return content
+  end
+end
+
+local function write_file(filepath, content)
+  local file = io.open(filepath, "w")
+  if file then
+    file:write(content)
+    file:close()
+  end
+end
+
 local M = {}
 
 function M.compile()
@@ -66,46 +83,29 @@ function M.setup(opts)
   end
 
   local util = require("nightfox.util")
-  local cached_stat = util.join_paths(config.options.compile_path, "stat")
-  local file = io.open(cached_stat)
-  local last_stat = nil
-  if file then
-    last_stat = file:read()
-    file:close()
-  end
 
-  -- Get the file stat of the file that called `setup` and nightfox's ORIG_HEAD file
-  -- This means that any changes to either the file that called setup of nightfox itself change
-  -- then the stat saved will be different and needs to be re-compiled
+  local cached_stat_file = util.join_paths(config.options.compile_path, "stat")
+  local cached_stat = read_file(cached_stat_file)
   local user_stat = vim.loop.fs_stat(debug.getinfo(2).source:sub(2))
-  local nf_git_stat = vim.loop.fs_stat(util.join_paths(debug.getinfo(1).source:sub(2, -24), ".git", "ORIG_HEAD"))
-  local cur_stat = (user_stat and user_stat.mtime.sec or 0) + (nf_git_stat and nf_git_stat.mtime.sec or 0)
+  user_stat = user_stat and tostring(user_stat.mtime.sec)
 
-  if not user_stat or last_stat ~= tostring(cur_stat) then
+  local cached_fingerprint_file = util.join_paths(config.options.compile_path, "fingerprint")
+  local cached_fingerprint = read_file(cached_fingerprint_file) or ""
+  local fingerprint = require("nightfox.fingerprint")
+
+  if not user_stat or not cached_stat or (cached_stat ~= user_stat) or (cached_fingerprint ~= fingerprint) then
     util.ensure_dir(config.options.compile_path)
-
-    file = io.open(cached_stat, "wb")
-    if file then
-      file:write(cur_stat)
-      file:close()
+    write_file(cached_fingerprint_file, fingerprint)
+    if user_stat then
+      write_file(cached_stat_file, user_stat)
     end
 
     local cached_config = util.join_paths(config.options.compile_path, "config")
-    file = io.open(cached_config)
-    local cached_hash = nil
-    if file then
-      cached_hash = file:read()
-      io.close(file)
-    end
-
+    local cached_hash = read_file(cached_config)
     local current_config_hash = config.hash() + override.hash()
     if cached_hash ~= tostring(current_config_hash) then
       M.compile()
-      file = io.open(cached_config, "wb")
-      if file then
-        file:write(current_config_hash)
-        file:close()
-      end
+      write_file(cached_config, current_config_hash)
     end
   end
 
