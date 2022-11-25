@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks :
+      - id: fingerprint
+        name: Fingerprint
+        description: Generate the git fingerprint for nightfox
+        language: system
+        entry: make fingerprint
+        types: [file]
