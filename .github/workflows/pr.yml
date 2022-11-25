@@ -15,3 +15,13 @@ jobs:
           packages: stylua,fd
           script: |
             stylua -f stylua.toml --check $(fd . -t f -e lua | grep -v native_bitops)
+
+  fingerprint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate fingerprint
+        run: make fingerprint
+
+      - name: Check if fingerprint changed
+        run: git diff-index --quiet HEAD --
