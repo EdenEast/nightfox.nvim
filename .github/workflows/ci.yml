@@ -1,13 +1,9 @@
 name: Continuous Integration
 on:
+  workflow_dispatch: # Manual triggering
   push:
     branches:
       - main
-    paths:
-      - 'autocmd/*'
-      - 'colors/*'
-      - 'lua/*'
-      - 'plugin/*'
 
 jobs:
   fingerprint:
