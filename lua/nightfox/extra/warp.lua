@@ -15,7 +15,7 @@ function M.generate(spec)
     meta = p.meta,
     bg = spec.bg1,
     fg = spec.fg1,
-    details = p.meta.light and 'lighter' or 'darker',
+    details = p.meta.light and "lighter" or "darker",
     black = construct(p.black),
     red = construct(p.red),
     green = construct(p.green),
