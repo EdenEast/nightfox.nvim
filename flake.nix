@@ -32,7 +32,7 @@
             # lua5_1
           ];
           shellHook = ''
-            pre-commit-hooks install
+            pre-commit install
           '';
         };
 
