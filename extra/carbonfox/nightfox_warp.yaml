@@ -1,7 +1,10 @@
-accent: "#4d688e"
-background: "#161616"
-details: darker
-foreground: "#f2f4f8"
+# Nightfox Warp Colors
+# Style: carbonfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_warp.yaml
+accent:     '#f2f4f8'
+background: '#161616'
+foreground: '#f2f4f8'
+details:    'darker'
 terminal_colors:
   normal:
     black:   '#282828'

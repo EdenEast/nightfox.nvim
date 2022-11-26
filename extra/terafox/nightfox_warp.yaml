@@ -1,7 +1,10 @@
-accent: "#e6eaea"
-background: "#152528"
-details: darker
-foreground: "#e6eaea"
+# Nightfox Warp Colors
+# Style: terafox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/nightfox_warp.yaml
+accent:     '#e6eaea'
+background: '#152528'
+foreground: '#e6eaea'
+details:    'darker'
 terminal_colors:
   normal:
     black:   '#2f3239'

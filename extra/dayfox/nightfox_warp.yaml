@@ -1,7 +1,10 @@
-accent: "#1d344f"
-background: "#eaeaea"
-details: lighter
-foreground: "#1d344f"
+# Nightfox Warp Colors
+# Style: dayfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_warp.yaml
+accent:     '#1d344f'
+background: '#eaeaea'
+foreground: '#1d344f'
+details:    'lighter'
 terminal_colors:
   normal:
     black:   '#1d344f'

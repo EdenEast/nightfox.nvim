@@ -1,7 +1,10 @@
-accent: "#e0def4"
-background: "#232136"
-details: darker
-foreground: "#e0def4"
+# Nightfox Warp Colors
+# Style: duskfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/duskfox/nightfox_warp.yaml
+accent:     '#e0def4'
+background: '#232136'
+foreground: '#e0def4'
+details:    'darker'
 terminal_colors:
   normal:
     black:   '#393552'
