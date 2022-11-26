@@ -15,7 +15,7 @@ local function read_file(filepath)
 end
 
 local function write_file(filepath, content)
-  local file = io.open(filepath, "w")
+  local file = io.open(filepath, "wb")
   if file then
     file:write(content)
     file:close()
