@@ -1,13 +1,3 @@
-vim.loop = {
-  fs_stat = function(file)
-    local mod = vim.fn.getftime(file)
-    if mod == -1 then
-      return nil
-    end
-    return { mtime = { sec = mod } }
-  end,
-}
-
 -- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/shared.lua
 local function tbl_isempty(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
