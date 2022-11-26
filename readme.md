@@ -97,6 +97,7 @@ require('nightfox').setup({
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = false,   -- Non focused panes set to alternative background
     module_default = true,  -- Default enable value for modules
+    check_cache = true,     -- Check cached setup. Disable if using the `/nix/store`
     styles = {              -- Style to be applied to different syntax groups
       comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",

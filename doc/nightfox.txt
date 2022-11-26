@@ -248,6 +248,15 @@ module_default {bool}                  The default value of a module that has
                                        table.
 
 
+                                                        *nightfox-check_cache*
+
+check_cache {bool}                     If enabled nightfox will check a cached
+                                       hash of nightfox and the users config.
+                                       This should be disabled if your setup
+                                       uses `nix` and is stored in the
+                                       `/nix/store`. Default is `true`.
+
+
                                                              *nightfox-styles*
 
 styles {table}                         `styles` is a table that contains a list

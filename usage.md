@@ -196,6 +196,11 @@ A boolean value that if set will set the background of Non current windows to be
 
 The default value of a module that has not been overridden in the modules table.
 
+#### check_cache {bool}
+
+If enabled nightfox will check a cached hash of nightfox and the users config. This should be disabled if your setup
+uses `nix` and is stored in the `/nix/store`. Default is `true`.
+
 #### styles {table}
 
 `styles` is a table that contains a list of syntax components and their corresponding style. These styles can be any

@@ -10,6 +10,7 @@ local defaults = {
   terminal_colors = true,
   dim_inactive = false,
   module_default = true,
+  check_cache = true,
   styles = {
     comments = "NONE",
     conditionals = "NONE",
