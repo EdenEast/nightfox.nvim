@@ -83,30 +83,39 @@ function M.setup(opts)
   end
 
   local util = require("nightfox.util")
+  util.ensure_dir(config.options.compile_path)
 
-  local cached_stat_file = util.join_paths(config.options.compile_path, "stat")
-  local cached_stat = read_file(cached_stat_file)
-  local user_stat = vim.loop.fs_stat(debug.getinfo(2).source:sub(2))
-  user_stat = user_stat and tostring(user_stat.mtime.sec)
-
+  local config_hash = nil
   local cached_fingerprint_file = util.join_paths(config.options.compile_path, "fingerprint")
-  local cached_fingerprint = read_file(cached_fingerprint_file) or ""
+  local cached_stat_file = util.join_paths(config.options.compile_path, "stat")
+  local cached_config_file = util.join_paths(config.options.compile_path, "config")
+
+  local cached_fingerprint = read_file(cached_fingerprint_file)
   local fingerprint = require("nightfox.fingerprint")
+  local should_compile = fingerprint ~= cached_fingerprint
 
-  if not user_stat or not cached_stat or (cached_stat ~= user_stat) or (cached_fingerprint ~= fingerprint) then
-    util.ensure_dir(config.options.compile_path)
-    write_file(cached_fingerprint_file, fingerprint)
-    if user_stat then
+  local user_config_file = debug.getinfo(2).source:sub(2)
+  local user_stat = user_config_file .. "-" .. vim.fn.getftime(user_config_file)
+
+  if not should_compile then
+    if user_stat ~= read_file(cached_stat_file) then
+      -- The user's file could have changed but the config table has not. This means that we don't have to compile _but_
+      -- the cached stat file should be updated with the change.
       write_file(cached_stat_file, user_stat)
-    end
 
-    local cached_config = util.join_paths(config.options.compile_path, "config")
-    local cached_hash = read_file(cached_config)
-    local current_config_hash = config.hash() + override.hash()
-    if cached_hash ~= tostring(current_config_hash) then
-      M.compile()
-      write_file(cached_config, current_config_hash)
+      -- Should only compile if the config cache has changed
+      config_hash = config.hash() + override.hash()
+      should_compile = tostring(config_hash) ~= read_file(cached_config_file)
     end
+  end
+
+  if should_compile then
+    M.compile()
+
+    write_file(cached_fingerprint_file, fingerprint)
+    write_file(cached_stat_file, user_stat)
+    config_hash = config_hash or config.hash() + override.hash()
+    write_file(cached_config_file, config_hash)
   end
 
   require("nightfox.util.deprecation").check_deprecation(opts)
