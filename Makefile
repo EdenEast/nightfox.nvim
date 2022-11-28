@@ -9,6 +9,7 @@ all: extragen docgen fingerprint
 
 fingerprint:
 	echo "return [[$(fp)]]" > $(fpfile)
+	git add $(fpfile)
 
 extragen:
 	nvim --headless --clean -u misc/extra.lua
