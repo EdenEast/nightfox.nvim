@@ -104,8 +104,8 @@ If you want to stay on nvim 0.7, disable the module, or pin to commit 15f3b5837a
     ["@text.warning"]           = { fg = spec.bg1, bg = spec.diag.warn },
     ["@text.danger"]            = { fg = spec.bg1, bg = spec.diag.error },
 
-    ["@text.diff.add"]          = { link = "diffAdd" }, -- added text (for diff files)
-    ["@text.diff.delete"]       = { link = "diffDelete" }, -- deleted text (for diff files)
+    ["@text.diff.add"]          = { link = "diffAdded" }, -- added text (for diff files)
+    ["@text.diff.delete"]       = { link = "diffRemoved" }, -- deleted text (for diff files)
 
     -- Tags
     ["@tag"]                    = { fg = syn.keyword }, -- Tags like html tag names.
