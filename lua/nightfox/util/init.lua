@@ -29,6 +29,10 @@ end
 M.is_nvim = vim.fn.has("nvim") == 1
 M.use_nvim_api = M.is_nvim and vim.fn.has("nvim-0.7") == 1
 
+function M.get_tmp_dir()
+  return M.is_windows and os.getenv("TMP") or "/tmp"
+end
+
 function M.get_separator()
   if M.is_windows then
     return "\\"
@@ -52,7 +56,9 @@ function M.exists(path)
 end
 
 function M.ensure_dir(path)
-  os.execute(string.format("mkdir %s %s", M.is_windows and "" or "-p", path))
+  if vim.fn.isdirectory(path) == 0 then
+    vim.fn.mkdir(path, "p")
+  end
 end
 
 local function vim_cache_home()
