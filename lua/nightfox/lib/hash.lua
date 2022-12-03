@@ -1,4 +1,4 @@
-local bitop = bit or bit32 or require("nightfox.lib.vim.bit")
+local bitop = bit or bit32 or require("nightfox.lib.native_bit")
 local M = {}
 
 -- Reference: https://github.com/catppuccin/nvim/blob/97c7781/lua/catppuccin/lib/hashing.lua
