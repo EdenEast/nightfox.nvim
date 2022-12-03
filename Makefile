@@ -1,15 +1,9 @@
 pandocrepo = https://github.com/kdheepak/panvimdoc
 pandocdir = misc/panvimdoc
-fpfile = ./lua/nightfox/fingerprint.lua
 
 root_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-fp := $(shell git ls-files -- './lua/*' './autoload/*' './colors/*' './plugin/*' | grep -v 'fingerprint.lua' | git hash-object --stdin-paths | git hash-object --stdin)
 
-all: extragen docgen fingerprint
-
-fingerprint:
-	echo "return [[$(fp)]]" > $(fpfile)
-	git add $(fpfile)
+all: extragen docgen
 
 extragen:
 	nvim --headless --clean -u misc/extra.lua
