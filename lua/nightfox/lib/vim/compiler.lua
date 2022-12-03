@@ -61,10 +61,29 @@ set background="%s"]],
   opts.name = style
   local output_path, output_file = config.get_compiled_info(opts)
   util.ensure_dir(output_path)
-
   local file = io.open(output_file, "wb")
+
   local ld = load or loadstring -- loadstring == 5.1, load >= 5.2
-  ld(table.concat(lines, "\n"), "=")()
+  local f = ld(table.concat(lines, "\n"), "=")
+  if not f then
+    local tmpfile = util.join_paths(util.get_tmp_dir(), "nightfox_error.lua")
+    require("nightfox.lib.log").error(fmt(
+      [[There is an error in your nigtfox config.
+You can open '%s' for debugging.
+
+If you think this is a bug, kindly open an issue and attach '%s' file.
+Bellow is the error message:
+]],
+      tmpfile,
+      tmpfile
+    ))
+    local efile = io.open(tmpfile, "wb")
+    efile:write(table.concat(lines, "\n"))
+    efile:close()
+    dofile(tmpfile)
+  end
+
+  f()
   file:write(require("nightfox").compiled)
   file:close()
 end
