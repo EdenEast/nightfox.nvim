@@ -24,16 +24,12 @@
             gnumake
             stylua
             vim-lua
-            pre-commit
             # luajit
             lua5_4
             # lua5_3
             # lua5_2
             # lua5_1
           ];
-          shellHook = ''
-            pre-commit install
-          '';
         };
 
       in
