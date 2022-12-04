@@ -1,9 +1,9 @@
 -- Reference(stripped down): https://github.com/davidm/lua-bit-numberlua/blob/master/lmod/bit/numberlua.lua
-local M = {}
 
 local floor = math.floor
 
 local MOD = 2 ^ 32
+local MODM = MOD - 1
 
 local function memoize(f)
   local mt = {}
@@ -13,7 +13,6 @@ local function memoize(f)
     t[k] = v
     return v
   end
-
   return t
 end
 
@@ -30,7 +29,6 @@ local function make_bitop_uncached(t, m)
     res = res + (a + b) * p
     return res
   end
-
   return bitop
 end
 
@@ -44,17 +42,21 @@ local function make_bitop(t)
   return make_bitop_uncached(op2, 2 ^ (t.n or 1))
 end
 
-M.bxor = make_bitop({ [0] = { [0] = 0, [1] = 1 }, [1] = { [0] = 1, [1] = 0 }, n = 4 })
-local bxor = M.bxor
+local bxor = make_bitop({ [0] = { [0] = 0, [1] = 1 }, [1] = { [0] = 1, [1] = 0 }, n = 4 })
 
-local lshift, rshift
-
-lshift = function(a, disp) -- Lua5.2 inspired
-  if disp < 0 then
-    return rshift(a, -disp)
-  end
-  return (a * 2 ^ disp) % 2 ^ 32
+local function bnot(a)
+  return MODM - a
 end
+
+local function band(a, b)
+  return ((a + b) - bxor(a, b)) / 2
+end
+
+local function bor(a, b)
+  return MODM - band(MODM - a, MODM - b)
+end
+
+local lshift, rshift -- forward declare
 
 rshift = function(a, disp) -- Lua5.2 insipred
   if disp < 0 then
@@ -63,12 +65,43 @@ rshift = function(a, disp) -- Lua5.2 insipred
   return floor(a % 2 ^ 32 / 2 ^ disp)
 end
 
+lshift = function(a, disp) -- Lua5.2 inspired
+  if disp < 0 then
+    return rshift(a, -disp)
+  end
+  return (a * 2 ^ disp) % 2 ^ 32
+end
+
 local function bit_tobit(x)
   x = x % MOD
   if x >= 0x80000000 then
     x = x - MOD
   end
   return x
+end
+
+local function bit_not(x)
+  return bit_tobit(bnot(x % MOD))
+end
+
+local function bit_bor(a, b, c, ...)
+  if c then
+    return bit_bor(bit_bor(a, b), c, ...)
+  elseif b then
+    return bit_tobit(bor(a % MOD, b % MOD))
+  else
+    return bit_tobit(a)
+  end
+end
+
+local function bit_band(a, b, c, ...)
+  if c then
+    return bit_band(bit_band(a, b), c, ...)
+  elseif b then
+    return bit_tobit(band(a % MOD, b % MOD))
+  else
+    return bit_tobit(a)
+  end
 end
 
 local function bit_bxor(a, b, c, ...)
@@ -82,8 +115,16 @@ local function bit_bxor(a, b, c, ...)
 end
 
 return {
-  bxor = bit_bxor,
+  lshift = function(x, n)
+    return bit_tobit(lshift(x % MOD, n % 32))
+  end,
+
   rshift = function(x, n)
     return bit_tobit(rshift(x % MOD, n % 32))
   end,
+
+  bnot = bit_not,
+  band = bit_band,
+  bor = bit_bor,
+  bxor = bit_bxor,
 }
