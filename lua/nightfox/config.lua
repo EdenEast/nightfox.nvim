@@ -104,7 +104,7 @@ function M.get_compiled_info(opts)
 end
 
 function M.hash()
-  local hash = require("nightfox.lib.hash").hash(M.options)
+  local hash = require("nightfox.lib.hash")(M.options)
   return hash and hash or 0
 end
 
