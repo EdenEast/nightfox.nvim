@@ -15,7 +15,7 @@ local function reset()
 end
 
 local function hash()
-  local hash = require("nightfox.lib.hash").hash(store)
+  local hash = require("nightfox.lib.hash")(store)
   return hash and hash or 0
 end
 
