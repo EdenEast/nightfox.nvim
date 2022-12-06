@@ -103,6 +103,8 @@ If you want to stay on nvim 0.7, disable the module, or pin to commit 15f3b5837a
     ["@text.note"]              = { fg = spec.bg1, bg = spec.diag.info },
     ["@text.warning"]           = { fg = spec.bg1, bg = spec.diag.warn },
     ["@text.danger"]            = { fg = spec.bg1, bg = spec.diag.error },
+    ["@text.todo.unchecked"]    = { fg = spec.fg3 }, -- For brackets and parens.
+    ["@text.todo.checked"]      = { fg = P.green.base }, -- For brackets and parens.
 
     ["@text.diff.add"]          = { link = "diffAdded" }, -- added text (for diff files)
     ["@text.diff.delete"]       = { link = "diffRemoved" }, -- deleted text (for diff files)
