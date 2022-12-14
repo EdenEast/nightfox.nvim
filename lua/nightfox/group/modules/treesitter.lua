@@ -126,7 +126,7 @@ If you want to stay on nvim 0.7, disable the module, or pin to commit 15f3b5837a
     ["@field.rust"]             = { fg = spec.fg2 },
 
     -- yaml
-    ["@field.yaml"]             = { fg = spec.func }, -- For fields.
+    ["@field.yaml"]             = { fg = syn.func }, -- For fields.
   }
 end
 
