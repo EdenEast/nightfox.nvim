@@ -533,6 +533,7 @@ There are [extra](./extra) configuration files for the following:
 - [kitty](https://sw.kovidgoyal.net/kitty/overview/#configuring-kitty)
 - [konsole](https://konsole.kde.org/)
 - [tmux](https://github.com/tmux/tmux)
+- [warp](https://www.warp.dev/)
 - [wezterm](https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file)
 - [windows terminal](https://github.com/Microsoft/Terminal)
 - [xresources](https://wiki.archlinux.org/title/X_resources)
