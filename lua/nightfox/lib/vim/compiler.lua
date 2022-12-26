@@ -61,7 +61,15 @@ set background="%s"]],
   opts.name = style
   local output_path, output_file = config.get_compiled_info(opts)
   util.ensure_dir(output_path)
-  local file = io.open(output_file, "wb")
+
+  local file
+  if vim.g.nightfox_debug then
+    file = io.open(output_file .. ".lua", "wb")
+    file:write(table.concat(lines, "\n"))
+    file:close()
+  end
+
+  file = io.open(output_file, "wb")
 
   local ld = load or loadstring -- loadstring == 5.1, load >= 5.2
   local f = ld(table.concat(lines, "\n"), "=")
