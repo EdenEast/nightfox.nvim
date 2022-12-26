@@ -1,76 +1,51 @@
-local util = require("nightfox.util")
-local is_nvim = util.is_nvim
-local fmt = string.format
+local M = {}
 
-local nvim_log = {
-  info = function(...)
-    vim.notify({ ... }, vim.log.levels.INFO, { title = "nightfox" })
-  end,
+local is_nvim = vim.fn.has("nvim") == 1
 
-  warn = function(...)
-    vim.notify({ ... }, vim.log.levels.WARN, { title = "nightfox" })
-  end,
+local notified = {}
 
-  error = function(...)
-    vim.notify({ ... }, vim.log.levels.ERROR, { title = "nightfox" })
-  end,
-}
+function M.clear()
+  notified = {}
+end
 
-local vim_log = {
+---@param msg string|string[]
+---@param level integer
+function M.notify(msg, level)
+  if type(msg) == "table" then
+    msg = table.concat(
+      vim.tbl_filter(function(line)
+        return line or false
+      end, msg),
+      "\n"
+    )
+  end
 
-  info = function(...)
-    local msgs = { ... }
-    local lines = {
-      "echohl MoreMsg",
-      [[echo "[info][nightfox]: "]],
-      "echohl None",
-    }
-    local first = table.remove(msgs, 1)
-    if first then
-      table.insert(lines, fmt([[echon "%s"]], first))
-    end
-    for _, v in ipairs(msgs) do
-      table.insert(lines, fmt([[echo "%s"]], v))
-    end
+  if not notified[msg] then
+    vim.notify(msg, level, {
+      on_open = function(win)
+        vim.wo[win].conceallevel = 3
+        vim.wo[win].concealcursor = ""
+        vim.wo[win].spell = false
+        local buf = vim.api.nvim_win_get_buf(win)
+        vim.bo[buf].filetype = "markdown"
+      end,
+      title = "nightfox.nvim",
+    })
 
-    vim.command(table.concat(lines, " | "))
-  end,
+    notified[msg] = true
+  end
+end
 
-  warn = function(...)
-    local msgs = { ... }
-    local lines = {
-      "echohl WarningMsg",
-      [[echo "[warn][nightfox]: "]],
-      "echohl None",
-    }
-    local first = table.remove(msgs, 1)
-    if first then
-      table.insert(lines, fmt([[echon "%s"]], first))
-    end
-    for _, v in ipairs(msgs) do
-      table.insert(lines, fmt([[echo "%s"]], v))
-    end
+function M.error(msg)
+  M.notify(msg, vim.log.levels.ERROR)
+end
 
-    vim.command(table.concat(lines, " | "))
-  end,
+function M.warn(msg)
+  M.notify(msg, vim.log.levels.WARN)
+end
 
-  error = function(...)
-    local msgs = { ... }
-    local lines = {
-      "echohl ErrorMsg",
-      [[echo "[error][nightfox]: "]],
-      "echohl None",
-    }
-    local first = table.remove(msgs, 1)
-    if first then
-      table.insert(lines, fmt([[echon "%s"]], first))
-    end
-    for _, v in ipairs(msgs) do
-      table.insert(lines, fmt([[echo "%s"]], v))
-    end
+function M.info(msg)
+  M.notify(msg, vim.log.levels.INFO)
+end
 
-    vim.command(table.concat(lines, " | "))
-  end,
-}
-
-return is_nvim and nvim_log or vim_log
+return M

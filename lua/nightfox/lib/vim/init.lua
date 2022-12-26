@@ -1,4 +1,16 @@
 -- Reference: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/shared.lua
+
+local function split(inputstr, sep)
+  sep = sep or "%s"
+  local t = {}
+  for field, s in string.gmatch(inputstr, "([^" .. sep .. "]*)(" .. sep .. "?)") do
+    table.insert(t, field)
+    if s == "" then
+      return t
+    end
+  end
+end
+
 local function tbl_isempty(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
   return next(t) == nil
@@ -70,4 +82,55 @@ end
 
 function vim.tbl_deep_extend(behavior, ...)
   return tbl_extend(behavior, true, ...)
+end
+
+vim.log = {
+  levels = {
+    TRACE = 0,
+    DEBUG = 1,
+    INFO = 2,
+    WARN = 3,
+    ERROR = 4,
+    OFF = 5,
+  },
+}
+
+--- Filter a table using a predicate function
+---
+---@generic T
+---@param func fun(value: T): boolean (function) Function
+---@param t table<any, T> (table) Table
+---@return T[] (table) Table of filtered values
+function vim.tbl_filter(func, t)
+  local rettab = {}
+  for _, entry in pairs(t) do
+    if func(entry) then
+      table.insert(rettab, entry)
+    end
+  end
+  return rettab
+end
+
+--- Display a notification to the user.
+---
+--- This function can be overridden by plugins to display notifications using a
+--- custom provider (such as the system notification provider). By default,
+--- writes to |:messages|.
+---
+---@param msg string Content of the notification to show to the user.
+---@param level number|nil One of the values from |vim.log.levels|.
+---@param opts table|nil Optional parameters. Unused by default.
+function vim.notify(msg, level, opts) -- luacheck: no unused args
+  if level == vim.log.levels.ERROR then
+    vim.command("echohl ErrorMsg")
+  elseif level == vim.log.levels.WARN then
+    vim.command("echohl WarningMsg")
+  end
+
+  for _, v in ipairs(split(msg, "\n")) do
+    vim.command(string.format([[echo "%s"]], v))
+  end
+  
+
+  vim.command("echohl None")
 end
