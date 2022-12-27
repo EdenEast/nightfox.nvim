@@ -1,5 +1,4 @@
 local bitop = bit or bit32 or require("nightfox.lib.native_bit")
-local M = {}
 
 -- https://theartincode.stanis.me/008-djb2/
 local function djb2(s)

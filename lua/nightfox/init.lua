@@ -92,14 +92,12 @@ function M.setup(opts)
 
   local git_path = util.join_paths(debug.getinfo(1).source:sub(2, -23), ".git", "ORIG_HEAD")
   local git = vim.fn.getftime(git_path)
-  local hash = config.hash() .. override.hash() .. (git == -1 and git_path or git)
+  local hash = require("nightfox.lib.hash")(opts) .. (git == -1 and git_path or git)
 
   if cached ~= hash then
     M.compile()
     write_file(cached_path, hash)
   end
-
-  require("nightfox.util.deprecation").check_deprecation(opts)
 end
 
 return M
