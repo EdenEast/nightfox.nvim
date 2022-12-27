@@ -451,6 +451,7 @@ There are a few things to note:
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [pounce.nvim](https://github.com/rlane/pounce.nvim)
+- [vim-signify](https://github.com/mhinz/vim-signify)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)

@@ -398,6 +398,7 @@ Current list of modules are:
 - notify
 - nvimtree
 - pounce
+- signify
 - sneak
 - symbol_outline
 - telescope

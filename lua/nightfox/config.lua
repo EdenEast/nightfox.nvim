@@ -74,6 +74,7 @@ M.module_names = {
   "notify",
   "nvimtree",
   "pounce",
+  "signify",
   "sneak",
   "symbol_outline",
   "telescope",
