@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  release:
+    name: release
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          package-name: nightfox.nvim
