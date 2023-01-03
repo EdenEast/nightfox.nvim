@@ -10,8 +10,5 @@ jobs:
       - uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - uses: workflow/nix-shell-action@v3
-        with:
-          packages: stylua,fd
-          script: |
-            stylua -f stylua.toml --check $(fd . -t f -e lua | grep -v native_bitops)
+      - run:
+        nix-shell -p stylua --run "stylua -f stylua.toml --check ."
