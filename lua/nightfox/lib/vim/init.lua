@@ -130,7 +130,6 @@ function vim.notify(msg, level, opts) -- luacheck: no unused args
   for _, v in ipairs(split(msg, "\n")) do
     vim.command(string.format([[echo "%s"]], v))
   end
-  
 
   vim.command("echohl None")
 end
