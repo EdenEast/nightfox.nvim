@@ -68,6 +68,7 @@ M.module_names = {
   "mini",
   "modes",
   "native_lsp",
+  "navic",
   "neogit",
   "neotest",
   "neotree",

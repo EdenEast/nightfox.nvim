@@ -392,6 +392,7 @@ Current list of modules are:
 - mini
 - modes
 - native_lsp
+- navic
 - neogit
 - neotest
 - neotree
