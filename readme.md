@@ -445,6 +445,7 @@ There are a few things to note:
 - [lsp-trouble.nvim](https://github.com/simrat39/lsp-trouble.nvim)
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
+- [nvim-navic](https://github.com/SmiteshP/nvim-navic)
 - [neogit](https://github.com/TimUntersberger/neogit)
 - [neotest](https://github.com/nvim-neotest/neotest)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
