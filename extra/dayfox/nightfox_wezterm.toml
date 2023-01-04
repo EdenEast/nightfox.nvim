@@ -4,64 +4,64 @@ author = "EdenEast"
 origin_url = "https://github.com/EdenEast/nightfox.nvim"
 
 [colors]
-foreground = "#1d344f"
-background = "#eaeaea"
-cursor_bg = "#1d344f"
-cursor_border = "#1d344f"
-cursor_fg = "#eaeaea"
-compose_cursor = '#e3786c'
-selection_bg = "#ced5de"
-selection_fg = "#1d344f"
-scrollbar_thumb = "#2e537d"
-split = "#dbdbdb"
-visual_bell = "#1d344f"
-ansi = ["#1d344f", "#b95d76", "#618774", "#ba793e", "#4d688e", "#8e6f98", "#6ca7bd", "#cdd1d5"]
-brights = ["#24476f", "#c76882", "#629f81", "#ca884a", "#4e75aa", "#9f75ac", "#74b2c9", "#cfd6dd"]
+foreground = "#3d2b5a"
+background = "#f6f2ee"
+cursor_bg = "#3d2b5a"
+cursor_border = "#3d2b5a"
+cursor_fg = "#f6f2ee"
+compose_cursor = '#d75f00'
+selection_bg = "#e7d2be"
+selection_fg = "#3d2b5a"
+scrollbar_thumb = "#824d5b"
+split = "#e6dcd4"
+visual_bell = "#3d2b5a"
+ansi = ["#282828", "#a5222f", "#396847", "#ac5402", "#2848a9", "#6e33ce", "#287980", "#fafafa"]
+brights = ["#484848", "#b3434e", "#577f63", "#b86e28", "#4863b6", "#8452d5", "#488d93", "#fbfbfb"]
 
 [colors.indexed]
-16 = "#d685af"
-17 = "#e3786c"
+16 = "#a440b5"
+17 = "#d75f00"
 
 [colors.tab_bar]
-background = "#dbdbdb"
-inactive_tab_edge = "#dbdbdb"
-inactive_tab_edge_hover = "#dbcece"
+background = "#e6dcd4"
+inactive_tab_edge = "#e6dcd4"
+inactive_tab_edge_hover = "#dbd1dd"
 
 [colors.tab_bar.active_tab]
-bg_color = "#2e537d"
-fg_color = "#eaeaea"
+bg_color = "#824d5b"
+fg_color = "#f6f2ee"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#dbcece"
-fg_color = "#233f5e"
+bg_color = "#dbd1dd"
+fg_color = "#643f61"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#ced6db"
-fg_color = "#1d344f"
+bg_color = "#d7c8bb"
+fg_color = "#3d2b5a"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab]
-bg_color = "#eaeaea"
-fg_color = "#233f5e"
+bg_color = "#f6f2ee"
+fg_color = "#643f61"
 intensity = "Normal"
 italic = false
 strikethrough = false
 underline = "None"
 
 [colors.tab_bar.new_tab_hover]
-bg_color = "#ced6db"
-fg_color = "#1d344f"
+bg_color = "#d7c8bb"
+fg_color = "#3d2b5a"
 intensity = "Normal"
 italic = false
 strikethrough = false
