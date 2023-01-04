@@ -8,23 +8,23 @@ local meta = {
 
 -- stylua: ignore
 local palette = {
-  black   = Shade.new("#282828", 0.15, -0.15, true),
+  black   = Shade.new("#352c24", 0.15, -0.15, true),
   red     = Shade.new("#a5222f", 0.15, -0.15, true),
   green   = Shade.new("#396847", 0.15, -0.15, true),
   yellow  = Shade.new("#AC5402", 0.15, -0.15, true),
   blue    = Shade.new("#2848a9", 0.15, -0.15, true),
   magenta = Shade.new("#6e33ce", 0.15, -0.15, true),
   cyan    = Shade.new("#287980", 0.15, -0.15, true),
-  white   = Shade.new("#fafafa", 0.15, -0.15, true),
-  orange  = Shade.new("#d75f00", 0.15, -0.15, true),
+  white   = Shade.new("#f2e9e1", 0.15, -0.15, true),
+  orange  = Shade.new("#955f61", 0.15, -0.15, true),
   pink    = Shade.new("#a440b5", 0.15, -0.15, true),
 
   comment = "#837a72",
 
-  bg0     = "#e6dcd4", -- Dark bg (status line and float)
+  bg0     = "#e4dcd4", -- Dark bg (status line and float)
   bg1     = "#f6f2ee", -- Default bg
   bg2     = "#dbd1dd", -- Lighter bg (colorcolm folds)
-  bg3     = "#d7c8bb", -- Lighter bg (cursor line)
+  bg3     = "#d3c7bb", -- Lighter bg (cursor line)
   bg4     = "#aab0ad", -- Conceal, border fg
 
   fg0     = "#302b5d", -- Lighter fg

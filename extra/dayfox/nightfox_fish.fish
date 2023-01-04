@@ -5,7 +5,7 @@ set -l foreground 3d2b5a
 set -l selection e7d2be
 set -l comment 837a72
 set -l red a5222f
-set -l orange d75f00
+set -l orange 955f61
 set -l yellow ac5402
 set -l green 396847
 set -l purple 6e33ce
