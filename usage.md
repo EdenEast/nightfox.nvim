@@ -10,6 +10,7 @@ It comes with multiple different styles to suite your preference. These are:
 - `Nordfox`
 - `Terafox`
 - `Carbonfox`
+- `Hybridfox`
 
 ## Usage
 

@@ -23,6 +23,7 @@
   <h3>Nordfox</h3><img src="https://user-images.githubusercontent.com/2746374/158456289-eee096df-7ea7-4161-9199-808fdba58e06.png" alt="nordfox" style="border-radius:1%" />
   <h3>Terafox</h3><img src="https://user-images.githubusercontent.com/2746374/160268126-cd417690-3660-4a04-9040-183c35f127f7.png" alt="terafox" style="border-radius:1%" />
   <h3>Carbonfox</h3><img src="https://user-images.githubusercontent.com/2746374/183569670-91260cab-83a9-4247-8e09-6abb46c52152.png" alt="carbonfox" style="border-radius:1%" />
+  <h3>Hybridfox</h3><img src="https://user-images.githubusercontent.com/2746374/183569670-91260cab-83a9-4247-8e09-6abb46c52152.png" alt="hybridfox" style="border-radius:1%" />
 </div>
 
 > Tabline is [tabby.nvim] and statusline is [feline.nvim]. You can find my config for [tabby] and [feline] here as well
@@ -635,6 +636,7 @@ There are [extra](./extra) configuration files for the following:
 - [catppuccin](https://github.com/catppuccin/nvim/) (integration/modules)
 - [rose-pine](https://github.com/rose-pine/nvim) (dawnfox/duskfox)
 - [oxocarbon.nvim](https://github.com/shaunsingh/oxocarbon.nvim) (carbonfox)
+- [hybridfox](https://github.com/w0ng/vim-hybrid) (hybridfox)
 - [coolers](https://coolers.co) (useful color information and palette tool)
 - [colorhexa](https://www.colorhexa.com/) (detailed color information)
 - [neogit](https://github.com/TimUntersberger/neogit/blob/b688a2c/lua/neogit/lib/color.lua) (base for color lib)

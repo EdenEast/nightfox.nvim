@@ -54,6 +54,19 @@ themes {
     black "#373354"
     white "#cdcbe0"
   }
+  hybridfox {
+    bg "#1d1f21"
+    fg "#c5c8c6"
+    red "#cc6666"
+    green "#b5bd68"
+    blue "#81a2be"
+    yellow "#f0c674"
+    magenta "#b294bb"
+    orange "#de935f"
+    cyan "#8abeb7"
+    black "#282a2e"
+    white "#aeafb0"
+  }
   nightfox {
     bg "#192330"
     fg "#cdcecf"
