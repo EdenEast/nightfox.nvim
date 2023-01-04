@@ -10,5 +10,4 @@ jobs:
       - uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - run:
-        nix-shell -p stylua --run "stylua -f stylua.toml --check ."
+      - run: nix-shell -p stylua --run "stylua -f stylua.toml --check ."
