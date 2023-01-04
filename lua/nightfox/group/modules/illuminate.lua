@@ -5,8 +5,9 @@ local M = {}
 function M.get(spec, config, opts)
   -- stylua: ignore
   return {
-    illuminatedWord    = { link = "LspReferenceText" },
-    illuminatedCurWord = { link = "LspReferenceText" },
+    illuminatedWordText  = { link = "LspReferenceText" },
+    illuminatedWordRead  = { link = "LspReferenceText" },
+    illuminatedWordWrite = { link = "LspReferenceText" },
   }
 end
 
