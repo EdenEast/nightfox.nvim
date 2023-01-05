@@ -1,16 +1,16 @@
 # Nightfox Color Palette
 # Style: dayfox
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/dayfox/nightfox_fish.fish
-set -l foreground 1d344f
-set -l selection ced5de
-set -l comment 7f848e
-set -l red b95d76
-set -l orange e3786c
-set -l yellow ba793e
-set -l green 618774
-set -l purple 8e6f98
-set -l cyan 6ca7bd
-set -l pink d685af
+set -l foreground 3d2b5a
+set -l selection e7d2be
+set -l comment 837a72
+set -l red a5222f
+set -l orange 955f61
+set -l yellow ac5402
+set -l green 396847
+set -l purple 6e33ce
+set -l cyan 287980
+set -l pink a440b5
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
