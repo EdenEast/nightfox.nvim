@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.0.0](https://github.com/EdenEast/nightfox.nvim/compare/v2.1.0...v3.0.0) (2023-01-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **palette:** rework dayfox ([#285](https://github.com/EdenEast/nightfox.nvim/issues/285))
+
+### Features
+
+* **module:** add highlight support for nvim-navic ([#283](https://github.com/EdenEast/nightfox.nvim/issues/283)) ([0f94892](https://github.com/EdenEast/nightfox.nvim/commit/0f948925ec435f2fa115522a991ac84efed0045a))
+
+
+### Bug Fixes
+
+* **module:** use correct group names for illuminate.vim ([#286](https://github.com/EdenEast/nightfox.nvim/issues/286)) ([c88664b](https://github.com/EdenEast/nightfox.nvim/commit/c88664b18e593319aea1ded731dd252d4f9e0f9a))
+
+
+### Code Refactoring
+
+* **palette:** rework dayfox ([#285](https://github.com/EdenEast/nightfox.nvim/issues/285)) ([4f6eff4](https://github.com/EdenEast/nightfox.nvim/commit/4f6eff46463e248c3bd952a82fc7250dc87b91d8))
+
 ## [2.1.0](https://github.com/EdenEast/nightfox.nvim/compare/v2.0.0...v2.1.0) (2022-12-27)
 
 
