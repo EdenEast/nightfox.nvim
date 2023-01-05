@@ -362,7 +362,7 @@ defined, and the table value is the arguments to the |:highlight| command.
 
 If the value of `link` is present and is not empty, nightfox will link the group to the corresponding value.
 
-## Module
+## Modules
 
 Modules are a way to adding extra information for various plugins or features. This also allows them to be enabled or
 disabled. There are two types of modules, `base` modules and `extended` modules. A `base` modules do not have any other
