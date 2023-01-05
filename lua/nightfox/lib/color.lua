@@ -217,6 +217,18 @@ function Color:to_css(with_alpha)
   return string.format("#%0" .. l .. "x", n)
 end
 
+---Calculate the relative lumanance of the color
+---https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+---@return number
+function Color:lumanance()
+  local r, g, b = self.red, self.green, self.blue
+  r = (r > 0.04045) and ((r + 0.055) / 1.055) ^ 2.4 or (r / 12.92)
+  g = (g > 0.04045) and ((g + 0.055) / 1.055) ^ 2.4 or (g / 12.92)
+  b = (b > 0.04045) and ((b + 0.055) / 1.055) ^ 2.4 or (b / 12.92)
+
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b
+end
+
 --#endregion
 
 --#region Manipulate -----------------------------------------------------------
@@ -294,6 +306,30 @@ end
 
 Color.WHITE = Color.init(1, 1, 1, 1)
 Color.BLACK = Color.init(0, 0, 0, 1)
+
+--#endregion
+
+--#region Utility --------------------------------------------------------------
+
+---Returns the contrast ratio of the other against another
+---@param other Color
+function Color:contrast(other)
+  local l1 = self:lumanance()
+  local l2 = other:lumanance()
+  if l2 > l1 then
+    l1, l2 = l2, l1
+  end
+  return (l1 + 0.05) / (l2 + 0.05)
+end
+
+---Check if color passes WCAG AA
+---https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+---@param background Color background to check against
+---@return boolean, number
+function Color:valid_wcag_aa(background)
+  local ratio = self:contrast(background)
+  return ratio >= 4.5, ratio
+end
 
 --#endregion
 
