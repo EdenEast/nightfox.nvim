@@ -418,7 +418,7 @@ This command will attach an autocmd to the current buffer that executes on `Buff
 autocmd will clear nightfox's internal state and re-source it's config from the newly saved file. It will then reset the
 colorscheme.
 
-![demo](https://user-images.githubusercontent.com/2746374/163106922-aa7a2f40-0c67-4aed-addc-5c4444c3a814.gif)
+![demo](https://user-images.githubusercontent.com/2746374/211108157-b5221ea4-9369-453d-9c27-4a71ac161a55.gif)
 
 There are a few things to note:
 
