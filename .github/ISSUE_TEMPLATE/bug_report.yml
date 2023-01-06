@@ -44,7 +44,7 @@ body:
   - type: textarea
     attributes:
       label: Repro
-      description: Minimal [`init.lua`](https://github.com/edeneast/nightfox/tree/main/.github/minimal_init.lua) to reproduce this issue. Save as `repro.lua` and run with `nvim -u repro.lua`
+      description: Minimal [`init.lua`](https://github.com/EdenEast/nightfox.nvim/blob/main/.github/minimal_init.lua) to reproduce this issue. Save as `repro.lua` and run with `nvim -u repro.lua`
       value: |
         -- DO NOT change the paths and don't remove the colorscheme
         local root = vim.fn.fnamemodify("./.repro", ":p")
