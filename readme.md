@@ -49,7 +49,7 @@
 
 ## Requirements
 
-- Neovim >= 0.8 **or** Vim 8.2 with lua = **5.1** or **5.2**
+- Neovim >= 0.8 **or** Vim 9 with lua = **5.1+**
 - True color support
 - Undercurl terminal support (optional)
 
