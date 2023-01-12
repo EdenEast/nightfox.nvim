@@ -20,6 +20,7 @@ local extras = {
   iterm = "itermcolors",
   kitty = "conf",
   konsole = "colorscheme",
+  nushell = "nu",
   tmux = "tmux",
   wezterm = "toml",
   windows_terminal = "json",
