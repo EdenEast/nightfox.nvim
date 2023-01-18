@@ -56,6 +56,7 @@ vim.o.background = "%s"
       op.bg = values.bg
       op.fg = values.fg
       op.sp = values.sp
+      op.blend = values.blend
       table.insert(lines, fmt([[vim.api.nvim_set_hl(0, "%s", %s)]], name, inspect(op)))
     end
   end
