@@ -2,7 +2,7 @@ local M = {}
 
 function M.get(spec, config)
   local trans = config.transparent
-  local alt = config.dim_inactive
+  local inactive = config.dim_inactive
   local inv = config.inverse
   local fg_search = spec.palette.meta.light and "#FFFFFF" or "#000000"
 
@@ -40,7 +40,7 @@ function M.get(spec, config)
     MoreMsg         = { fg = spec.diag.info, style = "bold" }, -- |more-prompt|
     NonText         = { fg = spec.bg4 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal          = { fg = spec.fg1, bg = trans and "NONE" or spec.bg1 }, -- normal text
-    NormalNC        = alt and { fg = spec.fg1, bg = spec.bg0 } or { link = "Normal" },
+    NormalNC        = { fg = spec.fg1, bg = (inactive and spec.bg0) or (trans and "NONE") or spec.bg1 }, -- normal text in non-current windows
     NormalFloat     = { fg = spec.fg1, bg = spec.bg0 }, -- Normal text in floating windows.
     FloatBorder     = { fg = spec.fg3 }, -- TODO
     Pmenu           = { fg = spec.fg1, bg = spec.sel0 }, -- Popup menu: normal item.
@@ -70,7 +70,7 @@ function M.get(spec, config)
     Whitespace      = { fg = spec.bg3 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu        = { link = "Pmenu" }, -- current match in 'wildmenu' completion
     WinBar          = { fg = spec.fg3, bg = trans and "NONE" or spec.bg1, style = "bold" }, -- Window bar of current window.
-    WinBarNC        = { fg = spec.fg3, bg = trans and "NONE" or alt and spec.bg0 or spec.bg1, style = "bold" }, --Window bar of not-current windows.
+    WinBarNC        = { fg = spec.fg3, bg = trans and "NONE" or inactive and spec.bg0 or spec.bg1, style = "bold" }, --Window bar of not-current windows.
 
     -- qfLineNr        = {},
     -- qfFileName      = {},
