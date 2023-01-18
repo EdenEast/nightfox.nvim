@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.0.0...v3.1.0) (2023-01-18)
+
+
+### Features
+
+* **color:** add WCAG AA contrast validation ([12e0ca7](https://github.com/EdenEast/nightfox.nvim/commit/12e0ca70e978f58318e7f0279bb7b243ababbd49))
+* Nushell Extra Theme Config ([#298](https://github.com/EdenEast/nightfox.nvim/issues/298)) ([23a678f](https://github.com/EdenEast/nightfox.nvim/commit/23a678f47722801f70fe64df39a1fa29f6abf297))
+
+
+### Bug Fixes
+
+* **module:** use treesitter links only if module enabled ([#296](https://github.com/EdenEast/nightfox.nvim/issues/296)) ([07332c1](https://github.com/EdenEast/nightfox.nvim/commit/07332c1c62aba0c8f80ad677d44ca15009353bde))
+
 ## [3.0.0](https://github.com/EdenEast/nightfox.nvim/compare/v2.1.0...v3.0.0) (2023-01-05)
 
 
