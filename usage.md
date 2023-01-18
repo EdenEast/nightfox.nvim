@@ -405,6 +405,7 @@ Current list of modules are:
 - telescope
 - treesitter
 - tsrainbow
+- tsrainbow2
 - whichkey
 
 ### Neovim specific modules
