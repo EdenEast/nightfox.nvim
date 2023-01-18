@@ -457,6 +457,7 @@ There are a few things to note:
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
+- [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ## Status lines

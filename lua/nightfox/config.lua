@@ -81,6 +81,7 @@ M.module_names = {
   "telescope",
   "treesitter",
   "tsrainbow",
+  "tsrainbow2",
   "whichkey",
 }
 
