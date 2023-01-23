@@ -230,6 +230,23 @@ foreground and background colors instead of applying the normal highlight group.
 `match_paren`, `visual`, `search`. For an example if search is enabled instead of highlighting a search term with the
 default search color it will inverse the foureground and background colors.
 
+#### colorblind {table}
+
+`colorblind` stores configuration information for nightfox's `color vision deficiency` (cdv) mode. This contains the
+following table: 
+
+```lua
+colorblind = {
+  enable = false,        -- Enable colorblind support
+  simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
+  severity = {
+    protan = 0,          -- Severity [0,1] for protan (red)
+    deutan = 0,          -- Severity [0,1] for deutan (green)
+    tritan = 0,          -- Severity [0,1] for tritan (blue)
+  },
+},
+```
+
 #### modules {table}
 
 `modules` store configuration information for various plugins and other neovim modules. A module can either be a boolean
@@ -530,6 +547,38 @@ or less saturated version depending of +/- v. {value} is Float [-100, 100].
 
 Returns a new `Color` with {value} added to the `hue` (`hsv`) of the current color. The resulting value of `hue` will be
 wrapped from `[0,360]`, meaning that if the value exceeds `360` it will be wrapped back to `0`.
+
+## Colorblind
+
+For individuals with `color vision deficiency` (cvd), nightfox has implemented a `colorblind` mode to help enhance color
+contrast. This can be enabled with this option `colorblind.enable`.
+
+There are three types of `color vision deficiency` (cvd)
+
+| Cone      | Type   | Week (trichromacy) | Missing (Dichromacy) |
+| --------- | ------ | ------------------ | -------------------- |
+| L / Red   | Protan | Protanomaly        | Protanopia           |
+| M / Green | Deutan | Deuteranomaly      | Deuteranopia         |
+| S / Blue  | Tritan | Tritanomaly        | Tritanopia           |
+
+The severity of `protan`, `deutan`, and `tritan` can be set individually. Severity is a value ranging from `0` to `1`.
+where `1` is full `dichromacy` (missing cone type).
+
+**Example:**
+
+```lua
+require("nightfox").setup({
+  options = {
+    colorblind = {
+      enable = true,
+      severity = {
+        protan = 0.3,
+        deutan = 0.6,
+      },
+    },
+  },
+})
+```
 
 ## Compile
 

@@ -41,6 +41,7 @@
 
 - Supports both vim and neovim
 - Highly configurable with template overriding
+- [Colorblind](#colorblind) mode (daltonization, and simulation)
 - Support for multiple [plugins](#supported-plugins) and [status lines](#status-lines)
   - And many others should "just work"!
 - [Compile](#compile) user's configuration for fast startup times
@@ -93,12 +94,21 @@ require('nightfox').setup({
     -- Compiled file's destination location
     compile_path = vim.fn.stdpath("cache") .. "/nightfox",
     compile_file_suffix = "_compiled", -- Compiled file suffix
-    transparent = false,    -- Disable setting background
-    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-    dim_inactive = false,   -- Non focused panes set to alternative background
-    module_default = true,  -- Default enable value for modules
-    styles = {              -- Style to be applied to different syntax groups
-      comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
+    transparent = false,     -- Disable setting background
+    terminal_colors = true,  -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+    dim_inactive = false,    -- Non focused panes set to alternative background
+    module_default = true,   -- Default enable value for modules
+    colorblind = {
+      enable = false,        -- Enable colorblind support
+      simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
+      severity = {
+        protan = 0,          -- Severity [0,1] for protan (red)
+        deutan = 0,          -- Severity [0,1] for deutan (green)
+        tritan = 0,          -- Severity [0,1] for tritan (blue)
+      },
+    },
+    styles = {               -- Style to be applied to different syntax groups
+      comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
       constants = "NONE",
       functions = "NONE",
@@ -384,6 +394,76 @@ print(vim.inspect(alt_bg:to_hsv()))
 There are a lot of useful functions to manipulate and work with colors in different color spaces.
 See [Usage](./usage.md#color) for more information on `Color`.
 
+## Colorblind
+
+For individuals with `color vision deficiency` (cvd), nightfox has implemented a `colorblind` mode to help enhance color
+contrast. This can be enabled with this option `colorblind.enable`.
+
+<details>
+<summary>Understanding cvd</summary>
+
+There are three types of cvd:
+
+- Protan (Red / L cones)
+- Deutan (Green / M cones)
+- Tritan (Blue / S cones)
+
+These are referred to as `protanomaly`, `deuteranomaly`, and `tritanomaly` for individuals that have all three cones
+(trichromats) but one is week (anomalous trichromacy).
+
+These can also be referred to as `protanopia`, `deuteranopia`, and `tritanopia`. This is for individuals that only have
+two cones (dichromats or dichromacy).
+
+| Cone      | Type   | Week (trichromacy) | Missing (Dichromacy) |
+| --------- | ------ | ------------------ | -------------------- |
+| L / Red   | Protan | Protanomaly        | Protanopia           |
+| M / Green | Deutan | Deuteranomaly      | Deuteranopia         |
+| S / Blue  | Tritan | Tritanomaly        | Tritanopia           |
+
+</details>
+
+### Configuring cvd
+
+Nightfox needs to simulate your cvd in order to shift colors correctly. This is done by setting your cvd type's severity
+level. Severity is a value between `0` and `1` where `1` is full dichromacy. You can also have multiple kinds of cvd
+configured at a time. Here is a full example:
+
+```lua
+require("nightfox").setup({
+  options = {
+    colorblind = {
+      enable = true,
+      severity = {
+        protan = 0.3,
+        deutan = 0.6,
+      },
+    },
+  },
+})
+```
+
+If you are looking for a way to self evaluate what severity factor to use, check out [daltonlens's][cb-self-eval] self
+evaluation article with interactive self evaluation Ishihasa plates.
+
+Another method would be to use the option `colorblind.simulate_only` option along with nightfox's
+[interactive](#interactive) mode. While nightfox is simulating cvd set a severity to 1. Now decrease the severity
+incrementally until you cannot perceive a difference in the change of colors.
+
+[cb-self-eval]: https://daltonlens.org/evaluating-cvd-simulation/#Generating-Ishihara-like-plates-for-self-evaluation
+
+### How does this work?
+
+This is accomplished by applying an algorithm called `Daltonization`. The process follows these steps:
+
+1. Simulate what a person with cvd would see
+1. Calculate the difference between original vs. simulated
+1. Shift the difference towards the visible spectrum of the cvd individual
+1. Correct original color by adding it to the corrected difference
+
+You can see the simulated colors instead of the corrected colors by setting the option `colorblind.simulate_only`.
+
+![cvd-example](https://user-images.githubusercontent.com/2746374/210025850-9a84b142-e989-4efa-9b55-5f7312013da3.gif)
+
 ## Compile
 
 Nightfox is a highly customizable and configurable colorscheme. This does however come at the cost of complexity and
@@ -552,6 +632,7 @@ There are [extra](./extra) configuration files for the following:
 - [coolers](https://coolers.co) (useful color information and palette tool)
 - [colorhexa](https://www.colorhexa.com/) (detailed color information)
 - [neogit](https://github.com/TimUntersberger/neogit/blob/b688a2c/lua/neogit/lib/color.lua) (base for color lib)
+- [daltonlens](https://daltonlens.org/) (understanding cvd simulations and research. Thanks [@nburrus](https://github.com/nburrus)!)
 
 ## References
 

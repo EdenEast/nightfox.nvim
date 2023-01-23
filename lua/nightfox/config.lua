@@ -10,6 +10,15 @@ local defaults = {
   terminal_colors = true,
   dim_inactive = false,
   module_default = true,
+  colorblind = {
+    enable = false,
+    simulate_only = false,
+    severity = {
+      protan = 0,
+      deutan = 0,
+      tritan = 0,
+    },
+  },
   styles = {
     comments = "NONE",
     conditionals = "NONE",

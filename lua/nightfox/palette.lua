@@ -1,4 +1,5 @@
 local collect = require("nightfox.lib.collect")
+local config = require("nightfox.config")
 
 --#region Types
 
@@ -64,6 +65,30 @@ local function override(color, ovr)
   return color
 end
 
+local function apply_daltonization(palette)
+  local cb = require("nightfox.lib.colorblind")
+  local severity = config.options.colorblind.severity
+  local severities = { protan = severity.protan, deutan = severity.deutan, tritan = severity.tritan }
+  local f = config.options.colorblind.simulate_only and cb.simulate or cb.daltonize
+
+  local function inner(p)
+    local t = type(p)
+    if t == "string" then
+      return f(p, severities)
+    elseif t == "table" then
+      local r = {}
+      for k, v in pairs(p) do
+        r[k] = inner(v)
+      end
+      return setmetatable(r, getmetatable(p))
+    else
+      return p
+    end
+  end
+
+  return inner(palette)
+end
+
 function M.load(name)
   local ovr = require("nightfox.override").palettes
 
@@ -71,10 +96,15 @@ function M.load(name)
     return ovr[key] and override(palette, ovr[key]) or palette
   end
 
+  local cb_func = config.options.colorblind.enable and apply_daltonization or function(x)
+    return x
+  end
+
   if name then
     local valid = collect.contains(M.foxes, name)
     local raw = valid and require("nightfox.palette." .. name) or require("nightfox.palette.nightfox")
     local palette = raw.palette
+    palette = cb_func(palette)
     palette = apply_ovr("all", palette)
     palette = apply_ovr(name, palette)
     palette.meta = raw.meta
@@ -85,6 +115,7 @@ function M.load(name)
     for _, mod in ipairs(M.foxes) do
       local raw = require("nightfox.palette." .. mod)
       local palette = raw.palette
+      palette = cb_func(palette)
       palette = apply_ovr("all", palette)
       palette = apply_ovr(mod, palette)
       palette.meta = raw.meta
