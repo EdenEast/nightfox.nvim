@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.2.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.1.0...v3.2.0) (2023-01-24)
+
+
+### Features
+
+* add support for ts-rainbow2 ([#301](https://github.com/EdenEast/nightfox.nvim/issues/301)) ([97e66df](https://github.com/EdenEast/nightfox.nvim/commit/97e66dfaaecdc81f1dd7da00f8d4a6033f3bf6b2))
+* **cvd:** support colorblind mode with daltonization ([#281](https://github.com/EdenEast/nightfox.nvim/issues/281)) ([f093297](https://github.com/EdenEast/nightfox.nvim/commit/f093297145e917f7ae4d0e09fc9c07ac40620361))
+
+
+### Bug Fixes
+
+* **transparent:** remove `NormalNC` link to `Normal` ([773fd00](https://github.com/EdenEast/nightfox.nvim/commit/773fd00919fdd737569906948a9a527fd0127465))
+
 ## [3.1.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.0.0...v3.1.0) (2023-01-18)
 
 
