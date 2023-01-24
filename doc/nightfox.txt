@@ -298,7 +298,7 @@ inverse {table}                        `inverse` is a table that contains a
                                        foureground and background colors.
 
 
-                                                         *nightfox-colorblind*
+                                                  *nightfox-option-colorblind*
 
 colorblind {table}                     `colorblind` stores configuration
                                        information for nightfox’s `color
