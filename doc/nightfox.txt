@@ -12,7 +12,7 @@ Table of Contents                                 *nightfox-table-of-contents*
   - Palette                                                 |nightfox-palette|
   - Spec                                                       |nightfox-spec|
   - Group                                                     |nightfox-group|
-  - Module                                                   |nightfox-module|
+  - Modules                                                 |nightfox-modules|
   - Color                                                     |nightfox-color|
   - Colorblind                                           |nightfox-colorblind|
   - Compile                                                 |nightfox-compile|
@@ -200,26 +200,26 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
 
 OPTION                                                       *nightfox-option*
 
-                                                       *nightfox-compile_path*
+                                               *nightfox-options.compile_path*
 
-compile_path {path}                    The output directory {path} where the
+options.compile_path {path}            The output directory {path} where the
                                        compiled results will be written to.
                                        Default:
                                        `vim.fn.stdpath("cache")/nightfox`.
 
 
-                                                *nightfox-compile_file_suffix*
+                                        *nightfox-options.compile_file_suffix*
 
-compile_file_suffix {suffix}           The string appended to the compiled
+options.compile_file_suffix {suffix}   The string appended to the compiled
                                        file. Each `style` outputs to its own
                                        file. These files will append the
                                        {suffix} to the end of the file.
                                        Default: `_compiled`
 
 
-                                                        *nightfox-transparent*
+                                                *nightfox-options.transparent*
 
-transparent {bool}                     A boolean value that if set will disable
+options.transparent {bool}             A boolean value that if set will disable
                                        setting the background of `Normal`,
                                        `NormalNC` and other highlight groups.
                                        This lets you use the colors of the
@@ -227,31 +227,31 @@ transparent {bool}                     A boolean value that if set will disable
                                        your terminal. Default: `false`.
 
 
-                                                    *nightfox-terminal_colors*
+                                            *nightfox-options.terminal_colors*
 
-terminal_colors {bool}                 A boolean value that if set will define
+options.terminal_colors {bool}         A boolean value that if set will define
                                        the terminal colors for the builtin
                                        `terminal` (vim.g.terminal_color_*).
                                        Default: `true`.
 
 
-                                                       *nightfox-dim_inactive*
+                                               *nightfox-options.dim_inactive*
 
-dim_inactive {bool}                    A boolean value that if set will set the
+options.dim_inactive {bool}            A boolean value that if set will set the
                                        background of Non current windows to be
                                        darker. See `:h hl-NormalNC`.
 
 
-                                                     *nightfox-module_default*
+                                             *nightfox-options.module_default*
 
-module_default {bool}                  The default value of a module that has
+options.module_default {bool}          The default value of a module that has
                                        not been overridden in the modules
                                        table.
 
 
-                                                             *nightfox-styles*
+                                                     *nightfox-options.styles*
 
-styles {table}                         `styles` is a table that contains a list
+options.styles {table}                 `styles` is a table that contains a list
                                        of syntax components and their
                                        corresponding style. These styles can be
                                        any combination of |highlight-args|. The
@@ -283,9 +283,9 @@ Example:
 <
 
 
-                                                            *nightfox-inverse*
+                                                    *nightfox-options.inverse*
 
-inverse {table}                        `inverse` is a table that contains a
+options.inverse {table}                `inverse` is a table that contains a
                                        list of highlight types. If a highlight
                                        type is enabled it will inverse the
                                        foreground and background colors instead
@@ -298,9 +298,9 @@ inverse {table}                        `inverse` is a table that contains a
                                        foureground and background colors.
 
 
-                                                         *nightfox-colorblind*
+                                                 *nightfox-options.colorblind*
 
-colorblind {table}                     `colorblind` stores configuration
+options.colorblind {table}             `colorblind` stores configuration
                                        information for nightfox’s `color
                                        vision deficiency` (cdv) mode. This
                                        contains the following table:
@@ -319,9 +319,9 @@ colorblind {table}                     `colorblind` stores configuration
 <
 
 
-                                                            *nightfox-modules*
+                                                    *nightfox-options.modules*
 
-modules {table}                        `modules` store configuration
+options.modules {table}                `modules` store configuration
                                        information for various plugins and
                                        other neovim modules. A module can
                                        either be a boolean or a table that
@@ -484,7 +484,7 @@ arguments to the |:highlight| command.
 If the value of `link` is present and is not empty, nightfox will link the
 group to the corresponding value.
 
-MODULE                                                       *nightfox-module*
+MODULES                                                     *nightfox-modules*
 
 Modules are a way to adding extra information for various plugins or features.
 This also allows them to be enabled or disabled. There are two types of

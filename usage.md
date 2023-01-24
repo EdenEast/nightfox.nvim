@@ -168,35 +168,35 @@ require('nightfox').setup({ specs = specs, groups = groups })
 
 ## Option
 
-#### compile_path {path}
+#### options.compile_path {path}
 
 The output directory {path} where the compiled results will be written to. Default:
 `vim.fn.stdpath("cache")/nightfox`.
 
-#### compile_file_suffix {suffix}
+#### options.compile_file_suffix {suffix}
 
 The string appended to the compiled file. Each `style` outputs to its own file. These files will append the {suffix} to
 the end of the file. Default: `_compiled`
 
-#### transparent {bool}
+#### options.transparent {bool}
 
 A boolean value that if set will disable setting the background of `Normal`, `NormalNC` and other highlight groups. This
 lets you use the colors of the colorscheme but use the background of your terminal. Default: `false`.
 
-#### terminal_colors {bool}
+#### options.terminal_colors {bool}
 
 A boolean value that if set will define the terminal colors for the builtin `terminal` (vim.g.terminal*color*\*).
 Default: `true`.
 
-#### dim_inactive {bool}
+#### options.dim_inactive {bool}
 
 A boolean value that if set will set the background of Non current windows to be darker. See `:h hl-NormalNC`.
 
-#### module_default {bool}
+#### options.module_default {bool}
 
 The default value of a module that has not been overridden in the modules table.
 
-#### styles {table}
+#### options.styles {table}
 
 `styles` is a table that contains a list of syntax components and their corresponding style. These styles can be any
 combination of |highlight-args|. The list of syntax components are:
@@ -223,17 +223,17 @@ local options = {
 }
 ```
 
-#### inverse {table}
+#### options.inverse {table}
 
 `inverse` is a table that contains a list of highlight types. If a highlight type is enabled it will inverse the
 foreground and background colors instead of applying the normal highlight group. Thees highlight types are:
 `match_paren`, `visual`, `search`. For an example if search is enabled instead of highlighting a search term with the
 default search color it will inverse the foureground and background colors.
 
-#### colorblind {table}
+#### options.colorblind {table}
 
 `colorblind` stores configuration information for nightfox's `color vision deficiency` (cdv) mode. This contains the
-following table: 
+following table:
 
 ```lua
 colorblind = {
@@ -247,7 +247,7 @@ colorblind = {
 },
 ```
 
-#### modules {table}
+#### options.modules {table}
 
 `modules` store configuration information for various plugins and other neovim modules. A module can either be a boolean
 or a table that contains additional configuration for that module. If the value is a table it also has a field called
