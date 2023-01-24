@@ -200,7 +200,7 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
 
 OPTION                                                       *nightfox-option*
 
-                                                       *nightfox-compile_path*
+                                                *nightfox-option-compile_path*
 
 compile_path {path}                    The output directory {path} where the
                                        compiled results will be written to.
@@ -208,7 +208,7 @@ compile_path {path}                    The output directory {path} where the
                                        `vim.fn.stdpath("cache")/nightfox`.
 
 
-                                                *nightfox-compile_file_suffix*
+                                         *nightfox-option-compile_file_suffix*
 
 compile_file_suffix {suffix}           The string appended to the compiled
                                        file. Each `style` outputs to its own
@@ -217,7 +217,7 @@ compile_file_suffix {suffix}           The string appended to the compiled
                                        Default: `_compiled`
 
 
-                                                        *nightfox-transparent*
+                                                 *nightfox-option-transparent*
 
 transparent {bool}                     A boolean value that if set will disable
                                        setting the background of `Normal`,
@@ -227,7 +227,7 @@ transparent {bool}                     A boolean value that if set will disable
                                        your terminal. Default: `false`.
 
 
-                                                    *nightfox-terminal_colors*
+                                             *nightfox-option-terminal_colors*
 
 terminal_colors {bool}                 A boolean value that if set will define
                                        the terminal colors for the builtin
@@ -235,21 +235,21 @@ terminal_colors {bool}                 A boolean value that if set will define
                                        Default: `true`.
 
 
-                                                       *nightfox-dim_inactive*
+                                                *nightfox-option-dim_inactive*
 
 dim_inactive {bool}                    A boolean value that if set will set the
                                        background of Non current windows to be
                                        darker. See `:h hl-NormalNC`.
 
 
-                                                     *nightfox-module_default*
+                                              *nightfox-option-module_default*
 
 module_default {bool}                  The default value of a module that has
                                        not been overridden in the modules
                                        table.
 
 
-                                                             *nightfox-styles*
+                                                      *nightfox-option-styles*
 
 styles {table}                         `styles` is a table that contains a list
                                        of syntax components and their
@@ -283,7 +283,7 @@ Example:
 <
 
 
-                                                            *nightfox-inverse*
+                                                     *nightfox-option-inverse*
 
 inverse {table}                        `inverse` is a table that contains a
                                        list of highlight types. If a highlight
@@ -319,7 +319,7 @@ colorblind {table}                     `colorblind` stores configuration
 <
 
 
-                                                            *nightfox-modules*
+                                                     *nightfox-option-modules*
 
 modules {table}                        `modules` store configuration
                                        information for various plugins and
