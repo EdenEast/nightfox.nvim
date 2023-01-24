@@ -781,14 +781,14 @@ COMPILE COMMANDS ~
 
 compile()                              Compile nightfox settings for each
                                        `style` and write compiled file to
-                                       |nightfox-compile_path|.
+                                       |nightfox-option-compile_path|.
 
 
                                                    *nightfox-:NightfoxCompile*
 
 :NightfoxCompile                       Compile nightfox settings for each
                                        `style` and write compiled file to
-                                       |nightfox-compile_path|.
+                                       |nightfox-option-compile_path|.
 
 
 INTERACTIVE                                             *nightfox-interactive*
