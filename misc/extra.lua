@@ -5,6 +5,7 @@ vim.opt.runtimepath:append("./.")
 -- package.path = "./lua/?/init.lua;./lua/?.lua"
 
 local util = require("nightfox.util")
+local join = util.join_paths
 
 local function write(str, folder, filename)
   util.ensure_dir(folder)
@@ -28,7 +29,12 @@ local extras = {
   warp = "yaml",
 }
 
+local full_extra = {
+  zellij = { ext = "kdl", filename = "nightfox.kdl" },
+}
+
 local specs = require("nightfox.spec").load()
+table.sort(specs)
 
 for extra, ext in pairs(extras) do
   local mod = require("nightfox.extra." .. extra)
@@ -39,6 +45,13 @@ for extra, ext in pairs(extras) do
       string.format("https://github.com/edeneast/nightfox.nvim/raw/main/extra/%s/%s", name, filename)
     write(mod.generate(spec), folder, filename)
   end
+end
+
+for name, extra in pairs(full_extra) do
+  local mod = require("nightfox.extra." .. name)
+  local folder = extra.folder and join("extra", extra.folder) or join("extra", name)
+  local filename = extra.filename or name .. "." .. extra.ext
+  write(mod.generate(specs), folder, filename)
 end
 
 vim.cmd("quit")
