@@ -620,6 +620,7 @@ There are [extra](./extra) configuration files for the following:
 - [wezterm](https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file)
 - [windows terminal](https://github.com/Microsoft/Terminal)
 - [xresources](https://wiki.archlinux.org/title/X_resources)
+- [zellij](https://zellij.dev/)
 
 [lualine]: https://github.com/nvim-lualine/lualine.nvim
 [lightline]: https://github.com/itchyny/lightline.vim
