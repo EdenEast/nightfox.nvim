@@ -25,7 +25,7 @@ if exists("colors_name")
 endif
 set termguicolors
 let g:colors_name = "%s"
-set background="%s"]],
+set background=%s]],
       style,
       background
     ),
