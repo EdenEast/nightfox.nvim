@@ -18,7 +18,7 @@ function M.compile(opts)
   local lines = {
     fmt(
       [[
-require("nightfox").compiled = string.dump(function()
+return string.dump(function()
 vim.command([[
 if exists("colors_name")
   hi clear
@@ -91,8 +91,7 @@ Bellow is the error message:
     dofile(tmpfile)
   end
 
-  f()
-  file:write(require("nightfox").compiled)
+  file:write(f())
   file:close()
 end
 
