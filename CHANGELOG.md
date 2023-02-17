@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.3.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.2.0...v3.3.0) (2023-02-17)
+
+
+### Features
+
+* **extra:** add zellij theme file ([789b302](https://github.com/EdenEast/nightfox.nvim/commit/789b3029d5058e925436ac29eb0521aa4e042b36))
+
+
+### Bug Fixes
+
+* **compile:** correct call to set background for vim ([5aeb0e7](https://github.com/EdenEast/nightfox.nvim/commit/5aeb0e730755b3007029b51dda094d4e0e6e9291))
+
+
+### Performance Improvements
+
+* **compile:** remove table overhead for better performance ([#312](https://github.com/EdenEast/nightfox.nvim/issues/312)) ([4cf5680](https://github.com/EdenEast/nightfox.nvim/commit/4cf56808775d4f2d4c83fa01401ff2c5c509484d))
+* **compiler:** remove `require` call to write compiled file ([#311](https://github.com/EdenEast/nightfox.nvim/issues/311)) ([14489df](https://github.com/EdenEast/nightfox.nvim/commit/14489dfa8c4241a919845ed9101fae074234f35b))
+
 ## [3.2.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.1.0...v3.2.0) (2023-01-24)
 
 
