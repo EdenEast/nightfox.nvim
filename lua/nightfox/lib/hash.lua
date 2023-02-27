@@ -4,12 +4,12 @@ local bitop = bit or bit32 or require("nightfox.lib.native_bit")
 local function djb2(s)
   local h = 5381
   for i = 1, #s do
-    h = bitop.lshift(h, 5) + string.byte(s, i) -- h * 33 + c
+    h = bitop.lshift(h, 5) + h + string.byte(s, i) -- h * 33 + c
   end
   return h
 end
 
--- Reference: https://github.com/catppuccin/nvim/blob/60f8f40df0db92b5715642b3ea7074380c4b7995/lua/catppuccin/lib/hashing.lua
+-- Reference: https://github.com/catppuccin/nvim/blob/bad9c23f12944683cd11484d9570560849efc101/lua/catppuccin/lib/hashing.lua
 local function hash(x)
   local t = type(x)
   if t == "table" then
