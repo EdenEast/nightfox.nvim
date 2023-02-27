@@ -4,7 +4,7 @@ local bitop = bit or bit32 or require("nightfox.lib.native_bit")
 local function djb2(s)
   local h = 5381
   for i = 1, #s do
-    h = bitop.lshift(h, 5) + string.byte(s, i) -- h * 33 + c
+    h = bitop.lshift(h, 5) + h + string.byte(s, i) -- h * 33 + c
   end
   return h
 end
