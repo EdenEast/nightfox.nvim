@@ -30,7 +30,7 @@
 > that can be added to your own config check out [misc/feline.lua][misc-feline] and [misc/tabby.lua][misc-tabby].
 
 [tabby.nvim]: https://github.com/nanozuki/tabby.nvim
-[feline.nvim]: https://github.com/feline-nvim/feline.nvim
+[feline.nvim]: https://github.com/freddiehaddad/feline.nvim
 [tabby]: https://github.com/EdenEast/nyx/blob/573ff3f22da95c00ec71a094b3e1ec166c0afcdd/config/.config/nvim/lua/eden/modules/ui/tabby.lua
 [feline]: https://github.com/EdenEast/nyx/blob/573ff3f22da95c00ec71a094b3e1ec166c0afcdd/config/.config/nvim/lua/eden/modules/ui/feline/init.lua
 [conf-colors]: https://github.com/EdenEast/nyx/blob/573ff3f22da95c00ec71a094b3e1ec166c0afcdd/config/.config/nvim/lua/eden/modules/ui/colors.lua
