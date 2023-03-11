@@ -51,6 +51,7 @@ local defaults = {
       background = true,
     },
     treesitter = util.is_nvim,
+    lsp_semantic_tokens = util.is_nvim,
   },
 }
 
@@ -73,6 +74,7 @@ M.module_names = {
   "illuminate",
   "lightspeed",
   "lsp_saga",
+  "lsp_semantic_tokens",
   "lsp_trouble",
   "mini",
   "modes",
