@@ -47,6 +47,10 @@ function M.load(opts)
     return
   end
 
+  if not did_setup then
+    M.setup()
+  end
+
   opts = opts or {}
 
   local _, compiled_file = config.get_compiled_info(opts)
@@ -63,7 +67,9 @@ function M.load(opts)
   lock = false
 end
 
+local did_setup = false
 function M.setup(opts)
+  did_setup = true
   opts = opts or {}
 
   local override = require("nightfox.override")
