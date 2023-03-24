@@ -403,6 +403,7 @@ Current list of modules are:
 - glyph_palette
 - hop
 - illuminate
+- leap
 - lightspeed
 - lsp_saga
 - lsp_trouble
@@ -459,6 +460,14 @@ This module sets highlight groups from neovim's builtin `lsp`.
 | ---------- | ------- | ------- | --------------------------------- |
 | enable     | boolean | `true`  | Enable the module to be included  |
 | background | boolean | `true`  | Set virtual text background color |
+
+#### modules.leap
+
+| key        | type    | default | description                            |
+| ---------- | ------- | ------- | -------------------------------------- |
+| enable     | boolean | `true`  | Enable the module to be included       |
+| background | boolean | `true`  | Sets the label color to the background |
+| harsh      | boolean | `false` | Sets label's contrast to be harsher    |
 
 ## Color
 

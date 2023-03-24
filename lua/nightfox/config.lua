@@ -52,6 +52,9 @@ local defaults = {
     },
     treesitter = util.is_nvim,
     lsp_semantic_tokens = util.is_nvim,
+    leap = {
+      background = true,
+    }
   },
 }
 
@@ -72,6 +75,7 @@ M.module_names = {
   "glyph_palette",
   "hop",
   "illuminate",
+  "leap",
   "lightspeed",
   "lsp_saga",
   "lsp_semantic_tokens",
