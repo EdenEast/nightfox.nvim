@@ -508,6 +508,7 @@ There are a few things to note:
 
 ## Supported Plugins
 
+- [alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [aerial.nvim](https://github.com/stevearc/aerial.nvim)
 - [barbar.nvim](https://github.com/romgrk/barbar.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
