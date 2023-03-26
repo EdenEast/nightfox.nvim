@@ -61,6 +61,7 @@ local defaults = {
 M.options = collect.deep_copy(defaults)
 
 M.module_names = {
+  "alpha",
   "aerial",
   "barbar",
   "cmp",
