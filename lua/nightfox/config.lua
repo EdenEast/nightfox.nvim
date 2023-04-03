@@ -54,7 +54,7 @@ local defaults = {
     lsp_semantic_tokens = util.is_nvim,
     leap = {
       background = true,
-    }
+    },
   },
 }
 
