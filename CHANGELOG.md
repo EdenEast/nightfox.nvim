@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.4.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.3.0...v3.4.0) (2023-04-04)
+
+
+### Features
+
+* add new lsp semantic token highlight groups ([#318](https://github.com/EdenEast/nightfox.nvim/issues/318)) ([a8044b0](https://github.com/EdenEast/nightfox.nvim/commit/a8044b084e0114609ec2c59cc4fa94c709a457d4))
+* add vim/neovim test on ubuntu/macos/windows ([#320](https://github.com/EdenEast/nightfox.nvim/issues/320)) ([8bb6713](https://github.com/EdenEast/nightfox.nvim/commit/8bb6713c56458aae339575b205234d820ec2046a))
+* **module:** add alpha support ([4b73c9d](https://github.com/EdenEast/nightfox.nvim/commit/4b73c9d0995eb1a43e284534b97a543ca21c5c77))
+* **semantic_tokens:** add injected highlights ([#321](https://github.com/EdenEast/nightfox.nvim/issues/321)) ([3802464](https://github.com/EdenEast/nightfox.nvim/commit/380246446a359f7faf2f0ccb865658ec0a295bd0))
+* **semantic_tokens:** link default library to function builtin ([53cdaa5](https://github.com/EdenEast/nightfox.nvim/commit/53cdaa583138698f4a0a4a9d2abaf761c8960407))
+
+
+### Bug Fixes
+
+* **kitty:** add "cursor_text_color" parameter ([#325](https://github.com/EdenEast/nightfox.nvim/issues/325)) ([4a291f8](https://github.com/EdenEast/nightfox.nvim/commit/4a291f83297b42026fdbe245378d579f33c0b106))
+* **load:** add setup guard ([9b6e3a4](https://github.com/EdenEast/nightfox.nvim/commit/9b6e3a470ac12fb2ce3de2162bb80bd0b47736f6))
+* **setup:** ORIG_HEAD doesn't exist in Detached HEAD ([d4a615a](https://github.com/EdenEast/nightfox.nvim/commit/d4a615a015451e12b7f13886aa25512a02bd5cab))
+
 ## [3.3.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.2.0...v3.3.0) (2023-02-17)
 
 
