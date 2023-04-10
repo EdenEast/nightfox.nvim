@@ -41,6 +41,7 @@ end
 
 -- Avold g:colors_name reloading
 local lock = false
+local did_setup = false
 
 function M.load(opts)
   if lock then
@@ -62,12 +63,12 @@ function M.load(opts)
     f = loadfile(compiled_file)
   end
 
+  ---@diagnostic disable-next-line: need-check-nil
   f()
 
   lock = false
 end
 
-local did_setup = false
 function M.setup(opts)
   did_setup = true
   opts = opts or {}
