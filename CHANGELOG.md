@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.5.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.4.0...v3.5.0) (2023-04-11)
+
+
+### Features
+
+* **ci:** add github action to autogenerate extra files ([#327](https://github.com/EdenEast/nightfox.nvim/issues/327)) ([727a0ea](https://github.com/EdenEast/nightfox.nvim/commit/727a0ea9d2dde7f8cfd4ae0f2e5570c365638227))
+
+
+### Bug Fixes
+
+* **cache:** move setup guard before load call ([#331](https://github.com/EdenEast/nightfox.nvim/issues/331)) ([88182d4](https://github.com/EdenEast/nightfox.nvim/commit/88182d48373be8ff1933bfd5fabc4c4aa55bf726))
+* **release:** rename "branch" -&gt; "branches" ([#328](https://github.com/EdenEast/nightfox.nvim/issues/328)) ([b9a3385](https://github.com/EdenEast/nightfox.nvim/commit/b9a3385d4814d7c8aa6a9a68f42c6a8bc05282f4))
+
 ## [3.4.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.3.0...v3.4.0) (2023-04-04)
 
 
