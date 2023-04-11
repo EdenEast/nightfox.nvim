@@ -1,0 +1,33 @@
+name: extra
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "lua/nightfox/extra/**.lua"
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    name: Generate extra files
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Git
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Install Neovim
+        shell: bash
+        run: |
+          wget -q https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb -O /tmp/nvim.deb
+          sudo dpkg -i /tmp/nvim.deb
+
+      - name: Run "make extragen"
+        run: |
+          make extragen
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(extra): generate extra files"
+          branch: ${{ github.head_ref }}
