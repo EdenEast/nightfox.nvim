@@ -3,6 +3,7 @@
 local M = {}
 
 function M.get(spec, config, opts)
+  local has_ts = config.modules.treesitter
   local syn = spec.syntax
 
   -- stylua: ignore
@@ -20,8 +21,8 @@ function M.get(spec, config, opts)
 
     CmpItemKindKeyword       = { link = "Identifier" },
 
-    CmpItemKindVariable      = { link = "TSVariable" },
-    CmpItemKindConstant      = { link = "TSConstant" },
+    CmpItemKindVariable      = { link = has_ts and "@variable" or  "Identifier" },
+    CmpItemKindConstant      = { link = has_ts and "@constant" or "Constant" },
     CmpItemKindReference     = { link = "Keyword" },
     CmpItemKindValue         = { link = "Keyword" },
 
@@ -37,12 +38,12 @@ function M.get(spec, config, opts)
     CmpItemKindClass         = { link = "Type" },
     CmpItemKindStruct        = { link = "Type" },
 
-    CmpItemKindModule        = { link = "TSNamespace" },
+    CmpItemKindModule        = { link = has_ts and "@namespace"  or "Identifier" },
 
-    CmpItemKindProperty      = { link = "TSProperty" },
-    CmpItemKindField         = { link = "TSField" },
-    CmpItemKindTypeParameter = { link = "TSField" },
-    CmpItemKindEnumMember    = { link = "TSField" },
+    CmpItemKindProperty      = { link = has_ts and "@property" or  "Identifier" },
+    CmpItemKindField         = { link = has_ts and "@field" or "Identifier" },
+    CmpItemKindTypeParameter = { link = has_ts and "@field" or "Identifier" },
+    CmpItemKindEnumMember    = { link = has_ts and "@field" or "Identifier" },
     CmpItemKindOperator      = { link = "Operator" },
     CmpItemKindSnippet       = { fg = spec.fg2 },
   }
