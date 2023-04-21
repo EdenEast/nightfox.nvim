@@ -11,9 +11,15 @@ function M.generate(specs)
 themes {
 ]]
 
-  for _, spec in pairs(specs) do
+  local keys = vim.tbl_keys(specs)
+  table.sort(keys)
+
+  for _, name in ipairs(keys) do
+    local spec = specs[name]
+    spec.name = name
+
     local content = [[
-  ${palette.meta.name} {
+  ${name} {
     bg "${bg1}"
     fg "${fg1}"
     red "${palette.red}"
@@ -23,12 +29,13 @@ themes {
     magenta "${palette.magenta}"
     orange "${palette.orange}"
     cyan "${palette.cyan}"
-    black "${palette.black}"
-    white "${palette.white}"
+    black "${bg3}"
+    white "${fg3}"
   }
 ]]
     lines[#lines + 1] = template.parse_template_str(content, spec)
   end
+
   lines[#lines + 1] = "}"
 
   return table.concat(lines)
