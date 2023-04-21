@@ -30,7 +30,7 @@ themes {
     orange "${palette.orange}"
     cyan "${palette.cyan}"
     black "${bg3}"
-    white "${fg3}"
+    white "${fg2}"
   }
 ]]
     lines[#lines + 1] = template.parse_template_str(content, spec)
