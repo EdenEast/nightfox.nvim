@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.5.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.5.0...v3.5.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* **extra:** switch from fg3 to fg2 for white ([e54427a](https://github.com/EdenEast/nightfox.nvim/commit/e54427a1bfea55c9ab0c21ac7e9d07b22156d0f0))
+* **extra:** zellij black and white set to bg3/fg3 ([#336](https://github.com/EdenEast/nightfox.nvim/issues/336)) ([409d646](https://github.com/EdenEast/nightfox.nvim/commit/409d646bd15989241e0a71e4da513434c49cad10))
+* **module:** remove `TS` prefix from cmp links ([669b0ce](https://github.com/EdenEast/nightfox.nvim/commit/669b0ce7d02d511c06ceae6201392dc29906dfc0))
+
 ## [3.5.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.4.0...v3.5.0) (2023-04-11)
 
 
