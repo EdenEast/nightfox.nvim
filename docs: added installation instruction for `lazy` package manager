@@ -64,7 +64,7 @@
 Download with your favorite package manager.
 
 ```lua
-{ "EdenEast/nightfox.nvim" } --lazy
+{ "EdenEast/nightfox.nvim" } -- lazy
 ```
 
 ```lua
