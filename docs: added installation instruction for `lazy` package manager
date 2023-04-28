@@ -64,6 +64,10 @@
 Download with your favorite package manager.
 
 ```lua
+{ "EdenEast/nightfox.nvim" } -- lazy
+```
+
+```lua
 use "EdenEast/nightfox.nvim" -- Packer
 ```
 
