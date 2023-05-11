@@ -497,6 +497,7 @@ table that contains the additional configuration as well as a field called
 Current list of modules are:
 
 
+- alpha
 - aerial
 - barbar
 - cmp
@@ -511,6 +512,8 @@ Current list of modules are:
 - glyph_palette
 - hop
 - illuminate
+- indent_blanklines
+- leap
 - lightspeed
 - lsp_saga
 - lsp_trouble
@@ -574,6 +577,14 @@ modules.native_lsp                     This module sets highlight groups from
 │   key    │ type  │default │           description           │
 │enable    │boolean│true    │Enable the module to be included │
 │background│boolean│true    │Set virtual text background color│
+
+
+                                                       *nightfox-modules.leap*
+
+│   key    │ type  │ default │             description              │
+│enable    │boolean│true     │Enable the module to be included      │
+│background│boolean│true     │Sets the label color to the background│
+│harsh     │boolean│false    │Sets label’s contrast to be harsher │
 
 
 COLOR                                                         *nightfox-color*

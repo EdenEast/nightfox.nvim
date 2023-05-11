@@ -404,6 +404,7 @@ Current list of modules are:
 - glyph_palette
 - hop
 - illuminate
+- indent_blanklines
 - leap
 - lightspeed
 - lsp_saga
