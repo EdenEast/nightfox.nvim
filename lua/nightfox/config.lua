@@ -76,6 +76,7 @@ M.module_names = {
   "glyph_palette",
   "hop",
   "illuminate",
+  "indent_blankline",
   "leap",
   "lightspeed",
   "lsp_saga",
