@@ -17,6 +17,7 @@ end
 
 local extras = {
   alacritty = "yml",
+  base16 = "yaml",
   fish = "fish",
   iterm = "itermcolors",
   kitty = "conf",
