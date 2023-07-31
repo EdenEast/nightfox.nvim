@@ -117,7 +117,7 @@ If you want to stay on nvim 0.7, disable the module, or pin to commit 15f3b5837a
     -- Language specific -------------------------------------------------------
 
     -- json
-    ["@label.json"]             = { fg = spec.func }, -- For labels: label: in C and :label: in Lua.
+    ["@label.json"]             = { fg = syn.func }, -- For labels: label: in C and :label: in Lua.
 
     -- lua
     ["@constructor.lua"]        = { fg = spec.fg2 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
