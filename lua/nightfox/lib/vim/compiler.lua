@@ -80,7 +80,7 @@ set background=%s]],
 You can open '%s' for debugging.
 
 If you think this is a bug, kindly open an issue and attach '%s' file.
-Bellow is the error message:
+Below is the error message:
 ]],
       tmpfile,
       tmpfile
