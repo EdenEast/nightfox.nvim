@@ -19,7 +19,7 @@ function M.compile(opts)
     fmt(
       [[
 return string.dump(function()
-vim.command([[
+vim.command(]] .. '[[' .. [[
 if exists("colors_name")
   hi clear
 endif
