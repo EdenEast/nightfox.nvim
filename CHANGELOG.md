@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.6.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.5.1...v3.6.0) (2023-09-19)
+
+
+### Features
+
+* **modules:** add indent_blankline ([#347](https://github.com/EdenEast/nightfox.nvim/issues/347)) ([5472a3e](https://github.com/EdenEast/nightfox.nvim/commit/5472a3e2bae6f381b603cd7998fc131f8134755c))
+
+
+### Bug Fixes
+
+* **compiler:** add file permission error ([#368](https://github.com/EdenEast/nightfox.nvim/issues/368)) ([e886e39](https://github.com/EdenEast/nightfox.nvim/commit/e886e39e592e89f316536a6f070365a9d88901c9))
+* **indent_blankline:** style wasn't set correctly ([#351](https://github.com/EdenEast/nightfox.nvim/issues/351)) ([77aa745](https://github.com/EdenEast/nightfox.nvim/commit/77aa7458d2b725c2d9ff55a18befe1b891ac473e))
+* **syntax:** Fix highlight for json labels ([#363](https://github.com/EdenEast/nightfox.nvim/issues/363)) ([a48f6d9](https://github.com/EdenEast/nightfox.nvim/commit/a48f6d9a0273101df76eb25d2f5477baa277f935))
+* **vim:** resolve deprecation of nested `[[` ([#373](https://github.com/EdenEast/nightfox.nvim/issues/373)) ([e45f802](https://github.com/EdenEast/nightfox.nvim/commit/e45f80288c0af7f30d785676a0d89c9dcc3e390a))
+
 ## [3.5.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.5.0...v3.5.1) (2023-04-21)
 
 
