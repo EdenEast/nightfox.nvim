@@ -17,7 +17,7 @@ function M.compile(opts)
 
   local lines = {
     fmt(
-      [[
+      [=[
 return string.dump(function()
 vim.command([[
 if exists("colors_name")
@@ -25,7 +25,7 @@ if exists("colors_name")
 endif
 set termguicolors
 let g:colors_name = "%s"
-set background=%s]],
+set background=%s]=],
       style,
       background
     ),
