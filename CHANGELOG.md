@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.6.0...v3.6.1) (2023-09-20)
+
+
+### Bug Fixes
+
+* **vim:** loadstring (5.1) vs load (5.2&gt;=) ([#375](https://github.com/EdenEast/nightfox.nvim/issues/375)) ([4ab4dda](https://github.com/EdenEast/nightfox.nvim/commit/4ab4ddae66f21b57251b03fd74437c6e2de9f2b1))
+
 ## [3.6.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.5.1...v3.6.0) (2023-09-19)
 
 
