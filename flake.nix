@@ -12,8 +12,14 @@
     inputs.flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages."${system}";
+        lua = pkgs.lua5_1;
+        # lua = pkgs.lua5_2;
+        # lua = pkgs.lua5_3;
+        # lua = pkgs.lua5_4;
+        # lua = pkgs.luajit;
 
         vim-lua = pkgs.vim_configurable.override {
+          inherit lua;
           luaSupport = true;
         };
 
@@ -23,12 +29,8 @@
             pandoc
             gnumake
             stylua
-            vim-lua
-            # luajit
-            lua5_4
-            # lua5_3
-            # lua5_2
-            # lua5_1
+            # vim-lua
+            # lua
           ];
         };
 
