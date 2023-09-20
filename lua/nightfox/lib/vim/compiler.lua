@@ -71,7 +71,7 @@ set background=%s]=],
 
   file = io.open(output_file, "wb")
 
-  local ld = load or loadstring -- loadstring == 5.1, load >= 5.2
+  local ld = loadstring or load -- loadstring == 5.1, load >= 5.2
   local f = ld(table.concat(lines, "\n"), "=")
   if not f then
     local tmpfile = util.join_paths(util.get_tmp_dir(), "nightfox_error.lua")
