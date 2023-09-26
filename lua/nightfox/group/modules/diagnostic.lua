@@ -10,21 +10,25 @@ function M.get(spec, config, opts)
     DiagnosticWarn             = { fg = d.warn },
     DiagnosticInfo             = { fg = d.info },
     DiagnosticHint             = { fg = d.hint },
+    DiagnosticOk               = { fg = d.ok },
 
     DiagnosticSignError        = { link = "DiagnosticError" },
     DiagnosticSignWarn         = { link = "DiagnosticWarn" },
     DiagnosticSignInfo         = { link = "DiagnosticInfo" },
     DiagnosticSignHint         = { link = "DiagnosticHint" },
+    DiagnosticSignOk           = { link = "DiagnosticOk" },
 
     DiagnosticVirtualTextError = { fg = d.error, bg = opts.background and dbg.error or "NONE" },
     DiagnosticVirtualTextWarn  = { fg = d.warn, bg = opts.background and dbg.warn or "NONE" },
     DiagnosticVirtualTextInfo  = { fg = d.info, bg = opts.background and dbg.info or "NONE" },
     DiagnosticVirtualTextHint  = { fg = d.hint, bg = opts.background and dbg.hint or "NONE" },
+    DiagnosticVirtualTextOk    = { fg = d.ok, bg = opts.background and dbg.ok or "NONE" },
 
     DiagnosticUnderlineError   = { style = "undercurl", sp = d.error },
     DiagnosticUnderlineWarn    = { style = "undercurl", sp = d.warn },
     DiagnosticUnderlineInfo    = { style = "undercurl", sp = d.info },
     DiagnosticUnderlineHint    = { style = "undercurl", sp = d.hint },
+    DiagnosticUnderlineOk      = { style = "undercurl", sp = d.ok },
   }
 end
 
