@@ -87,6 +87,7 @@ local function generate_spec(pal)
     warn  = pal.yellow.base,
     info  = pal.blue.base,
     hint  = pal.green.base,
+    ok    = pal.green.base,
   }
 
   spec.diag_bg = {
@@ -94,6 +95,7 @@ local function generate_spec(pal)
     warn  = C(spec.bg1):blend(C(spec.diag.warn), 0.15):to_css(),
     info  = C(spec.bg1):blend(C(spec.diag.info), 0.15):to_css(),
     hint  = C(spec.bg1):blend(C(spec.diag.hint), 0.15):to_css(),
+    ok    = C(spec.bg1):blend(C(spec.diag.ok), 0.15):to_css(),
   }
 
   spec.diff = {

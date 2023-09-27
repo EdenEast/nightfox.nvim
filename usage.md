@@ -347,12 +347,12 @@ The `syntax` table maps [palette] color values to syntax values to be used by th
 #### spec.diag
 
 The `diag` table maps [palette] colors to vim diagnostic colors values.
-These values are: `error`, `warn`, `info` and `hint`.
+These values are: `error`, `warn`, `info`, `hint`, and `ok`.
 
 #### spec.diag_bg
 
 The `diag_bg` table maps [palette] colors to vim diagnostic background colors.
-These values are: `error`, `warn`, `info` and `hint`.
+These values are: `error`, `warn`, `info`, `hint`, and `ok`.
 
 #### spec.diff
 

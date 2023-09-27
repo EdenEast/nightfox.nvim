@@ -97,6 +97,7 @@ local function generate_pallet_from_colorscheme()
     info = { hl = "DiagnosticInfo", default = color_map.blue.default },
     warn = { hl = "DiagnosticWarn", default = color_map.yellow.default },
     error = { hl = "DiagnosticError", default = color_map.red.default },
+    ok = { hl = "DiagnosticOk", default = color_map.green.default },
   }
 
   local pallet = {}

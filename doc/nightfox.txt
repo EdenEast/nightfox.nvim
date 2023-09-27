@@ -439,7 +439,7 @@ spec.syntax                            The `syntax` table maps
 spec.diag                              The `diag` table maps |nightfox-palette|
                                        colors to vim diagnostic colors values.
                                        These values are: `error`, `warn`,
-                                       `info` and `hint`.
+                                       `info`, `hint`, and `ok`.
 
 
                                                        *nightfox-spec.diag_bg*
@@ -447,8 +447,8 @@ spec.diag                              The `diag` table maps |nightfox-palette|
 spec.diag_bg                           The `diag_bg` table maps
                                        |nightfox-palette| colors to vim
                                        diagnostic background colors. These
-                                       values are: `error`, `warn`, `info` and
-                                       `hint`.
+                                       values are: `error`, `warn`, `info`,
+                                       `hint`, and `ok`.
 
 
                                                           *nightfox-spec.diff*

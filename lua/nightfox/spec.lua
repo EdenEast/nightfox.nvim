@@ -49,12 +49,14 @@ local template = require("nightfox.util.template")
 ---@field warn string
 ---@field info string
 ---@field hint string
+---@field ok string
 
 ---@class SpecDiagnosticBg
 ---@field error string
 ---@field warn string
 ---@field info string
 ---@field hint string
+---@field ok string
 
 ---@class SpecDiff
 ---@field add string
