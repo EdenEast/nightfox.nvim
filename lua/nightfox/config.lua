@@ -77,6 +77,7 @@ M.module_names = {
   "hop",
   "illuminate",
   "indent_blankline",
+  "lazy",
   "leap",
   "lightspeed",
   "lsp_saga",
