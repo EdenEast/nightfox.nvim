@@ -529,6 +529,7 @@ There are a few things to note:
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
 - [lsp-trouble.nvim](https://github.com/simrat39/lsp-trouble.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [mini.nvim](https://github.com/echasnovski/mini.nvim)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [nvim-navic](https://github.com/SmiteshP/nvim-navic)

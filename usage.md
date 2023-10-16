@@ -405,6 +405,7 @@ Current list of modules are:
 - hop
 - illuminate
 - indent_blanklines
+- lazy.nvim
 - leap
 - lightspeed
 - lsp_saga
