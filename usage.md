@@ -228,7 +228,7 @@ local options = {
 `inverse` is a table that contains a list of highlight types. If a highlight type is enabled it will inverse the
 foreground and background colors instead of applying the normal highlight group. Thees highlight types are:
 `match_paren`, `visual`, `search`. For an example if search is enabled instead of highlighting a search term with the
-default search color it will inverse the foureground and background colors.
+default search color it will inverse the foreground and background colors.
 
 #### options.colorblind {table}
 
