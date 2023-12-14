@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.7.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.6.1...v3.7.0) (2023-12-14)
+
+
+### Features
+
+* add new DiagnosticOk highlight ([#378](https://github.com/EdenEast/nightfox.nvim/issues/378)) ([fe2fc7b](https://github.com/EdenEast/nightfox.nvim/commit/fe2fc7b93d66349eff2c5baa6cec922ee3958f56))
+
+
+### Bug Fixes
+
+* **groups:** differentiate between active button with lazy.nvim ([#383](https://github.com/EdenEast/nightfox.nvim/issues/383)) ([6a6076b](https://github.com/EdenEast/nightfox.nvim/commit/6a6076bd678f825ffbe16ec97807793c3167f1a7))
+* **group:** WinSeperator defined along side VertSplit ([#387](https://github.com/EdenEast/nightfox.nvim/issues/387)) ([de1bd3a](https://github.com/EdenEast/nightfox.nvim/commit/de1bd3a7c48d37f3c7ccecb1980c4009fa4fb791))
+
 ## [3.6.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.6.0...v3.6.1) (2023-09-20)
 
 
