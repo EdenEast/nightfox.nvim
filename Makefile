@@ -15,8 +15,8 @@ extragen:
 
 .PHONY : minimal
 minimal:
-	sed -i "s|EdenEast/nightfox.nvim|${root_dir}|g" minimal_init.lua
-	nvim --clean -u minimal_init.lua minimal_init.lua
+	sed -i "s|EdenEast/nightfox.nvim|${root_dir}|g" .github/minimal_init.lua
+	nvim --clean -u .github/minimal_init.lua .github/minimal_init.lua
 
 .PHONY : docgen
 docgen: $(pandocdir)
