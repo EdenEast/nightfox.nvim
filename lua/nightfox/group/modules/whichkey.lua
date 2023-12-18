@@ -10,7 +10,7 @@ function M.get(spec, config, opts)
     WhichKeyDesc      = { link = "Keyword" },
     WhichKeySeperator = { link = "Comment" },
     WhichKeySeparator = { link = "Comment" },
-    WhichKeyFloat     = { bg = spec.bg0 },
+    WhichKeyFloat     = { link = "NormalFloat" },
     WhichKeyValue     = { link = "Comment" },
   }
 end
