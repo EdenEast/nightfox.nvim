@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.7.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.7.0...v3.7.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* **group:** Fix typo from WinSeperator to WinSeparator ([3f98459](https://github.com/EdenEast/nightfox.nvim/commit/3f984596e6c30351470656279cde86433d574d51)), closes [#387](https://github.com/EdenEast/nightfox.nvim/issues/387)
+
 ## [3.7.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.6.1...v3.7.0) (2023-12-14)
 
 
