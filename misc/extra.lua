@@ -18,6 +18,7 @@ end
 local extras = {
   alacritty = "yml",
   fish = "fish",
+  ghostty = "ghostty",
   iterm = "itermcolors",
   kitty = "conf",
   konsole = "colorscheme",
