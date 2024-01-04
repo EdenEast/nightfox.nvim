@@ -13,7 +13,7 @@ local function construct(shade)
   }
 end
 
-function M.generate(spec)
+function M.generate(spec, _)
   -- Convert default hex string format to Alacritty `0x` format
   local p = spec.palette
   local colors = {

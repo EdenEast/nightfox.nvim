@@ -1,5 +1,5 @@
 // Nightfox Theme:
-// https://github.com/edeneast/nightfox.nvim
+// Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/zellij/nightfox.kdl
 
 themes {
   carbonfox {

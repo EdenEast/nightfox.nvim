@@ -6,11 +6,13 @@ vim.opt.runtimepath:append("./.")
 
 local util = require("nightfox.util")
 local join = util.join_paths
+local fmt = string.format
 
 local function write(str, folder, filename)
   util.ensure_dir(folder)
-  local name = util.join_paths(folder, filename)
+  local name = join(folder, filename)
   local file = io.open(name, "w")
+  assert(file)
   file:write(str)
   file:close()
 end
@@ -18,41 +20,41 @@ end
 local extras = {
   alacritty = "yml",
   base16 = "yaml",
-  fish = "fish",
-  iterm = "itermcolors",
+  fish = { ext = "fish", use_spec_name = true },
+  iterm = { ext = "itermcolors", use_spec_name = true },
   kitty = "conf",
   konsole = "colorscheme",
-  nushell = "nu",
-  tmux = "tmux",
+  nushell = { ext = "nu", use_spec_name = true },
+  tmux = { ext = "tmux", use_spec_name = true },
   wezterm = "toml",
   windows_terminal = "json",
-  xresources = "Xresources",
+  xresources = { ext = "Xresources", use_spec_name = true },
   warp = "yaml",
-}
-
-local full_extra = {
-  zellij = { ext = "kdl", filename = "nightfox.kdl" },
+  zellij = { ext = "kdl", basename = "nightfox", is_full = true },
 }
 
 local specs = require("nightfox.spec").load()
 table.sort(specs)
 
-for extra, ext in pairs(extras) do
-  local mod = require("nightfox.extra." .. extra)
-  for name, spec in pairs(specs) do
-    local folder = util.join_paths("extra", name)
-    local filename = "nightfox_" .. extra .. "." .. ext
-    spec.palette.meta.url =
-      string.format("https://github.com/edeneast/nightfox.nvim/raw/main/extra/%s/%s", name, filename)
-    write(mod.generate(spec), folder, filename)
-  end
-end
+for extra_name, extra in pairs(extras) do
+  local is_table = type(extra) == "table"
+  local mod = require("nightfox.extra." .. extra_name)
+  if is_table and extra.is_full then
+    local folder = join("extra", extra_name)
+    local filename = extra.basename and fmt("%s.%s", extra.basename, extra.ext) or fmt("%s.%s", extra_name, extra.ext)
+    local url = fmt("https://github.com/edeneast/nightfox.nvim/raw/main/%s/%s", folder, filename)
+    write(mod.generate(specs, { url = url }), folder, filename)
+  else
+    for spec_name, spec in pairs(specs) do
+      local folder = join("extra", spec_name)
+      local ext = is_table and extra.ext or extra
+      local filename = (is_table and extra.use_spec_name) and fmt("%s.%s", spec_name, ext)
+        or fmt("%s.%s", extra_name, ext)
 
-for name, extra in pairs(full_extra) do
-  local mod = require("nightfox.extra." .. name)
-  local folder = extra.folder and join("extra", extra.folder) or join("extra", name)
-  local filename = extra.filename or name .. "." .. extra.ext
-  write(mod.generate(specs), folder, filename)
+      spec.palette.meta.url = fmt("https://github.com/edeneast/nightfox.nvim/raw/main/%s/%s", folder, filename)
+      write(mod.generate(spec, {}), folder, filename)
+    end
+  end
 end
 
 vim.cmd("quit")

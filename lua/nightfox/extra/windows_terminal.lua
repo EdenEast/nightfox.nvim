@@ -2,7 +2,7 @@ local template = require("nightfox.util.template")
 
 local M = {}
 
-function M.generate(spec)
+function M.generate(spec, _)
   local content = [[
 {
     "name" : "${palette.meta.name}",
