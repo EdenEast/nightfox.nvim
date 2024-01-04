@@ -17,7 +17,7 @@ local function conv_shade(shade)
   }
 end
 
-function M.generate(spec)
+function M.generate(spec, _)
   local colors = {
     black = conv_shade(spec.palette.black),
     red = conv_shade(spec.palette.red),

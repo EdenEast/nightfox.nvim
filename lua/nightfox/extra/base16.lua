@@ -6,7 +6,7 @@ local function conv(color)
   return color:gsub("^#", "")
 end
 
-function M.generate(spec)
+function M.generate(spec, _)
   -- Remove '#' from color
   local p = spec.palette
   local colors = {

@@ -2,7 +2,7 @@ local template = require("nightfox.util.template")
 
 local M = {}
 
-function M.generate(spec)
+function M.generate(spec, _)
   local P = spec.palette
   spec.harsh = P.meta.light and P.black or P.white
 

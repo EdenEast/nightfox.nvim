@@ -1,0 +1,26 @@
+# Nightfox Warp Colors
+# Style: duskfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/duskfox/warp.yaml
+accent:     '#e0def4'
+background: '#232136'
+foreground: '#e0def4'
+details:    'darker'
+terminal_colors:
+  normal:
+    black:   '#393552'
+    red:     '#eb6f92'
+    green:   '#a3be8c'
+    yellow:  '#f6c177'
+    blue:    '#569fba'
+    magenta: '#c4a7e7'
+    cyan:    '#9ccfd8'
+    white:   '#e0def4'
+  bright:
+    black:   '#47407d'
+    red:     '#f083a2'
+    green:   '#b1d196'
+    yellow:  '#f9cb8c'
+    blue:    '#65b1cd'
+    magenta: '#ccb1ed'
+    cyan:    '#a6dae3'
+    white:   '#e2e0f7'

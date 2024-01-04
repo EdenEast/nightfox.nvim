@@ -2,14 +2,18 @@ local template = require("nightfox.util.template")
 
 local M = {}
 
-function M.generate(specs)
+function M.generate(specs, opts)
+  opts = opts or {}
   local lines = {}
-  lines[#lines + 1] = [[
+  lines[#lines + 1] = string.format(
+    [[
 // Nightfox Theme:
-// https://github.com/edeneast/nightfox.nvim
+// Upstream: %s
 
 themes {
-]]
+]],
+    opts.url
+  )
 
   local keys = vim.tbl_keys(specs)
   table.sort(keys)
