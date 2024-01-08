@@ -1,0 +1,79 @@
+# Nightfox Alacritty Colors
+## name: terafox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/alacritty.toml
+
+[colors.primary]
+background = "#152528"
+foreground = "#e6eaea"
+dim_forground = "#cbd9d8"
+bright_forground = "#eaeeee"
+
+[colors.cursor]
+text = "#e6eaea"
+cursor = "#cbd9d8"
+
+[colors.vi_mode_cursor]
+text = "#e6eaea"
+cursor = "#a1cdd8"
+
+[colors.search.matches]
+foreground = "#e6eaea"
+background = "#425e5e"
+
+[colors.search.focused_match]
+foreground = "#e6eaea"
+background = "#7aa4a1"
+
+[colors.footer_bar]
+foreground = "#e6eaea"
+background = "#254147"
+
+[colors.hints.start]
+foreground = "#e6eaea"
+background = "#ff8349"
+
+[colors.hints.end]
+foreground = "#e6eaea"
+background = "#254147"
+
+[colors.selection]
+text = "#e6eaea"
+background = "#293e40"
+
+[colors.normal]
+black = "#2f3239"
+red = "#e85c51"
+green = "#7aa4a1"
+yellow = "#fda47f"
+blue = "#5a93aa"
+magenta = "#ad5c7c"
+cyan = "#a1cdd8"
+white = "#ebebeb"
+
+[colors.bright]
+black = "#4e5157"
+red = "#eb746b"
+green = "#8eb2af"
+yellow = "#fdb292"
+blue = "#73a3b7"
+magenta = "#b97490"
+cyan = "#afd4de"
+white = "#eeeeee"
+
+[colors.dim]
+black = "#282a30"
+red = "#c54e45"
+green = "#688b89"
+yellow = "#d78b6c"
+blue = "#4d7d90"
+magenta = "#934e69"
+cyan = "#89aeb8"
+white = "#c8c8c8"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ff8349"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#cb7985"
