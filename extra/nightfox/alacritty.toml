@@ -7,8 +7,6 @@ background = "#192330"
 foreground = "#cdcecf"
 dim_forground = "#aeafb0"
 bright_forground = "#d6d6d7"
-dim_forground = "#aeafb0"
-bright_forground = "#d6d6d7"
 
 [colors.cursor]
 text = "#cdcecf"

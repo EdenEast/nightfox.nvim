@@ -5,8 +5,6 @@
 [colors.primary]
 background = "#f6f2ee"
 foreground = "#3d2b5a"
-dim_forground = "#643f61"
-bright_forground = "#302b5d"
 dim_forground = "#302b5d"
 bright_forground = "#643f61"
 
