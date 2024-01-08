@@ -1,0 +1,81 @@
+# Nightfox Alacritty Colors
+## name: nordfox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nordfox/alacritty.toml
+
+[colors.primary]
+background = "#2e3440"
+foreground = "#cdcecf"
+dim_forground = "#abb1bb"
+bright_forground = "#c7cdd9"
+dim_forground = "#abb1bb"
+bright_forground = "#c7cdd9"
+
+[colors.cursor]
+text = "#cdcecf"
+cursor = "#abb1bb"
+
+[colors.vi_mode_cursor]
+text = "#cdcecf"
+cursor = "#88c0d0"
+
+[colors.search.matches]
+foreground = "#cdcecf"
+background = "#4f6074"
+
+[colors.search.focused_match]
+foreground = "#cdcecf"
+background = "#a3be8c"
+
+[colors.footer_bar]
+foreground = "#cdcecf"
+background = "#444c5e"
+
+[colors.hints.start]
+foreground = "#cdcecf"
+background = "#c9826b"
+
+[colors.hints.end]
+foreground = "#cdcecf"
+background = "#444c5e"
+
+[colors.selection]
+text = "#cdcecf"
+background = "#3e4a5b"
+
+[colors.normal]
+black = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#e5e9f0"
+
+[colors.bright]
+black = "#465780"
+red = "#d06f79"
+green = "#b1d196"
+yellow = "#f0d399"
+blue = "#8cafd2"
+magenta = "#c895bf"
+cyan = "#93ccdc"
+white = "#e7ecf4"
+
+[colors.dim]
+black = "#353a45"
+red = "#a54e56"
+green = "#8aa872"
+yellow = "#d9b263"
+blue = "#668aab"
+magenta = "#9d7495"
+cyan = "#69a7ba"
+white = "#bbc3d4"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#c9826b"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#bf88bc"

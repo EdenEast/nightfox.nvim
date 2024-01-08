@@ -18,7 +18,7 @@ local function write(str, folder, filename)
 end
 
 local extras = {
-  alacritty = "yml",
+  alacritty = "toml",
   base16 = "yaml",
   fish = { ext = "fish", use_spec_name = true },
   ghostty = { ext = "ghostty", use_spec_name = true },
