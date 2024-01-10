@@ -5,8 +5,8 @@
 [colors.primary]
 background = "#152528"
 foreground = "#e6eaea"
-dim_forground = "#cbd9d8"
-bright_forground = "#eaeeee"
+dim_foreground = "#cbd9d8"
+bright_foreground = "#eaeeee"
 
 [colors.cursor]
 text = "#e6eaea"
