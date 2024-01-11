@@ -14,8 +14,8 @@ function M.generate(spec, _)
 [colors.primary]
 background = "${bg1}"
 foreground = "${fg1}"
-dim_forground = "${dim_fg}"
-bright_forground = "${bright_fg}"
+dim_foreground = "${dim_fg}"
+bright_foreground = "${bright_fg}"
 
 [colors.cursor]
 text = "${fg1}"
