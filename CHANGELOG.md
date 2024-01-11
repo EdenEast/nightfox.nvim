@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.8.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.7.1...v3.8.0) (2024-01-11)
+
+
+### Features
+
+* **extra:** add ghostty support ([#398](https://github.com/EdenEast/nightfox.nvim/issues/398)) ([34542a4](https://github.com/EdenEast/nightfox.nvim/commit/34542a433e5bd03c27b6cd4570849d9cde59acf7))
+* **extras:** add base16 scheme template generated base16 schemes. ([#354](https://github.com/EdenEast/nightfox.nvim/issues/354)) ([ca21c15](https://github.com/EdenEast/nightfox.nvim/commit/ca21c15589d9b71c7e1ad130273ad7819c6636d3))
+
+
+### Bug Fixes
+
+* **extra:** alacritty config from yml to toml ([#400](https://github.com/EdenEast/nightfox.nvim/issues/400)) ([83bad15](https://github.com/EdenEast/nightfox.nvim/commit/83bad1576d94251d460b2cc5635a15dd73cf6f65))
+* **extra:** fix typo from forground to foreground ([#401](https://github.com/EdenEast/nightfox.nvim/issues/401)) ([1e65031](https://github.com/EdenEast/nightfox.nvim/commit/1e650316680a777fb50e4ab35d82ecf32da485b8))
+* **whichkey:** link WhichKeyFloat to NormalFloat([#391](https://github.com/EdenEast/nightfox.nvim/issues/391)) ([281f307](https://github.com/EdenEast/nightfox.nvim/commit/281f30716cbbf57a8ef5aef0f381b1532f25cfac))
+
 ## [3.7.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.7.0...v3.7.1) (2023-12-21)
 
 
