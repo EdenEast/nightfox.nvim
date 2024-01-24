@@ -56,7 +56,7 @@ function M.get(spec, config, opts)
     -- ["@function.method.call"] = { }, -- method calls
 
     ["@constructor"] = { fg = syn.ident }, -- constructor calls and definitions
-    ["@operator"] = { fg = syn.builtin1, stl.variables }, -- symbolic operators (e.g. `+` / `*`)
+    ["@operator"] = { link = "Operator" }, -- symbolic operators (e.g. `+` / `*`)
 
     -- Keywords ---------------------------------------------------------------
     ["@keyword"] = { link = "Keyword" }, -- keywords not fitting into specific categories
