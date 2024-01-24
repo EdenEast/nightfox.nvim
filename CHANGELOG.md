@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.9.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.8.0...v3.9.0) (2024-01-24)
+
+
+### Features
+
+* **semanic_tokens:** add missing semanic tokens ([#406](https://github.com/EdenEast/nightfox.nvim/issues/406)) ([378ed7e](https://github.com/EdenEast/nightfox.nvim/commit/378ed7e671256f558d7364a5e5e986f45d9f330a))
+* **treesitter:** follow upstream highlight groups ([#404](https://github.com/EdenEast/nightfox.nvim/issues/404)) ([1e0dbb4](https://github.com/EdenEast/nightfox.nvim/commit/1e0dbb4abf1bbb57a3a03f83e5b8b6515ea1507e))
+
+
+### Bug Fixes
+
+* **treesitter:** link [@operator](https://github.com/operator) to operator ([ae41992](https://github.com/EdenEast/nightfox.nvim/commit/ae41992917d989177aff351bd6e66929de386f35))
+
 ## [3.8.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.7.1...v3.8.0) (2024-01-11)
 
 
