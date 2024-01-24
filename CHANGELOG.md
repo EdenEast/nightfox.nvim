@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.9.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.0...v3.9.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* **treesitter:** '[@comment](https://github.com/comment).note' correctly set ([#408](https://github.com/EdenEast/nightfox.nvim/issues/408)) ([ec59253](https://github.com/EdenEast/nightfox.nvim/commit/ec59253e835ecce2a393dfeafeb1fa2b25d92312))
+
 ## [3.9.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.8.0...v3.9.0) (2024-01-24)
 
 
