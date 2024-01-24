@@ -169,8 +169,6 @@ function M.get(spec, config, opts)
   hl["@text.todo.checked"] = hl["@markup.list.checked"]
   hl["@text.todo.unchecked"] = hl["@markup.list.unchecked"]
 
-  hl["@comment.note"] = hl["@comment.hint"]
-
   -- @text.todo is now for todo comments, not todo notes like in markdown
   hl["@text.todo"] = hl["@comment.todo"]
   hl["@text.warning"] = hl["@comment.warning"]
