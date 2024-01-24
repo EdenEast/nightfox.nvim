@@ -5,129 +5,207 @@ function M.get(spec, config, opts)
   local stl = config.styles
   local P = spec.palette
 
-  if vim.treesitter.highlighter.hl_map then
-    require("nightfox.lib.log").warn([[nvim-treesitter integration requires neovim 0.8
-If you want to stay on nvim 0.7, disable the module, or pin to commit 15f3b5837a8d07f45cbe16753fbf13630bc167a3
-]])
-    return {}
-  end
+  local hl = {
+    -- Identifiers ------------------------------------------------------------
+    ["@variable"] = { syn.variable, style = stl.variables }, -- various variable names
+    ["@variable.builtin"] = { fg = syn.builtin0, style = stl.variables }, -- built-in variable names (e.g. `this`)
+    ["@variable.parameter"] = { fg = syn.builtin1, stl.variables }, -- parameters of a function
+    ["@variable.member"] = { fg = syn.field }, -- object and struct fields
 
-  -- stylua: ignore
-  return {
-    -- Misc
-    ["@comment"]                = { link = "Comment" },
-    ["@error"]                  = { link = "Error" },
-    ["@preproc"]                = { link = "PreProc" }, -- various preprocessor directives & shebangs
-    ["@define"]                 = { link = "Define" }, -- preprocessor definition directives
-    ["@operator"]               = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
+    ["@constant"] = { link = "Constant" }, -- constant identifiers
+    ["@constant.builtin"] = { fg = syn.builtin2, style = stl.keywords }, -- built-in constant values
+    ["@constant.macro"] = { link = "Macro" }, -- constants defined by the preprocessor
 
-    -- Punctuation
-    ["@punctuation.delimiter"]  = { fg = syn.bracket }, -- For delimiters ie: .
-    ["@punctuation.bracket"]    = { fg = syn.bracket }, -- For brackets and parenthesis.
-    ["@punctuation.special"]    = { fg = syn.builtin1, style = stl.operators }, -- For special punctutation that does not fall in the catagories before.
+    ["@module"] = { fg = syn.builtin1 }, -- modules or namespaces
+    -- ["@module.builtin"] = { }, -- built-in modules or namespaces
+    ["@label"] = { link = "Label" }, -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
 
-    -- Literals
-    ["@string"]                 = { link = "String" }, -- For strings.
-    ["@string.regex"]           = { fg = syn.regex, style = stl.strings }, -- Regular expression literals.
-    ["@string.escape"]          = { fg = syn.regex, style = "bold" }, -- Escape characters within a string: `\n`, `\t`, etc.
-    ["@string.special"]         = { link = "Special" }, -- other special strings (e.g. dates)
+    -- Literals ---------------------------------------------------------------
+    ["@string"] = { link = "String" }, -- string literals
+    -- ["@string.documentation"] = { }, -- string documenting code (e.g. Python docstrings)
+    ["@string.regexp"] = { fg = syn.regex, style = stl.strings }, -- regular expressions
+    ["@string.escape"] = { fg = syn.regex, style = "bold" }, -- escape sequences
+    ["@string.special"] = { link = "Special" }, -- other special strings (e.g. dates)
+    -- ["@string.special.symbol"] = { }, -- symbols or atoms
+    ["@string.special.url"] = { fg = syn.const, style = "italic,underline" }, -- URIs (e.g. hyperlinks)
+    -- ["@string.special.path"] = { }, -- filenames
 
-    ["@character"]              = { link = "Character" }, -- character literals
-    ["@character.special"]      = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
+    ["@character"] = { link = "Character" }, -- character literals
+    ["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
 
-    ["@boolean"]                = { link = "Boolean" }, -- For booleans.
-    ["@number"]                 = { link = "Number" }, -- For all numbers
-    ["@float"]                  = { link = "Number" }, -- For floats.
+    ["@boolean"] = { link = "Boolean" }, -- boolean literals
+    ["@number"] = { link = "Number" }, -- numeric literals
+    ["@number.float"] = { link = "Float" }, -- floating-point number literals
 
-    -- Functions
-    ["@function"]               = { link = "Function" }, -- For function (calls and definitions).
-    ["@function.builtin"]       = { fg = syn.builtin0, style = stl.functions }, -- For builtin functions: table.insert in Lua.
-    ["@function.call"]          = { link = "@function" }, -- function calls
-    ["@function.macro"]         = { fg = syn.builtin0, style = stl.functions }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
-    ["@method"]                 = { link = "@function"}, -- For method calls and definitions.
+    -- Types ------------------------------------------------------------------
+    ["@type"] = { link = "Type" }, -- type or class definitions and annotations
+    ["@type.builtin"] = { fg = syn.builtin1, style = stl.types }, -- built-in types
+    -- ["@type.definition"] = { }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+    -- ["@type.qualifier"] = { }, -- type qualifiers (e.g. `const`)
 
-    ["@method.call"]            = { link = "@method" }, -- method calls
+    ["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
+    ["@property"] = { fg = syn.field }, -- the key in key/value pairs
 
-    ["@constructor"]            = { fg = syn.ident }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-    ["@parameter"]              = { fg = syn.builtin1, stl.variables }, -- For parameters of a function.
+    -- Functions --------------------------------------------------------------
+    ["@function"] = { link = "Functions" }, -- function definitions
+    ["@function.builtin"] = { fg = syn.builtin0, style = stl.functions }, -- built-in functions
+    -- ["@function.call"] = { }, -- function calls
+    ["@function.macro"] = { fg = syn.builtin0, style = stl.functions }, -- preprocessor macros
 
-    -- Keywords
-    ["@keyword"]                = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-    ["@keyword.function"]       = { fg = syn.keyword, style = stl.functions }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-    ["@keyword.operator"]       = { fg = syn.operator, style = stl.operators }, -- For new keyword operator
-    ["@keyword.return"]         = { fg = syn.builtin0, style = stl.keywords },
+    -- ["@function.method"] = { }, -- method definitions
+    -- ["@function.method.call"] = { }, -- method calls
 
-    ["@conditional"]            = { link = "Conditional" }, -- For keywords related to conditionnals.
-    ["@repeat"]                 = { link = "Repeat" }, -- For keywords related to loops.
-    ["@label"]                  = { link = "Label" }, -- For labels: label: in C and :label: in Lua.
-    ["@include"]                = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-    ["@exception"]              = { fg = syn.builtin0, style = stl.keywords }, -- Exception related keywords: `try`, `except`, `finally` in Python.
+    ["@constructor"] = { fg = syn.ident }, -- constructor calls and definitions
+    ["@operator"] = { fg = syn.builtin1, stl.variables }, -- symbolic operators (e.g. `+` / `*`)
 
-    -- Types
-    ["@type"]                   = { link = "Type" }, -- For types.
-    ["@type.builtin"]           = { fg = syn.builtin1, style = stl.types }, -- For builtin types.
-    ["@type.definition"]        = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
-    ["@type.qualifier"]         = { link = "@type" }, -- type qualifiers (e.g. `const`)
+    -- Keywords ---------------------------------------------------------------
+    ["@keyword"] = { link = "Keyword" }, -- keywords not fitting into specific categories
+    -- ["@keyword.coroutine"] = { }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+    ["@keyword.function"] = { fg = syn.keyword, style = stl.functions }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    ["@keyword.operator"] = { fg = syn.operator, style = stl.operators }, -- operators that are English words (e.g. `and` / `or`)
+    ["@keyword.import"] = { link = "Include" }, -- keywords for including modules (e.g. `import` / `from` in Python)
+    ["@keyword.storage"] = { link = "StorageClass" }, -- modifiers that affect storage in memory or life-time
+    ["@keyword.repeat"] = { link = "Repeat" }, -- keywords related to loops (e.g. `for` / `while`)
+    ["@keyword.return"] = { fg = syn.builtin0, style = stl.keywords }, -- keywords like `return` and `yield`
+    -- ["@keyword.debug"] = { }, -- keywords related to debugging
+    ["@keyword.exception"] = { link = "Exception" }, -- keywords related to exceptions (e.g. `throw` / `catch`)
 
-    ["@storageclass"]           = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
-    ["@attribute"]              = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-    ["@field"]                  = { fg = syn.field }, -- For fields.
-    ["@property"]               = { link = "@field" }, -- Same as @field.
+    ["@keyword.conditional"] = { link = "Conditional" }, -- keywords related to conditionals (e.g. `if` / `else`)
+    ["@keyword.conditional.ternary"] = { link = "Conditional" }, -- ternary operator (e.g. `?` / `:`)
 
-    -- Identifiers
-    ["@variable"]               = { fg = syn.variable, style = stl.variables }, -- Any variable name that does not have another highlighC.
-    ["@variable.builtin"]       = { fg = syn.builtin0, style = stl.variables }, -- Variable names that are defined by the languages, like this or self.
+    -- ["@keyword.directive"] = { }, -- various preprocessor directives & shebangs
+    -- ["@keyword.directive.define"] = { }, -- preprocessor definition directives
 
-    ["@constant"]               = { link = "Constant" }, -- For constants
-    ["@constant.builtin"]       = { fg = syn.builtin2, style = stl.keywords }, -- For constant that are built in the language: nil in Lua.
-    ["@constant.macro"]         = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
+    -- Punctuation ------------------------------------------------------------
+    ["@punctuation.delimiter"] = { fg = syn.bracket }, -- delimiters (e.g. `;` / `.` / `,`)
+    ["@punctuation.bracket"] = { fg = syn.bracket }, -- brackets (e.g. `()` / `{}` / `[]`)
+    ["@punctuation.special"] = { fg = syn.builtin1, style = stl.operators }, -- special symbols (e.g. `{}` in string interpolation)
 
-    ["@namespace"]              = { fg = syn.builtin1,  }, -- For identifiers referring to modules and namespaces.
-    ["@symbol"]                 = { fg = syn.preproc },
+    -- Comments ---------------------------------------------------------------
+    ["@comment"] = { link = "Comment" }, -- line and block comments
+    -- ["@comment.documentation"] = { link = "" }, -- comments documenting code
 
-    -- Text
-    ["@text"]                   = { fg = spec.fg1 }, -- For strings considerated text in a markup language.
-    ["@text.strong"]            = { fg = P.red:subtle(), style = "bold" }, -- bold
-    ["@text.emphasis"]          = { fg = P.red:subtle(), style = "italic" }, -- italic
-    ["@text.underline"]         = { link = "Underline" }, -- underlined text
-    ["@text.strike"]            = { fg = spec.fg1, style = "strikethrough" }, -- strikethrough text
-    ["@text.title"]             = { link = "Title"}, -- titles like: # Example
-    ["@text.literal"]           = { fg = syn.ident, style = "italic" }, -- used for inline code in markdown and for doc in python (""")
-    ["@text.uri"]               = { fg = syn.const, style = "italic,underline" }, -- urls, links and emails
-    ["@text.math"]              = { fg = syn.func }, -- math environments (e.g. `$ ... $` in LaTeX)
-    ["@text.environment"]       = { fg = syn.preproc }, -- text environments of markup languages
-    ["@text.environment.name"]  = { fg = syn.func }, -- text indicating the type of an environment
-    ["@text.reference"]         = { fg = syn.keyword, style = "bold" }, -- references
+    ["@comment.error"] = { fg = spec.bg1, bg = spec.diag.error }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED:`)
+    ["@comment.warning"] = { fg = spec.bg1, bg = spec.diag.warn }, -- warning-type comments (e.g. `WARNING:`, `FIX:`, `HACK:`)
+    ["@comment.todo"] = { fg = spec.bg1, bg = spec.diag.hint }, -- todo-type comments (e.g. `TODO:`, `WIP:`, `FIXME:`)
+    ["@comment.note"] = { fg = spec.bg1, bg = spec.diag.info }, -- note-type comments (e.g. `NOTE:`, `INFO:`, `XXX`)
 
-    ["@text.todo"]              = { fg = spec.bg1, bg = spec.diag.hint }, -- todo notes
-    ["@text.note"]              = { fg = spec.bg1, bg = spec.diag.info },
-    ["@text.warning"]           = { fg = spec.bg1, bg = spec.diag.warn },
-    ["@text.danger"]            = { fg = spec.bg1, bg = spec.diag.error },
-    ["@text.todo.unchecked"]    = { fg = spec.fg3 }, -- For brackets and parens.
-    ["@text.todo.checked"]      = { fg = P.green.base }, -- For brackets and parens.
+    -- Markup -----------------------------------------------------------------
+    ["@markup"] = { fg = spec.fg1 }, -- For strings considerated text in a markup language.
+    ["@markup.strong"] = { fg = P.red:subtle(), style = "bold" }, -- bold text
+    ["@markup.italic"] = { link = "" }, -- italic text
+    ["@markup.strikethrough"] = { fg = spec.fg1, style = "strikethrough" }, -- struck-through text
+    ["@markup.underline"] = { link = "Underline" }, -- underlined text (only for literal underline markup!)
 
-    ["@text.diff.add"]          = { link = "diffAdded" }, -- added text (for diff files)
-    ["@text.diff.delete"]       = { link = "diffRemoved" }, -- deleted text (for diff files)
+    ["@markup.heading"] = { link = "Title" }, -- headings, titles (including markers)
 
-    -- Tags
-    ["@tag"]                    = { fg = syn.keyword }, -- Tags like html tag names.
-    ["@tag.attribute"]          = { fg = syn.func, style = "italic" }, -- Tags like html tag names.
-    ["@tag.delimiter"]          = { fg = syn.builtin1 }, -- Tag delimiter like < > /
+    -- ["@markup.quote"] = { }, -- block quotes
+    -- ["@markup.math"] = { }, -- math environments (e.g. `$ ... $` in LaTeX)
+    -- ["@markup.environment"] = { }, -- environments (e.g. in LaTeX)
+
+    -- ["@markup.link"] = { }, -- text references, footnotes, citations, etc.
+    -- ["@markup.link.label"] = { }, -- link, reference descriptions
+    -- ["@markup.link.url"] = { }, -- URL-style links
+
+    -- ["@markup.raw"] = { link = "" }, -- literal or verbatim text (e.g. inline code)
+    -- ["@markup.raw.block"] = { link = "" }, -- literal or verbatim text as a stand-alone block (use priority 90 for blocks with injections)
+
+    -- ["@markup.list"] = { link = "" }, -- list markers
+    -- ["@markup.list.checked"] = { link = "" }, -- checked todo-style list markers
+    -- ["@markup.list.unchecked"] = { link = "" }, -- unchecked todo-style list markers
+
+    ["@diff.plus"] = { link = "diffAdded" }, -- added text (for diff files)
+    ["@diff.minus"] = { link = "diffRemoved" }, -- deleted text (for diff files)
+    ["@diff.delta"] = { link = "diffChanged" }, -- changed text (for diff files)
+
+    ["@tag"] = { fg = syn.keyword }, -- XML-style tag names (and similar)
+    ["@tag.attribute"] = { fg = syn.func, style = "italic" }, -- XML-style tag attributes
+    ["@tag.delimiter"] = { fg = syn.builtin1 }, -- XML-style tag delimiters
+
+    -- Misc -------------------------------------------------------------------
+    -- ["@none"] = { }, -- completely disable the highlight
+    -- ["@conceal"] = { }, -- captures that are only meant to be concealed
+
+    -- ["@spell"] = { }, -- for defining regions to be spellchecked
+    -- ["@nospell"] = { }, -- for defining regions that should NOT be spellchecked
 
     -- Language specific -------------------------------------------------------
 
     -- json
-    ["@label.json"]             = { fg = syn.func }, -- For labels: label: in C and :label: in Lua.
+    ["@label.json"] = { fg = syn.func }, -- For labels: label: in C and :label: in Lua.
 
     -- lua
-    ["@constructor.lua"]        = { fg = spec.fg2 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+    ["@constructor.lua"] = { fg = spec.fg2 }, -- Lua's constructor is { }
 
     -- rust
-    ["@field.rust"]             = { fg = spec.fg2 },
+    ["@field.rust"] = { fg = spec.fg2 },
 
     -- yaml
-    ["@field.yaml"]             = { fg = syn.func }, -- For fields.
+    ["@variable.member.yaml"] = { fg = syn.func }, -- For fields.
   }
+
+  -- Legacy highlights
+  hl["@parameter"] = hl["@variable.parameter"]
+  hl["@field"] = hl["@variable.member"]
+  hl["@namespace"] = hl["@module"]
+  hl["@float"] = hl["@number.float"]
+  hl["@symbol"] = hl["@string.special.symbol"]
+  hl["@string.regex"] = hl["@string.regexp"]
+
+  hl["@text"] = hl["@markup"]
+  hl["@text.strong"] = hl["@markup.strong"]
+  hl["@text.emphasis"] = hl["@markup.italic"]
+  hl["@text.underline"] = hl["@markup.underline"]
+  hl["@text.strike"] = hl["@markup.strikethrough"]
+  hl["@text.uri"] = hl["@markup.link.url"]
+  hl["@text.math"] = hl["@markup.math"]
+  hl["@text.environment"] = hl["@markup.environment"]
+  hl["@text.environment.name"] = hl["@markup.environment.name"]
+
+  hl["@text.title"] = hl["@markup.heading"]
+  hl["@text.literal"] = hl["@markup.raw"]
+  hl["@text.reference"] = hl["@markup.link"]
+
+  hl["@text.todo.checked"] = hl["@markup.list.checked"]
+  hl["@text.todo.unchecked"] = hl["@markup.list.unchecked"]
+
+  hl["@comment.note"] = hl["@comment.hint"]
+
+  -- @text.todo is now for todo comments, not todo notes like in markdown
+  hl["@text.todo"] = hl["@comment.todo"]
+  hl["@text.warning"] = hl["@comment.warning"]
+  hl["@text.note"] = hl["@comment.note"]
+  hl["@text.danger"] = hl["@comment.error"]
+
+  -- @text.uri is now
+  -- > @markup.link.url in markup links
+  -- > @string.special.url outside of markup
+  hl["@text.uri"] = hl["@markup.link.uri"]
+
+  hl["@method"] = hl["@function.method"]
+  hl["@method.call"] = hl["@function.method.call"]
+
+  hl["@text.diff.add"] = hl["@diff.plus"]
+  hl["@text.diff.delete"] = hl["@diff.minus"]
+
+  hl["@define"] = hl["@keyword.directive.define"]
+  hl["@preproc"] = hl["@keyword.directive"]
+  hl["@storageclass"] = hl["@keyword.storage"]
+  hl["@conditional"] = hl["@keyword.conditional"]
+  hl["@exception"] = hl["@keyword.exception"]
+  hl["@include"] = hl["@keyword.import"]
+  hl["@repeat"] = hl["@keyword.repeat"]
+
+  hl["@variable.member.yaml"] = hl["@field.yaml"]
+
+  hl["@text.title.1.markdown"] = hl["@markup.heading.1.markdown"]
+  hl["@text.title.2.markdown"] = hl["@markup.heading.2.markdown"]
+  hl["@text.title.3.markdown"] = hl["@markup.heading.3.markdown"]
+  hl["@text.title.4.markdown"] = hl["@markup.heading.4.markdown"]
+  hl["@text.title.5.markdown"] = hl["@markup.heading.5.markdown"]
+  hl["@text.title.6.markdown"] = hl["@markup.heading.6.markdown"]
+
+  return hl
 end
 
 return M
