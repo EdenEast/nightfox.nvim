@@ -47,7 +47,7 @@ function M.get(spec, config, opts)
     ["@property"] = { fg = syn.field }, -- the key in key/value pairs
 
     -- Functions --------------------------------------------------------------
-    ["@function"] = { link = "Functions" }, -- function definitions
+    ["@function"] = { link = "Function" }, -- function definitions
     ["@function.builtin"] = { fg = syn.builtin0, style = stl.functions }, -- built-in functions
     -- ["@function.call"] = { }, -- function calls
     ["@function.macro"] = { fg = syn.builtin0, style = stl.functions }, -- preprocessor macros
