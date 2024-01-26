@@ -99,20 +99,20 @@ function M.get(spec, config, opts)
 
     ["@markup.heading"] = { link = "Title" }, -- headings, titles (including markers)
 
-    -- ["@markup.quote"] = { }, -- block quotes
-    -- ["@markup.math"] = { }, -- math environments (e.g. `$ ... $` in LaTeX)
+    ["@markup.quote"] = { fg = spec.fg2 }, -- block quotes
+    ["@markup.math"] = { fg = syn.func }, -- math environments (e.g. `$ ... $` in LaTeX)
     -- ["@markup.environment"] = { }, -- environments (e.g. in LaTeX)
 
-    -- ["@markup.link"] = { }, -- text references, footnotes, citations, etc.
-    -- ["@markup.link.label"] = { }, -- link, reference descriptions
-    -- ["@markup.link.url"] = { }, -- URL-style links
+    ["@markup.link"] = { fg = syn.keyword, style = "bold" }, -- text references, footnotes, citations, etc.
+    ["@markup.link.label"] = { link = "Special" }, -- link, reference descriptions
+    ["@markup.link.url"] = { fg = syn.const, style = "italic,underline" }, -- URL-style links
 
-    -- ["@markup.raw"] = { link = "" }, -- literal or verbatim text (e.g. inline code)
-    -- ["@markup.raw.block"] = { link = "" }, -- literal or verbatim text as a stand-alone block (use priority 90 for blocks with injections)
+    ["@markup.raw"] = { fg = syn.ident, style = "italic" }, -- literal or verbatim text (e.g. inline code)
+    ["@markup.raw.block"] = { fg = P.pink.base }, -- literal or verbatim text as a stand-alone block (use priority 90 for blocks with injections)
 
-    -- ["@markup.list"] = { link = "" }, -- list markers
-    -- ["@markup.list.checked"] = { link = "" }, -- checked todo-style list markers
-    -- ["@markup.list.unchecked"] = { link = "" }, -- unchecked todo-style list markers
+    ["@markup.list"] = { fg = syn.builtin1, style = stl.operators }, -- list markers
+    ["@markup.list.checked"] = { fg = P.green.base }, -- checked todo-style list markers
+    ["@markup.list.unchecked"] = { fg = P.yellow.base }, -- unchecked todo-style list markers
 
     ["@diff.plus"] = { link = "diffAdded" }, -- added text (for diff files)
     ["@diff.minus"] = { link = "diffRemoved" }, -- deleted text (for diff files)
