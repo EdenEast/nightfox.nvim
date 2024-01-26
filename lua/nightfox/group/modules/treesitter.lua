@@ -7,7 +7,7 @@ function M.get(spec, config, opts)
 
   local hl = {
     -- Identifiers ------------------------------------------------------------
-    ["@variable"] = { syn.variable, style = stl.variables }, -- various variable names
+    ["@variable"] = { fg = syn.variable, style = stl.variables }, -- various variable names
     ["@variable.builtin"] = { fg = syn.builtin0, style = stl.variables }, -- built-in variable names (e.g. `this`)
     ["@variable.parameter"] = { fg = syn.builtin1, stl.variables }, -- parameters of a function
     ["@variable.member"] = { fg = syn.field }, -- object and struct fields
