@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.9.2](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.1...v3.9.2) (2024-01-26)
+
+
+### Bug Fixes
+
+* add missing treesitter capture groups ([d4339e5](https://github.com/EdenEast/nightfox.nvim/commit/d4339e5b30a17b7130bbbc5de3bb6407239c9f9f)), closes [#412](https://github.com/EdenEast/nightfox.nvim/issues/412)
+* link to correct Function highlight group ([#413](https://github.com/EdenEast/nightfox.nvim/issues/413)) ([20d2eb4](https://github.com/EdenEast/nightfox.nvim/commit/20d2eb42a22a87fdf4e859af1b0262d4f3b3602b))
+
 ## [3.9.1](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.0...v3.9.1) (2024-01-24)
 
 
