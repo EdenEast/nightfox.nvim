@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.9.3](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.2...v3.9.3) (2024-01-26)
+
+
+### Bug Fixes
+
+* **treesitter:** missing [@variable](https://github.com/variable) fg key ([#415](https://github.com/EdenEast/nightfox.nvim/issues/415)) ([9aef9ff](https://github.com/EdenEast/nightfox.nvim/commit/9aef9ff0e41c43fe9d9dbb3cd5f1ce20e0d18cfa))
+
 ## [3.9.2](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.1...v3.9.2) (2024-01-26)
 
 
