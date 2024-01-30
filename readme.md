@@ -413,12 +413,12 @@ There are three types of cvd:
 - Tritan (Blue / S cones)
 
 These are referred to as `protanomaly`, `deuteranomaly`, and `tritanomaly` for individuals that have all three cones
-(trichromats) but one is week (anomalous trichromacy).
+(trichromats) but one is weak (anomalous trichromacy).
 
 These can also be referred to as `protanopia`, `deuteranopia`, and `tritanopia`. This is for individuals that only have
 two cones (dichromats or dichromacy).
 
-| Cone      | Type   | Week (trichromacy) | Missing (Dichromacy) |
+| Cone      | Type   | Weak (trichromacy) | Missing (Dichromacy) |
 | --------- | ------ | ------------------ | -------------------- |
 | L / Red   | Protan | Protanomaly        | Protanopia           |
 | M / Green | Deutan | Deuteranomaly      | Deuteranopia         |
