@@ -24,11 +24,12 @@ function M.get(spec, config, opts)
     NotifyDEBUGTitle = { fg = spec.diag.hint },
     NotifyTRACETitle = { fg = spec.syntax.comment },
 
-    NotifyERRORIcon = { link = "NotifyERRORTitle" },
-    NotifyWARNIcon  = { link = "NotifyWARNTitle" },
-    NotifyINFOIcon  = { link = "NotifyINFOTitle" },
-    NotifyDEBUGIcon = { link = "NotifyDEBUGTitle" },
-    NotifyTRACEIcon = { link = "NotifyTRACETitle" },
+    NotifyERRORIcon  = { link = "NotifyERRORTitle" },
+    NotifyWARNIcon   = { link = "NotifyWARNTitle" },
+    NotifyINFOIcon   = { link = "NotifyINFOTitle" },
+    NotifyDEBUGIcon  = { link = "NotifyDEBUGTitle" },
+    NotifyTRACEIcon  = { link = "NotifyTRACETitle" },
+    NotifyBackground = { link = "NormalFloat" },
   }
 end
 
