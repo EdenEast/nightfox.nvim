@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.9.4](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.3...v3.9.4) (2024-03-18)
+
+
+### Bug Fixes
+
+* add NotifyBackground missing highlight ([#422](https://github.com/EdenEast/nightfox.nvim/issues/422)) ([a4eb88b](https://github.com/EdenEast/nightfox.nvim/commit/a4eb88b2dad3fba5c2d87f82cd15dfb9de73913d))
+
 ## [3.9.3](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.2...v3.9.3) (2024-01-26)
 
 
