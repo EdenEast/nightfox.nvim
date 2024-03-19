@@ -1,0 +1,79 @@
+# Nightfox Alacritty Colors
+## name: gruvfox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/gruvfox/alacritty.toml
+
+[colors.primary]
+background = "#1d2021"
+foreground = "#ebdbb2"
+dim_foreground = "#d5c4a1"
+bright_foreground = "#fbf1c7"
+
+[colors.cursor]
+text = "#ebdbb2"
+cursor = "#d5c4a1"
+
+[colors.vi_mode_cursor]
+text = "#ebdbb2"
+cursor = "#8ec07c"
+
+[colors.search.matches]
+foreground = "#ebdbb2"
+background = "#665C54"
+
+[colors.search.focused_match]
+foreground = "#ebdbb2"
+background = "#b8bb26"
+
+[colors.footer_bar]
+foreground = "#ebdbb2"
+background = "#3c3836"
+
+[colors.hints.start]
+foreground = "#ebdbb2"
+background = "#f28019"
+
+[colors.hints.end]
+foreground = "#ebdbb2"
+background = "#3c3836"
+
+[colors.selection]
+text = "#ebdbb2"
+background = "#3c3836"
+
+[colors.normal]
+black = "#282828"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ebdbb2"
+
+[colors.bright]
+black = "#282828"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ebdbb2"
+
+[colors.dim]
+black = "#282828"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ebdbb2"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#f28019"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#b16286"
