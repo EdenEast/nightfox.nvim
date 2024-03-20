@@ -56,7 +56,7 @@ local function generate_spec(pal)
 
   spec.syntax = {
     bracket     = spec.fg2,           -- Brackets and Punctuation
-    builtin0    = pal.red.base,       -- Builtin variable
+    builtin0    = pal.magenta.base,   -- Builtin variable
     builtin1    = pal.cyan.bright,    -- Builtin type
     builtin2    = pal.orange.bright,  -- Builtin const
     builtin3    = pal.red.bright,     -- Not used
@@ -65,15 +65,15 @@ local function generate_spec(pal)
     const       = pal.orange.bright,  -- Constants, imports and booleans
     dep         = spec.fg3,           -- Deprecated
     field       = pal.blue.base,      -- Field
-    func        = pal.blue.bright,    -- Functions and Titles
+    func        = pal.green.base,     -- Functions and Titles
     ident       = pal.cyan.base,      -- Identifiers
-    keyword     = pal.magenta.base,   -- Keywords
+    keyword     = pal.red.base,       -- Keywords
     number      = pal.orange.base,    -- Numbers
     operator    = spec.fg2,           -- Operators
     preproc     = pal.pink.bright,    -- PreProc
     regex       = pal.yellow.bright,  -- Regex
     statement   = pal.magenta.base,   -- Statements
-    string      = pal.green.base,     -- Strings
+    string      = pal.green.bright,   -- Strings
     type        = pal.yellow.base,    -- Types
     variable    = pal.white.base,     -- Variables
   }
