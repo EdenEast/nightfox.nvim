@@ -545,6 +545,7 @@ There are a few things to note:
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 - [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
+- [rainbow-delimiters](https://gitlab.com/HiPhish/rainbow-delimiters.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ## Status lines
