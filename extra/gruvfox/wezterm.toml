@@ -9,18 +9,18 @@ background = "#1d2021"
 cursor_bg = "#ebdbb2"
 cursor_border = "#ebdbb2"
 cursor_fg = "#1d2021"
-compose_cursor = '#f28019'
+compose_cursor = '#fe8019'
 selection_bg = "#3c3836"
 selection_fg = "#ebdbb2"
 scrollbar_thumb = "#bdae93"
 split = "#141617"
 visual_bell = "#ebdbb2"
 ansi = ["#282828", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c", "#ebdbb2"]
-brights = ["#484848", "#fc6452", "#bfc23c", "#fbc74e", "#96b3a7", "#e0aab9", "#9fc990", "#eee0be"]
+brights = ["#928374", "#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#a89984"]
 
 [colors.indexed]
-16 = "#b16286"
-17 = "#f28019"
+16 = "#ff79c6"
+17 = "#fe8019"
 
 [colors.tab_bar]
 background = "#141617"

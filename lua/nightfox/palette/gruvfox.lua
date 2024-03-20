@@ -8,16 +8,16 @@ local meta = {
 
 -- stylua: ignore
 local palette = {
-  black   = Shade.new("#282828", 0.15, -0.150),
-  red     = Shade.new("#fb4934", 0.15, -0.150),
-  green   = Shade.new("#b8bb26", 0.10, -0.150),
-  yellow  = Shade.new("#fabd2f", 0.15, -0.150),
-  blue    = Shade.new("#83a598", 0.15, -0.150),
-  magenta = Shade.new("#d3869b", 0.30, -0.150),
-  cyan    = Shade.new("#8ec07c", 0.15, -0.150),
-  white   = Shade.new("#ebdbb2", 0.15, -0.150),
-  orange  = Shade.new("#f28019", 0.15, -0.150),
-  pink    = Shade.new("#b16286", 0.15, -0.150),
+  black   = Shade.new("#282828", "#928374", -0.150),
+  red     = Shade.new("#fb4934", "#cc241d", -0.150),
+  green   = Shade.new("#b8bb26", "#98971a", -0.150),
+  yellow  = Shade.new("#fabd2f", "#d79921", -0.150),
+  blue    = Shade.new("#83a598", "#458588", -0.150),
+  magenta = Shade.new("#d3869b", "#b16286", -0.150),
+  cyan    = Shade.new("#8ec07c", "#689d6a", -0.150),
+  white   = Shade.new("#ebdbb2", "#a89984", -0.150),
+  orange  = Shade.new("#fe8019", "#d65d0e", -0.150),
+  pink    = Shade.new("#ff79c6", "#d65d8b", -0.150),
 
   comment = "#928374",
 

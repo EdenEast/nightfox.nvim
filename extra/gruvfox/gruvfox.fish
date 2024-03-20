@@ -5,12 +5,12 @@ set -l foreground ebdbb2
 set -l selection 3c3836
 set -l comment 928374
 set -l red fb4934
-set -l orange f28019
+set -l orange fe8019
 set -l yellow fabd2f
 set -l green b8bb26
 set -l purple d3869b
 set -l cyan 8ec07c
-set -l pink b16286
+set -l pink ff79c6
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
