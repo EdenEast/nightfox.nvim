@@ -208,6 +208,7 @@ combination of |highlight-args|. The list of syntax components are:
 - keywords
 - numbers
 - operators
+- preprocs
 - strings
 - types
 - variables

@@ -27,6 +27,7 @@ local defaults = {
     keywords = "NONE",
     numbers = "NONE",
     operators = "NONE",
+    preprocs = "NONE",
     strings = "NONE",
     types = "NONE",
     variables = "NONE",

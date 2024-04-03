@@ -27,7 +27,7 @@ function M.get(spec, config)
     Keyword        = { fg = syn.keyword, style = stl.keywords }, -- any other keyword
     Exception      = { link = "Keyword" }, -- try, catch, throw
 
-    PreProc        = { fg = syn.preproc }, -- (preferred) generic Preprocessor
+    PreProc        = { fg = syn.preproc, style = stl.preprocs }, -- (preferred) generic Preprocessor
     Include        = { link = "PreProc" }, -- preprocessor #include
     Define         = { link = "PreProc" }, -- preprocessor #define
     Macro          = { link = "PreProc" }, -- same as Define
