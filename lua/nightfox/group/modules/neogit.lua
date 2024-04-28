@@ -1,4 +1,4 @@
--- https://github.com/TimUntersberger/neogit
+-- https://github.com/NeogitOrg/neogit
 
 local M = {}
 
