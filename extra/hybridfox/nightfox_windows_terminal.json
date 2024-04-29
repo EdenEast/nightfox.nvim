@@ -1,0 +1,23 @@
+{
+    "name" : "hybridfox",
+    "background" : "#1d1f21",
+    "foreground" : "#c5c8c6",
+    "cursorColor": "#c5c8c6",
+    "selectionBackground": "#2b3b51",
+    "black" : "#282a2e",
+    "blue" : "#81a2be",
+    "cyan" : "#8abeb7",
+    "green" : "#b5bd68",
+    "purple" : "#b294bb",
+    "red" : "#cc6666",
+    "white" : "#c5c8c6",
+    "yellow" : "#f0c674",
+    "brightBlack" : "#3d4454",
+    "brightBlue" : "#7ab3e6",
+    "brightCyan" : "#93d9d0",
+    "brightGreen" : "#cbd66b",
+    "brightPurple" : "#ce90e0",
+    "brightRed" : "#e66767",
+    "brightWhite" : "#707880",
+    "brightYellow" : "#ffc654"
+}
