@@ -367,7 +367,7 @@ local c = {
   },
   lsp_status = {
     provider = function()
-      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or " ◦ "
+      return vim.tbl_count(vim.lsp.get_clients { bufnr = 0 }) == 0 and "" or " ◦ "
     end,
     hl = "UserSLStatus",
     left_sep = { str = "", hl = "UserSLStatusBg", always_visible = true },
