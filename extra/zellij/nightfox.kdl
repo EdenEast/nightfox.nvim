@@ -3,7 +3,7 @@
 
 themes {
   carbonfox {
-    bg "#161616"
+    bg "#2a2a2a"
     fg "#f2f4f8"
     red "#ee5396"
     green "#25be6a"
@@ -16,7 +16,7 @@ themes {
     white "#b6b8bb"
   }
   dawnfox {
-    bg "#faf4ed"
+    bg "#d0d8d8"
     fg "#575279"
     red "#b4637a"
     green "#618774"
@@ -29,7 +29,7 @@ themes {
     white "#625c87"
   }
   dayfox {
-    bg "#f6f2ee"
+    bg "#e7d2be"
     fg "#3d2b5a"
     red "#a5222f"
     green "#396847"
@@ -42,7 +42,7 @@ themes {
     white "#643f61"
   }
   duskfox {
-    bg "#232136"
+    bg "#433c59"
     fg "#e0def4"
     red "#eb6f92"
     green "#a3be8c"
@@ -55,7 +55,7 @@ themes {
     white "#cdcbe0"
   }
   nightfox {
-    bg "#192330"
+    bg "#2b3b51"
     fg "#cdcecf"
     red "#c94f6d"
     green "#81b29a"
@@ -68,7 +68,7 @@ themes {
     white "#aeafb0"
   }
   nordfox {
-    bg "#2e3440"
+    bg "#3e4a5b"
     fg "#cdcecf"
     red "#bf616a"
     green "#a3be8c"
@@ -81,7 +81,7 @@ themes {
     white "#abb1bb"
   }
   terafox {
-    bg "#152528"
+    bg "#293e40"
     fg "#e6eaea"
     red "#e85c51"
     green "#7aa4a1"

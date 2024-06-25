@@ -24,7 +24,7 @@ themes {
 
     local content = [[
   ${name} {
-    bg "${bg1}"
+    bg "${sel0}"
     fg "${fg1}"
     red "${palette.red}"
     green "${palette.green}"
