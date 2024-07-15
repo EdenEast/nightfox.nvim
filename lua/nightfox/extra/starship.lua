@@ -14,6 +14,7 @@ function M.generate(spec, _)
 format = """
 [░▒▓](os_bg)\
 $os\
+$username\
 [](bg:dir_bg fg:os_bg)\
 $directory\
 [](fg:dir_bg bg:git_bg)\
@@ -34,13 +35,13 @@ green = "${palette.green}"
 purple = "${palette.magenta}"
 yellow = "${palette.yellow}"
 os_bg = "${fg3}"
-os_fg = "${bg1}"
+os_fg = "${bg0}"
 dir_bg = "${palette.green}"
 dir_fg = "${bg1}"
 git_bg = "${palette.yellow}"
-git_fg = "${bg1}"
+git_fg = "${bg2}"
 lang_bg = "${palette.blue}"
-lang_fg = "${bg1}"
+lang_fg = "${bg3}"
 
 [os]
 disabled = false
@@ -66,6 +67,12 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:os_bg fg:os_fg"
+style_root = "bg:os_bg fg:os_fg"
+format = "[ $user ]($style)"
 
 [directory]
 style = "fg:dir_fg bg:dir_bg"
@@ -136,8 +143,8 @@ format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
+success_symbol = '[](bold fg:${diag.ok})'
+error_symbol = '[](bold fg:${diag.error})'
 vimcmd_symbol = '[](bold fg:green)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'

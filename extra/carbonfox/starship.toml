@@ -8,6 +8,7 @@
 format = """
 [░▒▓](os_bg)\
 $os\
+$username\
 [](bg:dir_bg fg:os_bg)\
 $directory\
 [](fg:dir_bg bg:git_bg)\
@@ -28,13 +29,13 @@ green = "#25be6a"
 purple = "#be95ff"
 yellow = "#08bdba"
 os_bg = "#7b7c7e"
-os_fg = "#161616"
+os_fg = "#0c0c0c"
 dir_bg = "#25be6a"
 dir_fg = "#161616"
 git_bg = "#08bdba"
-git_fg = "#161616"
+git_fg = "#252525"
 lang_bg = "#78a9ff"
-lang_fg = "#161616"
+lang_fg = "#353535"
 
 [os]
 disabled = false
@@ -60,6 +61,12 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:os_bg fg:os_fg"
+style_root = "bg:os_bg fg:os_fg"
+format = "[ $user ]($style)"
 
 [directory]
 style = "fg:dir_fg bg:dir_bg"
@@ -130,8 +137,8 @@ format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
+success_symbol = '[](bold fg:#25be6a)'
+error_symbol = '[](bold fg:#ee5396)'
 vimcmd_symbol = '[](bold fg:green)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
