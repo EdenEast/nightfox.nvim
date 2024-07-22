@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.10.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.3...v3.10.0) (2024-07-22)
+
+
+### Features
+
+* added custom styling for preprocessor macros ([ce0cdf8](https://github.com/EdenEast/nightfox.nvim/commit/ce0cdf8538c8c0b9c8fb2884d3d1090c8faf515d))
+* **extra:** adding starship([#445](https://github.com/EdenEast/nightfox.nvim/issues/445)) ([932e417](https://github.com/EdenEast/nightfox.nvim/commit/932e417b032bac90baacccb32ebfc08207b018f7))
+* **mini:** add new highlight groups ([#443](https://github.com/EdenEast/nightfox.nvim/issues/443)) ([1a87edd](https://github.com/EdenEast/nightfox.nvim/commit/1a87edd2eb9b5885882cb37d726aff26493ecd02))
+
+
+### Bug Fixes
+
+* add NotifyBackground missing highlight ([#422](https://github.com/EdenEast/nightfox.nvim/issues/422)) ([a4eb88b](https://github.com/EdenEast/nightfox.nvim/commit/a4eb88b2dad3fba5c2d87f82cd15dfb9de73913d))
+* **zellij:** corrected text selection bg color ([#444](https://github.com/EdenEast/nightfox.nvim/issues/444)) ([7afb230](https://github.com/EdenEast/nightfox.nvim/commit/7afb230ccff4cad20a6cb778c49735074f915869))
+
 ## [3.9.3](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.2...v3.9.3) (2024-01-26)
 
 
