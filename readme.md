@@ -618,6 +618,7 @@ There are [extra](./extra) configuration files for the following:
 - [iterm](https://iterm2.com/index.html)
 - [kitty](https://sw.kovidgoyal.net/kitty/overview/#configuring-kitty)
 - [konsole](https://konsole.kde.org/)
+- [starship](https://starship.rs/)
 - [tmux](https://github.com/tmux/tmux)
 - [warp](https://www.warp.dev/)
 - [wezterm](https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file)

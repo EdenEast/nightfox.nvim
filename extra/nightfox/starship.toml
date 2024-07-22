@@ -1,0 +1,146 @@
+# [metadata]
+# name = "nightfox"
+# author = "wjohnsto"
+# origin_url = "https://github.com/EdenEast/nightfox.nvim"
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """
+[░▒▓](os_bg)\
+$os\
+$username\
+[](bg:dir_bg fg:os_bg)\
+$directory\
+[](fg:dir_bg bg:git_bg)\
+$git_branch\
+$git_status\
+[](fg:git_bg bg:lang_bg)\
+$nodejs\
+$rust\
+$golang\
+[](fg:lang_bg bg:background)\
+\n$character"""
+
+palette = "nightfox"
+
+[palettes.nightfox]
+red = "#c94f6d"
+green = "#81b29a"
+purple = "#9d79d6"
+yellow = "#dbc074"
+os_bg = "#71839b"
+os_fg = "#131a24"
+dir_bg = "#81b29a"
+dir_fg = "#192330"
+git_bg = "#dbc074"
+git_fg = "#212e3f"
+lang_bg = "#719cd6"
+lang_fg = "#29394f"
+
+[os]
+disabled = false
+style = "bg:os_bg fg:os_fg"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = " 󰣭 "
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:os_bg fg:os_fg"
+style_root = "bg:os_bg fg:os_fg"
+format = "[ $user ]($style)"
+
+[directory]
+style = "fg:dir_fg bg:dir_bg"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"src" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:git_bg"
+format = '[[ $symbol $branch ](fg:git_fg bg:git_bg)]($style)'
+
+[git_status]
+style = "bg:git_bg"
+format = '[[($all_status$ahead_behind )](fg:git_fg bg:git_bg)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[c]
+symbol = " "
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[php]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[java]
+symbol = " "
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[python]
+symbol = ""
+style = "bg:lang_bg"
+format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:#81b29a)'
+error_symbol = '[](bold fg:#c94f6d)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:yellow)'
+

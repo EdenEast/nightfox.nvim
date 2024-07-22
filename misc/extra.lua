@@ -26,6 +26,7 @@ local extras = {
   kitty = "conf",
   konsole = "colorscheme",
   nushell = { ext = "nu", use_spec_name = true },
+  starship = "toml",
   tmux = { ext = "tmux", use_spec_name = true },
   wezterm = "toml",
   windows_terminal = "json",
