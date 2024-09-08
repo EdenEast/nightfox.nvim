@@ -93,7 +93,7 @@ function M.get(spec, config, opts)
     -- Markup -----------------------------------------------------------------
     ["@markup"] = { fg = spec.fg1 }, -- For strings considerated text in a markup language.
     ["@markup.strong"] = { fg = P.red:subtle(), style = "bold" }, -- bold text
-    ["@markup.italic"] = { link = "" }, -- italic text
+    ["@markup.italic"] = { link = "Italic" }, -- italic text
     ["@markup.strikethrough"] = { fg = spec.fg1, style = "strikethrough" }, -- struck-through text
     ["@markup.underline"] = { link = "Underline" }, -- underlined text (only for literal underline markup!)
 
