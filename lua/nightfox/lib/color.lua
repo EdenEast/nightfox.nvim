@@ -9,6 +9,12 @@ local util = require("nightfox.util")
 ---@field blue number [0,255]
 ---@field alpha number [0,1]
 
+---Linear RGB
+---@class LRGB
+---@field red number [0,1]
+---@field green number [0,1]
+---@field blue number [0,1]
+
 ---@class HSL
 ---@field hue number Float [0,360)
 ---@field saturation number Float [0,100]
@@ -18,6 +24,11 @@ local util = require("nightfox.util")
 ---@field hue number Float [0,360)
 ---@field saturation number Float [0,100]
 ---@field value number Float [0,100]
+
+---@class OkLab
+---@field lightness number Float [0,1]
+---@field a number Float [-0.5,0.5]
+---@field b number Float [-0.5,0.5]
 
 --#endregion
 
@@ -155,6 +166,43 @@ function Color.from_hsl(h, s, l, a)
   return Color.init(f(0), f(8), f(4), a)
 end
 
+---Compute a component of RGB in [0,1] from it's gamma-expanded linear version.
+---@return number Float [0,1]
+local function from_linear_component(c)
+  return (c >= 0.0031308) and (1.055 * c ^ (1.0 / 2.4) - 0.055) or (12.92 * c)
+end
+
+---Create color from Linear RGB
+---@param r number Integer [0,1]
+---@param g number Integer [0,1]
+---@param b number Integer [0,1]
+---@param a number Float [0,1]
+---@return Color
+function Color.from_lrgb(r, g, b, a)
+  r = from_linear_component(r)
+  g = from_linear_component(g)
+  b = from_linear_component(b)
+  return Color.init(r, g, b, a)
+end
+
+---Create a Color from OkLab value
+---@param L number Lightness. Float [0,1]
+---@param a number a value. Float [-0.5,0.5]
+---@param b number b value. Float [-0.5,0.5]
+---@param alpha number (Optional) Alpha. Float [0,1]
+---@return Color
+function Color.from_oklab(L, a, b, alpha)
+  local l = (L + 0.3963377774 * a + 0.2158037573 * b) ^ 3
+  local m = (L - 0.1055613458 * a - 0.0638541728 * b) ^ 3
+  local s = (L - 0.0894841775 * a - 1.2914855480 * b) ^ 3
+
+  local r = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s
+  local g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s
+  local b_ = -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s
+
+  return Color.from_lrgb(r, g, b_, alpha)
+end
+
 --#endregion
 
 --#region to_* -----------------------------------------------------------------
@@ -167,6 +215,23 @@ function Color:to_rgba()
     green = util.round(self.green * 0xff),
     blue = util.round(self.blue * 0xff),
     alpha = self.alpha,
+  }
+end
+
+---Convert a component of RGB in [0,1] to it's gamma-expanded linear version.
+---@return number Float [0,1]
+local function to_linear_component(c)
+  return (c > 0.04045) and ((c + 0.055) / 1.055) ^ 2.4 or (c / 12.92)
+end
+
+---Convert Color to Linear RGB
+---@return LRGB
+function Color:to_lrgb()
+  local r, g, b = self.red, self.green, self.blue
+  return {
+    red = to_linear_component(r),
+    green = to_linear_component(g),
+    blue = to_linear_component(b),
   }
 end
 
@@ -198,6 +263,27 @@ function Color:to_hsl()
   return { hue = h, saturation = s * 100, lightness = l * 100 }
 end
 
+---Convert the color to OkLab.
+---@return OkLab
+function Color:to_oklab()
+  local lrgb = self:to_lrgb()
+  local r, g, b = lrgb.red, lrgb.green, lrgb.blue
+
+  local l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ^ (1 / 3)
+  local m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ^ (1 / 3)
+  local s = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ^ (1 / 3)
+
+  local L = 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s
+  local a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s
+  local b_ = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s
+
+  if r == g and g == b then
+    a = 0
+    b_ = 0
+  end
+  return { lightness = L, a = a, b = b_ }
+end
+
 ---Convert the color to a hex number representation (`0xRRGGBB[AA]`).
 ---@param with_alpha boolean Include the alpha component.
 ---@return integer
@@ -221,12 +307,8 @@ end
 ---https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
 ---@return number
 function Color:lumanance()
-  local r, g, b = self.red, self.green, self.blue
-  r = (r > 0.04045) and ((r + 0.055) / 1.055) ^ 2.4 or (r / 12.92)
-  g = (g > 0.04045) and ((g + 0.055) / 1.055) ^ 2.4 or (g / 12.92)
-  b = (b > 0.04045) and ((b + 0.055) / 1.055) ^ 2.4 or (b / 12.92)
-
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b
+  local lrgb = self:to_lrgb()
+  return 0.2126 * lrgb.red + 0.7152 * lrgb.green + 0.0722 * lrgb.blue
 end
 
 --#endregion
