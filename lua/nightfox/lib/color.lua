@@ -1,4 +1,5 @@
 local util = require("nightfox.util")
+local oklab = require("nightfox.util.oklab")
 
 --#region Types ----------------------------------------------------------------
 
@@ -8,12 +9,6 @@ local util = require("nightfox.util")
 ---@field green number [0,255]
 ---@field blue number [0,255]
 ---@field alpha number [0,1]
-
----Linear RGB
----@class LRGB
----@field red number [0,1]
----@field green number [0,1]
----@field blue number [0,1]
 
 ---@class HSL
 ---@field hue number Float [0,360)
@@ -29,6 +24,16 @@ local util = require("nightfox.util")
 ---@field lightness number Float [0,1]
 ---@field a number Float [-0.5,0.5]
 ---@field b number Float [-0.5,0.5]
+
+---@class OkHSL
+---@field hue number Float [0,360)
+---@field saturation number Float [0,100]
+---@field lightness number Float [0,100]
+
+---@class OkHSV
+---@field hue number Float [0,360)
+---@field saturation number Float [0,100]
+---@field value number Float [0,100]
 
 --#endregion
 
@@ -166,25 +171,6 @@ function Color.from_hsl(h, s, l, a)
   return Color.init(f(0), f(8), f(4), a)
 end
 
----Compute a component of RGB in [0,1] from it's gamma-expanded linear version.
----@return number Float [0,1]
-local function from_linear_component(c)
-  return (c >= 0.0031308) and (1.055 * c ^ (1.0 / 2.4) - 0.055) or (12.92 * c)
-end
-
----Create color from Linear RGB
----@param r number Integer [0,1]
----@param g number Integer [0,1]
----@param b number Integer [0,1]
----@param a number Float [0,1]
----@return Color
-function Color.from_lrgb(r, g, b, a)
-  r = from_linear_component(r)
-  g = from_linear_component(g)
-  b = from_linear_component(b)
-  return Color.init(r, g, b, a)
-end
-
 ---Create a Color from OkLab value
 ---@param L number Lightness. Float [0,1]
 ---@param a number a value. Float [-0.5,0.5]
@@ -192,15 +178,42 @@ end
 ---@param alpha number (Optional) Alpha. Float [0,1]
 ---@return Color
 function Color.from_oklab(L, a, b, alpha)
-  local l = (L + 0.3963377774 * a + 0.2158037573 * b) ^ 3
-  local m = (L - 0.1055613458 * a - 0.0638541728 * b) ^ 3
-  local s = (L - 0.0894841775 * a - 1.2914855480 * b) ^ 3
+  -- NOTE: do not clamp a and b as they are technically allowed to go past the
+  -- range. The resulting lrgb value will get clamped later anyways.
+  L = util.clamp(L, 0, 1)
+  alpha = util.clamp(alpha or 1, 0, 1)
+  local r, g, b_ = oklab.oklab_to_srgb(L, a, b)(L, a, b)
+  return Color.init(r, g, b_, alpha)
+end
 
-  local r = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s
-  local g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s
-  local b_ = -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s
+---Create a Color from OkHSV value
+---@param h number Hue. Float [0,360]
+---@param s number Saturation. Float [0,100]
+---@param v number Value. Float [0,100]
+---@param a number (Optional) Alpha. Float [0,1]
+---@return Color
+function Color.from_okhsv(h, s, v, a)
+  h = (h % 360) / 360
+  s = util.clamp(s, 0, 100) / 100
+  v = util.clamp(v, 0, 100) / 100
+  a = util.clamp(a or 1, 0, 1)
+  local r, g, b = oklab.oklab_to_srgb(oklab.okhsv_to_oklab(h, s, v))
+  return Color.init(r, g, b, a)
+end
 
-  return Color.from_lrgb(r, g, b_, alpha)
+---Create a Color from OkHSL value
+---@param h number Hue. Float [0,360]
+---@param s number Saturation. Float [0,100]
+---@param l number Lightness. Float [0,100]
+---@param a number (Optional) Alpha. Float [0,1]
+---@return Color
+function Color.from_okhsl(h, s, l, a)
+  h = (h % 360) / 360
+  s = util.clamp(s, 0, 100) / 100
+  l = util.clamp(l, 0, 100) / 100
+  a = util.clamp(a or 1, 0, 1)
+  local r, g, b = oklab.oklab_to_srgb(oklab.okhsl_to_oklab(h, s, l))
+  return Color.init(r, g, b, a)
 end
 
 --#endregion
@@ -215,23 +228,6 @@ function Color:to_rgba()
     green = util.round(self.green * 0xff),
     blue = util.round(self.blue * 0xff),
     alpha = self.alpha,
-  }
-end
-
----Convert a component of RGB in [0,1] to it's gamma-expanded linear version.
----@return number Float [0,1]
-local function to_linear_component(c)
-  return (c > 0.04045) and ((c + 0.055) / 1.055) ^ 2.4 or (c / 12.92)
-end
-
----Convert Color to Linear RGB
----@return LRGB
-function Color:to_lrgb()
-  local r, g, b = self.red, self.green, self.blue
-  return {
-    red = to_linear_component(r),
-    green = to_linear_component(g),
-    blue = to_linear_component(b),
   }
 end
 
@@ -266,22 +262,32 @@ end
 ---Convert the color to OkLab.
 ---@return OkLab
 function Color:to_oklab()
-  local lrgb = self:to_lrgb()
-  local r, g, b = lrgb.red, lrgb.green, lrgb.blue
-
-  local l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ^ (1 / 3)
-  local m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ^ (1 / 3)
-  local s = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ^ (1 / 3)
-
-  local L = 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s
-  local a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s
-  local b_ = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s
+  local r, g, b = self.red, self.green, self.blue
+  local L, a, b_ = oklab.srgb_to_oklab(r, g, b)
 
   if r == g and g == b then
     a = 0
     b_ = 0
   end
   return { lightness = L, a = a, b = b_ }
+end
+
+---Convert Color to OkHSV
+---@return OkHSV
+function Color:to_okhsv()
+  local h, s, v = oklab.oklab_to_okhsv( --
+    oklab.srgb_to_oklab(self.red, self.green, self.blue)
+  )
+  return { hue = h * 360, saturation = s * 100, value = v * 100 }
+end
+
+---Convert the color to OkHSL.
+---@return OkHSL
+function Color:to_okhsl()
+  local h, s, l = oklab.oklab_to_okhsl( --
+    oklab.srgb_to_oklab(self.red, self.green, self.blue)
+  )
+  return { hue = h * 360, saturation = s * 100, lightness = l * 100 }
 end
 
 ---Convert the color to a hex number representation (`0xRRGGBB[AA]`).
@@ -307,8 +313,8 @@ end
 ---https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
 ---@return number
 function Color:lumanance()
-  local lrgb = self:to_lrgb()
-  return 0.2126 * lrgb.red + 0.7152 * lrgb.green + 0.0722 * lrgb.blue
+  local r, g, b = oklab.srgb_to_linear(self.red, self.green, self.blue)
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b
 end
 
 --#endregion
