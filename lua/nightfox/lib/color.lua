@@ -182,7 +182,7 @@ function Color.from_oklab(L, a, b, alpha)
   -- range. The resulting lrgb value will get clamped later anyways.
   L = util.clamp(L, 0, 1)
   alpha = util.clamp(alpha or 1, 0, 1)
-  local r, g, b_ = oklab.oklab_to_srgb(L, a, b)(L, a, b)
+  local r, g, b_ = oklab.oklab_to_srgb(L, a, b)
   return Color.init(r, g, b_, alpha)
 end
 
@@ -265,10 +265,6 @@ function Color:to_oklab()
   local r, g, b = self.red, self.green, self.blue
   local L, a, b_ = oklab.srgb_to_oklab(r, g, b)
 
-  if r == g and g == b then
-    a = 0
-    b_ = 0
-  end
   return { lightness = L, a = a, b = b_ }
 end
 
@@ -325,13 +321,15 @@ end
 ---@param other Color
 ---@param f number Float [0,1]. 0 being this and 1 being other
 ---@return Color
-function Color:blend(other, f)
-  return Color.init(
-    (other.red - self.red) * f + self.red,
-    (other.green - self.green) * f + self.green,
-    (other.blue - self.blue) * f + self.blue,
-    self.alpha
-  )
+function Color:blend(other_, f)
+  local this = self:to_oklab()
+  local other = other_:to_oklab()
+
+  local L = (other.lightness - this.lightness) * f + this.lightness
+  local a = (other.a - this.a) * f + this.a
+  local b = (other.b - this.b) * f + this.b
+
+  return Color.from_oklab(L, a, b, self.alpha)
 end
 
 ---Returns a new shaded color.
@@ -339,14 +337,8 @@ end
 ---@return Color
 function Color:shade(f)
   local t = f < 0 and 0 or 1.0
-  local p = f < 0 and f * -1.0 or f
 
-  return Color.init(
-    (t - self.red) * p + self.red,
-    (t - self.green) * p + self.green,
-    (t - self.blue) * p + self.blue,
-    self.alpha
-  )
+  return self:blend(Color.init(t, t, t, 1.0), math.abs(f))
 end
 
 ---Adds value of `v` to the `value` of the current color. This returns either
@@ -354,9 +346,9 @@ end
 ---@param v number Value. Float [-100,100].
 ---@return Color
 function Color:brighten(v)
-  local hsv = self:to_hsv()
+  local hsv = self:to_okhsv()
   local value = util.clamp(hsv.value + v, 0, 100)
-  return Color.from_hsv(hsv.hue, hsv.saturation, value)
+  return Color.from_okhsv(hsv.hue, hsv.saturation, value)
 end
 
 ---Adds value of `v` to the `lightness` of the current color. This returns
@@ -364,9 +356,9 @@ end
 ---@param v number Lightness. Float [-100,100].
 ---@return Color
 function Color:lighten(v)
-  local hsl = self:to_hsl()
+  local hsl = self:to_okhsl()
   local lightness = util.clamp(hsl.lightness + v, 0, 100)
-  return Color.from_hsl(hsl.hue, hsl.saturation, lightness)
+  return Color.from_okhsl(hsl.hue, hsl.saturation, lightness)
 end
 
 ---Adds value of `v` to the `saturation` of the current color. This returns
@@ -374,18 +366,18 @@ end
 ---@param v number Saturation. Float [-100,100].
 ---@return Color
 function Color:saturate(v)
-  local hsv = self:to_hsv()
+  local hsv = self:to_okhsv()
   local saturation = util.clamp(hsv.saturation + v, 0, 100)
-  return Color.from_hsv(hsv.hue, saturation, hsv.value)
+  return Color.from_okhsv(hsv.hue, saturation, hsv.value)
 end
 
 ---Adds value of `v` to the `hue` of the current color. This returns a rotation of
 ---hue based on +/- of v. Resulting `hue` is wrapped [0,360]
 ---@return Color
 function Color:rotate(v)
-  local hsv = self:to_hsv()
+  local hsv = self:to_okhsv()
   local hue = (hsv.hue + v) % 360
-  return Color.from_hsv(hue, hsv.saturation, hsv.value)
+  return Color.from_okhsv(hue, hsv.saturation, hsv.value)
 end
 
 --#endregion

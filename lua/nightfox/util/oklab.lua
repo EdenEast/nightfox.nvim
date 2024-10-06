@@ -30,7 +30,7 @@ function M.srgb_to_linear(r, g, b)
     srgb_transfer_function_inv(b)
 end
 
-local function linear_srgb_to_oklab(r, b, g)
+local function linear_srgb_to_oklab(r, g, b)
   local l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ^ (1 / 3)
   local m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ^ (1 / 3)
   local s = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ^ (1 / 3)

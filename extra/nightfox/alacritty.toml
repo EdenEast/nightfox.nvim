@@ -51,24 +51,24 @@ cyan = "#63cdcf"
 white = "#dfdfe0"
 
 [colors.bright]
-black = "#575860"
-red = "#d16983"
+black = "#53555d"
+red = "#d46b81"
 green = "#8ebaa4"
-yellow = "#e0c989"
-blue = "#86abdc"
-magenta = "#baa1e2"
-cyan = "#7ad5d6"
+yellow = "#e0ca8a"
+blue = "#86abdd"
+magenta = "#b9a1e4"
+cyan = "#7fd5d6"
 white = "#e4e4e5"
 
 [colors.dim]
-black = "#30323a"
-red = "#ab435d"
-green = "#6e9783"
-yellow = "#baa363"
-blue = "#6085b6"
-magenta = "#8567b6"
-cyan = "#54aeb0"
-white = "#bebebe"
+black = "#2c2e35"
+red = "#a13e56"
+green = "#678f7b"
+yellow = "#b09a5c"
+blue = "#5a7dac"
+magenta = "#7e60ac"
+cyan = "#4ea5a6"
+white = "#b3b3b4"
 
 [[colors.indexed_colors]]
 index = 16
