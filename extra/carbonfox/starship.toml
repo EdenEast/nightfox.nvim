@@ -28,14 +28,14 @@ red = "#ee5396"
 green = "#25be6a"
 purple = "#be95ff"
 yellow = "#08bdba"
-os_bg = "#7b7c7e"
-os_fg = "#0c0c0c"
+os_bg = "#737476"
+os_fg = "#0b0b0b"
 dir_bg = "#25be6a"
 dir_fg = "#161616"
 git_bg = "#08bdba"
 git_fg = "#252525"
 lang_bg = "#78a9ff"
-lang_fg = "#353535"
+lang_fg = "#333333"
 
 [os]
 disabled = false

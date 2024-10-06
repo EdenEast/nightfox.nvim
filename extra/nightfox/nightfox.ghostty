@@ -19,13 +19,13 @@ palette = 6=#63cdcf
 palette = 7=#dfdfe0
 
 # bright
-palette = 8=#575860
-palette = 9=#d16983
+palette = 8=#53555d
+palette = 9=#d46b81
 palette = 10=#8ebaa4
-palette = 11=#e0c989
-palette = 12=#86abdc
-palette = 13=#baa1e2
-palette = 14=#7ad5d6
+palette = 11=#e0ca8a
+palette = 12=#86abdd
+palette = 13=#b9a1e4
+palette = 14=#7fd5d6
 palette = 15=#e4e4e5
 
 # extended colors

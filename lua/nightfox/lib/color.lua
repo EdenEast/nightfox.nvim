@@ -1,4 +1,5 @@
 local util = require("nightfox.util")
+local oklab = require("nightfox.util.oklab")
 
 --#region Types ----------------------------------------------------------------
 
@@ -15,6 +16,21 @@ local util = require("nightfox.util")
 ---@field lightness number Float [0,100]
 
 ---@class HSV
+---@field hue number Float [0,360)
+---@field saturation number Float [0,100]
+---@field value number Float [0,100]
+
+---@class OkLab
+---@field lightness number Float [0,1]
+---@field a number Float [-0.5,0.5]
+---@field b number Float [-0.5,0.5]
+
+---@class OkHSL
+---@field hue number Float [0,360)
+---@field saturation number Float [0,100]
+---@field lightness number Float [0,100]
+
+---@class OkHSV
 ---@field hue number Float [0,360)
 ---@field saturation number Float [0,100]
 ---@field value number Float [0,100]
@@ -155,6 +171,51 @@ function Color.from_hsl(h, s, l, a)
   return Color.init(f(0), f(8), f(4), a)
 end
 
+---Create a Color from OkLab value
+---@param L number Lightness. Float [0,1]
+---@param a number a value. Float [-0.5,0.5]
+---@param b number b value. Float [-0.5,0.5]
+---@param alpha number (Optional) Alpha. Float [0,1]
+---@return Color
+function Color.from_oklab(L, a, b, alpha)
+  -- NOTE: do not clamp a and b as they are technically allowed to go past the
+  -- range. The resulting lrgb value will get clamped later anyways.
+  L = util.clamp(L, 0, 1)
+  alpha = util.clamp(alpha or 1, 0, 1)
+  local r, g, b_ = oklab.oklab_to_srgb(L, a, b)
+  return Color.init(r, g, b_, alpha)
+end
+
+---Create a Color from OkHSV value
+---@param h number Hue. Float [0,360]
+---@param s number Saturation. Float [0,100]
+---@param v number Value. Float [0,100]
+---@param a number (Optional) Alpha. Float [0,1]
+---@return Color
+function Color.from_okhsv(h, s, v, a)
+  h = (h % 360) / 360
+  s = util.clamp(s, 0, 100) / 100
+  v = util.clamp(v, 0, 100) / 100
+  a = util.clamp(a or 1, 0, 1)
+  local r, g, b = oklab.oklab_to_srgb(oklab.okhsv_to_oklab(h, s, v))
+  return Color.init(r, g, b, a)
+end
+
+---Create a Color from OkHSL value
+---@param h number Hue. Float [0,360]
+---@param s number Saturation. Float [0,100]
+---@param l number Lightness. Float [0,100]
+---@param a number (Optional) Alpha. Float [0,1]
+---@return Color
+function Color.from_okhsl(h, s, l, a)
+  h = (h % 360) / 360
+  s = util.clamp(s, 0, 100) / 100
+  l = util.clamp(l, 0, 100) / 100
+  a = util.clamp(a or 1, 0, 1)
+  local r, g, b = oklab.oklab_to_srgb(oklab.okhsl_to_oklab(h, s, l))
+  return Color.init(r, g, b, a)
+end
+
 --#endregion
 
 --#region to_* -----------------------------------------------------------------
@@ -198,6 +259,33 @@ function Color:to_hsl()
   return { hue = h, saturation = s * 100, lightness = l * 100 }
 end
 
+---Convert the color to OkLab.
+---@return OkLab
+function Color:to_oklab()
+  local r, g, b = self.red, self.green, self.blue
+  local L, a, b_ = oklab.srgb_to_oklab(r, g, b)
+
+  return { lightness = L, a = a, b = b_ }
+end
+
+---Convert Color to OkHSV
+---@return OkHSV
+function Color:to_okhsv()
+  local h, s, v = oklab.oklab_to_okhsv( --
+    oklab.srgb_to_oklab(self.red, self.green, self.blue)
+  )
+  return { hue = h * 360, saturation = s * 100, value = v * 100 }
+end
+
+---Convert the color to OkHSL.
+---@return OkHSL
+function Color:to_okhsl()
+  local h, s, l = oklab.oklab_to_okhsl( --
+    oklab.srgb_to_oklab(self.red, self.green, self.blue)
+  )
+  return { hue = h * 360, saturation = s * 100, lightness = l * 100 }
+end
+
 ---Convert the color to a hex number representation (`0xRRGGBB[AA]`).
 ---@param with_alpha boolean Include the alpha component.
 ---@return integer
@@ -221,11 +309,7 @@ end
 ---https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
 ---@return number
 function Color:lumanance()
-  local r, g, b = self.red, self.green, self.blue
-  r = (r > 0.04045) and ((r + 0.055) / 1.055) ^ 2.4 or (r / 12.92)
-  g = (g > 0.04045) and ((g + 0.055) / 1.055) ^ 2.4 or (g / 12.92)
-  b = (b > 0.04045) and ((b + 0.055) / 1.055) ^ 2.4 or (b / 12.92)
-
+  local r, g, b = oklab.srgb_to_linear(self.red, self.green, self.blue)
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 end
 
@@ -237,13 +321,15 @@ end
 ---@param other Color
 ---@param f number Float [0,1]. 0 being this and 1 being other
 ---@return Color
-function Color:blend(other, f)
-  return Color.init(
-    (other.red - self.red) * f + self.red,
-    (other.green - self.green) * f + self.green,
-    (other.blue - self.blue) * f + self.blue,
-    self.alpha
-  )
+function Color:blend(other_, f)
+  local this = self:to_oklab()
+  local other = other_:to_oklab()
+
+  local L = (other.lightness - this.lightness) * f + this.lightness
+  local a = (other.a - this.a) * f + this.a
+  local b = (other.b - this.b) * f + this.b
+
+  return Color.from_oklab(L, a, b, self.alpha)
 end
 
 ---Returns a new shaded color.
@@ -251,14 +337,8 @@ end
 ---@return Color
 function Color:shade(f)
   local t = f < 0 and 0 or 1.0
-  local p = f < 0 and f * -1.0 or f
 
-  return Color.init(
-    (t - self.red) * p + self.red,
-    (t - self.green) * p + self.green,
-    (t - self.blue) * p + self.blue,
-    self.alpha
-  )
+  return self:blend(Color.init(t, t, t, 1.0), math.abs(f))
 end
 
 ---Adds value of `v` to the `value` of the current color. This returns either
@@ -266,9 +346,9 @@ end
 ---@param v number Value. Float [-100,100].
 ---@return Color
 function Color:brighten(v)
-  local hsv = self:to_hsv()
+  local hsv = self:to_okhsv()
   local value = util.clamp(hsv.value + v, 0, 100)
-  return Color.from_hsv(hsv.hue, hsv.saturation, value)
+  return Color.from_okhsv(hsv.hue, hsv.saturation, value)
 end
 
 ---Adds value of `v` to the `lightness` of the current color. This returns
@@ -276,9 +356,9 @@ end
 ---@param v number Lightness. Float [-100,100].
 ---@return Color
 function Color:lighten(v)
-  local hsl = self:to_hsl()
+  local hsl = self:to_okhsl()
   local lightness = util.clamp(hsl.lightness + v, 0, 100)
-  return Color.from_hsl(hsl.hue, hsl.saturation, lightness)
+  return Color.from_okhsl(hsl.hue, hsl.saturation, lightness)
 end
 
 ---Adds value of `v` to the `saturation` of the current color. This returns
@@ -286,18 +366,18 @@ end
 ---@param v number Saturation. Float [-100,100].
 ---@return Color
 function Color:saturate(v)
-  local hsv = self:to_hsv()
+  local hsv = self:to_okhsv()
   local saturation = util.clamp(hsv.saturation + v, 0, 100)
-  return Color.from_hsv(hsv.hue, saturation, hsv.value)
+  return Color.from_okhsv(hsv.hue, saturation, hsv.value)
 end
 
 ---Adds value of `v` to the `hue` of the current color. This returns a rotation of
 ---hue based on +/- of v. Resulting `hue` is wrapped [0,360]
 ---@return Color
 function Color:rotate(v)
-  local hsv = self:to_hsv()
+  local hsv = self:to_okhsv()
   local hue = (hsv.hue + v) % 360
-  return Color.from_hsv(hue, hsv.saturation, hsv.value)
+  return Color.from_okhsv(hue, hsv.saturation, hsv.value)
 end
 
 --#endregion

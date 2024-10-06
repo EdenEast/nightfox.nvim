@@ -12,8 +12,8 @@ themes {
     magenta "#be95ff"
     orange "#3ddbd9"
     cyan "#33b1ff"
-    black "#353535"
-    white "#b6b8bb"
+    black "#333333"
+    white "#b1b2b5"
   }
   dawnfox {
     bg "#d0d8d8"
