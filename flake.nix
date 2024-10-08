@@ -1,7 +1,7 @@
 {
   description = "A highly customizable theme for vim and neovim";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,20 +23,43 @@
           luaSupport = true;
         };
 
-        devShell = pkgs.mkShell {
-          name = "nightfox";
-          packages = with pkgs; [
-            pandoc
-            gnumake
-            stylua
-            # vim-lua
-            # lua
+        coloraide = with pkgs; python3.pkgs.buildPythonPackage rec {
+          pname = "coloraide";
+          version = "4.0";
+          format = "pyproject";
+
+          src = pkgs.fetchFromGitHub {
+            owner = "facelessuser";
+            repo = "${pname}";
+            rev = "${version}";
+            sha256 = "sha256-IkKowqSmUhomJavTqyd2iNcClsntr4Ro5ckgK6GrQ0M=";
+          };
+
+          nativeBuildInputs = with python3.pkgs; [
+            hatchling
           ];
         };
 
       in
       rec {
-        inherit devShell;
+        devShells = {
+          default = pkgs.mkShell {
+            name = "nightfox";
+            packages = with pkgs; [
+              pandoc
+              gnumake
+              stylua
+              # vim-lua
+              # lua
+            ];
+          };
+          python = pkgs.mkShell {
+            name = "python";
+            buildInputs = [ pkgs.python3 coloraide ];
+          };
+        };
       });
 }
+
+
 
