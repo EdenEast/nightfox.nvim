@@ -167,7 +167,7 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
           -- Value does not start with `#` so is treated as a template.
           -- Since `magenta` is a `shade` object the `base` value will be used.
           keyword = "magenta",
-    
+
           -- Adding either `.bright` or `.dim` will change the value
           conditional = "magenta.bright",
           number = "orange.dim",
@@ -178,22 +178,22 @@ Note: If the resulting value of a template is a |nightfox-shade| then the
         }
       }
     }
-    
+
     -- Groups use specs as the template source
     local groups = {
       all = {
         -- The template path is parsed to [`syntax`, `string`]. This is like calling into a lua table like:
         -- `spec.syntax.string`.
         String = { fg = "syntax.string" },
-    
+
         -- If `link` is defined it will be applied over any other values defined
         Whitespace = { link = "Comment" }
-    
+
         -- Specs are used for the template. Specs have their palette's as a field that can be accessed
         IncSearch = { bg = "palette.cyan" },
       },
     }
-    
+
     require('nightfox').setup({ specs = specs, groups = groups })
 <
 
@@ -529,6 +529,7 @@ Current list of modules are:
 - notify
 - nvimtree
 - pounce
+- rainbow-delimiters
 - signify
 - sneak
 - symbol_outline
