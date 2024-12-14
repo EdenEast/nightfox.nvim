@@ -541,6 +541,7 @@ There are a few things to note:
 - [pounce.nvim](https://github.com/rlane/pounce.nvim)
 - [vim-signify](https://github.com/mhinz/vim-signify)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
+- [rainbow-delimiters](https://github.com/hiphish/rainbow-delimiters.nvim)
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
