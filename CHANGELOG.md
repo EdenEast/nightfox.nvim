@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.11.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.10.0...v3.11.0) (2024-12-29)
+
+
+### Features
+
+* add support for rainbow-delimiters ([#459](https://github.com/EdenEast/nightfox.nvim/issues/459)) ([4463a37](https://github.com/EdenEast/nightfox.nvim/commit/4463a37979ee43abb5a0b9a2268b92f1d4255d5e))
+* **extra:** add bat themes ([#457](https://github.com/EdenEast/nightfox.nvim/issues/457)) ([4641eaa](https://github.com/EdenEast/nightfox.nvim/commit/4641eaa2e9e0b37bb9195ed995aa4be431f6f77f))
+
 ## [3.10.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.3...v3.10.0) (2024-07-22)
 
 
