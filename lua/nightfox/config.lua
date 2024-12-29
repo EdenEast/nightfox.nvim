@@ -97,6 +97,7 @@ M.module_names = {
   "signify",
   "sneak",
   "symbol_outline",
+  "rainbow-delimiters",
   "telescope",
   "treesitter",
   "tsrainbow",

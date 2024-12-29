@@ -424,6 +424,7 @@ Current list of modules are:
 - signify
 - sneak
 - symbol_outline
+- rainbow-delimiters
 - telescope
 - treesitter
 - tsrainbow
