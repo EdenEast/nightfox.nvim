@@ -20,6 +20,7 @@ end
 local extras = {
   alacritty = "toml",
   base16 = "yaml",
+  bat = { ext = "tmTheme", use_spec_name = true },
   fish = { ext = "fish", use_spec_name = true },
   ghostty = { ext = "ghostty", use_spec_name = true },
   iterm = { ext = "itermcolors", use_spec_name = true },
