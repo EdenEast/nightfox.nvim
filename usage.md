@@ -421,6 +421,7 @@ Current list of modules are:
 - notify
 - nvimtree
 - pounce
+- rainbow_delimiters
 - signify
 - sneak
 - symbol_outline
