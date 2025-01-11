@@ -72,6 +72,7 @@ M.module_names = {
   "diagnostic",
   "fern",
   "fidget",
+  "fzf",
   "gitgutter",
   "gitsigns",
   "glyph_palette",
