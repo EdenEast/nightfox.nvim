@@ -84,6 +84,8 @@ function M.get(spec, config)
     diffFile        = { fg = spec.diag.info }, -- The filename of the diff ("diff --git a/readme.md b/readme.md")
     diffLine        = { fg = spec.syntax.builtin2 }, -- Line information ("@@ -169,6 +169,9 @@")
     diffIndexLine   = { fg = spec.syntax.preproc }, -- Index line of diff ("index bf3763d..94f0f62 100644")
+
+    typescriptParens = { fg = syn.bracket,  }, -- For typescript
   }
 end
 
