@@ -65,6 +65,7 @@ M.module_names = {
   "alpha",
   "aerial",
   "barbar",
+  "blink",
   "cmp",
   "coc",
   "dap_ui",
