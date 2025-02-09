@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.11.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.10.0...v3.11.0) (2025-02-09)
+
+
+### Features
+
+* add support for rainbow-delimiters ([#459](https://github.com/EdenEast/nightfox.nvim/issues/459)) ([4463a37](https://github.com/EdenEast/nightfox.nvim/commit/4463a37979ee43abb5a0b9a2268b92f1d4255d5e))
+* **extra:** add bat themes ([#457](https://github.com/EdenEast/nightfox.nvim/issues/457)) ([4641eaa](https://github.com/EdenEast/nightfox.nvim/commit/4641eaa2e9e0b37bb9195ed995aa4be431f6f77f))
+* **group:** add support for blink.cmp ([#463](https://github.com/EdenEast/nightfox.nvim/issues/463)) ([6d01bae](https://github.com/EdenEast/nightfox.nvim/commit/6d01bae8c39b8770f585f24a22c125ec25903375))
+
+
+### Bug Fixes
+
+* **syntax:** link typescriptParens to brackets ([#475](https://github.com/EdenEast/nightfox.nvim/issues/475)) ([c03e3ee](https://github.com/EdenEast/nightfox.nvim/commit/c03e3eefdbcbb648924448d4386b6955dab04b4c))
+
 ## [3.10.0](https://github.com/EdenEast/nightfox.nvim/compare/v3.9.3...v3.10.0) (2024-07-22)
 
 
