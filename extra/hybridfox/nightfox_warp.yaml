@@ -1,0 +1,26 @@
+# Nightfox Warp Colors
+# Style: hybridfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/hybridfox/nightfox_warp.yaml
+accent:     '#c5c8c6'
+background: '#1d1f21'
+foreground: '#c5c8c6'
+details:    'darker'
+terminal_colors:
+  normal:
+    black:   '#282a2e'
+    red:     '#cc6666'
+    green:   '#b5bd68'
+    yellow:  '#f0c674'
+    blue:    '#81a2be'
+    magenta: '#b294bb'
+    cyan:    '#8abeb7'
+    white:   '#c5c8c6'
+  bright:
+    black:   '#3d4454'
+    red:     '#e66767'
+    green:   '#cbd66b'
+    yellow:  '#ffc654'
+    blue:    '#7ab3e6'
+    magenta: '#ce90e0'
+    cyan:    '#93d9d0'
+    white:   '#707880'
