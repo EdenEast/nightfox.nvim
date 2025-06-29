@@ -10,7 +10,7 @@ function M.get(spec, config, opts)
     FlashBackdrop = { fg = spec.syntax.comment },
     FlashMatch = { link = "Search" },
     FlashCurrent = { link = "IncSearch" },
-    FlashLabel = { link = "Substitute" },
+    FlashLabel = { fg = "#ffffff" },
     FlashPrompt = { link = "MsgArea" },
     FlashPromptIcon = { link = "Special" },
     FlashCursor = { link = "Cursor" },
