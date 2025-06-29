@@ -12,8 +12,8 @@ function M.get(spec, config, opts)
     FlashCurrent = { link = "IncSearch" },
     FlashLabel = { link = "Substitute" },
     FlashPrompt = { link = "MsgArea" },
-    FlashPromptIcon = { fg = "#ffffff" },
-    FlashCursor = { link = "Cursor" },
+    FlashPromptIcon = { link = "Special" },
+    FlashCursor = { fg = "#ffffff" },
   }
 end
 
