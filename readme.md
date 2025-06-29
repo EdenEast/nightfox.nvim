@@ -520,6 +520,7 @@ There are a few things to note:
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
 - [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+- [flash.nvim](https://github.com/folke/flash.nvim)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
