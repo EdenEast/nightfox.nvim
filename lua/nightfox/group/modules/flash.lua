@@ -13,7 +13,7 @@ function M.get(spec, config, opts)
     FlashCurrent = { link = "IncSearch" },
     FlashLabel = {  fg = "#ffffff", bg = c.pink.base, bold = true  },
     FlashPrompt = { link = "MsgArea" },
-    FlashPromptIcon = { fg = "#ffffff" },
+    FlashPromptIcon = { link = "Special" },
     FlashCursor = { link = "Cursor" },
   }
 end
