@@ -8,7 +8,7 @@ function M.get(spec, config, opts)
 
   -- stylua: ignore
   return {
-    FlashBackdrop = { fg = spec.syntax.comment },
+    FlashBackdrop = { fg = c.pink.base },
     FlashMatch = { link = "Search" },
     FlashCurrent = { link = "IncSearch" },
     FlashLabel = { link = "Substitute" },
