@@ -11,8 +11,8 @@ function M.get(spec, config, opts)
     FlashMatch = { link = "Search" },
     FlashCurrent = { link = "IncSearch" },
     FlashLabel = { link = "Substitute" },
-    FlashPrompt = { fg = "#ffffff" },
-    FlashPromptIcon = { link = "Special" },
+    FlashPrompt = { link = "MsgArea" },
+    FlashPromptIcon = { fg = "#ffffff" },
     FlashCursor = { link = "Cursor" },
   }
 end
