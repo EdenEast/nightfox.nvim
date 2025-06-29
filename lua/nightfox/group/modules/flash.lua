@@ -4,15 +4,16 @@ local M = {}
 
 function M.get(spec, config, opts)
   opts = opts or {}
+  local c = spec.palette
 
   -- stylua: ignore
   return {
     FlashBackdrop = { fg = spec.syntax.comment },
     FlashMatch = { link = "Search" },
-    FlashCurrent = { fg = "#ffffff" },
+    FlashCurrent = { link = "IncSearch" },
     FlashLabel = { link = "Substitute" },
     FlashPrompt = { link = "MsgArea" },
-    FlashPromptIcon = { link = "Special" },
+    FlashPromptIcon = { fg = "#ffffff", bg = c.pink.base, bold = true  },
     FlashCursor = { link = "Cursor" },
   }
 end
