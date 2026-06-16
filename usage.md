@@ -78,7 +78,7 @@ style. These mainly use the color defined in the [palette] and [spec] objects in
 
 ### Setup
 
-The setup function is a convince wrapper for the above components. It takes each component as seperate keys and calls
+The setup function is a convince wrapper for the above components. It takes each component as separate keys and calls
 the correct init/override function.
 
 ```lua
