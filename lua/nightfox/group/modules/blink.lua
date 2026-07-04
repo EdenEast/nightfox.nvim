@@ -3,18 +3,19 @@
 
 local M = {}
 
-function M.get(spec, config, opts)
+function M.get(spec, config, _)
   local has_ts = config.modules.treesitter
   local syn = spec.syntax
 
   -- stylua: ignore
   return {
-    BlinkCmpDoc         = { fg = spec.fg1, bg = spec.bg0 },
-    BlinkCmpDocBorder   = { fg = spec.sel0, bg = spec.bg0 },
+    BlinkCmpGhostText         = { link = "NonText" },
+    BlinkCmpDoc               = { fg = spec.fg1, bg = spec.bg0 },
+    BlinkCmpDocBorder         = { fg = spec.sel0, bg = spec.bg0 },
 
-    BlinkCmpLabel              = { fg = spec.fg1, },
-    BlinkCmpLabelDeprecated    = { fg = syn.dep, style = "strikethrough" },
-    BlinkCmpLabelMatch         = { fg = syn.func, },
+    BlinkCmpLabel             = { fg = spec.fg1, },
+    BlinkCmpLabelDeprecated   = { fg = syn.dep, style = "strikethrough" },
+    BlinkCmpLabelMatch        = { fg = syn.func, },
 
     BlinkCmpKindDefault       = { fg = spec.fg2, },
     BlinkCmpLabelDetail       = { link = "Comment" },
