@@ -3,7 +3,7 @@
 # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/carbonfox.fish
 set -l foreground f2f4f8
 set -l selection 2a2a2a
-set -l comment 6e6f70
+set -l comment 646566
 set -l red ee5396
 set -l orange 3ddbd9
 set -l yellow 08bdba

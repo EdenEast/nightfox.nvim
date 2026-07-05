@@ -16,7 +16,7 @@ scrollbar_thumb = "#824d5b"
 split = "#e4dcd4"
 visual_bell = "#3d2b5a"
 ansi = ["#352c24", "#a5222f", "#396847", "#ac5402", "#2848a9", "#6e33ce", "#287980", "#f2e9e1"]
-brights = ["#534c45", "#b3434e", "#577f63", "#b86e28", "#4863b6", "#8452d5", "#488d93", "#f4ece6"]
+brights = ["#504740", "#b64a4c", "#567d60", "#ba6e3b", "#4464b8", "#8058d8", "#4e8c92", "#f4ece5"]
 
 [colors.indexed]
 16 = "#a440b5"
