@@ -31,7 +31,7 @@ Nightfox is built to be customizable. There are four main components that can be
 
 ## Configuration
 
-Nightfox allows you to set individual components separately as apposed to using the default `setup` function.
+Nightfox allows you to set individual components separately as opposed to using the default `setup` function.
 
 ### Init
 
@@ -78,7 +78,7 @@ style. These mainly use the color defined in the [palette] and [spec] objects in
 
 ### Setup
 
-The setup function is a convince wrapper for the above components. It takes each component as separate keys and calls
+The setup function is a convenience wrapper for the above components. It takes each component as separate keys and calls
 the correct init/override function.
 
 ```lua
