@@ -32,6 +32,7 @@ styles to suite your preference. These are:
 - `Nordfox`
 - `Terafox`
 - `Carbonfox`
+- `Hybridfox`
 
 
 USAGE                                                         *nightfox-usage*
