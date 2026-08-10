@@ -18,6 +18,7 @@ $git_status\
 $nodejs\
 $rust\
 $golang\
+$python\
 [](fg:lang_bg bg:background)\
 \n$character"""
 
@@ -133,7 +134,9 @@ format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
 [python]
 symbol = ""
 style = "bg:lang_bg"
-format = '[[ $symbol( $version) ](fg:lang_fg bg:lang_bg)]($style)'
+format = '[[ $symbol($virtualenv )($version) ](fg:lang_fg bg:lang_bg)]($style)'
+python_binary = ['.venv/bin/python']
+detect_extensions = ['py']
 
 [character]
 disabled = false
