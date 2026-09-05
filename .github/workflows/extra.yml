@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate extra files
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       - name: Setup Git
         run: |
