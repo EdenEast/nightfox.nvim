@@ -29,6 +29,7 @@ local extras = {
   nushell = { ext = "nu", use_spec_name = true },
   starship = "toml",
   tmux = { ext = "tmux", use_spec_name = true },
+  vscode = { ext = "json", use_spec_name = true },
   wezterm = "toml",
   windows_terminal = "json",
   xresources = { ext = "Xresources", use_spec_name = true },
